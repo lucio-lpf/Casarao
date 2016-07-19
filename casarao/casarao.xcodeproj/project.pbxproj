@@ -16,6 +16,7 @@
 		5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */; };
 		5A41A2A01D3E902000C93165 /* casaraoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A29F1D3E902000C93165 /* casaraoTests.swift */; };
 		5A41A2AB1D3E902000C93165 /* casaraoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */; };
+		9FE2BCB81D3E95E100B95074 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE2BCB71D3E95E100B95074 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		5A41A2A61D3E902000C93165 /* casaraoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = casaraoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casaraoUITests.swift; sourceTree = "<group>"; };
 		5A41A2AC1D3E902000C93165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FE2BCB61D3E95D900B95074 /* casarao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = casarao.entitlements; sourceTree = "<group>"; };
+		9FE2BCB71D3E95E100B95074 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FE2BCB81D3E95E100B95074 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 		5A41A27A1D3E902000C93165 = {
 			isa = PBXGroup;
 			children = (
+				9FE2BCB71D3E95E100B95074 /* CloudKit.framework */,
 				5A41A2851D3E902000C93165 /* casarao */,
 				5A41A29E1D3E902000C93165 /* casaraoTests */,
 				5A41A2A91D3E902000C93165 /* casaraoUITests */,
@@ -101,6 +106,7 @@
 		5A41A2851D3E902000C93165 /* casarao */ = {
 			isa = PBXGroup;
 			children = (
+				9FE2BCB61D3E95D900B95074 /* casarao.entitlements */,
 				5A41A2861D3E902000C93165 /* AppDelegate.swift */,
 				5A41A2881D3E902000C93165 /* GameScene.sks */,
 				5A41A28A1D3E902000C93165 /* GameScene.swift */,
@@ -199,6 +205,12 @@
 				TargetAttributes = {
 					5A41A2821D3E902000C93165 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = TY5QM4UU69;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					5A41A29A1D3E902000C93165 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -409,10 +421,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = casarao/casarao.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = casarao/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-team.casarao";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -420,10 +436,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = casarao/casarao.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = casarao/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-team.casarao";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -494,6 +514,7 @@
 				5A41A2B11D3E902000C93165 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A41A2B21D3E902000C93165 /* Build configuration list for PBXNativeTarget "casaraoTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +523,7 @@
 				5A41A2B41D3E902000C93165 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A41A2B51D3E902000C93165 /* Build configuration list for PBXNativeTarget "casaraoUITests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +532,7 @@
 				5A41A2B71D3E902000C93165 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
