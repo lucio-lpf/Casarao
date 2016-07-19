@@ -16,15 +16,14 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-
-        let obj = self.childNodeWithName("tile11")
-        
         loadButtons()
+        
     }
 
     
     func loadButtons(){
     
+        userTileMatrix
         
     }
     
