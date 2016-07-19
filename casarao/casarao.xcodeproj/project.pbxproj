@@ -142,7 +142,6 @@
 				5A41A28A1D3E902000C93165 /* GameScene.swift */,
 				5A41A28C1D3E902000C93165 /* GameViewController.swift */,
 				5AFDBCF31D3EAEDF0093F328 /* WebServiceManneger.swift */,
-				5A41A2B81D3E913D00C93165 /* Tile.swift */,
 				5A41A28E1D3E902000C93165 /* Main.storyboard */,
 				5A41A2911D3E902000C93165 /* Assets.xcassets */,
 				5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */,
@@ -185,6 +184,7 @@
 				9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */,
 				9FE8E1BF1D3EB6ED00A32C65 /* Matrix.swift */,
 				9FE8E1BD1D3EB42A00A32C65 /* Player.swift */,
+				5A41A2B81D3E913D00C93165 /* Tile.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";

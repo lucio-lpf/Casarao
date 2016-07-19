@@ -16,5 +16,6 @@ class Player {
     var coins:Double = 100.0
     
     
-    var currentMatrix:Matrix?
+    var currentMatrix:MatrixNode?
 }
+

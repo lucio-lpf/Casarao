@@ -13,6 +13,15 @@ class Tile: SKSpriteNode{
     
     
     
+    init(){
+
+        super.init(texture: nil, color: UIColor.redColor(), size: CGSize(width: 100, height: 100))
+        
+        self.userInteractionEnabled = true
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+
+    }
+    
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture,color:color, size: size)
     }
@@ -24,8 +33,9 @@ class Tile: SKSpriteNode{
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        changeColor()
+
         
+        changeColor()
         
         
     }
