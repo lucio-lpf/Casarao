@@ -9,23 +9,25 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    
+    var rightTileMatrix = Array<Array<Tile>>()
+    var userTileMatrix = Array<Array<Tile>>()
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         
-        self.addChild(myLabel)
+
+        let obj = self.childNodeWithName("tile11")
         
-        print(self.children)
+        loadButtons()
+    }
+
+    
+    func loadButtons(){
+    
+        
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        print("funciona na cena")
-    }
-    
-   
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
