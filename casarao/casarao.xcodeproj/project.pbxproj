@@ -1,0 +1,517 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A41A2871D3E902000C93165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2861D3E902000C93165 /* AppDelegate.swift */; };
+		5A41A2891D3E902000C93165 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A2881D3E902000C93165 /* GameScene.sks */; };
+		5A41A28B1D3E902000C93165 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A28A1D3E902000C93165 /* GameScene.swift */; };
+		5A41A28D1D3E902000C93165 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A28C1D3E902000C93165 /* GameViewController.swift */; };
+		5A41A2901D3E902000C93165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A28E1D3E902000C93165 /* Main.storyboard */; };
+		5A41A2921D3E902000C93165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A2911D3E902000C93165 /* Assets.xcassets */; };
+		5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */; };
+		5A41A2A01D3E902000C93165 /* casaraoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A29F1D3E902000C93165 /* casaraoTests.swift */; };
+		5A41A2AB1D3E902000C93165 /* casaraoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A41A29C1D3E902000C93165 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A41A27B1D3E902000C93165 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A41A2821D3E902000C93165;
+			remoteInfo = casarao;
+		};
+		5A41A2A71D3E902000C93165 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A41A27B1D3E902000C93165 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A41A2821D3E902000C93165;
+			remoteInfo = casarao;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5A41A2831D3E902000C93165 /* casarao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = casarao.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A41A2861D3E902000C93165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5A41A2881D3E902000C93165 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		5A41A28A1D3E902000C93165 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		5A41A28C1D3E902000C93165 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5A41A28F1D3E902000C93165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A41A2911D3E902000C93165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A41A2941D3E902000C93165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5A41A2961D3E902000C93165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A41A29B1D3E902000C93165 /* casaraoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = casaraoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A41A29F1D3E902000C93165 /* casaraoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casaraoTests.swift; sourceTree = "<group>"; };
+		5A41A2A11D3E902000C93165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A41A2A61D3E902000C93165 /* casaraoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = casaraoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casaraoUITests.swift; sourceTree = "<group>"; };
+		5A41A2AC1D3E902000C93165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A41A2801D3E902000C93165 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A41A2981D3E902000C93165 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A41A2A31D3E902000C93165 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A41A27A1D3E902000C93165 = {
+			isa = PBXGroup;
+			children = (
+				5A41A2851D3E902000C93165 /* casarao */,
+				5A41A29E1D3E902000C93165 /* casaraoTests */,
+				5A41A2A91D3E902000C93165 /* casaraoUITests */,
+				5A41A2841D3E902000C93165 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5A41A2841D3E902000C93165 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A41A2831D3E902000C93165 /* casarao.app */,
+				5A41A29B1D3E902000C93165 /* casaraoTests.xctest */,
+				5A41A2A61D3E902000C93165 /* casaraoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A41A2851D3E902000C93165 /* casarao */ = {
+			isa = PBXGroup;
+			children = (
+				5A41A2861D3E902000C93165 /* AppDelegate.swift */,
+				5A41A2881D3E902000C93165 /* GameScene.sks */,
+				5A41A28A1D3E902000C93165 /* GameScene.swift */,
+				5A41A28C1D3E902000C93165 /* GameViewController.swift */,
+				5A41A28E1D3E902000C93165 /* Main.storyboard */,
+				5A41A2911D3E902000C93165 /* Assets.xcassets */,
+				5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */,
+				5A41A2961D3E902000C93165 /* Info.plist */,
+			);
+			path = casarao;
+			sourceTree = "<group>";
+		};
+		5A41A29E1D3E902000C93165 /* casaraoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A41A29F1D3E902000C93165 /* casaraoTests.swift */,
+				5A41A2A11D3E902000C93165 /* Info.plist */,
+			);
+			path = casaraoTests;
+			sourceTree = "<group>";
+		};
+		5A41A2A91D3E902000C93165 /* casaraoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */,
+				5A41A2AC1D3E902000C93165 /* Info.plist */,
+			);
+			path = casaraoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A41A2821D3E902000C93165 /* casarao */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A41A2AF1D3E902000C93165 /* Build configuration list for PBXNativeTarget "casarao" */;
+			buildPhases = (
+				5A41A27F1D3E902000C93165 /* Sources */,
+				5A41A2801D3E902000C93165 /* Frameworks */,
+				5A41A2811D3E902000C93165 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = casarao;
+			productName = casarao;
+			productReference = 5A41A2831D3E902000C93165 /* casarao.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5A41A29A1D3E902000C93165 /* casaraoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A41A2B21D3E902000C93165 /* Build configuration list for PBXNativeTarget "casaraoTests" */;
+			buildPhases = (
+				5A41A2971D3E902000C93165 /* Sources */,
+				5A41A2981D3E902000C93165 /* Frameworks */,
+				5A41A2991D3E902000C93165 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A41A29D1D3E902000C93165 /* PBXTargetDependency */,
+			);
+			name = casaraoTests;
+			productName = casaraoTests;
+			productReference = 5A41A29B1D3E902000C93165 /* casaraoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5A41A2A51D3E902000C93165 /* casaraoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A41A2B51D3E902000C93165 /* Build configuration list for PBXNativeTarget "casaraoUITests" */;
+			buildPhases = (
+				5A41A2A21D3E902000C93165 /* Sources */,
+				5A41A2A31D3E902000C93165 /* Frameworks */,
+				5A41A2A41D3E902000C93165 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A41A2A81D3E902000C93165 /* PBXTargetDependency */,
+			);
+			name = casaraoUITests;
+			productName = casaraoUITests;
+			productReference = 5A41A2A61D3E902000C93165 /* casaraoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A41A27B1D3E902000C93165 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "'team'";
+				TargetAttributes = {
+					5A41A2821D3E902000C93165 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					5A41A29A1D3E902000C93165 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 5A41A2821D3E902000C93165;
+					};
+					5A41A2A51D3E902000C93165 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 5A41A2821D3E902000C93165;
+					};
+				};
+			};
+			buildConfigurationList = 5A41A27E1D3E902000C93165 /* Build configuration list for PBXProject "casarao" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A41A27A1D3E902000C93165;
+			productRefGroup = 5A41A2841D3E902000C93165 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A41A2821D3E902000C93165 /* casarao */,
+				5A41A29A1D3E902000C93165 /* casaraoTests */,
+				5A41A2A51D3E902000C93165 /* casaraoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A41A2811D3E902000C93165 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A41A2891D3E902000C93165 /* GameScene.sks in Resources */,
+				5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */,
+				5A41A2921D3E902000C93165 /* Assets.xcassets in Resources */,
+				5A41A2901D3E902000C93165 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A41A2991D3E902000C93165 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A41A2A41D3E902000C93165 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A41A27F1D3E902000C93165 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A41A28B1D3E902000C93165 /* GameScene.swift in Sources */,
+				5A41A28D1D3E902000C93165 /* GameViewController.swift in Sources */,
+				5A41A2871D3E902000C93165 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A41A2971D3E902000C93165 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A41A2A01D3E902000C93165 /* casaraoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A41A2A21D3E902000C93165 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A41A2AB1D3E902000C93165 /* casaraoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A41A29D1D3E902000C93165 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A41A2821D3E902000C93165 /* casarao */;
+			targetProxy = 5A41A29C1D3E902000C93165 /* PBXContainerItemProxy */;
+		};
+		5A41A2A81D3E902000C93165 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A41A2821D3E902000C93165 /* casarao */;
+			targetProxy = 5A41A2A71D3E902000C93165 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5A41A28E1D3E902000C93165 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A41A28F1D3E902000C93165 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A41A2941D3E902000C93165 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A41A2AD1D3E902000C93165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A41A2AE1D3E902000C93165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A41A2B01D3E902000C93165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = casarao/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-team.casarao";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5A41A2B11D3E902000C93165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = casarao/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-team.casarao";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5A41A2B31D3E902000C93165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = casaraoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/casarao.app/casarao";
+			};
+			name = Debug;
+		};
+		5A41A2B41D3E902000C93165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = casaraoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/casarao.app/casarao";
+			};
+			name = Release;
+		};
+		5A41A2B61D3E902000C93165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = casaraoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = casarao;
+			};
+			name = Debug;
+		};
+		5A41A2B71D3E902000C93165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = casaraoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = casarao;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A41A27E1D3E902000C93165 /* Build configuration list for PBXProject "casarao" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A41A2AD1D3E902000C93165 /* Debug */,
+				5A41A2AE1D3E902000C93165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A41A2AF1D3E902000C93165 /* Build configuration list for PBXNativeTarget "casarao" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A41A2B01D3E902000C93165 /* Debug */,
+				5A41A2B11D3E902000C93165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5A41A2B21D3E902000C93165 /* Build configuration list for PBXNativeTarget "casaraoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A41A2B31D3E902000C93165 /* Debug */,
+				5A41A2B41D3E902000C93165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5A41A2B51D3E902000C93165 /* Build configuration list for PBXNativeTarget "casaraoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A41A2B61D3E902000C93165 /* Debug */,
+				5A41A2B71D3E902000C93165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A41A27B1D3E902000C93165 /* Project object */;
+}
