@@ -16,6 +16,9 @@
 		5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */; };
 		5A41A2A01D3E902000C93165 /* casaraoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A29F1D3E902000C93165 /* casaraoTests.swift */; };
 		5A41A2AB1D3E902000C93165 /* casaraoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */; };
+		5A41A2B91D3E913D00C93165 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2B81D3E913D00C93165 /* Tile.swift */; };
+		5A41A2BA1D3E913D00C93165 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2B81D3E913D00C93165 /* Tile.swift */; };
+		5A41A2BB1D3E913D00C93165 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2B81D3E913D00C93165 /* Tile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,7 @@
 		5A41A2A61D3E902000C93165 /* casaraoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = casaraoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casaraoUITests.swift; sourceTree = "<group>"; };
 		5A41A2AC1D3E902000C93165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A41A2B81D3E913D00C93165 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 				5A41A2881D3E902000C93165 /* GameScene.sks */,
 				5A41A28A1D3E902000C93165 /* GameScene.swift */,
 				5A41A28C1D3E902000C93165 /* GameViewController.swift */,
+				5A41A2B81D3E913D00C93165 /* Tile.swift */,
 				5A41A28E1D3E902000C93165 /* Main.storyboard */,
 				5A41A2911D3E902000C93165 /* Assets.xcassets */,
 				5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */,
@@ -266,6 +271,7 @@
 				5A41A28B1D3E902000C93165 /* GameScene.swift in Sources */,
 				5A41A28D1D3E902000C93165 /* GameViewController.swift in Sources */,
 				5A41A2871D3E902000C93165 /* AppDelegate.swift in Sources */,
+				5A41A2B91D3E913D00C93165 /* Tile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A41A2A01D3E902000C93165 /* casaraoTests.swift in Sources */,
+				5A41A2BA1D3E913D00C93165 /* Tile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A41A2AB1D3E902000C93165 /* casaraoUITests.swift in Sources */,
+				5A41A2BB1D3E913D00C93165 /* Tile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
