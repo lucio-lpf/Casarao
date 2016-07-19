@@ -16,7 +16,10 @@
 		5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */; };
 		5A41A2A01D3E902000C93165 /* casaraoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A29F1D3E902000C93165 /* casaraoTests.swift */; };
 		5A41A2AB1D3E902000C93165 /* casaraoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */; };
+		5BD677ACBFEFA1B3C5955B57 /* Pods_casaraoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730A9F6588B9E66C8B631ABE /* Pods_casaraoUITests.framework */; };
 		9FE2BCB81D3E95E100B95074 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE2BCB71D3E95E100B95074 /* CloudKit.framework */; };
+		DE86FA8407EA37A96FB3E097 /* Pods_casarao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9621FB30D68550CD1AF8D1F /* Pods_casarao.framework */; };
+		DF86772EA0839830E60E640F /* Pods_casaraoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA99AF5004B20F68CAF0FF03 /* Pods_casaraoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5186AD38E5BF37BCB2F71290 /* Pods-casaraoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casaraoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-casaraoTests/Pods-casaraoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A41A2831D3E902000C93165 /* casarao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = casarao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A41A2861D3E902000C93165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A41A2881D3E902000C93165 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -52,8 +56,16 @@
 		5A41A2A61D3E902000C93165 /* casaraoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = casaraoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casaraoUITests.swift; sourceTree = "<group>"; };
 		5A41A2AC1D3E902000C93165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		730A9F6588B9E66C8B631ABE /* Pods_casaraoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casaraoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		959A03A97B0FD0970772EB90 /* Pods-casaraoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casaraoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-casaraoUITests/Pods-casaraoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		95C3A4A2498456A784D8E56F /* Pods-casarao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casarao.debug.xcconfig"; path = "Pods/Target Support Files/Pods-casarao/Pods-casarao.debug.xcconfig"; sourceTree = "<group>"; };
 		9FE2BCB61D3E95D900B95074 /* casarao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = casarao.entitlements; sourceTree = "<group>"; };
 		9FE2BCB71D3E95E100B95074 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		D9621FB30D68550CD1AF8D1F /* Pods_casarao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casarao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC2E7637816376BF6BDAAD64 /* Pods-casarao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casarao.release.xcconfig"; path = "Pods/Target Support Files/Pods-casarao/Pods-casarao.release.xcconfig"; sourceTree = "<group>"; };
+		E04774D78DF9D98A87A73489 /* Pods-casaraoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casaraoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-casaraoUITests/Pods-casaraoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EA99AF5004B20F68CAF0FF03 /* Pods_casaraoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casaraoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDA7E4F4DB549660F802D01D /* Pods-casaraoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casaraoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-casaraoTests/Pods-casaraoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FE2BCB81D3E95E100B95074 /* CloudKit.framework in Frameworks */,
+				DE86FA8407EA37A96FB3E097 /* Pods_casarao.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF86772EA0839830E60E640F /* Pods_casaraoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD677ACBFEFA1B3C5955B57 /* Pods_casaraoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +105,8 @@
 				5A41A29E1D3E902000C93165 /* casaraoTests */,
 				5A41A2A91D3E902000C93165 /* casaraoUITests */,
 				5A41A2841D3E902000C93165 /* Products */,
+				CCBC8C5CBD228F6FD020BA16 /* Pods */,
+				9734F5870A3FF1CFC2597050 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +154,29 @@
 			path = casaraoUITests;
 			sourceTree = "<group>";
 		};
+		9734F5870A3FF1CFC2597050 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9621FB30D68550CD1AF8D1F /* Pods_casarao.framework */,
+				EA99AF5004B20F68CAF0FF03 /* Pods_casaraoTests.framework */,
+				730A9F6588B9E66C8B631ABE /* Pods_casaraoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCBC8C5CBD228F6FD020BA16 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				95C3A4A2498456A784D8E56F /* Pods-casarao.debug.xcconfig */,
+				DC2E7637816376BF6BDAAD64 /* Pods-casarao.release.xcconfig */,
+				5186AD38E5BF37BCB2F71290 /* Pods-casaraoTests.debug.xcconfig */,
+				EDA7E4F4DB549660F802D01D /* Pods-casaraoTests.release.xcconfig */,
+				E04774D78DF9D98A87A73489 /* Pods-casaraoUITests.debug.xcconfig */,
+				959A03A97B0FD0970772EB90 /* Pods-casaraoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A41A2AF1D3E902000C93165 /* Build configuration list for PBXNativeTarget "casarao" */;
 			buildPhases = (
+				5663B2DA4E4ED5163637A2D0 /* [CP] Check Pods Manifest.lock */,
 				5A41A27F1D3E902000C93165 /* Sources */,
 				5A41A2801D3E902000C93165 /* Frameworks */,
 				5A41A2811D3E902000C93165 /* Resources */,
+				432EE73171DC9E5357882C36 /* [CP] Embed Pods Frameworks */,
+				764F19EB1652D8A32B773925 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A41A2B21D3E902000C93165 /* Build configuration list for PBXNativeTarget "casaraoTests" */;
 			buildPhases = (
+				0C02C237E9D9703A6E41B610 /* [CP] Check Pods Manifest.lock */,
 				5A41A2971D3E902000C93165 /* Sources */,
 				5A41A2981D3E902000C93165 /* Frameworks */,
 				5A41A2991D3E902000C93165 /* Resources */,
+				A980ACFEE042BD2FB9391D05 /* [CP] Embed Pods Frameworks */,
+				071BECFE237F0D66ECF9EEB5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A41A2B51D3E902000C93165 /* Build configuration list for PBXNativeTarget "casaraoUITests" */;
 			buildPhases = (
+				5FC9A7BAE65995DB0272A2FA /* [CP] Check Pods Manifest.lock */,
 				5A41A2A21D3E902000C93165 /* Sources */,
 				5A41A2A31D3E902000C93165 /* Frameworks */,
 				5A41A2A41D3E902000C93165 /* Resources */,
+				4EB878F3C292B65910AAAD48 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,6 +317,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		071BECFE237F0D66ECF9EEB5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casaraoTests/Pods-casaraoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0C02C237E9D9703A6E41B610 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		432EE73171DC9E5357882C36 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casarao/Pods-casarao-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EB878F3C292B65910AAAD48 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casaraoUITests/Pods-casaraoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5663B2DA4E4ED5163637A2D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5FC9A7BAE65995DB0272A2FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		764F19EB1652D8A32B773925 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casarao/Pods-casarao-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A980ACFEE042BD2FB9391D05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casaraoTests/Pods-casaraoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5A41A27F1D3E902000C93165 /* Sources */ = {
@@ -419,6 +590,7 @@
 		};
 		5A41A2B01D3E902000C93165 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95C3A4A2498456A784D8E56F /* Pods-casarao.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = casarao/casarao.entitlements;
@@ -434,6 +606,7 @@
 		};
 		5A41A2B11D3E902000C93165 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC2E7637816376BF6BDAAD64 /* Pods-casarao.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = casarao/casarao.entitlements;
@@ -449,6 +622,7 @@
 		};
 		5A41A2B31D3E902000C93165 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5186AD38E5BF37BCB2F71290 /* Pods-casaraoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -462,6 +636,7 @@
 		};
 		5A41A2B41D3E902000C93165 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDA7E4F4DB549660F802D01D /* Pods-casaraoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = casaraoTests/Info.plist;
@@ -474,6 +649,7 @@
 		};
 		5A41A2B61D3E902000C93165 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E04774D78DF9D98A87A73489 /* Pods-casaraoUITests.debug.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = casaraoUITests/Info.plist;
@@ -486,6 +662,7 @@
 		};
 		5A41A2B71D3E902000C93165 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 959A03A97B0FD0970772EB90 /* Pods-casaraoUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = casaraoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
