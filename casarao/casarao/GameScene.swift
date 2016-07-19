@@ -10,23 +10,10 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    var rightTileMatrix = Array<Array<Tile>>()
-    var userTileMatrix = Array<Array<Tile>>()
-    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-        loadButtons()
-        
     }
-
-    
-    func loadButtons(){
-    
-        userTileMatrix
-        
-    }
-    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }

@@ -22,6 +22,9 @@
 		5AFDBCF41D3EAEDF0093F328 /* WebServiceManneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDBCF31D3EAEDF0093F328 /* WebServiceManneger.swift */; };
 		5BD677ACBFEFA1B3C5955B57 /* Pods_casaraoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730A9F6588B9E66C8B631ABE /* Pods_casaraoUITests.framework */; };
 		9FE2BCB81D3E95E100B95074 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE2BCB71D3E95E100B95074 /* CloudKit.framework */; };
+		9FE8E1BC1D3EB19100A32C65 /* GameRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */; };
+		9FE8E1BE1D3EB42A00A32C65 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BD1D3EB42A00A32C65 /* Player.swift */; };
+		9FE8E1C01D3EB6ED00A32C65 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BF1D3EB6ED00A32C65 /* Matrix.swift */; };
 		DE86FA8407EA37A96FB3E097 /* Pods_casarao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9621FB30D68550CD1AF8D1F /* Pods_casarao.framework */; };
 		DF86772EA0839830E60E640F /* Pods_casaraoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA99AF5004B20F68CAF0FF03 /* Pods_casaraoTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +70,9 @@
 		95C3A4A2498456A784D8E56F /* Pods-casarao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casarao.debug.xcconfig"; path = "Pods/Target Support Files/Pods-casarao/Pods-casarao.debug.xcconfig"; sourceTree = "<group>"; };
 		9FE2BCB61D3E95D900B95074 /* casarao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = casarao.entitlements; sourceTree = "<group>"; };
 		9FE2BCB71D3E95E100B95074 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoom.swift; sourceTree = "<group>"; };
+		9FE8E1BD1D3EB42A00A32C65 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		9FE8E1BF1D3EB6ED00A32C65 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		D9621FB30D68550CD1AF8D1F /* Pods_casarao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casarao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2E7637816376BF6BDAAD64 /* Pods-casarao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casarao.release.xcconfig"; path = "Pods/Target Support Files/Pods-casarao/Pods-casarao.release.xcconfig"; sourceTree = "<group>"; };
 		E04774D78DF9D98A87A73489 /* Pods-casaraoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casaraoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-casaraoUITests/Pods-casaraoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +135,7 @@
 		5A41A2851D3E902000C93165 /* casarao */ = {
 			isa = PBXGroup;
 			children = (
+				9FE8E1BA1D3EB17800A32C65 /* Model */,
 				9FE2BCB61D3E95D900B95074 /* casarao.entitlements */,
 				5A41A2861D3E902000C93165 /* AppDelegate.swift */,
 				5A41A2881D3E902000C93165 /* GameScene.sks */,
@@ -170,6 +177,16 @@
 				730A9F6588B9E66C8B631ABE /* Pods_casaraoUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9FE8E1BA1D3EB17800A32C65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */,
+				9FE8E1BF1D3EB6ED00A32C65 /* Matrix.swift */,
+				9FE8E1BD1D3EB42A00A32C65 /* Player.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		CCBC8C5CBD228F6FD020BA16 /* Pods */ = {
@@ -585,6 +602,9 @@
 				5A41A28B1D3E902000C93165 /* GameScene.swift in Sources */,
 				5A41A28D1D3E902000C93165 /* GameViewController.swift in Sources */,
 				5A41A2871D3E902000C93165 /* AppDelegate.swift in Sources */,
+				9FE8E1C01D3EB6ED00A32C65 /* Matrix.swift in Sources */,
+				9FE8E1BE1D3EB42A00A32C65 /* Player.swift in Sources */,
+				9FE8E1BC1D3EB19100A32C65 /* GameRoom.swift in Sources */,
 				5A41A2B91D3E913D00C93165 /* Tile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

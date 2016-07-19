@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import Parse
+
+
+class WebServiceManager {
+    static let sharedInstance = WebServiceManager()
+}
