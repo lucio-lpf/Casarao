@@ -10,23 +10,70 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    
+    var matrix: MatrixNode!
+    var chances : Int = 3
+    var gameRoom:GameRoom!
+    
     override func didMoveToView(view: SKView) {
         
         
-        
-        
-        /* Setup your scene here */
-        
-        
-        let matrix = MatrixNode(numColumns: 3, numRows: 3)
+        matrix = MatrixNode(numColumns: 3, numRows: 3)
         matrix.position = CGPoint(x: 0,y: 0)
         self.addChild(matrix)
         
-        matrix.runAction(SKAction.rotateByAngle(CGFloat(M_PI_4), duration: 4))
-        print(self.children)
-        print(matrix.children)
+        let checkButton = SKSpriteNode(color: SKColor.blueColor(), size: CGSize(width: 400, height: 100))
+        checkButton.position = CGPoint(x:0,y:-500)
+        checkButton.name = "checkButton"
+        checkButton.zPosition = 1
+        self.addChild(checkButton)
+        
     }
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first!
+        let node = self.nodeAtPoint(touch.locationInNode(self))
+        
+        if node is Tile{
+            let tile = node as! Tile
+            if tile.status != "right"{
+                checkUserChances(tile)
+            }
+            
+        }
+        
+        else if node.name == "checkButton"{
+            checkUserMatrix()
+            self.userInteractionEnabled = false
+        }
+        
+    }
+    
+    
+    func checkUserChances(tile:Tile){
+        if tile.colorNumber == 3 {
+            self.chances += 1
+            tile.changeColor()
+            return
+        }
+        if tile.colorNumber != 0{
+            tile.changeColor()
+            return
+        }
+        if chances > 0{
+            if tile.colorNumber == 0{
+                self.chances -= 1
+                tile.changeColor()
+            }
+        }
+    }
+    
+    func checkUserMatrix(){
+        
+        
+        
     }
 }

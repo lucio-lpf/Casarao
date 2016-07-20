@@ -21,7 +21,7 @@ class MatrixNode : SKSpriteNode {
     init(numColumns:Int,numRows:Int){
         
         super.init(texture: nil, color: UIColor.blackColor(), size: CGSize(width: 400, height: 400))
-        
+        self.zPosition = 1
         //SO FUNCIONA PRA MATRIZES QUADRADAS
         let numberOfTiles = numRows*numColumns
         
