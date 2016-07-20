@@ -33,11 +33,7 @@ class Tile: SKSpriteNode{
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-
-        
         changeColor()
-        
-        
     }
     
     
