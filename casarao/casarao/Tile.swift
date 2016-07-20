@@ -10,13 +10,14 @@ import SpriteKit
 
 
 class Tile: SKSpriteNode{
+
     
-    
+    var colorNumber:Int!
     
     init(){
-
-        super.init(texture: nil, color: UIColor.redColor(), size: CGSize(width: 100, height: 100))
         
+        super.init(texture: nil, color: SKColor.whiteColor(), size: CGSize(width: 100, height: 100))
+        self.colorNumber = -1
         self.userInteractionEnabled = true
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
 
@@ -33,12 +34,27 @@ class Tile: SKSpriteNode{
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        colorNumber = colorNumber + 1
         changeColor()
     }
     
     
     func changeColor(){
-        self.color = SKColor.blueColor()
         
+        switch self.colorNumber {
+            
+        case 0:
+            self.color = SKColor.redColor()
+            
+        case 1:
+            self.color = SKColor.blueColor()
+            
+        case 2:
+            self.color = SKColor.greenColor()
+            
+        default:
+            self.colorNumber = 0
+            changeColor()
+        }
     }
 }
