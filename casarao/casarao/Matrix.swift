@@ -17,7 +17,7 @@ class MatrixNode : SKSpriteNode {
     
     init(numColumns:Int,numRows:Int){
         matrix = Array2D<Tile>(columns: numColumns, rows: numRows)
-        super.init(texture: nil, color: UIColor.blueColor(), size: CGSize(width: 500, height: 500))
+        super.init(texture: nil, color: UIColor.blackColor(), size: CGSize(width: 500, height: 500))
     
         //SO FUNCIONA PRA MATRIZES QUADRADAS
         
@@ -37,19 +37,25 @@ class MatrixNode : SKSpriteNode {
     
     
     func addTilesAsMatrixChildren(){
+        
+        //otimizar essa parte(muitos ifs)
         for column in 0..<matrix.columns{
             for row in 0..<matrix.rows{
+                var x = 0
+                var y = 0
                 let tile = matrix[column,row]!
-                var x = -(row+1)
-                x = x*250
-                x += 500
-                x += (row+1)*50
-                x += 100
-                var y = (row+1)
-                y = y*250
-                y -= 500
-                y -= (row+1)*50
-                y -= 100
+                if column == 2{
+                    x = 200
+                }
+                if column == 0{
+                    x = -200
+                }
+                if row == 2{
+                    y = -200
+                }
+                if row == 0{
+                    y = 200
+                }
                 
                 tile.position = CGPoint(x: x, y: y)
                 self.addChild(tile)
