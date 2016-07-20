@@ -11,21 +11,22 @@ import SpriteKit
 
 class MatrixNode : SKSpriteNode {
     //TODO: LUCIO ARRAY 2D\
-    var matrix:Array2D<Tile>
+    
+    var tilesArray = Array<Tile>()
+    var numberOfColumns:Int!
+    
     
     
     
     init(numColumns:Int,numRows:Int){
-        matrix = Array2D<Tile>(columns: numColumns, rows: numRows)
-        super.init(texture: nil, color: UIColor.blackColor(), size: CGSize(width: 500, height: 500))
-    
-        //SO FUNCIONA PRA MATRIZES QUADRADAS
         
-        for int in 0..<numColumns{
-            matrix[int,0] = Tile()
-            
-            matrix[int,1] = Tile()
-            matrix[int,2] = Tile()
+        super.init(texture: nil, color: UIColor.blackColor(), size: CGSize(width: 400, height: 400))
+        self.zPosition = 1
+        //SO FUNCIONA PRA MATRIZES QUADRADAS
+        let numberOfTiles = numRows*numColumns
+        
+        for _ in 0..<numberOfTiles{
+            tilesArray.append(Tile())
         }
         
         addTilesAsMatrixChildren()
@@ -39,27 +40,21 @@ class MatrixNode : SKSpriteNode {
     func addTilesAsMatrixChildren(){
         
         //otimizar essa parte(muitos ifs)
-        for column in 0..<matrix.columns{
-            for row in 0..<matrix.rows{
-                var x = 0
-                var y = 0
-                let tile = matrix[column,row]!
-                if column == 2{
-                    x = 200
-                }
-                if column == 0{
-                    x = -200
-                }
-                if row == 2{
-                    y = -200
-                }
-                if row == 0{
-                    y = 200
-                }
-                
-                tile.position = CGPoint(x: x, y: y)
-                self.addChild(tile)
+        var countLine  = 0
+        var y = +self.size.height/2
+        var x = -self.size.width/2
+        for i in 0..<tilesArray.count{
+            let tile = tilesArray[i]
+            tile.position = CGPoint(x: x, y: y)
+            self.addChild(tile)
+            countLine += 1
+            x += self.size.width/2
+            if countLine == 3{
+                y -= self.size.height/2
+                x = -self.size.width/2
+                countLine = 0
             }
+            
         }
     }
     
