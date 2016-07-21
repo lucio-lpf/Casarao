@@ -68,7 +68,8 @@ class StoreScene: SKScene {
     
     private func transitioToScene(scene:SKScene, direction:SKTransitionDirection ) {
         
-        let transition = SKTransition.revealWithDirection(direction, duration: 1.0)
+//        let transition = SKTransition.revealWithDirection(direction, duration: 1.0)
+        let transition = SKTransition.crossFadeWithDuration(0.5)
         // Configure the view.
         let skView = self.view!
         skView.showsFPS = true
