@@ -12,6 +12,8 @@ class Player: Hashable {
     
     static let sharedInstance = Player()
     
+    internal
+    
     var hashValue: Int {
         get {
             return NSUUID().UUIDString.hashValue

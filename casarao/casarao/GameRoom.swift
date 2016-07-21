@@ -26,8 +26,27 @@ class GameRoom {
     // matriz de resposta para cada player
     private var answersMatrixPerUser:Dictionary<Player,MatrixNode>?
     
-    func checkUserAnswer(answer:Array<Int>) -> (){
+    func checkUserAnswer(answer:Array<Tile>,selfPlayer:Player) -> (nRightAnswers:Array<Int>,didFinishTheGame:Bool){
+
+        let righMatrix = self.answersMatrixPerUser![selfPlayer]
         
+        var contAnswers = Array<Int>()
+        
+        for i in 0..<righMatrix!.tilesArray.count{
+        
+            if righMatrix!.tilesArray[i] == answer[i]{
+                contAnswers.append(i)
+            }
+            
+        }
+        
+        if contAnswers.count == righMatrix!.tilesArray.count{
+            return(contAnswers,true)
+        }
+        else{
+            return(contAnswers,false)
+        }
+   
     }
     
 }

@@ -14,6 +14,7 @@ class GameScene: SKScene {
     var matrix: MatrixNode!
     var chances : Int = 3
     var gameRoom:GameRoom!
+    var player:Player!
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -22,11 +23,17 @@ class GameScene: SKScene {
         matrix.position = CGPoint(x: 0,y: 0)
         self.addChild(matrix)
         
+        
+        
         let checkButton = SKSpriteNode(color: SKColor.blueColor(), size: CGSize(width: 400, height: 100))
         checkButton.position = CGPoint(x:0,y:-500)
         checkButton.name = "checkButton"
         checkButton.zPosition = 1
         self.addChild(checkButton)
+        
+        
+        
+        
         
     }
     override func update(currentTime: CFTimeInterval) {
@@ -46,7 +53,6 @@ class GameScene: SKScene {
         }
         else if node.name == "checkButton"{
             checkUserMatrix()
-            self.userInteractionEnabled = false
         }
         
     }
@@ -72,7 +78,14 @@ class GameScene: SKScene {
     
     func checkUserMatrix(){
         
-        
+//        let results = gameRoom.checkUserAnswer(matrix.tilesArray, selfPlayer: player)
+//        
+//        if results.didFinishTheGame{
+//            userInteractionEnabled = false
+//        }
+//        else{
+            chances = 3
+       // }
         
     }
 }
