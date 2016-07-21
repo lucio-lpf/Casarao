@@ -21,6 +21,12 @@
 		5A41A2BB1D3E913D00C93165 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2B81D3E913D00C93165 /* Tile.swift */; };
 		5AFDBCF41D3EAEDF0093F328 /* WebServiceManneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDBCF31D3EAEDF0093F328 /* WebServiceManneger.swift */; };
 		5BD677ACBFEFA1B3C5955B57 /* Pods_casaraoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730A9F6588B9E66C8B631ABE /* Pods_casaraoUITests.framework */; };
+		9F0E7E501D400B1E00F7B75D /* ProfileScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9F0E7E4F1D400B1E00F7B75D /* ProfileScene.sks */; };
+		9F1591AB1D3FD70A00C52171 /* LobbyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */; };
+		9F1591AF1D3FDC5700C52171 /* LobbyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9F1591AE1D3FDC5700C52171 /* LobbyScene.sks */; };
+		9FA7E9CD1D400E5000BF482C /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */; };
+		9FA7E9CF1D40182600BF482C /* StoreScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9FA7E9CE1D40182600BF482C /* StoreScene.sks */; };
+		9FA7E9D11D40187D00BF482C /* StoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7E9D01D40187D00BF482C /* StoreScene.swift */; };
 		9FE2BCB81D3E95E100B95074 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE2BCB71D3E95E100B95074 /* CloudKit.framework */; };
 		9FE8E1BC1D3EB19100A32C65 /* GameRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */; };
 		9FE8E1BE1D3EB42A00A32C65 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BD1D3EB42A00A32C65 /* Player.swift */; };
@@ -68,6 +74,12 @@
 		730A9F6588B9E66C8B631ABE /* Pods_casaraoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casaraoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		959A03A97B0FD0970772EB90 /* Pods-casaraoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casaraoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-casaraoUITests/Pods-casaraoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		95C3A4A2498456A784D8E56F /* Pods-casarao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casarao.debug.xcconfig"; path = "Pods/Target Support Files/Pods-casarao/Pods-casarao.debug.xcconfig"; sourceTree = "<group>"; };
+		9F0E7E4F1D400B1E00F7B75D /* ProfileScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ProfileScene.sks; sourceTree = "<group>"; };
+		9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyScene.swift; sourceTree = "<group>"; };
+		9F1591AE1D3FDC5700C52171 /* LobbyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LobbyScene.sks; sourceTree = "<group>"; };
+		9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
+		9FA7E9CE1D40182600BF482C /* StoreScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StoreScene.sks; sourceTree = "<group>"; };
+		9FA7E9D01D40187D00BF482C /* StoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreScene.swift; sourceTree = "<group>"; };
 		9FE2BCB61D3E95D900B95074 /* casarao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = casarao.entitlements; sourceTree = "<group>"; };
 		9FE2BCB71D3E95E100B95074 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoom.swift; sourceTree = "<group>"; };
@@ -138,13 +150,10 @@
 				9FE8E1BA1D3EB17800A32C65 /* Model */,
 				9FE2BCB61D3E95D900B95074 /* casarao.entitlements */,
 				5A41A2861D3E902000C93165 /* AppDelegate.swift */,
-				5A41A2881D3E902000C93165 /* GameScene.sks */,
-				5A41A28A1D3E902000C93165 /* GameScene.swift */,
+				9F1591AC1D3FD7E900C52171 /* Scenes */,
 				5A41A28C1D3E902000C93165 /* GameViewController.swift */,
 				5AFDBCF31D3EAEDF0093F328 /* WebServiceManneger.swift */,
-				5A41A28E1D3E902000C93165 /* Main.storyboard */,
-				5A41A2911D3E902000C93165 /* Assets.xcassets */,
-				5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */,
+				9F1591AD1D3FD80900C52171 /* Assets */,
 				5A41A2961D3E902000C93165 /* Info.plist */,
 			);
 			path = casarao;
@@ -176,6 +185,31 @@
 				730A9F6588B9E66C8B631ABE /* Pods_casaraoUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F1591AC1D3FD7E900C52171 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5A41A2881D3E902000C93165 /* GameScene.sks */,
+				5A41A28A1D3E902000C93165 /* GameScene.swift */,
+				9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */,
+				9F1591AE1D3FDC5700C52171 /* LobbyScene.sks */,
+				9F0E7E4F1D400B1E00F7B75D /* ProfileScene.sks */,
+				9FA7E9D01D40187D00BF482C /* StoreScene.swift */,
+				9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */,
+				9FA7E9CE1D40182600BF482C /* StoreScene.sks */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		9F1591AD1D3FD80900C52171 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5A41A28E1D3E902000C93165 /* Main.storyboard */,
+				5A41A2911D3E902000C93165 /* Assets.xcassets */,
+				5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		9FE8E1BA1D3EB17800A32C65 /* Model */ = {
@@ -328,9 +362,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A41A2891D3E902000C93165 /* GameScene.sks in Resources */,
+				9F1591AF1D3FDC5700C52171 /* LobbyScene.sks in Resources */,
 				5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */,
 				5A41A2921D3E902000C93165 /* Assets.xcassets in Resources */,
 				5A41A2901D3E902000C93165 /* Main.storyboard in Resources */,
+				9FA7E9CF1D40182600BF482C /* StoreScene.sks in Resources */,
+				9F0E7E501D400B1E00F7B75D /* ProfileScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,9 +639,12 @@
 				5A41A28B1D3E902000C93165 /* GameScene.swift in Sources */,
 				5A41A28D1D3E902000C93165 /* GameViewController.swift in Sources */,
 				5A41A2871D3E902000C93165 /* AppDelegate.swift in Sources */,
+				9FA7E9CD1D400E5000BF482C /* ProfileScene.swift in Sources */,
+				9FA7E9D11D40187D00BF482C /* StoreScene.swift in Sources */,
 				9FE8E1C01D3EB6ED00A32C65 /* Matrix.swift in Sources */,
 				9FE8E1BE1D3EB42A00A32C65 /* Player.swift in Sources */,
 				9FE8E1BC1D3EB19100A32C65 /* GameRoom.swift in Sources */,
+				9F1591AB1D3FD70A00C52171 /* LobbyScene.swift in Sources */,
 				5A41A2B91D3E913D00C93165 /* Tile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

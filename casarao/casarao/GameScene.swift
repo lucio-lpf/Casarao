@@ -16,7 +16,7 @@ class GameScene: SKScene {
     var gameRoom:GameRoom!
     
     override func didMoveToView(view: SKView) {
-        
+        /* Setup your scene here */
         
         matrix = MatrixNode(numColumns: 3, numRows: 3)
         matrix.position = CGPoint(x: 0,y: 0)
