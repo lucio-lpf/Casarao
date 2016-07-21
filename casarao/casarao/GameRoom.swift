@@ -26,7 +26,6 @@ class GameRoom {
     // matriz de resposta para cada player
     private var answersMatrixPerUser:Dictionary<Player,MatrixNode>?
     
-    
     func checkUserAnswer(answer:Array<Int>) -> (){
         
     }

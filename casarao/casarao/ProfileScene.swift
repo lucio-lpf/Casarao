@@ -42,7 +42,7 @@ class ProfileScene: SKScene {
                 
                 if let profileScene = ProfileScene(fileNamed: "ProfileScene") {
                     if(!self.isKindOfClass(ProfileScene)){
-                    transitioToScene(profileScene, direction: .Left)
+                    transitioToScene(profileScene)
                     }
                 }
             }
@@ -50,14 +50,14 @@ class ProfileScene: SKScene {
             if (lobbyButton!.containsPoint(touch.locationInNode(self))){
                 if let lobbyScene = LobbyScene(fileNamed: "LobbyScene") {
                     if(!self.isKindOfClass(LobbyScene)){
-                        transitioToScene(lobbyScene, direction: .Left)
+                        transitioToScene(lobbyScene)
                     }
                 }
             }
             if (storeButton!.containsPoint(touch.locationInNode(self))) {
                 if let storeScene = StoreScene(fileNamed: "StoreScene") {
                     if(!self.isKindOfClass(StoreScene)){
-                        transitioToScene(storeScene, direction: .Left)
+                        transitioToScene(storeScene)
                     }
                 }
             }
@@ -66,9 +66,7 @@ class ProfileScene: SKScene {
     
     
     
-    private func transitioToScene(scene:SKScene, direction:SKTransitionDirection ) {
-        
-//        let transition = SKTransition.revealWithDirection(direction, duration: 1.0)
+    private func transitioToScene(scene:SKScene) {
         let transition = SKTransition.crossFadeWithDuration(0.5)
         // Configure the view.
         let skView = self.view!
