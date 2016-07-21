@@ -8,16 +8,10 @@
 
 import Foundation
 
-class Player: Hashable {
+class Player {
     
     static let sharedInstance = Player()
     
-    
-    var hashValue: Int {
-        get {
-            return NSUUID().UUIDString.hashValue
-        }
-    }
     
     
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -29,6 +23,8 @@ class Player: Hashable {
     
     var currentMatrix:Array<Int>?
     
+    var answerMatrix:Array<Int>?
+    
  
     func updateUserDefaults(newCoins:Double) {
         coins = defaults.doubleForKey("coins")
@@ -37,10 +33,27 @@ class Player: Hashable {
         }
     }
     
+    func checkUserAnswer(playerAnswer: Array<Int>) -> (didScoreAnyPoint:Bool,didFinishTheGame:Bool){
+        
+        var countScore = 0
+        var didScoreBool = false
+        
+        for i in 0..<currentMatrix!.count{
+            
+            if currentMatrix![i] == answerMatrix![i]{
+                countScore += 1
+                didScoreBool = true
+            }
+            
+        }
+        
+        if countScore == answerMatrix!.count{
+            return(didScoreBool,true)
+        }
+        else{
+            return(didScoreBool,false)
+        }
+    }
     
-}
-
-func ==(lhs:Player, rhs:Player) -> Bool {
-    return lhs.hashValue == rhs.hashValue
 }
 
