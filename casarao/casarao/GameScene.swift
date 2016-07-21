@@ -45,8 +45,6 @@ class GameScene: SKScene {
             
         }
         
-            decypher
-        
         else if node.name == "checkButton"{
             checkUserMatrix()
             self.userInteractionEnabled = false

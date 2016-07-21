@@ -29,7 +29,24 @@ class GameRoom {
     private var answersMatrixPerUser:Dictionary<Int,MatrixNode>?
     
     
-    func checkUserAnswer(answer:Array<Int>) -> (){
+    func checkUserAnswer(answer:Array<Int>,selfPlayer:Player) -> (nRightAnswers:Int,didFinishTheGame:Bool){
+
+        let righMatrix = self.answersMatrixPerUser![2]
+        if ((righMatrix?.isEqual(answer)) != nil){
+            return(9,true)
+        }
+        
+        var contAnswers = 0
+        
+        for i in 0..<righMatrix!.tilesArray.count{
+        
+            if righMatrix!.tilesArray[i] == answer[i]{
+                contAnswers += 1
+            }
+            
+        }
+        return(contAnswers,false)
+        
         
     }
     
