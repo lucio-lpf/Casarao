@@ -8,9 +8,16 @@
 
 import Foundation
 
-class Player {
+class Player: Hashable {
     
     static let sharedInstance = Player()
+    
+    var hashValue: Int {
+        get {
+            return NSUUID().UUIDString.hashValue
+        }
+    }
+    
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
@@ -28,5 +35,11 @@ class Player {
             defaults.setDouble(newCoins, forKey: "coins")
         }
     }
+    
+    
+}
+
+func ==(lhs:Player, rhs:Player) -> Bool {
+    return lhs.hashValue == rhs.hashValue
 }
 

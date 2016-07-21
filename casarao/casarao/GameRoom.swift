@@ -24,9 +24,7 @@ class GameRoom {
     var bet:Double?
     
     // matriz de resposta para cada player
-    //TODO: trocar key para Player, Player deve implementar equatable
-    
-    var answersMatrixPerUser:Dictionary<Int,MatrixNode>?
+    var answersMatrixPerUser:Dictionary<Player,MatrixNode>?
     
     
     

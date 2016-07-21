@@ -17,7 +17,12 @@ class LobbyScene: SKScene {
     var profileButton:SKNode?
     var lobbyButton:SKNode?
     var storeButton:SKNode?
+    var joinGameButton:SKNode?
     
+    
+    // REFACTORING
+    var selectedRoomNode:SKNode?
+
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
@@ -32,7 +37,7 @@ class LobbyScene: SKScene {
         
         // fake player
         let player = Player()
-        player.nickname = "Jogador 1"
+        player.nickname = "Fake Player"
         player.coins = 10
         
         var players = Array<Player>()
@@ -44,7 +49,7 @@ class LobbyScene: SKScene {
         room.roomName = "Sala 1"
         room.bet = 1
         room.players = players
-        room.amount = (Double((room.players?.count)!) * room.bet! )
+        room.amount = (Double((room.players?.count)!) * room.bet!)
         
         gameRooms.append(room)
         
@@ -56,9 +61,13 @@ class LobbyScene: SKScene {
         let bet = roomNode.childNodeWithName("bet") as! SKLabelNode
         let numPlayers = roomNode.childNodeWithName("numPlayers") as! SKLabelNode
         let amount = roomNode.childNodeWithName("amount") as! SKLabelNode
-//        let joinGame = roomNode.childNodeWithName("joinGameNode") as SKNode!
         
         
+        
+        // REFACTORING
+        selectedRoomNode = roomNode
+        
+        joinGameButton = roomNode.childNodeWithName("joinGameNode") as SKNode!
         
         roomName.text = "\(gameRooms[0].roomName!)"
         bet.text = "$\(gameRooms[0].bet!)"
@@ -92,6 +101,7 @@ class LobbyScene: SKScene {
                     }
                 }
             }
+            
             if (storeButton!.containsPoint(touch.locationInNode(self))) {
                 if let storeScene = StoreScene(fileNamed: "StoreScene") {
                     if(!self.isKindOfClass(StoreScene)){
@@ -99,14 +109,22 @@ class LobbyScene: SKScene {
                     }
                 }
             }
+            
+            if selectedRoomNode!.containsPoint(touch.locationInNode(self)) {
+                verifyUserCoins()
+            }
         }
     }
     
     
+    func verifyUserCoins() {
+        let player = Player.sharedInstance
+        if player.coins > Double(gameRooms[0].bet!) {
+            
+        }
+    }
     
     private func transitioToScene(scene:SKScene, direction:SKTransitionDirection ) {
-        
-        
         
 //        let transition = SKTransition.revealWithDirection(direction, duration: 1.0)
         let transition = SKTransition.crossFadeWithDuration(0.5)
