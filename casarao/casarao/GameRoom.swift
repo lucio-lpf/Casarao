@@ -44,11 +44,14 @@ class GameRoom {
         self.players.append(player)
         
         var playerRandomArray = Array<Int>()
+        var playerFreshArray = Array<Int>()
         for _ in 0..<9{
             playerRandomArray.append(Int(arc4random_uniform(3) + 1))
+            playerFreshArray.append(0)
         }
         
         player.answerMatrix = playerRandomArray
+        player.currentMatrix = playerFreshArray
         
     }
 }

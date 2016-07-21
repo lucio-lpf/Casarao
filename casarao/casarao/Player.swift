@@ -33,7 +33,7 @@ class Player {
         }
     }
     
-    func checkUserAnswer(playerAnswer: Array<Int>) -> (didScoreAnyPoint:Bool,didFinishTheGame:Bool){
+    func checkUserAnswer() -> (didScoreAnyPoint:Bool,didFinishTheGame:Bool){
         
         var countScore = 0
         var didScoreBool = false
