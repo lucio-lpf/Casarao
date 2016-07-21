@@ -32,8 +32,19 @@ class GameScene: SKScene {
         self.addChild(checkButton)
         
         
+        setRoomInformation()
         
         
+        
+        
+        
+    }
+    
+    
+    func setRoomInformation(){
+        
+        let chancesLabel = SKLabelNode(text:"Tentatias:\(chances)")
+        chancesLabel.position = CGPoint(x: 0, y: 600)
         
     }
     override func update(currentTime: CFTimeInterval) {
