@@ -26,9 +26,11 @@ class GameRoom {
     // matriz de resposta para cada player
     //TODO: trocar key para Player, Player deve implementar equatable
     
-    var answersMatrixPerUser:Dictionary<Int,MatrixNode>?
+    private var answersMatrixPerUser:Dictionary<Int,MatrixNode>?
     
     
-    
+    func checkUserAnswer(answer:Array<Int>) -> (){
+        
+    }
     
 }
