@@ -19,8 +19,30 @@ class Tile: SKSpriteNode{
         colorNumber = 0
         self.zPosition = 2
         status = "stillWrong"
-        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
 
+    }
+    
+    init(colorNumber:Int, status:String){
+        var texture = SKTexture()
+        switch colorNumber {
+        case 0:
+            texture = SKTexture(imageNamed: "white_tile.png")
+            
+        case 1:
+            texture = SKTexture(imageNamed: "orange_tile.png")
+            
+        case 2:
+            texture = SKTexture(imageNamed: "blue_tile.png")
+            
+        case 3:
+            texture = SKTexture(imageNamed: "pink_tile.png")
+            
+        default:
+            fatalError()
+        }
+        super.init(texture:texture, color: SKColor.clearColor(), size: CGSize(width: 127, height: 122))
+        self.colorNumber = colorNumber
+        self.status = "stillWrong"
     }
     
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {

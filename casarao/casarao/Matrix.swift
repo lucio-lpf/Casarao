@@ -20,7 +20,7 @@ class MatrixNode : SKSpriteNode {
     
     init(numColumns:Int,numRows:Int){
         
-        super.init(texture: nil, color: UIColor.blackColor(), size: CGSize(width: 400, height: 400))
+        super.init(texture: nil, color: UIColor.clearColor(), size: CGSize(width: 400, height: 400))
         self.zPosition = 1
         //SO FUNCIONA PRA MATRIZES QUADRADAS
         let numberOfTiles = numRows*numColumns
@@ -36,6 +36,27 @@ class MatrixNode : SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    init(array:Array<Int>,answerArray:Array<Int>){
+        
+        super.init(texture: nil, color: UIColor.clearColor(), size: CGSize(width: 400, height: 400))
+        
+        self.zPosition = 1
+        //SO FUNCIONA PRA MATRIZES QUADRADAS
+        
+        for i in 0..<array.count{
+            if array[i] == answerArray[i]{
+                tilesArray.append(Tile(colorNumber: i,status: "right"))
+            }
+            else{
+                tilesArray.append(Tile(colorNumber: i,status: "stillWrong"))
+            }
+            
+        }
+        
+        addTilesAsMatrixChildren()
+        
+    }
     
     private func addTilesAsMatrixChildren() {
         //otimizar essa parte(muitos ifs)

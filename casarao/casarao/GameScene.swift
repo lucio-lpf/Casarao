@@ -18,7 +18,12 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-        self.backgroundColor = UIColor(patternImage: UIImage(named:"grey_background" )!)
+        let background = SKSpriteNode(imageNamed: "black_background")
+        background.size = self.size
+        background.position = CGPoint(x: 0,y: 0)
+        background.zPosition = 0
+        self.addChild(background)
+        
         
         
         matrix = MatrixNode(numColumns: 3, numRows: 3)
@@ -91,12 +96,24 @@ class GameScene: SKScene {
     
     func checkUserMatrix() {
         
-        let results = gameRoom.checkUserAnswer(matrix.tilesArray, selfPlayer: player)
+        //atualizando a matriz do user
+        player.currentMatrix?.removeAll()
+        
+        for tile in matrix.tilesArray{
+            player.currentMatrix?.append(tile.colorNumber)
+        }
+        
+        let results = player.checkUserAnswer()
         
         if results.didFinishTheGame{
             userInteractionEnabled = false
         }
         else{
+            if results.tileRight.count != 0{
+                for i in results.tileRight{
+                    matrix.tilesArray[i].status = "right"
+                }
+            }
             chances = 3
         }
         

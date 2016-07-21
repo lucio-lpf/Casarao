@@ -33,25 +33,25 @@ class Player {
         }
     }
     
-    func checkUserAnswer() -> (didScoreAnyPoint:Bool,didFinishTheGame:Bool){
+    func checkUserAnswer() -> (tileRight:Array<Int>,didFinishTheGame:Bool){
         
         var countScore = 0
-        var didScoreBool = false
+        var tilesRight = Array<Int>()
         
         for i in 0..<currentMatrix!.count{
             
             if currentMatrix![i] == answerMatrix![i]{
                 countScore += 1
-                didScoreBool = true
+                tilesRight.append(i)
             }
             
         }
         
         if countScore == answerMatrix!.count{
-            return(didScoreBool,true)
+            return(tilesRight,true)
         }
         else{
-            return(didScoreBool,false)
+            return(tilesRight,false)
         }
     }
     
