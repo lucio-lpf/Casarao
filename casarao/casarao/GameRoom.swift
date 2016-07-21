@@ -24,9 +24,11 @@ class GameRoom {
     var bet:Double?
     
     // matriz de resposta para cada player
-    var answersMatrixPerUser:Dictionary<Player,MatrixNode>?
+    private var answersMatrixPerUser:Dictionary<Player,MatrixNode>?
     
     
-    
+    func checkUserAnswer(answer:Array<Int>) -> (){
+        
+    }
     
 }
