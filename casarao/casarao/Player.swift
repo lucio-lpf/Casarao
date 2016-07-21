@@ -12,7 +12,6 @@ class Player: Hashable {
     
     static let sharedInstance = Player()
     
-    internal
     
     var hashValue: Int {
         get {
@@ -28,7 +27,7 @@ class Player: Hashable {
     // amonut user coins default
     var coins:Double?
     
-    var currentMatrix:MatrixNode?
+    var currentMatrix:Array<Int>?
     
  
     func updateUserDefaults(newCoins:Double) {

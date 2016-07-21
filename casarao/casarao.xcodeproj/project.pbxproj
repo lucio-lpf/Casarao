@@ -192,8 +192,8 @@
 			children = (
 				5A41A2881D3E902000C93165 /* GameScene.sks */,
 				5A41A28A1D3E902000C93165 /* GameScene.swift */,
-				9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */,
 				9F1591AE1D3FDC5700C52171 /* LobbyScene.sks */,
+				9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */,
 				9F0E7E4F1D400B1E00F7B75D /* ProfileScene.sks */,
 				9FA7E9D01D40187D00BF482C /* StoreScene.swift */,
 				9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */,

@@ -35,22 +35,37 @@ class GameRoom {
     }
     
     // matriz de resposta para cada player
-    private var answersMatrixPerUser:Dictionary<Player,MatrixNode>?
+    private var answersMatrixPerUser = Dictionary<Player,Array<Int>>()
     
     func checkUserAnswer(answer:Array<Tile>,selfPlayer:Player) -> (rightAnswers:Array<Int>,didFinishTheGame:Bool){
 
-        let righMatrix = self.answersMatrixPerUser![selfPlayer]
         
+        
+        for key in self.answersMatrixPerUser.keys {
+            print(key)
+            print("")
+            print(selfPlayer)
+        }
+        
+        
+        
+        if let m = self.answersMatrixPerUser[selfPlayer] {
+            print(m.count)
+        }
+
+        let righMatrix = self.answersMatrixPerUser[selfPlayer]
+        
+        print(self.answersMatrixPerUser[selfPlayer])
         var contAnswers = Array<Int>()
         
-        for i in 0..<righMatrix!.tilesArray.count{
+        for i in 0..<righMatrix!.count{
         
-            if righMatrix!.tilesArray[i] == answer[i]{
+            if righMatrix![i] == answer[i].colorNumber{
                 contAnswers.append(i)
             }
         }
         
-        if contAnswers.count == righMatrix!.tilesArray.count{
+        if contAnswers.count == righMatrix!.count{
             return(contAnswers,true)
         }
         else{
@@ -61,6 +76,13 @@ class GameRoom {
     func addPlayerToGame(player:Player) {
         // add player to game room
         self.players.append(player)
+        
+        var playerRandomArray = Array<Int>()
+        for _ in 0..<9{
+            playerRandomArray.append(Int(arc4random_uniform(3) + 1))
+        }
+        
+        self.answersMatrixPerUser[player] = playerRandomArray
         
     }
 }

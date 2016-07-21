@@ -7,17 +7,19 @@
 //
 
 import SpriteKit
-
 class GameScene: SKScene {
     
     
     var matrix: MatrixNode!
     var chances : Int = 3
     var gameRoom:GameRoom!
-    var player:Player!
+    var player: Player!
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        
+        self.backgroundColor = UIColor(patternImage: UIImage(named:"grey_background" )!)
+        
         
         matrix = MatrixNode(numColumns: 3, numRows: 3)
         matrix.position = CGPoint(x: 0,y: 0)
@@ -87,16 +89,16 @@ class GameScene: SKScene {
         }
     }
     
-    func checkUserMatrix(){
+    func checkUserMatrix() {
         
-//        let results = gameRoom.checkUserAnswer(matrix.tilesArray, selfPlayer: player)
-//        
-//        if results.didFinishTheGame{
-//            userInteractionEnabled = false
-//        }
-//        else{
+        let results = gameRoom.checkUserAnswer(matrix.tilesArray, selfPlayer: player)
+        
+        if results.didFinishTheGame{
+            userInteractionEnabled = false
+        }
+        else{
             chances = 3
-       // }
+        }
         
     }
     

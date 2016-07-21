@@ -121,7 +121,9 @@ class LobbyScene: SKScene {
         
         
         if let gameScene = GameScene(fileNamed: "GameScene") {
-            gameScene.gameRoom = gameRoom
+            
+            gameScene.gameRoom = self.gameRooms[0]
+            gameScene.player = self.player
             transitioToScene(gameScene)
         }
     }
