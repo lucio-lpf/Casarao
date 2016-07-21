@@ -12,7 +12,7 @@ class GameRoom {
     
     var roomName:String?
     
-    var players:Array<Player>?
+    var players:Array<Player>
     
     // hora que começa o game
     var startTime:NSDate?
@@ -22,11 +22,22 @@ class GameRoom {
     
     // aposta inicial
     var bet:Double?
+
+    
+    
+    convenience init(){
+        self.init(capacity:10)
+    }
+    
+    init(capacity:Int) {
+        self.players = Array<Player>()
+        players.reserveCapacity(capacity)
+    }
     
     // matriz de resposta para cada player
     private var answersMatrixPerUser:Dictionary<Player,MatrixNode>?
     
-    func checkUserAnswer(answer:Array<Tile>,selfPlayer:Player) -> (nRightAnswers:Array<Int>,didFinishTheGame:Bool){
+    func checkUserAnswer(answer:Array<Tile>,selfPlayer:Player) -> (rightAnswers:Array<Int>,didFinishTheGame:Bool){
 
         let righMatrix = self.answersMatrixPerUser![selfPlayer]
         
@@ -37,7 +48,6 @@ class GameRoom {
             if righMatrix!.tilesArray[i] == answer[i]{
                 contAnswers.append(i)
             }
-            
         }
         
         if contAnswers.count == righMatrix!.tilesArray.count{
@@ -46,7 +56,12 @@ class GameRoom {
         else{
             return(contAnswers,false)
         }
-   
+    }
+    
+    func addPlayerToGame(player:Player) {
+        
+        // add player to game room
+        self.players.append(player)
     }
     
 }

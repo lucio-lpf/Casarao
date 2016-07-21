@@ -37,14 +37,11 @@ class LobbyScene: SKScene {
         
         
         let room = GameRoom()
-        
-        var players = Array<Player>()
-        players.reserveCapacity(10)
+    
         
         room.roomName = "Sala 1"
         room.bet = 1
-        room.players = players
-        room.amount = (Double((room.players?.count)!) * room.bet!)
+        room.amount = (Double(room.players.count) * room.bet!)
         
         gameRooms.append(room)
         
@@ -65,7 +62,7 @@ class LobbyScene: SKScene {
         roomName.text = "\(gameRooms[0].roomName!)"
         bet.text = "$\(gameRooms[0].bet!)"
         amount.text = "$\(gameRooms[0].amount!)"
-        numPlayers.text = "\(gameRooms[0].players!.count) / \(gameRooms[0].players!.capacity)"
+        numPlayers.text = "\(gameRooms[0].players.count) / \(gameRooms[0].players.capacity)"
         
     }
     
@@ -111,15 +108,20 @@ class LobbyScene: SKScene {
     
     private func verifyUserCoins() {
         if player.coins > Double(gameRooms[0].bet!) {
-            gameRooms[0].players!.append(self.player)
             joinGame()
         }
     }
     
     
     func joinGame() {
+        
+        let gameRoom = gameRooms[0]
+        gameRoom.addPlayerToGame(self.player)
+        
+        
+        
         if let gameScene = GameScene(fileNamed: "GameScene") {
-            gameScene.gameRoom = gameRooms[0]
+            gameScene.gameRoom = gameRoom
             transitioToScene(gameScene)
         }
     }
