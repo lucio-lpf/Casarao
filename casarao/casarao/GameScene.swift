@@ -62,7 +62,6 @@ class GameScene: SKScene {
             }
             
         }
-        
         else if node.name == "checkButton"{
             checkUserMatrix()
         }
@@ -100,4 +99,6 @@ class GameScene: SKScene {
        // }
         
     }
+    
+    
 }

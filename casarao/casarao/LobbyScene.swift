@@ -21,42 +21,32 @@ class LobbyScene: SKScene {
     
     
     // REFACTORING
+    var player = Player.sharedInstance
     var selectedRoomNode:SKNode?
 
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
         
+        // REFACTORING
+        self.player.coins = 10
+        
         profileButton = self.childNodeWithName("profileButton") as SKNode!
         lobbyButton = self.childNodeWithName("lobbyButton") as SKNode!
         storeButton = self.childNodeWithName("storeButton") as SKNode!
         
         
-        
         let room = GameRoom()
-        
-        // fake player
-        let player = Player()
-        player.nickname = "Fake Player"
-        player.coins = 10
-        
-        var players = Array<Player>()
-        players.reserveCapacity(10)
-        
-        players.append(player)
-        
+    
         
         room.roomName = "Sala 1"
         room.bet = 1
-        room.players = players
-        room.amount = (Double((room.players?.count)!) * room.bet!)
+        room.amount = (Double(room.players.count) * room.bet!)
         
         gameRooms.append(room)
         
         
         let roomNode = self.childNodeWithName("gameRoomNode") as! SKSpriteNode
-        
-        
         let roomName = roomNode.childNodeWithName("roomName") as! SKLabelNode
         let bet = roomNode.childNodeWithName("bet") as! SKLabelNode
         let numPlayers = roomNode.childNodeWithName("numPlayers") as! SKLabelNode
@@ -72,8 +62,7 @@ class LobbyScene: SKScene {
         roomName.text = "\(gameRooms[0].roomName!)"
         bet.text = "$\(gameRooms[0].bet!)"
         amount.text = "$\(gameRooms[0].amount!)"
-        numPlayers.text = "\(gameRooms[0].players!.count) / \(gameRooms[0].players!.capacity)"
-        
+        numPlayers.text = "\(gameRooms[0].players.count) / \(gameRooms[0].players.capacity)"
         
     }
     
@@ -89,7 +78,7 @@ class LobbyScene: SKScene {
             if (profileButton!.containsPoint(touch.locationInNode(self))) {
                 if let profileScene = ProfileScene(fileNamed: "ProfileScene") {
                     if(!self.isKindOfClass(ProfileScene)){
-                        transitioToScene(profileScene, direction: .Right)
+                        transitioToScene(profileScene)
                     }
                 }
             }
@@ -97,7 +86,7 @@ class LobbyScene: SKScene {
             if (lobbyButton!.containsPoint(touch.locationInNode(self))) {
                 if let lobbyScene = LobbyScene(fileNamed: "LobbyScene") {
                     if(!self.isKindOfClass(LobbyScene)){
-                        transitioToScene(lobbyScene, direction: .Left)
+                        transitioToScene(lobbyScene)
                     }
                 }
             }
@@ -105,7 +94,7 @@ class LobbyScene: SKScene {
             if (storeButton!.containsPoint(touch.locationInNode(self))) {
                 if let storeScene = StoreScene(fileNamed: "StoreScene") {
                     if(!self.isKindOfClass(StoreScene)){
-                        transitioToScene(storeScene, direction: .Left)
+                        transitioToScene(storeScene)
                     }
                 }
             }
@@ -117,16 +106,30 @@ class LobbyScene: SKScene {
     }
     
     
-    func verifyUserCoins() {
-        let player = Player.sharedInstance
+    private func verifyUserCoins() {
         if player.coins > Double(gameRooms[0].bet!) {
-            
+            joinGame()
         }
     }
     
-    private func transitioToScene(scene:SKScene, direction:SKTransitionDirection ) {
+    
+    func joinGame() {
         
-//        let transition = SKTransition.revealWithDirection(direction, duration: 1.0)
+        let gameRoom = gameRooms[0]
+        gameRoom.addPlayerToGame(self.player)
+        
+        
+        
+        if let gameScene = GameScene(fileNamed: "GameScene") {
+            gameScene.gameRoom = gameRoom
+            transitioToScene(gameScene)
+        }
+    }
+    
+    
+    
+    private func transitioToScene(scene:SKScene) {
+        
         let transition = SKTransition.crossFadeWithDuration(0.5)
         // Configure the view.
         let skView = self.view!
