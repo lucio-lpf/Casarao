@@ -14,8 +14,7 @@ class Tile: SKSpriteNode{
     var colorNumber:Int!
     var status:String!
     
-    init(){
-        
+    init() {
         super.init(texture: nil, color: SKColor.whiteColor(), size: CGSize(width: 100, height: 100))
         colorNumber = 0
         self.zPosition = 2

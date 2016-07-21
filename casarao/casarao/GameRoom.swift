@@ -59,9 +59,8 @@ class GameRoom {
     }
     
     func addPlayerToGame(player:Player) {
-        
         // add player to game room
         self.players.append(player)
+        
     }
-    
 }

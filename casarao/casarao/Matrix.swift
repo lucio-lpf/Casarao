@@ -37,12 +37,12 @@ class MatrixNode : SKSpriteNode {
     }
     
     
-    func addTilesAsMatrixChildren(){
-        
+    private func addTilesAsMatrixChildren() {
         //otimizar essa parte(muitos ifs)
         var countLine  = 0
         var y = +self.size.height/2
         var x = -self.size.width/2
+        
         for i in 0..<tilesArray.count{
             let tile = tilesArray[i]
             tile.position = CGPoint(x: x, y: y)
