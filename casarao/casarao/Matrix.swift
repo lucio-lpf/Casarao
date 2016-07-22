@@ -78,4 +78,15 @@ class MatrixNode : SKSpriteNode {
             
         }
     }
+    
+    func updateMatrixColors(currentPlayerMatrix:Array<Int>){
+        
+        for i in 0..<tilesArray.count{
+            if currentPlayerMatrix[i] == 0{
+                tilesArray[i].colorNumber = 0
+                tilesArray[i].texture = SKTexture(imageNamed: "white_tile")
+            }
+        }
+        
+    }
 }

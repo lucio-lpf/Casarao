@@ -44,6 +44,9 @@ class Player {
                 countScore += 1
                 tilesRight.append(i)
             }
+            else{
+                currentMatrix![i] = 0
+            }
             
         }
         

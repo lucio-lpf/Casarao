@@ -137,6 +137,7 @@ class GameScene: SKScene {
                     matrix.tilesArray[i].status = "right"
                 }
             }
+            matrix.updateMatrixColors(player.currentMatrix!)
             chances = 3
         }
         

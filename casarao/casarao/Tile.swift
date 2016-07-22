@@ -24,7 +24,6 @@ class Tile: SKSpriteNode{
                     
                 case 3:
                     texture = SKTexture(imageNamed: "right_pink_tile.png")
-                    
                 default:
                     fatalError()
                 }
@@ -34,7 +33,7 @@ class Tile: SKSpriteNode{
     }
     
     init(){
-        super.init(texture:SKTexture(imageNamed: "white_tile.png"), color: SKColor.clearColor(), size: CGSize(width: 127, height: 122))
+        super.init(texture:SKTexture(imageNamed: "white_tile.png"), color: SKColor.clearColor(), size: (UIImage(named: "white_tile")?.size)!)
         colorNumber = 0
         self.zPosition = 2
         status = "stillWrong"
@@ -59,7 +58,7 @@ class Tile: SKSpriteNode{
         default:
             fatalError()
         }
-        super.init(texture:texture, color: SKColor.clearColor(), size: CGSize(width: 127, height: 122))
+        super.init(texture:texture, color: SKColor.clearColor(), size: texture.size())
         self.colorNumber = colorNumber
         self.status = "stillWrong"
     }
