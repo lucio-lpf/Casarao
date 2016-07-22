@@ -245,7 +245,7 @@ class GameScene: SKScene {
         self.view!.drawViewHierarchyInRect(self.view!.frame, afterScreenUpdates: true)
         
         // retrieve graphics context
-        let context = UIGraphicsGetCurrentContext()
+        _ = UIGraphicsGetCurrentContext()
         
         // query image from it
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -277,7 +277,7 @@ class GameScene: SKScene {
         // make image the position in the center
         sprite.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         
-        var scale:CGFloat = UIScreen.mainScreen().scale
+        let scale:CGFloat = UIScreen.mainScreen().scale
         
         sprite.size.width  *= scale
         
