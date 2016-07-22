@@ -33,7 +33,7 @@ class Player {
         }
     }
     
-    func checkUserAnswer() -> (tileRight:Array<Int>,didFinishTheGame:Bool){
+    func checkUserAnswer() -> (tileRight:Array<Int>,didFinishTheGame:Bool) {
         
         var countScore = 0
         var tilesRight = Array<Int>()
