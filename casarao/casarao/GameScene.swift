@@ -11,7 +11,7 @@ class GameScene: SKScene {
     
     
     var matrix: MatrixNode!
-    var chances : Int = 3
+    var chances : Int = 3 
     var gameRoom:GameRoom!
     var player: Player!
     
@@ -106,6 +106,15 @@ class GameScene: SKScene {
         let results = player.checkUserAnswer()
         
         if results.didFinishTheGame{
+            let popUpFinishGame = SKSpriteNode(texture: SKTexture(imageNamed: "grey_background"), color: SKColor.clearColor(), size: CGSize(width: 300, height: 300))
+            let label = SKLabelNode(text: "Acabou o jogo!!!")
+            popUpFinishGame.zPosition = 20
+            label.color  = SKColor.whiteColor()
+            label.position = CGPoint(x: 0,y: 0)
+            label.zPosition = 21
+            popUpFinishGame.addChild(label)
+            popUpFinishGame.position = CGPoint(x: 0,y: 0)
+            self.addChild(popUpFinishGame)
             userInteractionEnabled = false
         }
         else{
