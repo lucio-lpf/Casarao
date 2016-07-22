@@ -9,17 +9,36 @@
 import SpriteKit
 
 class Tile: SKSpriteNode{
-
+    
     
     var colorNumber:Int!
-    var status:String!
+    var status:String!{
+        didSet{
+            if status == "right"{
+                switch colorNumber {
+                case 1:
+                    texture = SKTexture(imageNamed: "right_orange_tile.png")
+                    
+                case 2:
+                    texture = SKTexture(imageNamed: "right_blue_tile.png")
+                    
+                case 3:
+                    texture = SKTexture(imageNamed: "right_pink_tile.png")
+                    
+                default:
+                    fatalError()
+                }
+
+            }
+        }
+    }
     
     init(){
         super.init(texture:SKTexture(imageNamed: "white_tile.png"), color: SKColor.clearColor(), size: CGSize(width: 127, height: 122))
         colorNumber = 0
         self.zPosition = 2
         status = "stillWrong"
-
+        
     }
     
     init(colorNumber:Int, status:String){
@@ -58,7 +77,7 @@ class Tile: SKSpriteNode{
     func changeColor() {
         
         colorNumber = colorNumber + 1
-
+        
         switch self.colorNumber {
         case 0:
             self.texture = SKTexture(imageNamed: "white_tile.png")

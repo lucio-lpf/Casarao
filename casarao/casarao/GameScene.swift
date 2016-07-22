@@ -11,9 +11,14 @@ class GameScene: SKScene {
     
     
     var matrix: MatrixNode!
-    var chances : Int = 3 
+    var chances : Int = 3{
+        didSet{
+            updateChancesLabel()
+        }
+    }
     var gameRoom:GameRoom!
     var player: Player!
+    let chancesLabel = SKLabelNode(text:"Tentatias:")
     
     
     
@@ -70,8 +75,17 @@ class GameScene: SKScene {
     
     func setRoomInformation(){
         
-        let chancesLabel = SKLabelNode(text:"Tentatias:\(chances)")
+        chancesLabel.text = "Tentatias:\(chances)"
         chancesLabel.position = CGPoint(x: 0, y: 600)
+        chancesLabel.color = SKColor.whiteColor()
+        chancesLabel.zPosition = 2
+        self.addChild(chancesLabel)
+        
+    }
+    
+    func updateChancesLabel(){
+        
+        chancesLabel.text = "Tentatias:\(chances)"
         
     }
     override func update(currentTime: CFTimeInterval) {
