@@ -68,11 +68,12 @@ class GameScene: SKScene {
         checkButton.name = "checkButton"
         checkButton.zPosition = 1
         
-        let checkLabel = SKLabelNode(text: "Checar matriz")
+        let checkLabel = SKLabelNode(text: "Validate")
         checkLabel.zPosition = 2
         checkLabel.fontName = "AvenirNext-Bold"
         checkLabel.fontColor = SKColor.blackColor()
         checkLabel.position = CGPoint(x: 0, y: 0)
+        checkLabel.name = "checkName"
         checkLabel.userInteractionEnabled = false
         checkButton.addChild(checkLabel)
         self.addChild(checkButton)
@@ -116,7 +117,7 @@ class GameScene: SKScene {
                 checkUserChances(tile)
             }
         }
-        else if node.name == "checkButton"{
+        else if (node.name == "checkButton") || (node.name == "checkName"){
             checkUserMatrix()
         }
         
