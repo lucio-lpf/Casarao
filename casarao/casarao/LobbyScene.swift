@@ -118,8 +118,6 @@ class LobbyScene: SKScene {
         let gameRoom = gameRooms[0]
         gameRoom.addPlayerToGame(self.player)
         
-        
-        
         if let gameScene = GameScene(fileNamed: "GameScene") {
             
             gameScene.gameRoom = self.gameRooms[0]
