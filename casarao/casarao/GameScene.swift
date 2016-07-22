@@ -116,10 +116,12 @@ class GameScene: SKScene {
             checkUserMatrix()
             return
         }
-        for tile in matrix.tilesArray{
-            if tile.containsPoint(point){
-                
-                checkUserChances(tile)
+        if matrix.containsPoint(point){
+            for tile in matrix.tilesArray{
+                if tile.containsPoint(point){
+                    
+                    checkUserChances(tile)
+                }
             }
         }
     }
