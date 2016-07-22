@@ -24,6 +24,9 @@ class GameScene: SKScene {
     
     
     
+    
+    
+    // REFACTORING
     var stopInterval:NSTimer?
     
     var levelTimerLabel = SKLabelNode(fontNamed: "ArialMT")
@@ -164,6 +167,8 @@ class GameScene: SKScene {
         
     }
     
+    
+    // REFACTORING
     private func removeBlurBG() {
         let blurNode = self.childNodeWithName("blurBG")!
         let popUpTimer = self.childNodeWithName("popUpTimer")!
@@ -185,14 +190,14 @@ class GameScene: SKScene {
         levelTimerValue = 5
     }
     
-    
-    
+    // REFACTORING
     func levelCountdown() {
         levelTimerValue -= 1
         levelTimerLabel.text = String(levelTimerValue)
     }
     
     
+    // REFACTORING
     private func loadWaitBGScreen() {
         
         let popUpTimer = SKSpriteNode(texture: SKTexture(imageNamed: "grey_background"), color: SKColor.clearColor(), size: CGSize(width: 300, height: 300))
@@ -212,7 +217,7 @@ class GameScene: SKScene {
         
         
         
-        let duration = 0.5
+        let duration = 0.0
         
         let waitBG:SKSpriteNode = self.getBluredScreenshot()
         
