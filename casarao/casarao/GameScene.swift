@@ -53,6 +53,8 @@ class GameScene: SKScene {
         background.zPosition = 0
         self.addChild(background)
         
+        chancesLabel.fontName = "AvenirNext-Bold"
+        
         
         
         matrix = MatrixNode(numColumns: 3, numRows: 3)
@@ -65,6 +67,14 @@ class GameScene: SKScene {
         checkButton.position = CGPoint(x:0,y:-500)
         checkButton.name = "checkButton"
         checkButton.zPosition = 1
+        
+        let checkLabel = SKLabelNode(text: "Checar matriz")
+        checkLabel.zPosition = 2
+        checkLabel.fontName = "AvenirNext-Bold"
+        checkLabel.fontColor = SKColor.blackColor()
+        checkLabel.position = CGPoint(x: 0, y: 0)
+        checkLabel.userInteractionEnabled = false
+        checkButton.addChild(checkLabel)
         self.addChild(checkButton)
         
         
