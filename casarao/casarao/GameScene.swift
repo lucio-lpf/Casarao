@@ -23,16 +23,17 @@ class GameScene: SKScene {
     
     
     
+    
+    var stopInterval:NSTimer?
+    
     var levelTimerLabel = SKLabelNode(fontNamed: "ArialMT")
     
     //Immediately after leveTimerValue variable is set, update label's text
-    var levelTimerValue: Int = 30 {
-        willSet {
-            if levelTimerValue == 0 {
-                print("zerou")
-            }
-        }
+    var levelTimerValue: Int = 5 {
         didSet {
+            if levelTimerValue == 0 {
+                removeBlurBG()
+            }
             levelTimerLabel.text = "0:\(levelTimerValue)"
         }
     }
@@ -151,7 +152,7 @@ class GameScene: SKScene {
             userInteractionEnabled = false
         }
         else{
-            NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameScene.levelCountdown), userInfo: nil, repeats: true)
+            stopInterval = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameScene.levelCountdown), userInfo: nil, repeats: true)
             loadWaitBGScreen()
             if results.tileRight.count != 0{
                 for i in results.tileRight{
@@ -162,12 +163,27 @@ class GameScene: SKScene {
         }
         
     }
-//    
-//    private func removeBlurBG() {
-//        for child in self.children {
-//            
-//        }
-//    }
+    
+    private func removeBlurBG() {
+        let blurNode = self.childNodeWithName("blurBG")!
+        let popUpTimer = self.childNodeWithName("popUpTimer")!
+        
+        var nodeToRemove:Array<SKNode> = Array()
+        
+        nodeToRemove.append(blurNode)
+        nodeToRemove.append(popUpTimer)
+        
+        levelTimerLabel.hidden = true
+        
+        
+        self.removeChildrenInArray(nodeToRemove)
+        
+        userInteractionEnabled = true
+        
+        stopInterval?.invalidate()
+        
+        levelTimerValue = 5
+    }
     
     
     
@@ -179,9 +195,9 @@ class GameScene: SKScene {
     
     private func loadWaitBGScreen() {
         
-        
         let popUpTimer = SKSpriteNode(texture: SKTexture(imageNamed: "grey_background"), color: SKColor.clearColor(), size: CGSize(width: 300, height: 300))
         
+        popUpTimer.name = "popUpTimer"
         popUpTimer.zPosition = 20
         levelTimerLabel.color  = SKColor.whiteColor()
         levelTimerLabel.position = CGPoint(x: 0,y: 0)
@@ -192,11 +208,15 @@ class GameScene: SKScene {
         
         levelTimerLabel.respondsToSelector(#selector(GameScene.levelCountdown))
         
+        levelTimerLabel.hidden = false
+        
         
         
         let duration = 0.5
         
         let waitBG:SKSpriteNode = self.getBluredScreenshot()
+        
+        waitBG.name = "blurBG"
         
         //pauseBG.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         waitBG.alpha = 0
