@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class EndGamePopUpSpriteNode: SKSpriteNode{
+class PopUpSpriteNode: SKSpriteNode{
     
     
     

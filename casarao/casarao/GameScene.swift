@@ -110,7 +110,17 @@ class GameScene: SKScene {
                 if tile.containsPoint(point){
                     
                     checkUserChances(tile)
+                    return
                 }
+            }
+        }
+        
+        if gameHUD.containsPoint(point){
+            if gameHUD.exitButton.containsPoint(point){
+                
+            }
+            else if gameHUD.otherUsersScoreButton.containsPoint(point){
+                
             }
         }
     }

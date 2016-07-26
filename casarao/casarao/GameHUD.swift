@@ -19,7 +19,12 @@ class GameHUD: SKSpriteNode{
     
     var playersScore: SKSpriteNode!
     
+    let giveUpButton = SKSpriteNode(texture: nil, color: SKColor.blueColor(), size: CGSize(width: 50, height: 50))
+    
     var chancesLabel = SKLabelNode(text:"Tentatias:")
+    
+    
+    let otherUsersScoreButton = SKSpriteNode(texture: nil, color: SKColor.redColor(), size: CGSize(width: 50, height: 50))
     
     
     init(gameRoom: GameRoom, selfScene: GameScene) {
@@ -46,6 +51,22 @@ class GameHUD: SKSpriteNode{
         amountOfMoneyLabel.color = SKColor.whiteColor()
         amountOfMoneyLabel.zPosition = 2
         self.addChild(amountOfMoneyLabel)
+        
+        
+        //BOTAO DE DESISTIR DO JOGO
+        
+        
+        giveUpButton.position = CGPoint(x: -self.size.width/2 + 40, y: self.size.height/2)
+        giveUpButton.zPosition = 2
+        self.addChild(giveUpButton)
+        
+        
+        otherUsersScoreButton.position = CGPoint(x: +self.size.width/2 - 40, y: self.size.height/2)
+        otherUsersScoreButton.zPosition = 2
+        self.addChild(otherUsersScoreButton)
+        
+        
+        
         
     }
     
