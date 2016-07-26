@@ -19,12 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
+        Parse.enableLocalDatastore()
+        
         // Initialize Parse.
-        let configuration = ParseClientConfiguration {
-            $0.applicationId = "m0Q4BvNmQbK3a2cm6BqAqTzwrm6m4ZQJYq6o9Gnr"
-            $0.clientKey = "UaWVKSG6sEyKY6t0hetQyQvFd3oHknkE7gkCfY17"
+        let configuration = ParseClientConfiguration{
+            $0.applicationId = "HSYwTD8Cz0O2cznV9J7jSCBmdR38X6EF"
+            $0.clientKey = "y5NPYdVS50Ts96N5O0iLrPZlFX7ULy1L"
+            $0.server = "https://decypher.tk/parse"
+            $0.localDatastoreEnabled = true
         }
-
         Parse.initializeWithConfiguration(configuration)
 
         return true
