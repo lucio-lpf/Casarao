@@ -12,8 +12,10 @@ import SpriteKit
 class PopUpSpriteNode: SKSpriteNode{
     
     
-    
-    
+//    
+//    init(winner
+//    
+//    
     
     
     
