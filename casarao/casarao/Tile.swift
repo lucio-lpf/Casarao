@@ -58,7 +58,7 @@ class Tile: SKSpriteNode{
         default:
             fatalError()
         }
-        super.init(texture:texture, color: SKColor.clearColor(), size: texture.size())
+        super.init(texture:texture, color: SKColor.clearColor(), size:  (UIImage(named: "white_tile")?.size)!)
         self.colorNumber = colorNumber
         self.status = "stillWrong"
     }

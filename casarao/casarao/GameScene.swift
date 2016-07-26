@@ -13,19 +13,19 @@ class GameScene: SKScene {
     var matrix: MatrixNode!
     var chances : Int = 3{
         didSet{
-            updateChancesLabel()
+            gameHUD.updateChancesLabel(chances)
         }
     }
     var gameRoom:GameRoom!
     var player: Player!
-    let chancesLabel = SKLabelNode(text:"Tentatias:")
     var checkButton: SKSpriteNode!
+    var mountOfMoney: Int = 0{
+        didSet{
+            gameHUD.updateMountLabel(mountOfMoney)
+        }
+    }
     
-    
-    
-    
-    
-    
+    var gameHUD: GameHUD! = nil
     
     // REFACTORING
     var stopInterval:NSTimer?
@@ -54,9 +54,16 @@ class GameScene: SKScene {
         background.zPosition = 0
         self.addChild(background)
         
-        chancesLabel.fontName = "AvenirNext-Bold"
+        
+        //ADD GAMEHUD
         
         
+        self.gameHUD = GameHUD(gameRoom: self.gameRoom, selfScene: self)
+        gameHUD.position = CGPoint(x: 0, y: (self.size.height*7)/32)
+        self.addChild(gameHUD)
+        
+        
+        // ADD MATRIX
         
         matrix = MatrixNode(numColumns: 3, numRows: 3)
         matrix.position = CGPoint(x: 0,y: 0)
@@ -80,30 +87,12 @@ class GameScene: SKScene {
         self.addChild(checkButton)
         
         
-        setRoomInformation()
-        
-        
-        
         
         
     }
     
     
-    func setRoomInformation(){
-        
-        chancesLabel.text = "Tentatias:\(chances)"
-        chancesLabel.position = CGPoint(x: 0, y: 600)
-        chancesLabel.color = SKColor.whiteColor()
-        chancesLabel.zPosition = 2
-        self.addChild(chancesLabel)
-        
-    }
-    
-    func updateChancesLabel(){
-        
-        chancesLabel.text = "Tentatias:\(chances)"
-        
-    }
+
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
