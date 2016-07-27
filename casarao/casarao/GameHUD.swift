@@ -15,9 +15,6 @@ class GameHUD: SKSpriteNode{
     
     var amountOfMoneyLabel = SKLabelNode(text:"Total de cash:")
     
-    var exitButton: SKSpriteNode!
-    
-    var playersScore: SKSpriteNode!
     
     let giveUpButton = SKSpriteNode(texture: nil, color: SKColor.blueColor(), size: CGSize(width: 50, height: 50))
     

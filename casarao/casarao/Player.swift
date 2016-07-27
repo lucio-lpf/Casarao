@@ -58,5 +58,18 @@ class Player {
         }
     }
     
+    
+    func numberOfUserRightAnswers()->Int{
+        
+        var countScore = 0
+        for i in 0..<currentMatrix!.count{
+            
+            if currentMatrix![i] == answerMatrix![i]{
+                countScore += 1
+            }
+        }
+        return(countScore)
+    }
+    
 }
 

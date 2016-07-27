@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 
 class GameRoom {
     
@@ -24,8 +25,6 @@ class GameRoom {
     var bet:Double?
     
     var status = "online"
-
-    
     
     convenience init(){
         self.init(capacity:10)
