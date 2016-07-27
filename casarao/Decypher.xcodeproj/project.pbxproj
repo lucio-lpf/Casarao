@@ -26,6 +26,7 @@
 		9F0E7E501D400B1E00F7B75D /* ProfileScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9F0E7E4F1D400B1E00F7B75D /* ProfileScene.sks */; };
 		9F1591AB1D3FD70A00C52171 /* LobbyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */; };
 		9F1591AF1D3FDC5700C52171 /* LobbyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9F1591AE1D3FDC5700C52171 /* LobbyScene.sks */; };
+		9F216B771D48F112005365A7 /* LobbyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F216B761D48F112005365A7 /* LobbyServices.swift */; };
 		9FA7E9CD1D400E5000BF482C /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */; };
 		9FA7E9CF1D40182600BF482C /* StoreScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9FA7E9CE1D40182600BF482C /* StoreScene.sks */; };
 		9FA7E9D11D40187D00BF482C /* StoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7E9D01D40187D00BF482C /* StoreScene.swift */; };
@@ -81,6 +82,7 @@
 		9F0E7E4F1D400B1E00F7B75D /* ProfileScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ProfileScene.sks; sourceTree = "<group>"; };
 		9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyScene.swift; sourceTree = "<group>"; };
 		9F1591AE1D3FDC5700C52171 /* LobbyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LobbyScene.sks; sourceTree = "<group>"; };
+		9F216B761D48F112005365A7 /* LobbyServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyServices.swift; sourceTree = "<group>"; };
 		9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
 		9FA7E9CE1D40182600BF482C /* StoreScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StoreScene.sks; sourceTree = "<group>"; };
 		9FA7E9D01D40187D00BF482C /* StoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreScene.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		5A41A2851D3E902000C93165 /* casarao */ = {
 			isa = PBXGroup;
 			children = (
+				9F216B751D48F0F7005365A7 /* Services */,
 				9FE8E1BA1D3EB17800A32C65 /* Model */,
 				9FE2BCB61D3E95D900B95074 /* casarao.entitlements */,
 				5A41A2861D3E902000C93165 /* AppDelegate.swift */,
@@ -214,6 +217,14 @@
 				5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		9F216B751D48F0F7005365A7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9F216B761D48F112005365A7 /* LobbyServices.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		9FE8E1BA1D3EB17800A32C65 /* Model */ = {
@@ -647,6 +658,7 @@
 				5A41A28D1D3E902000C93165 /* GameViewController.swift in Sources */,
 				5A41A2871D3E902000C93165 /* AppDelegate.swift in Sources */,
 				9FA7E9CD1D400E5000BF482C /* ProfileScene.swift in Sources */,
+				9F216B771D48F112005365A7 /* LobbyServices.swift in Sources */,
 				9FA7E9D11D40187D00BF482C /* StoreScene.swift in Sources */,
 				9FE8E1C01D3EB6ED00A32C65 /* Matrix.swift in Sources */,
 				9FE8E1BE1D3EB42A00A32C65 /* Player.swift in Sources */,

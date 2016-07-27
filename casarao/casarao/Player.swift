@@ -7,23 +7,22 @@
 //
 
 import Foundation
+import Parse
 
-class Player {
+class Player: PFUser {
     
     static let sharedInstance = Player()
     
-    
-    
     let defaults = NSUserDefaults.standardUserDefaults()
     
-    var nickname:String?
+    @NSManaged var nickname:String?
     
     // amonut user coins default
     var coins:Double?
     
     var currentMatrix:Array<Int>?
     
-    var answerMatrix:Array<Int>?
+    var answerMatrix:Array<Int>?    
     
  
     func updateUserDefaults(newCoins:Double) {
