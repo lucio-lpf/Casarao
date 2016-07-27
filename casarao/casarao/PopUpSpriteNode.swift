@@ -6,6 +6,14 @@
 //  Copyright © 2016 'team'. All rights reserved.
 //
 
+
+protocol PopUpInLobby {
+    
+    
+    func didDeciedEnterRoom(response:Bool, selfpopUp:PopUpSpriteNode)
+    
+}
+
 import Foundation
 import SpriteKit
 
@@ -13,15 +21,31 @@ class PopUpSpriteNode: SKSpriteNode{
     
     
     var GameSceneDelegate:GameScene?
-    var LobbySceneDelegate:LobbyScene?
+    var LobbySceneDelegate:PopUpInLobby?
+    var joinButtonAccept: SKSpriteNode? = nil
+    var cancelJoinButton: SKSpriteNode? = nil
+    
+
     
     
-    init(bet: Int,scene: LobbyScene){
-        super.init(texture: SKTexture(imageNamed: "Sprite") , color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
-        self.GameSceneDelegate = nil
-        self.LobbySceneDelegate = scene
+    init(bet: Double,scene: LobbyScene){
+        super.init(texture: SKTexture(imageNamed: "Sprites") , color: SKColor.clearColor(), size: CGSize(width: 400, height: 600))
+        userInteractionEnabled = true
+        GameSceneDelegate = nil
+        LobbySceneDelegate = scene
+        joinButtonAccept = SKSpriteNode(texture: nil, color: SKColor.redColor(), size: CGSize(width: 200, height: 100))
+        joinButtonAccept!.position = CGPoint(x: 0, y: -self.size.height/2)
+        addChild(joinButtonAccept!)
+        cancelJoinButton = SKSpriteNode(texture: nil, color: SKColor.blueColor(), size: CGSize(width: 200, height: 100))
+        cancelJoinButton!.position = CGPoint(x: 0, y: self.size.height/2)
+        addChild(cancelJoinButton!)
+        
+
+  
 
     }
+    
+    //POPUP COM LISTA DE USUARIOS DA SALA E SUAS PONTUAÇÕES
     init(users: Array<Player>,scene: GameScene){
         super.init(texture: SKTexture(imageNamed: "Sprite"), color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
         self.GameSceneDelegate = scene
@@ -29,12 +53,16 @@ class PopUpSpriteNode: SKSpriteNode{
     }
     
     
+    //POPUP DE DESITENCIA DA PARTIDA
+    
     init(scene: GameScene){
         super.init(texture: SKTexture(imageNamed: "Sprite"), color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
         self.GameSceneDelegate = scene
         self.LobbySceneDelegate = nil
     }
     
+    
+    //POPUP DO FIM DO JOGO COM O VENCEDOR
     init(winner: Player,scene: GameScene){
         super.init(texture: SKTexture(imageNamed: "Sprite"), color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
         self.GameSceneDelegate = scene
@@ -42,6 +70,8 @@ class PopUpSpriteNode: SKSpriteNode{
 
     }
     
+    
+    //POPUP COM  O TIME QUE É NECESSARIO ESPERAR PARA JOGAR NOVAMENTE
     init(timer:NSTimer,scene: GameScene){
         super.init(texture: SKTexture(imageNamed: "Sprite"), color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
         self.GameSceneDelegate = scene
@@ -51,7 +81,17 @@ class PopUpSpriteNode: SKSpriteNode{
     
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first!
+        let point = touch.locationInNode(self)
         
+        if joinButtonAccept != nil{
+            if joinButtonAccept!.containsPoint(point){
+                LobbySceneDelegate?.didDeciedEnterRoom(true,selfpopUp: self)
+            }
+            else if cancelJoinButton!.containsPoint(point){
+                LobbySceneDelegate?.didDeciedEnterRoom(false,selfpopUp: self)
+            }
+        }
     }
     
     
