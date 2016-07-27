@@ -116,7 +116,7 @@ class GameScene: SKScene {
         }
         
         if gameHUD.containsPoint(point){
-            if gameHUD.exitButton.containsPoint(point){
+            if gameHUD.giveUpButton.containsPoint(point){
                 
             }
             else if gameHUD.otherUsersScoreButton.containsPoint(point){

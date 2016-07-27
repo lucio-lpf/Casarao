@@ -115,6 +115,7 @@ class LobbyScene: SKScene {
     
     func joinGame() {
         
+        
         let gameRoom = gameRooms[0]
         gameRoom.addPlayerToGame(self.player)
         
