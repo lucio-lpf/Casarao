@@ -14,16 +14,21 @@ protocol PopUpInLobby {
     
 }
 
+protocol PopUpInGame {
+    func userGaveUpGame(response:Bool, selfpopUp:PopUpSpriteNode)
+}
+
 import Foundation
 import SpriteKit
 
 class PopUpSpriteNode: SKSpriteNode{
     
     
-    var GameSceneDelegate:GameScene?
+    var GameSceneDelegate:PopUpInGame?
     var LobbySceneDelegate:PopUpInLobby?
     var joinButtonAccept: SKSpriteNode? = nil
     var cancelJoinButton: SKSpriteNode? = nil
+    var giveUpButton: SKSpriteNode? = nil
     
 
     
@@ -90,6 +95,11 @@ class PopUpSpriteNode: SKSpriteNode{
             }
             else if cancelJoinButton!.containsPoint(point){
                 LobbySceneDelegate?.didDeciedEnterRoom(false,selfpopUp: self)
+            }
+        }
+        if giveUpButton != nil{
+            if giveUpButton!.containsPoint(point){
+                
             }
         }
     }

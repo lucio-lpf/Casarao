@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-class GameScene: SKScene {
+class GameScene: SKScene, PopUpInGame {
     
     
     var matrix: MatrixNode!
@@ -118,13 +118,30 @@ class GameScene: SKScene {
         if gameHUD.containsPoint(point){
             if gameHUD.giveUpButton.containsPoint(point){
                 
+                let popUp = PopUpSpriteNode(scene: self)
+                addChild(popUp)
+                
             }
             else if gameHUD.otherUsersScoreButton.containsPoint(point){
                 
+                let popUp = PopUpSpriteNode(users: gameRoom.players, scene: self)
+                addChild(popUp)
             }
         }
     }
     
+    
+    func userGaveUpGame(response: Bool, selfpopUp: PopUpSpriteNode) {
+        if response{
+            
+            
+            //remover player da sala
+            
+        }
+        else{
+            selfpopUp.removeFromParent()
+        }
+    }
     
     func checkUserChances(tile:Tile) {
         if tile.colorNumber == 3 {
