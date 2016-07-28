@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 
-class LobbyScene: SKScene {
+class LobbyScene: SKScene, PopUpInLobby {
     
     var gameRooms:Array<GameRoom> = Array()
     
@@ -31,7 +31,7 @@ class LobbyScene: SKScene {
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
         
-        // REFACTORING
+                // REFACTORING
         self.player.coins = 10
         
         profileButton = self.childNodeWithName("profileButton") as SKNode!
@@ -118,18 +118,31 @@ class LobbyScene: SKScene {
     
     func joinGame() {
         
-        
         let gameRoom = gameRooms[0]
-        gameRoom.addPlayerToGame(self.player)
         
-        if let gameScene = GameScene(fileNamed: "GameScene") {
-            
-            gameScene.gameRoom = self.gameRooms[0]
-            gameScene.player = self.player
-            transitioToScene(gameScene)
-        }
+        self.addChild(PopUpSpriteNode(bet: gameRoom.bet!, scene: self))
+        
+        
     }
     
+    
+    func didDeciedEnterRoom(response: Bool,selfpopUp:PopUpSpriteNode) {
+        if response == true{
+            
+            gameRooms[0].addPlayerToGame(self.player)
+            
+            if let gameScene = GameScene(fileNamed: "GameScene") {
+                
+                gameScene.gameRoom = self.gameRooms[0]
+                gameScene.player = self.player
+                transitioToScene(gameScene)
+            }
+
+        }
+        else{
+            selfpopUp.removeFromParent()
+        }
+    }
     
     
     private func transitioToScene(scene:SKScene) {
