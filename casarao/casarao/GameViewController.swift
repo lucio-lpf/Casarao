@@ -10,14 +10,47 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // init player
-        Player.sharedInstance
+        // init user
+        let user = Player.sharedInstance
+        
+        user.username = "default "
+        user.password = "default pass"
+        
+        
+        user.signUpInBackgroundWithBlock {
+            (newUser, error) in
+            
+            print("Novo user ==== \(newUser)")
+            print("Novo user Erro ==== \(error)")
+        }
+        
+        
+//        let gameRoom = GameRoom()
+//        
+//        gameRoom.amount = 1
+//        gameRoom.bet = 2.5
+//        gameRoom.roomName = "test room"
+//        gameRoom.addPlayerToGame(user)
+//        
+//        
+//        
+//        gameRoom.saveEventually {
+//            (newRoom, error) in
+//            
+//            print("Novo game ==== \(newRoom)")
+//            print("Novo user Erro ==== \(error)")
+//        }
+        
+        
+        
+        
 
-//        if let scene = GameScene(fileNamed: "GameScene") {
+        
         if let scene = LobbyScene(fileNamed: "LobbyScene") {
             // Configure the view.
             let skView = self.view as! SKView
@@ -29,7 +62,7 @@ class GameViewController: UIViewController {
             
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
-            
+
             skView.presentScene(scene)
         }
     }

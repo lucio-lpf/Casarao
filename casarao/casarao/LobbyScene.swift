@@ -23,6 +23,9 @@ class LobbyScene: SKScene {
     // REFACTORING
     var player = Player.sharedInstance
     var selectedRoomNode:SKNode?
+    
+    
+    
 
     
     override func didMoveToView(view: SKView) {
@@ -41,7 +44,7 @@ class LobbyScene: SKScene {
         
         room.roomName = "Sala 1"
         room.bet = 1
-        room.amount = (Double(room.players.count) * room.bet!)
+        room.amount = (Double(room.players.count) * room.bet!.doubleValue)
         
         gameRooms.append(room)
         

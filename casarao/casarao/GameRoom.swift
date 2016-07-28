@@ -9,30 +9,37 @@
 import Foundation
 import Parse
 
-class GameRoom {
+class GameRoom: PFObject, PFSubclassing {
     
-    var roomName:String?
+    @NSManaged var roomName:String?
     
-    var players:Array<Player>
+    @NSManaged var players:Array<Player>
     
     // hora que começa o game
-    var startTime:NSDate?
+    @NSManaged var startTime:NSDate?
     
     // montante das apostas
-    var amount:Double?
+   @NSManaged var amount:NSNumber?
     
     // aposta inicial
-    var bet:Double?
+   @NSManaged var bet:NSNumber?
     
     var status = "online"
     
-    convenience init(){
-        self.init(capacity:10)
+
+    
+    static func parseClassName() -> String {
+        return "GameRoom"
     }
     
-    init(capacity:Int) {
-        self.players = Array<Player>()
-        players.reserveCapacity(capacity)
+    convenience override init() {
+        self.init(capacity:10)
+    }
+
+     init(capacity:Int) {
+//        self.players = Array<Player>()
+//        players.reserveCapacity(capacity)
+        super.init()
     }
     
     // matriz de resposta para cada player

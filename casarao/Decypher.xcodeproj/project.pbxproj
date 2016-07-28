@@ -30,6 +30,7 @@
 		9FA7E9CD1D400E5000BF482C /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */; };
 		9FA7E9CF1D40182600BF482C /* StoreScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9FA7E9CE1D40182600BF482C /* StoreScene.sks */; };
 		9FA7E9D11D40187D00BF482C /* StoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7E9D01D40187D00BF482C /* StoreScene.swift */; };
+		9FA85F381D493C6E005D0394 /* Decypher-BridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA85F371D493C6E005D0394 /* Decypher-BridgingHeader.m */; };
 		9FE2BCB81D3E95E100B95074 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE2BCB71D3E95E100B95074 /* CloudKit.framework */; };
 		9FE8E1BC1D3EB19100A32C65 /* GameRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */; };
 		9FE8E1BE1D3EB42A00A32C65 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BD1D3EB42A00A32C65 /* Player.swift */; };
@@ -86,6 +87,8 @@
 		9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
 		9FA7E9CE1D40182600BF482C /* StoreScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StoreScene.sks; sourceTree = "<group>"; };
 		9FA7E9D01D40187D00BF482C /* StoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreScene.swift; sourceTree = "<group>"; };
+		9FA85F361D493C6E005D0394 /* Decypher-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Decypher-Bridging-Header.h"; sourceTree = "<group>"; };
+		9FA85F371D493C6E005D0394 /* Decypher-BridgingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Decypher-BridgingHeader.m"; sourceTree = "<group>"; };
 		9FE2BCB61D3E95D900B95074 /* casarao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = casarao.entitlements; sourceTree = "<group>"; };
 		9FE2BCB71D3E95E100B95074 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoom.swift; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				5AFDBCF31D3EAEDF0093F328 /* WebServiceManneger.swift */,
 				9F1591AD1D3FD80900C52171 /* Assets */,
 				5A41A2961D3E902000C93165 /* Info.plist */,
+				9FA85F371D493C6E005D0394 /* Decypher-BridgingHeader.m */,
+				9FA85F361D493C6E005D0394 /* Decypher-Bridging-Header.h */,
 			);
 			path = casarao;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				TargetAttributes = {
 					5A41A2821D3E902000C93165 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = TY5QM4UU69;
 						SystemCapabilities = {
 							com.apple.iCloud = {
 								enabled = 1;
@@ -665,6 +671,7 @@
 				9FE8E1BC1D3EB19100A32C65 /* GameRoom.swift in Sources */,
 				9F1591AB1D3FD70A00C52171 /* LobbyScene.swift in Sources */,
 				5A8FDA6F1D46911900A7C1C9 /* PopUpSpriteNode.swift in Sources */,
+				9FA85F381D493C6E005D0394 /* Decypher-BridgingHeader.m in Sources */,
 				5A41A2B91D3E913D00C93165 /* Tile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -812,6 +819,7 @@
 			baseConfigurationReference = 95C3A4A2498456A784D8E56F /* Pods-casarao.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = casarao/casarao.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -820,6 +828,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-team.casarao";
 				PRODUCT_NAME = Decypher;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "casarao/Decypher-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -828,6 +838,7 @@
 			baseConfigurationReference = DC2E7637816376BF6BDAAD64 /* Pods-casarao.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = casarao/casarao.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -836,6 +847,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-team.casarao";
 				PRODUCT_NAME = Decypher;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "casarao/Decypher-Bridging-Header.h";
 			};
 			name = Release;
 		};
