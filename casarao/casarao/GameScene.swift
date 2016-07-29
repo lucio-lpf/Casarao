@@ -128,6 +128,10 @@ class GameScene: SKScene, PopUpInGame {
             }
                 
             else if gameHUD.backToLobbyButton.containsPoint(point){
+                
+                
+                
+                
             }
         }
     }
@@ -166,7 +170,7 @@ class GameScene: SKScene, PopUpInGame {
     func checkUserMatrix() {
         
         
-        if gameRoom.status == "finished"{
+        if gameRoom.status != "finished"{
             //atualizando a matriz do user
             player.currentMatrix?.removeAll()
             
@@ -202,7 +206,7 @@ class GameScene: SKScene, PopUpInGame {
             }
         }
         else{
-            let pop = PopUpSpriteNode(winner: gameRoom.winner, scene: self)
+            let pop = PopUpSpriteNode(winner: gameRoom.winner!, scene: self)
             addChild(pop)
         }
         

@@ -81,7 +81,7 @@ class GameRoom{
         }
         
     }
-    var winner:Player{
+    var winner:Player?{
         get{
             let user = parseObject.valueForKey("winner") as! PFUser
             return Player(pfuser: user)
@@ -89,7 +89,7 @@ class GameRoom{
         set{
             
             let player = newValue 
-            parseObject.setValue(player.parseUser, forKey: "winner")
+            parseObject.setValue(player!.parseUser, forKey: "winner")
             parseObject.saveInBackground()
         }
     }
