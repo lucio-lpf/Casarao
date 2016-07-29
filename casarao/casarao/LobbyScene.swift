@@ -26,7 +26,7 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     
     
-
+    
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
@@ -89,7 +89,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         let amount = roomNode.childNodeWithName("amount") as! SKLabelNode
         
         
-       
+        
         WebServiceManager.returnGameRooms { (gameRooms) in
             
             self.gameRooms = gameRooms
@@ -99,10 +99,9 @@ class LobbyScene: SKScene, PopUpInLobby {
             bet.text = "$\(gameRooms[0].bet)"
             amount.text = "$\(gameRooms[0].amount)"
             numPlayers.text = "\(gameRooms[0].players.count) / \(gameRooms[0].maxPlayers)"
-
+            
             
         }
-        
         
         profileButton = self.childNodeWithName("profileButton") as SKNode!
         lobbyButton = self.childNodeWithName("lobbyButton") as SKNode!
@@ -111,7 +110,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         
         
-
+        
         
         
         
@@ -183,6 +182,17 @@ class LobbyScene: SKScene, PopUpInLobby {
     func didDeciedEnterRoom(response: Bool,selfpopUp:PopUpSpriteNode) {
         if response == true{
             
+            for player in gameRooms[0].players{
+                if player.username ==  self.player!.username{
+                    if let gameScene = GameScene(fileNamed: "GameScene") {
+                        
+                        gameScene.gameRoom = self.gameRooms[0]
+                        gameScene.player = self.player
+                        transitioToScene(gameScene)
+                    }
+                }
+            }
+            
             gameRooms[0].addPlayerToGame(self.player)
             player.coins! -= gameRooms[0].bet
             if let gameScene = GameScene(fileNamed: "GameScene") {
@@ -191,7 +201,10 @@ class LobbyScene: SKScene, PopUpInLobby {
                 gameScene.player = self.player
                 transitioToScene(gameScene)
             }
-
+            
+            
+            
+            
         }
         else{
             selfpopUp.removeFromParent()
@@ -206,10 +219,10 @@ class LobbyScene: SKScene, PopUpInLobby {
         let skView = self.view!
         skView.showsFPS = true
         skView.showsNodeCount = true
-            
+        
         /* Sprite Kit applies additional optimizations to improve rendering performance */
         skView.ignoresSiblingOrder = true
-            
+        
         /* Set the scale mode to scale to fit the window */
         scene.scaleMode = .AspectFill
         

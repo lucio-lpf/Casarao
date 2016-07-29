@@ -57,6 +57,9 @@ class GameRoom{
         get{
             return parseObject.valueForKey("amount") as! Int
         }
+        set{
+            parseObject.setValue(newValue, forKey: "amount")
+        }
     }
     
     // aposta inicial
