@@ -83,6 +83,28 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         
         
+        let roomNode = self.childNodeWithName("gameRoomNode") as! SKSpriteNode
+        let roomName = roomNode.childNodeWithName("roomName") as! SKLabelNode
+        let bet = roomNode.childNodeWithName("bet") as! SKLabelNode
+        let numPlayers = roomNode.childNodeWithName("numPlayers") as! SKLabelNode
+        let amount = roomNode.childNodeWithName("amount") as! SKLabelNode
+        
+        
+       
+        WebServiceManager.returnGameRooms { (gameRooms) in
+            
+            self.gameRooms = gameRooms
+            print(gameRooms)
+            
+            roomName.text = "\(gameRooms[0].roomName!)"
+            bet.text = "$\(gameRooms[0].bet)"
+            amount.text = "$\(gameRooms[0].amount)"
+            numPlayers.text = "\(gameRooms[0].players.count) / \(gameRooms[0].maxPlayers)"
+
+            
+        }
+        
+        
         
                 // REFACTORING
         self.player.coins = 10
@@ -92,21 +114,9 @@ class LobbyScene: SKScene, PopUpInLobby {
         storeButton = self.childNodeWithName("storeButton") as SKNode!
         
         
-        let room = GameRoom()
-    
-        
-        room.roomName = "Sala 1"
-        room.bet = 1
-        room.amount = (Double(room.players.count) * room.bet!.doubleValue)
-        
-        gameRooms.append(room)
         
         
-        let roomNode = self.childNodeWithName("gameRoomNode") as! SKSpriteNode
-        let roomName = roomNode.childNodeWithName("roomName") as! SKLabelNode
-        let bet = roomNode.childNodeWithName("bet") as! SKLabelNode
-        let numPlayers = roomNode.childNodeWithName("numPlayers") as! SKLabelNode
-        let amount = roomNode.childNodeWithName("amount") as! SKLabelNode
+
         
         
         
@@ -115,10 +125,6 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         joinGameButton = roomNode.childNodeWithName("joinGameNode") as SKNode!
         
-        roomName.text = "\(gameRooms[0].roomName!)"
-        bet.text = "$\(gameRooms[0].bet!)"
-        amount.text = "$\(gameRooms[0].amount!)"
-        numPlayers.text = "\(gameRooms[0].players.count) / \(gameRooms[0].players.capacity)"
         
     }
     
@@ -163,7 +169,7 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     
     private func verifyUserCoins() {
-        if player.coins > Double(gameRooms[0].bet!) {
+        if player.coins! >= gameRooms[0].bet {
             joinGame()
         }
     }
@@ -173,7 +179,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         let gameRoom = gameRooms[0]
         
-        self.addChild(PopUpSpriteNode(bet: gameRoom.bet!, scene: self))
+        self.addChild(PopUpSpriteNode(bet: gameRoom.bet, scene: self))
         
         
     }
@@ -183,7 +189,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         if response == true{
             
             gameRooms[0].addPlayerToGame(self.player)
-            
+            player.coins! -= gameRooms[0].bet
             if let gameScene = GameScene(fileNamed: "GameScene") {
                 
                 gameScene.gameRoom = self.gameRooms[0]

@@ -30,8 +30,6 @@ class GameHUD: SKSpriteNode{
         //LABEL DAS CHANCES DO USUARIO
         
         
-        gameRoom.amount = 10
-        
         chancesLabel.text = "Tentatias:\(selfScene.chances)"
         chancesLabel.fontName = "AvenirNext-Bold"
         chancesLabel.position = CGPoint(x: 0, y: 0)
@@ -42,7 +40,7 @@ class GameHUD: SKSpriteNode{
         
         // QUANTIDADE DE DINHEIRO TOTAL DA SALA
         
-        amountOfMoneyLabel.text = "Total de cash:\(gameRoom.amount!)"
+        amountOfMoneyLabel.text = "Total de cash:\(gameRoom.amount)"
         amountOfMoneyLabel.fontName = "AvenirNext-Bold"
         amountOfMoneyLabel.position = CGPoint(x: 0, y: self.size.height/2)
         amountOfMoneyLabel.color = SKColor.whiteColor()

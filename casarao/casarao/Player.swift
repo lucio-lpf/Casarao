@@ -26,9 +26,9 @@ class Player{
 
     
     // amonut user coins default
-    var coins:Double?{
+    var coins:Int?{
         get{
-            return parseUser.valueForKey("coins") as? Double
+            return parseUser.valueForKey("coins") as? Int
         }
         set{
             parseUser.setValue(newValue, forKey: "coins")
@@ -66,10 +66,10 @@ class Player{
     
     
     
-    func updateUserDefaults(newCoins:Double) {
-        coins = defaults.doubleForKey("coins")
+    func updateUserDefaults(newCoins:Int) {
+        coins = defaults.integerForKey("coins")
         if (newCoins>coins) {
-            defaults.setDouble(newCoins, forKey: "coins")
+            defaults.setInteger(newCoins, forKey: "coins")
         }
     }
     

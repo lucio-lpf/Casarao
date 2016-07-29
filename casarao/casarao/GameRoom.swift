@@ -22,38 +22,65 @@ class GameRoom{
 
     }
     
-    var players: Array<Player>{
+    var players:Array<Player>{
+        
         get{
             let pfusers =  parseObject.valueForKey("players") as? Array<PFUser>
             var playerArray:Array<Player> = []
-            for user in pfusers!{
-                playerArray.append(Player(pfuser: user))
+            if pfusers != nil{
+                for user in (pfusers)!{
+                    playerArray.append(Player(pfuser: user))
+                }
             }
+            
             return playerArray
         }
         set{
-            
-            let userArray:Array<PFUser> = []
-            
-            for player in players{
-                
+            var userArray:Array<PFUser> = []
+            for player in newValue{
+                userArray.append(player.parseUser)
             }
-            parseObject.setValue(newValue, forKey: "players")
+            parseObject.setValue(userArray, forKey: "players")
             parseObject.saveInBackground()
         }
     }
     
     // hora que começa o game
-    @NSManaged var startTime:NSDate?
+    var startTime:NSDate?{
+        get{
+            return parseObject.valueForKey("startTime") as? NSDate
+        }
+    }
     
     // montante das apostas
-   @NSManaged var amount:NSNumber?
+    var amount:Int{
+        get{
+            return parseObject.valueForKey("amount") as! Int
+        }
+    }
     
     // aposta inicial
-   @NSManaged var bet:NSNumber?
+    var bet:Int{
+        get{
+            return parseObject.valueForKey("bet") as! Int
+        }
+    }
     
-    var status = "online"
+    var status:String{
+        
+        get{
+           return parseObject.valueForKey("estado") as! String
+        }
+        
+    }
     
+    
+    var maxPlayers:Int{
+        
+        get{
+            return parseObject.valueForKey("maxPlayers") as! Int
+        }
+    }
 
     
     var parseObject: PFObject
