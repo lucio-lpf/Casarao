@@ -92,7 +92,7 @@ class PopUpSpriteNode: SKSpriteNode{
     
     //POPUP COM  O TIME QUE É NECESSARIO ESPERAR PARA JOGAR NOVAMENTE
     init(timer:NSTimer,scene: GameScene){
-        super.init(texture: SKTexture(imageNamed: "Sprite"), color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
+        super.init(texture: SKTexture(imageNamed: "Sprites"), color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
         self.GameSceneDelegate = scene
         self.LobbySceneDelegate = nil
         

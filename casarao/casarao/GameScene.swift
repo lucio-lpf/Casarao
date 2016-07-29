@@ -215,6 +215,8 @@ class GameScene: SKScene, PopUpInGame {
         }
         else{
             let pop = PopUpSpriteNode(winner: gameRoom.winner!, scene: self)
+            pop.position = CGPoint(x: 0, y: 0)
+            pop.zPosition = 50
             addChild(pop)
         }
         
