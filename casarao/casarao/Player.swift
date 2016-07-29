@@ -35,6 +35,14 @@ class Player{
             parseUser.saveInBackground()
         }
     }
+    
+    
+    var username:String?{
+        get{
+            return parseUser.valueForKey("username") as? String
+        }
+    }
+
 
     
     var currentMatrix:Array<Int>?{
