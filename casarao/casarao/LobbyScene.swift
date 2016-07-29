@@ -37,48 +37,47 @@ class LobbyScene: SKScene, PopUpInLobby {
         addChild(checkUserPopUp)
         
         
-        //CHECK CURRENT USER
         
+        
+        // REFACTORING
+       
+        //CHECK CURRENT USER
         let allUsersPass = "P6xA5#72GacX;F]X"
         
         // init user
         let currentUser = PFUser.currentUser()
-        if currentUser != nil{
-            
-            
-            print(currentUser?.email)
+        if currentUser != nil {
             self.player = Player(pfuser: currentUser!)
+            self.player.coins = 10
             checkUserPopUp.removeFromParent()
             
-            
-        }
-        else{
-            
-            PFUser.logInWithUsernameInBackground(String(UIDevice.currentDevice().identifierForVendor!), password: allUsersPass, block: { (pfuser, error) in
-                if let e = error{
+        } else {
+            PFUser.logInWithUsernameInBackground(String(UIDevice.currentDevice().identifierForVendor!), password: allUsersPass) {
+                (pfuser, error) in
+                
+                if let e = error {
                     print(e.debugDescription)
                     let player = PFUser()
                     player.username = String(UIDevice.currentDevice().identifierForVendor!)
                     player.password = allUsersPass
-                    player.email = "lucio@example.com"
-                    player.signUpInBackgroundWithBlock({ (bool, error) in
+                    player.email = "\(UIDevice.currentDevice().identifierForVendor!)@teste.com"
+                    player.signUpInBackgroundWithBlock(){
+                        (bool, error) in
                         if let e = error{
                             print(e.debugDescription)
-                        }
-                        else{
-                            
+                        } else {
                             self.player = Player(pfuser: player)
+                            self.player.coins = 10
                             checkUserPopUp.removeFromParent()
                         }
-                    })
-                }
-                else{
+                    }
+                } else {
                     self.player = Player(pfuser: pfuser!)
+                    self.player.coins = 10
                     checkUserPopUp.removeFromParent()
                     
                 }
-            })
-            
+            }
         }
         
         
@@ -104,10 +103,6 @@ class LobbyScene: SKScene, PopUpInLobby {
             
         }
         
-        
-        
-                // REFACTORING
-        self.player.coins = 10
         
         profileButton = self.childNodeWithName("profileButton") as SKNode!
         lobbyButton = self.childNodeWithName("lobbyButton") as SKNode!
