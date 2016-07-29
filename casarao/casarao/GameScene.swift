@@ -127,6 +127,10 @@ class GameScene: SKScene, PopUpInGame {
                 let popUp = PopUpSpriteNode(users: gameRoom.players, scene: self)
                 addChild(popUp)
             }
+            
+            else if gameHUD.backToLobbyButton.containsPoint(point){
+               //VOLTAR PRA LOBBY
+            }
         }
     }
     

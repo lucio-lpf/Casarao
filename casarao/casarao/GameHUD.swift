@@ -20,6 +20,8 @@ class GameHUD: SKSpriteNode{
     
     var chancesLabel = SKLabelNode(text:"Tentatias:")
     
+    let backToLobbyButton = SKSpriteNode(texture: nil, color: SKColor.whiteColor(), size: CGSize(width: 100, height: 50))
+    
     
     let otherUsersScoreButton = SKSpriteNode(texture: nil, color: SKColor.redColor(), size: CGSize(width: 50, height: 50))
     
@@ -53,14 +55,17 @@ class GameHUD: SKSpriteNode{
         
         giveUpButton.position = CGPoint(x: -self.size.width/2 + 40, y: self.size.height/2)
         giveUpButton.zPosition = 2
-        self.addChild(giveUpButton)
+        addChild(giveUpButton)
         
         
         otherUsersScoreButton.position = CGPoint(x: +self.size.width/2 - 40, y: self.size.height/2)
         otherUsersScoreButton.zPosition = 2
-        self.addChild(otherUsersScoreButton)
+        addChild(otherUsersScoreButton)
         
         
+        backToLobbyButton.position = CGPoint(x: -self.size.width/2 + 40, y: self.size.height - 50)
+        backToLobbyButton.zPosition = 2
+        addChild(backToLobbyButton)
         
         
     }
