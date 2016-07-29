@@ -59,6 +59,7 @@ class GameRoom{
         }
         set{
             parseObject.setValue(newValue, forKey: "amount")
+            parseObject.saveInBackground()
         }
     }
     
@@ -102,6 +103,7 @@ class GameRoom{
     func addPlayerToGame(player:Player) {
         // add player to game room
         self.players.append(player)
+        amount += bet
         
         var playerRandomArray = Array<Int>()
         var playerFreshArray = Array<Int>()
@@ -112,6 +114,22 @@ class GameRoom{
         
         player.answerMatrix = playerRandomArray
         player.currentMatrix = playerFreshArray
+        
+    }
+    
+    func firstPlaceGame()->(Player){
+        
+        var firstPlayer = players[0]
+        
+        for player in players{
+            
+            if player.numberOfUserRightAnswers() > firstPlayer.numberOfUserRightAnswers(){
+                firstPlayer = player
+            }
+        }
+        
+        return firstPlayer
+        
         
     }
 }

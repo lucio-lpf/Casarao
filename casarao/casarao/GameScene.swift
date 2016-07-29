@@ -129,7 +129,6 @@ class GameScene: SKScene, PopUpInGame {
             }
             
             else if gameHUD.backToLobbyButton.containsPoint(point){
-               //VOLTAR PRA LOBBY
             }
         }
     }

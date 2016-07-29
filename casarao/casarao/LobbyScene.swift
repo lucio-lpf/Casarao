@@ -189,6 +189,7 @@ class LobbyScene: SKScene, PopUpInLobby {
                         gameScene.gameRoom = self.gameRooms[0]
                         gameScene.player = self.player
                         transitioToScene(gameScene)
+                        return
                     }
                 }
             }
