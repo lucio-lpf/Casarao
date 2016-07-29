@@ -69,20 +69,11 @@ class GameScene: SKScene, PopUpInGame {
         self.addChild(matrix)
         
         
-        
-        checkButton = SKSpriteNode(color: SKColor.cyanColor(), size: CGSize(width: 400, height: 100))
+        checkButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clearColor(), size: CGSize(width: 400, height: 100))
+
         checkButton.position = CGPoint(x:0,y:-500)
         checkButton.name = "checkButton"
         checkButton.zPosition = 1
-        
-        let checkLabel = SKLabelNode(text: "Validate")
-        checkLabel.zPosition = 2
-        checkLabel.fontName = "AvenirNext-Bold"
-        checkLabel.fontColor = SKColor.blackColor()
-        checkLabel.position = CGPoint(x: 0, y: 0)
-        checkLabel.name = "checkName"
-        checkLabel.userInteractionEnabled = false
-        checkButton.addChild(checkLabel)
         self.addChild(checkButton)
         
         

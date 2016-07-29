@@ -23,7 +23,7 @@ class GameHUD: SKSpriteNode{
     let backToLobbyButton = SKSpriteNode(texture: nil, color: SKColor.whiteColor(), size: CGSize(width: 100, height: 50))
     
     
-    let otherUsersScoreButton = SKSpriteNode(texture: nil, color: SKColor.redColor(), size: CGSize(width: 50, height: 50))
+    let otherUsersScoreButton = SKSpriteNode(texture: SKTexture(imageNamed: "playerIcon"), color: SKColor.clearColor(), size: CGSize(width: 50, height: 50))
     
     
     init(gameRoom: GameRoom, selfScene: GameScene) {
@@ -54,17 +54,17 @@ class GameHUD: SKSpriteNode{
         
         
         giveUpButton.position = CGPoint(x: -self.size.width/2 + 40, y: self.size.height/2)
-        giveUpButton.zPosition = 3
+        giveUpButton.zPosition = 100
         addChild(giveUpButton)
         
         
         otherUsersScoreButton.position = CGPoint(x: +self.size.width/2 - 40, y: self.size.height/2)
-        otherUsersScoreButton.zPosition = 3
+        otherUsersScoreButton.zPosition = 100
         addChild(otherUsersScoreButton)
         
         
         backToLobbyButton.position = CGPoint(x: -self.size.width/2 + 40, y: self.size.height - 50)
-        backToLobbyButton.zPosition = 3
+        backToLobbyButton.zPosition = 100
         addChild(backToLobbyButton)
         
         
