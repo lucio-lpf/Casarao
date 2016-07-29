@@ -64,7 +64,6 @@ class GameScene: SKScene, PopUpInGame {
         
         
         // ADD MATRIX
-        
         matrix = MatrixNode(numColumns: 3, numRows: 3)
         matrix.position = CGPoint(x: 0,y: 0)
         self.addChild(matrix)
@@ -92,7 +91,7 @@ class GameScene: SKScene, PopUpInGame {
     }
     
     
-
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
@@ -127,7 +126,7 @@ class GameScene: SKScene, PopUpInGame {
                 let popUp = PopUpSpriteNode(users: gameRoom.players, scene: self)
                 addChild(popUp)
             }
-            
+                
             else if gameHUD.backToLobbyButton.containsPoint(point){
             }
         }
@@ -166,37 +165,45 @@ class GameScene: SKScene, PopUpInGame {
     
     func checkUserMatrix() {
         
-        //atualizando a matriz do user
-        player.currentMatrix?.removeAll()
         
-        for tile in matrix.tilesArray{
-            player.currentMatrix?.append(tile.colorNumber)
-        }
-        
-        let results = player.checkUserAnswer()
-        
-        if results.didFinishTheGame{
-            let popUpFinishGame = SKSpriteNode(texture: SKTexture(imageNamed: "grey_background"), color: SKColor.clearColor(), size: CGSize(width: 300, height: 300))
-            let label = SKLabelNode(text: "Acabou o jogo!!!")
-            popUpFinishGame.zPosition = 20
-            label.color  = SKColor.whiteColor()
-            label.position = CGPoint(x: 0,y: 0)
-            label.zPosition = 21
-            popUpFinishGame.addChild(label)
-            popUpFinishGame.position = CGPoint(x: 0,y: 0)
-            self.addChild(popUpFinishGame)
-            userInteractionEnabled = false
+        if gameRoom.status == "finished"{
+            //atualizando a matriz do user
+            player.currentMatrix?.removeAll()
+            
+            for tile in matrix.tilesArray{
+                player.currentMatrix?.append(tile.colorNumber)
+            }
+            
+            let results = player.checkUserAnswer()
+            
+            if results.didFinishTheGame{
+                let popUpFinishGame = SKSpriteNode(texture: SKTexture(imageNamed: "grey_background"), color: SKColor.clearColor(), size: CGSize(width: 300, height: 300))
+                let label = SKLabelNode(text: "Acabou o jogo!!!")
+                popUpFinishGame.zPosition = 20
+                label.color  = SKColor.whiteColor()
+                label.position = CGPoint(x: 0,y: 0)
+                label.zPosition = 21
+                popUpFinishGame.addChild(label)
+                popUpFinishGame.position = CGPoint(x: 0,y: 0)
+                self.addChild(popUpFinishGame)
+                userInteractionEnabled = false
+                gameRoom.status = "finished"
+            }
+            else{
+                stopInterval = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameScene.levelCountdown), userInfo: nil, repeats: true)
+                loadWaitBGScreen()
+                if results.tileRight.count != 0{
+                    for i in results.tileRight{
+                        matrix.tilesArray[i].status = "right"
+                    }
+                }
+                matrix.updateMatrixColors(player.currentMatrix!)
+                chances = 3
+            }
         }
         else{
-            stopInterval = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameScene.levelCountdown), userInfo: nil, repeats: true)
-            loadWaitBGScreen()
-            if results.tileRight.count != 0{
-                for i in results.tileRight{
-                    matrix.tilesArray[i].status = "right"
-                }
-            }
-            matrix.updateMatrixColors(player.currentMatrix!)
-            chances = 3
+            let pop = PopUpSpriteNode(winner: gameRoom.winner, scene: self)
+            addChild(pop)
         }
         
     }

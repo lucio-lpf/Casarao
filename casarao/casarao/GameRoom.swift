@@ -75,7 +75,23 @@ class GameRoom{
         get{
            return parseObject.valueForKey("estado") as! String
         }
+        set{
+            parseObject.setValue(newValue, forKey: "estado")
+            parseObject.saveInBackground()
+        }
         
+    }
+    var winner:Player{
+        get{
+            let user = parseObject.valueForKey("winner") as! PFUser
+            return Player(pfuser: user)
+        }
+        set{
+            
+            let player = newValue 
+            parseObject.setValue(player.parseUser, forKey: "winner")
+            parseObject.saveInBackground()
+        }
     }
     
     

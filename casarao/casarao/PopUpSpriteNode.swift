@@ -34,15 +34,15 @@ class PopUpSpriteNode: SKSpriteNode{
     
     
     init(bet: NSNumber,scene: LobbyScene){
-        super.init(texture: SKTexture(imageNamed: "Sprites") , color: SKColor.clearColor(), size: CGSize(width: 400, height: 600))
+        super.init(texture: SKTexture(imageNamed: "LobbyPopUp") , color: SKColor.clearColor(), size: CGSize(width: 400, height: 400))
         userInteractionEnabled = true
         GameSceneDelegate = nil
         LobbySceneDelegate = scene
-        joinButtonAccept = SKSpriteNode(texture: nil, color: SKColor.redColor(), size: CGSize(width: 200, height: 100))
-        joinButtonAccept!.position = CGPoint(x: 0, y: -self.size.height/2)
+        joinButtonAccept = SKSpriteNode(texture: SKTexture(imageNamed:"yesButton"), color: SKColor.clearColor(), size: CGSize(width: 150, height: 100))
+        joinButtonAccept!.position = CGPoint(x: 0, y: -self.size.height/3)
         joinButtonAccept?.zPosition = 3
         addChild(joinButtonAccept!)
-        cancelJoinButton = SKSpriteNode(texture: nil, color: SKColor.blueColor(), size: CGSize(width: 200, height: 100))
+        cancelJoinButton = SKSpriteNode(texture: SKTexture(imageNamed:"x"), color: SKColor.clearColor(), size: CGSize(width: 50, height: 50))
         cancelJoinButton!.position = CGPoint(x: self.size.width/2 - 50, y: self.size.height/2)
         cancelJoinButton?.zPosition = 3
         addChild(cancelJoinButton!)
@@ -75,7 +75,7 @@ class PopUpSpriteNode: SKSpriteNode{
     //POPUP DE DESITENCIA DA PARTIDA
     
     init(scene: GameScene){
-        super.init(texture: SKTexture(imageNamed: "Sprite"), color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
+        super.init(texture: SKTexture(imageNamed: "giveUpPopUp"), color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
         self.GameSceneDelegate = scene
         self.LobbySceneDelegate = nil
     }
