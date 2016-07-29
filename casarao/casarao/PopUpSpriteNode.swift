@@ -83,7 +83,7 @@ class PopUpSpriteNode: SKSpriteNode{
     
     //POPUP DO FIM DO JOGO COM O VENCEDOR
     init(winner: Player,scene: GameScene){
-        super.init(texture: SKTexture(imageNamed: "Sprite"), color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
+        super.init(texture: SKTexture(imageNamed: "loseMessenge"), color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
         self.GameSceneDelegate = scene
         self.LobbySceneDelegate = nil
 
