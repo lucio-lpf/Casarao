@@ -9,11 +9,39 @@
 import Foundation
 import Parse
 
-class GameRoom: PFObject, PFSubclassing {
+class GameRoom{
     
-    @NSManaged var roomName:String?
+    var roomName:String?{
+        get{
+            return parseObject.valueForKey("roomName") as? String
+        }
+        set{
+            parseObject.setValue(newValue, forKey: "roomName")
+            parseObject.saveInBackground()
+        }
+
+    }
     
-    @NSManaged var players:Array<Player>
+    var players: Array<Player>{
+        get{
+            let pfusers =  parseObject.valueForKey("players") as? Array<PFUser>
+            var playerArray:Array<Player> = []
+            for user in pfusers!{
+                playerArray.append(Player(pfuser: user))
+            }
+            return playerArray
+        }
+        set{
+            
+            let userArray:Array<PFUser> = []
+            
+            for player in players{
+                
+            }
+            parseObject.setValue(newValue, forKey: "players")
+            parseObject.saveInBackground()
+        }
+    }
     
     // hora que começa o game
     @NSManaged var startTime:NSDate?
@@ -28,20 +56,16 @@ class GameRoom: PFObject, PFSubclassing {
     
 
     
-    static func parseClassName() -> String {
-        return "GameRoom"
-    }
+    var parseObject: PFObject
     
-    convenience override init() {
-        self.init(capacity:10)
-    }
-
-     init(capacity:Int) {
-//        self.players = Array<Player>()
-//        players.reserveCapacity(capacity)
-        super.init()
-    }
     
+    
+    
+    init(pfobject:PFObject){
+        
+        parseObject = pfobject
+        
+    }
     // matriz de resposta para cada player
     
     

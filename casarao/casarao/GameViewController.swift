@@ -8,49 +8,14 @@
 
 import UIKit
 import SpriteKit
+import Parse
 
 class GameViewController: UIViewController {
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // init user
-        let user = Player.sharedInstance
-        
-        user.username = "default "
-        user.password = "default pass"
-        
-        
-        user.signUpInBackgroundWithBlock {
-            (newUser, error) in
-            
-            print("Novo user ==== \(newUser)")
-            print("Novo user Erro ==== \(error)")
-        }
-        
-        
-//        let gameRoom = GameRoom()
-//        
-//        gameRoom.amount = 1
-//        gameRoom.bet = 2.5
-//        gameRoom.roomName = "test room"
-//        gameRoom.addPlayerToGame(user)
-//        
-//        
-//        
-//        gameRoom.saveEventually {
-//            (newRoom, error) in
-//            
-//            print("Novo game ==== \(newRoom)")
-//            print("Novo user Erro ==== \(error)")
-//        }
-        
-        
-        
-        
 
-        
         if let scene = LobbyScene(fileNamed: "LobbyScene") {
             // Configure the view.
             let skView = self.view as! SKView

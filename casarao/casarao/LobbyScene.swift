@@ -8,7 +8,7 @@
 
 import Foundation
 import SpriteKit
-
+import Parse
 
 class LobbyScene: SKScene, PopUpInLobby {
     
@@ -21,7 +21,7 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     
     // REFACTORING
-    var player = Player.sharedInstance
+    var player:Player!
     var selectedRoomNode:SKNode?
     
     
@@ -30,6 +30,59 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
+        
+        
+        let checkUserPopUp = PopUpSpriteNode()
+        
+        addChild(checkUserPopUp)
+        
+        
+        //CHECK CURRENT USER
+        
+        let allUsersPass = "P6xA5#72GacX;F]X"
+        
+        // init user
+        let currentUser = PFUser.currentUser()
+        if currentUser != nil{
+            
+            
+            print(currentUser?.email)
+            self.player = Player(pfuser: currentUser!)
+            checkUserPopUp.removeFromParent()
+            
+            
+        }
+        else{
+            
+            PFUser.logInWithUsernameInBackground(String(UIDevice.currentDevice().identifierForVendor!), password: allUsersPass, block: { (pfuser, error) in
+                if let e = error{
+                    print(e.debugDescription)
+                    let player = PFUser()
+                    player.username = String(UIDevice.currentDevice().identifierForVendor!)
+                    player.password = allUsersPass
+                    player.email = "lucio@example.com"
+                    player.signUpInBackgroundWithBlock({ (bool, error) in
+                        if let e = error{
+                            print(e.debugDescription)
+                        }
+                        else{
+                            
+                            self.player = Player(pfuser: player)
+                            checkUserPopUp.removeFromParent()
+                        }
+                    })
+                }
+                else{
+                    self.player = Player(pfuser: pfuser!)
+                    checkUserPopUp.removeFromParent()
+                    
+                }
+            })
+            
+        }
+        
+        
+        
         
                 // REFACTORING
         self.player.coins = 10

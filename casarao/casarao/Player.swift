@@ -9,22 +9,63 @@
 import Foundation
 import Parse
 
-class Player: PFUser {
+class Player{
     
-    static let sharedInstance = Player()
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
-    @NSManaged var nickname:String?
+    var nickname:String?{
+        get{
+            return parseUser.valueForKey("nickname") as? String
+        }
+        set{
+            parseUser.setValue(newValue, forKey: "nickname")
+            parseUser.saveInBackground()
+        }
+    }
+
     
     // amonut user coins default
-    var coins:Double?
+    var coins:Double?{
+        get{
+            return parseUser.valueForKey("coins") as? Double
+        }
+        set{
+            parseUser.setValue(newValue, forKey: "coins")
+            parseUser.saveInBackground()
+        }
+    }
+
     
-    var currentMatrix:Array<Int>?
+    var currentMatrix:Array<Int>?{
+        get{
+            return parseUser.valueForKey("currentMatrix") as? Array<Int>
+        }
+        set{
+            parseUser.setValue(newValue, forKey: "currentMatrix")
+            parseUser.saveInBackground()
+        }
+    }
+
     
-    var answerMatrix:Array<Int>?    
+    var answerMatrix:Array<Int>?{
+        get{
+            return parseUser.valueForKey("answerMatrix") as? Array<Int>
+        }
+        set{
+            parseUser.setValue(newValue, forKey: "answerMatrix")
+            parseUser.saveInBackground()
+        }
+    }
     
  
+    var parseUser: PFUser
+    
+    
+    
+    
+    
+    
     func updateUserDefaults(newCoins:Double) {
         coins = defaults.doubleForKey("coins")
         if (newCoins>coins) {
@@ -55,6 +96,12 @@ class Player: PFUser {
         else{
             return(tilesRight,false)
         }
+    }
+    
+    
+    init(pfuser:PFUser) {
+        
+        parseUser = pfuser
     }
     
     

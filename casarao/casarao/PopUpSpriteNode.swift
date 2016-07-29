@@ -33,7 +33,7 @@ class PopUpSpriteNode: SKSpriteNode{
 
     
     
-    init(bet: Double,scene: LobbyScene){
+    init(bet: NSNumber,scene: LobbyScene){
         super.init(texture: SKTexture(imageNamed: "Sprites") , color: SKColor.clearColor(), size: CGSize(width: 400, height: 600))
         userInteractionEnabled = true
         GameSceneDelegate = nil
@@ -84,6 +84,12 @@ class PopUpSpriteNode: SKSpriteNode{
         
     }
     
+    
+    init(){
+        
+        super.init(texture: SKTexture(imageNamed: "Sprite"), color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
+
+    }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first!
