@@ -40,9 +40,11 @@ class PopUpSpriteNode: SKSpriteNode{
         LobbySceneDelegate = scene
         joinButtonAccept = SKSpriteNode(texture: nil, color: SKColor.redColor(), size: CGSize(width: 200, height: 100))
         joinButtonAccept!.position = CGPoint(x: 0, y: -self.size.height/2)
+        joinButtonAccept?.zPosition = 3
         addChild(joinButtonAccept!)
         cancelJoinButton = SKSpriteNode(texture: nil, color: SKColor.blueColor(), size: CGSize(width: 200, height: 100))
-        cancelJoinButton!.position = CGPoint(x: 0, y: self.size.height/2)
+        cancelJoinButton!.position = CGPoint(x: self.size.width/2 - 50, y: self.size.height/2)
+        cancelJoinButton?.zPosition = 3
         addChild(cancelJoinButton!)
         
 
@@ -55,6 +57,18 @@ class PopUpSpriteNode: SKSpriteNode{
         super.init(texture: SKTexture(imageNamed: "Sprite"), color: SKColor.clearColor(), size: CGSize(width: 200, height: 400))
         self.GameSceneDelegate = scene
         self.LobbySceneDelegate = nil
+        
+        
+        
+        
+        var firstPlayer = users[0]
+        
+        for player in users{
+            
+            if player.numberOfUserRightAnswers() > firstPlayer.numberOfUserRightAnswers(){
+                firstPlayer = player
+            }
+        }
     }
     
     
