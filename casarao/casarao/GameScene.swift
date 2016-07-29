@@ -169,7 +169,14 @@ class GameScene: SKScene, PopUpInGame {
     
     func checkUserMatrix() {
         
-        
+        gameRoom.parseObject.fetchInBackgroundWithBlock { (newobject, error) in
+            self.gameRoom.parseObject = newobject!
+            self.chackUserMatrix2()
+        }
+    }
+    
+    
+    func chackUserMatrix2(){
         if gameRoom.status != "finished"{
             //atualizando a matriz do user
             player.currentMatrix?.removeAll()
@@ -192,6 +199,7 @@ class GameScene: SKScene, PopUpInGame {
                 self.addChild(popUpFinishGame)
                 userInteractionEnabled = false
                 gameRoom.status = "finished"
+                gameRoom.winner = player
             }
             else{
                 stopInterval = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameScene.levelCountdown), userInfo: nil, repeats: true)
@@ -211,7 +219,6 @@ class GameScene: SKScene, PopUpInGame {
         }
         
     }
-    
     
     // REFACTORING
     private func removeBlurBG() {
