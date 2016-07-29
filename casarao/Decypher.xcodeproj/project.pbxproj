@@ -342,7 +342,11 @@
 				TargetAttributes = {
 					5A41A2821D3E902000C93165 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = TY5QM4UU69;
 						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
