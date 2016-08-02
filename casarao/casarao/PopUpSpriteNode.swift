@@ -10,7 +10,7 @@
 protocol PopUpInLobby {
     
     
-    func didDeciedEnterRoom(response:Bool, selfpopUp:PopUpSpriteNode)
+    func didDeciedEnterRoom(response:Bool, selfpopUp:PopUpSpriteNode,gameRoom:GameRoom?)
     
 }
 
@@ -28,12 +28,14 @@ class PopUpSpriteNode: SKSpriteNode{
     var LobbySceneDelegate:PopUpInLobby?
     var joinButtonAccept: SKSpriteNode? = nil
     var cancelJoinButton: SKSpriteNode? = nil
+    var gameRoom:GameRoom?
     var giveUpButton: SKSpriteNode? = nil
     
 
     
     
-    init(bet: NSNumber,scene: LobbyScene){
+    init(gameRoom: GameRoom,scene: LobbyScene){
+        self.gameRoom = gameRoom
         super.init(texture: SKTexture(imageNamed: "LobbyPopUp") , color: SKColor.clearColor(), size: CGSize(width: 400, height: 400))
         userInteractionEnabled = true
         GameSceneDelegate = nil
@@ -111,10 +113,10 @@ class PopUpSpriteNode: SKSpriteNode{
         
         if joinButtonAccept != nil{
             if joinButtonAccept!.containsPoint(point){
-                LobbySceneDelegate?.didDeciedEnterRoom(true,selfpopUp: self)
+                LobbySceneDelegate?.didDeciedEnterRoom(true,selfpopUp: self,gameRoom: self.gameRoom)
             }
             else if cancelJoinButton!.containsPoint(point){
-                LobbySceneDelegate?.didDeciedEnterRoom(false,selfpopUp: self)
+                LobbySceneDelegate?.didDeciedEnterRoom(false,selfpopUp: self,gameRoom: nil)
             }
         }
         if giveUpButton != nil{

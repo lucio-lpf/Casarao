@@ -18,6 +18,7 @@ class WebServiceManager {
         
         var gameRoomsArray: Array<GameRoom>= []
         let parseQuery = PFQuery(className: "GameRoom")
+        parseQuery.whereKey("estado", equalTo: "waiting")
         parseQuery.includeKey("players")
         parseQuery.findObjectsInBackgroundWithBlock { (PFObjects, error) in
             if let e = error{
