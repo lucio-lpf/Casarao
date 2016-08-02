@@ -8,7 +8,7 @@
 
 import Foundation
 import SpriteKit
-
+import Parse
 
 
 class ProfileScene: SKScene {
@@ -18,13 +18,60 @@ class ProfileScene: SKScene {
     var lobbyButton:SKNode?
     var storeButton:SKNode?
     
+    var player: Player?
+    
+    var playerNickname:SKLabelNode?
+    var playerCoins:SKLabelNode?
+    
+    
+    
+    override init() {
+        super.init()
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
         
+        if let pfuser = PFUser.currentUser() {
+            self.player = Player(pfuser: pfuser)
+        }
+        
+        
         profileButton = self.childNodeWithName("profileButton") as SKNode!
         lobbyButton = self.childNodeWithName("lobbyButton") as SKNode!
         storeButton = self.childNodeWithName("storeButton") as SKNode!
+        
+        configItemPosition()
+    }
+    
+    
+    
+    func configItemPosition() {
+        
+        
+        guard let coins = player?.coins else {fatalError()}
+        guard let nickname = player?.nickname else {fatalError()}
+        
+        playerNickname = SKLabelNode(fontNamed: "AppleSDGothicNeo-Regular ")
+        playerNickname?.text = nickname
+        playerNickname?.color = UIColor.blackColor()
+        playerNickname?.position = CGPoint(x: 50, y: 50)
+        
+        self.addChild(playerNickname!)
+        
+        
+        playerCoins = SKLabelNode(fontNamed: "AppleSDGothicNeo-Regular ")
+        playerCoins?.text = coins.description
+        playerCoins?.color = UIColor.blackColor()
+        playerCoins?.position = CGPoint(x: 100, y: 100)
+        
+        self.addChild(playerCoins!)
+        
     }
     
     
@@ -40,11 +87,11 @@ class ProfileScene: SKScene {
             // self = scene ou parent do button
             if (profileButton!.containsPoint(touch.locationInNode(self))) {
                 
-                if let profileScene = ProfileScene(fileNamed: "ProfileScene") {
-                    if(!self.isKindOfClass(ProfileScene)){
-                    transitioToScene(profileScene)
-                    }
-                }
+//                if let profileScene = ProfileScene(fileNamed: "ProfileScene") {
+//                    if(!self.isKindOfClass(ProfileScene)){
+//                    transitioToScene(profileScene)
+//                    }
+//                }
             }
             
             if (lobbyButton!.containsPoint(touch.locationInNode(self))){

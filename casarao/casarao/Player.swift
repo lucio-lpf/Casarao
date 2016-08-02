@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-class Player{
+class Player {
     
     
     let defaults = NSUserDefaults.standardUserDefaults()
