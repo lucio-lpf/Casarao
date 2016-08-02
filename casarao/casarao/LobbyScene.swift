@@ -12,12 +12,11 @@ import Parse
 
 class LobbyScene: SKScene, PopUpInLobby {
     
-    var gameRooms:Array<GameRoom> = Array()
+    var gameRoomsSprites:Array<GameRoomSpriteNode> = Array()
     
-    var profileButton:SKNode?
-    var lobbyButton:SKNode?
-    var storeButton:SKNode?
-    var joinGameButton:SKNode?
+    var profileButton:SKSpriteNode
+    var lobbyButton:SKSpriteNode!
+    var storeButton:SKSpriteNode!
     
     
     // REFACTORING
@@ -26,6 +25,52 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     
     
+    
+    override init(size: CGSize) {
+        //SET TAB BUTTONS
+        
+        
+        profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        profileButton.position = CGPoint(x: -size.width/2 + profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
+        
+        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        lobbyButton.position = CGPoint(x: 0, y: -size.height/2 + profileButton.size.height/2)
+        
+        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        storeButton.position = CGPoint(x: size.width/2 - profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
+        
+        super.init(size: size)
+        
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        
+        //ADD TOP BAR
+        
+        let topBar = SKSpriteNode(texture: SKTexture(imageNamed: "lobbyTopBar"), color: SKColor.clearColor(), size: SKTexture(imageNamed: "lobbyTopBar").size())
+        topBar.position = CGPoint(x: 0, y: size.height/2 - topBar.size.height/2)
+        addChild(topBar)
+        
+        //ADD TAB BUTTONS
+        
+        addChild(profileButton)
+        
+        addChild(lobbyButton)
+        
+        addChild(storeButton)
+        
+        
+        WebServiceManager.returnGameRooms { (gameRooms) in
+            
+            self.gameRoomsSprites.removeAll()
+            self.addRoomsToScene(gameRooms)
+            
+        }
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     override func didMoveToView(view: SKView) {
@@ -40,7 +85,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         
         // REFACTORING
-       
+        
         //CHECK CURRENT USER
         let allUsersPass = "P6xA5#72GacX;F]X"
         let userNickname = "GuestUser\(Int(arc4random_uniform(1000)))"
@@ -86,42 +131,32 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         
         
-        let roomNode = self.childNodeWithName("gameRoomNode") as! SKSpriteNode
-        let roomName = roomNode.childNodeWithName("roomName") as! SKLabelNode
-        let bet = roomNode.childNodeWithName("bet") as! SKLabelNode
-        let numPlayers = roomNode.childNodeWithName("numPlayers") as! SKLabelNode
-        let amount = roomNode.childNodeWithName("amount") as! SKLabelNode
-        
-        
-        
-        WebServiceManager.returnGameRooms { (gameRooms) in
-            
-            self.gameRooms = gameRooms
-            print(gameRooms)
-            
-            roomName.text = "\(gameRooms[0].roomName!)"
-            bet.text = "$\(gameRooms[0].bet)"
-            amount.text = "$\(gameRooms[0].amount)"
-            numPlayers.text = "\(gameRooms[0].players.count) / \(gameRooms[0].maxPlayers)"
-            
-            
-        }
-        
-        profileButton = self.childNodeWithName("profileButton") as SKNode!
-        lobbyButton = self.childNodeWithName("lobbyButton") as SKNode!
-        storeButton = self.childNodeWithName("storeButton") as SKNode!
-        
-        
-        
-        
-        
         
         
         
         // REFACTORING
-        selectedRoomNode = roomNode
         
-        joinGameButton = roomNode.childNodeWithName("joinGameNode") as SKNode!
+        
+    }
+    
+    
+    func addRoomsToScene(gameRooms:[GameRoom]){
+        
+        if gameRooms.isEmpty{
+            
+        }
+        else{
+            var yposition = self.size.height/2 - 120
+            for room in gameRooms{
+                gameRoomsSprites.append(GameRoomSpriteNode(gameRoom: room, scene: self))
+                gameRoomsSprites.last!.position = CGPoint(x: 0, y: yposition)
+                gameRoomsSprites.last!.zPosition = 3
+                yposition -= 150
+                addChild(gameRoomsSprites.last!)
+                
+            }
+        }
+        
         
         
     }
@@ -133,83 +168,81 @@ class LobbyScene: SKScene, PopUpInLobby {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
         
-        for touch in touches {
-            // self = scene ou parent do button
-            if (profileButton!.containsPoint(touch.locationInNode(self))) {
-                if let profileScene = ProfileScene(fileNamed: "ProfileScene") {
-                    if(!self.isKindOfClass(ProfileScene)){
-                        transitioToScene(profileScene)
-                    }
-                }
-            }
+        let touch = touches.first!
+        let point = touch.locationInNode(self)
+        
+        if profileButton.containsPoint(point){
             
-            if (lobbyButton!.containsPoint(touch.locationInNode(self))) {
-                if let lobbyScene = LobbyScene(fileNamed: "LobbyScene") {
-                    if(!self.isKindOfClass(LobbyScene)){
-                        transitioToScene(lobbyScene)
-                    }
-                }
-            }
+            let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+            let scene:SKScene = ProfileScene(size: self.size)
+            self.view?.presentScene(scene, transition: transition)
             
-            if (storeButton!.containsPoint(touch.locationInNode(self))) {
-                if let storeScene = StoreScene(fileNamed: "StoreScene") {
-                    if(!self.isKindOfClass(StoreScene)){
-                        transitioToScene(storeScene)
-                    }
-                }
-            }
+        }
+        else if storeButton.containsPoint(point){
             
-            if selectedRoomNode!.containsPoint(touch.locationInNode(self)) {
-                verifyUserCoins()
+            let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+            let scene:SKScene = StoreScene(size: self.size)
+            self.view?.presentScene(scene, transition: transition)
+            
+        }
+        else if lobbyButton.containsPoint(point){
+            
+            reloadGameRooms()
+            
+        }
+            
+        else{
+            for gameRoomsSprite in gameRoomsSprites{
+                if gameRoomsSprite.containsPoint(point){
+                    joinGame(gameRoomsSprite.gameRoom)
+                }
             }
         }
     }
     
     
-    private func verifyUserCoins() {
-        if player.coins! >= gameRooms[0].bet {
-            joinGame()
+    
+    
+    func reloadGameRooms(){
+    }
+    
+    func joinGame(gameRoom: GameRoom) {
+        
+        for player in gameRoom.players{
+            if player.username ==  self.player!.username{
+                
+                let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+                let scene = GameScene(size: self.size)
+                scene.player = self.player
+                scene.gameRoom = gameRoom
+                self.view?.presentScene(scene, transition: transition)
+                return
+            }
         }
+        self.addChild(PopUpSpriteNode(gameRoom: gameRoom, scene: self))
     }
     
     
-    func joinGame() {
-        
-        let gameRoom = gameRooms[0]
-        
-        self.addChild(PopUpSpriteNode(bet: gameRoom.bet, scene: self))
-        
-        
-    }
-    
-    
-    func didDeciedEnterRoom(response: Bool,selfpopUp:PopUpSpriteNode) {
+    func didDeciedEnterRoom(response: Bool,selfpopUp:PopUpSpriteNode,gameRoom:GameRoom?) {
         if response == true{
             
-            for player in gameRooms[0].players{
-                if player.username ==  self.player!.username{
-                    if let gameScene = GameScene(fileNamed: "GameScene") {
-                        
-                        gameScene.gameRoom = self.gameRooms[0]
-                        gameScene.player = self.player
-                        transitioToScene(gameScene)
-                        return
-                    }
-                }
-            }
-            
-            gameRooms[0].addPlayerToGame(self.player)
-            player.coins! -= gameRooms[0].bet
-            if let gameScene = GameScene(fileNamed: "GameScene") {
+            if player.coins >= gameRoom?.bet{
+                gameRoom!.addPlayerToGame(self.player)
+                player.coins! -= gameRoom!.bet
                 
-                gameScene.gameRoom = self.gameRooms[0]
-                gameScene.player = self.player
-                transitioToScene(gameScene)
+                let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+                let scene = GameScene(size: self.size)
+                scene.gameRoom = gameRoom!
+                scene.player = self.player
+                self.view?.presentScene(scene, transition: transition)
+                return
             }
-            
-            
-            
-            
+                
+            else{
+                
+                print("User dosen't have enough money ")
+                selfpopUp.removeFromParent()
+            }
         }
         else{
             selfpopUp.removeFromParent()

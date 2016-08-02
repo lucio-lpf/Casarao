@@ -84,30 +84,7 @@ class ProfileScene: SKScene {
         super.touchesEnded(touches, withEvent: event)
         
         for touch in touches {
-            // self = scene ou parent do button
-            if (profileButton!.containsPoint(touch.locationInNode(self))) {
-                
-//                if let profileScene = ProfileScene(fileNamed: "ProfileScene") {
-//                    if(!self.isKindOfClass(ProfileScene)){
-//                    transitioToScene(profileScene)
-//                    }
-//                }
-            }
             
-            if (lobbyButton!.containsPoint(touch.locationInNode(self))){
-                if let lobbyScene = LobbyScene(fileNamed: "LobbyScene") {
-                    if(!self.isKindOfClass(LobbyScene)){
-                        transitioToScene(lobbyScene)
-                    }
-                }
-            }
-            if (storeButton!.containsPoint(touch.locationInNode(self))) {
-                if let storeScene = StoreScene(fileNamed: "StoreScene") {
-                    if(!self.isKindOfClass(StoreScene)){
-                        transitioToScene(storeScene)
-                    }
-                }
-            }
         }
     }
     
