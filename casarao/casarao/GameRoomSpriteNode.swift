@@ -21,35 +21,19 @@ class GameRoomSpriteNode: SKSpriteNode{
         
         self.gameRoom = gameRoom
         super.init(texture: SKTexture(imageNamed:"gameRoomCell"), color: SKColor.clearColor(), size: CGSize(width: scene.size.width - 20, height: 50))
+        
+        
         let number = SKLabelNode(text: gameRoom.roomName)
-        number.fontName = "AvenirNext-Bold"
-        number.fontSize = 16
-        number.fontColor = SKColor.blackColor()
-        number.zPosition = 4
-        number.verticalAlignmentMode = .Center
+        setLabelConfig(number)
         
         let bet = SKLabelNode(text: String(gameRoom.bet))
-        bet.fontName = "AvenirNext-Bold"
-        bet.fontSize = 16
-        bet.fontColor = SKColor.blackColor()
-        bet.zPosition = 4
-        bet.verticalAlignmentMode = .Center
-        
-        
+        setLabelConfig(bet)
         
         let amount = SKLabelNode(text: String(gameRoom.amount))
-        amount.fontName = "AvenirNext-Bold"
-        amount.fontSize = 16
-        amount.fontColor = SKColor.blackColor()
-        amount.zPosition = 4
-        amount.verticalAlignmentMode = .Center
+        setLabelConfig(amount)
         
         let numPlayers = SKLabelNode(text: "\(gameRoom.players.count)/\(gameRoom.maxPlayers)")
-        numPlayers.fontName = "AvenirNext-Bold"
-        numPlayers.fontSize = 16
-        numPlayers.fontColor = SKColor.blackColor()
-        numPlayers.zPosition = 4
-        numPlayers.verticalAlignmentMode = .Center
+        setLabelConfig(numPlayers)
         
         
         
@@ -74,6 +58,14 @@ class GameRoomSpriteNode: SKSpriteNode{
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setLabelConfig(label:SKLabelNode){
+        label.fontName = "AvenirNext-Bold"
+        label.fontSize = 16
+        label.fontColor = SKColor.blackColor()
+        label.zPosition = 4
+        label.verticalAlignmentMode = .Center
     }
     
 }

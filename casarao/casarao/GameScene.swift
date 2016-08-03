@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-class GameScene: SKScene, PopUpInGame {
+class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
     
     var matrix: MatrixNode!
@@ -16,16 +16,16 @@ class GameScene: SKScene, PopUpInGame {
             gameHUD.updateChancesLabel(chances)
         }
     }
-    var gameRoom:GameRoom!
-    var player: Player!
-    var checkButton: SKSpriteNode!
+    var gameRoom:GameRoom
+    var player: Player
+    var checkButton: SKSpriteNode
     var mountOfMoney: Int = 0{
         didSet{
             gameHUD.updateMountLabel(mountOfMoney)
         }
     }
     
-    var gameHUD: GameHUD! = nil
+    var gameHUD: GameHUD!
     
     // REFACTORING
     var stopInterval:NSTimer?
@@ -42,42 +42,62 @@ class GameScene: SKScene, PopUpInGame {
         }
     }
     
-    
-    
-    
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
+    init(size: CGSize,player: Player, gameRoom: GameRoom) {
         
         let background = SKSpriteNode(imageNamed: "black_background")
+        
+        checkButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clearColor(), size: CGSize(width: 300, height: 70))
+
+        
+        self.gameRoom = gameRoom
+        
+        self.player = player
+        
+        
+        super.init(size: size)
+        
+        
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        
         background.size = self.size
         background.position = CGPoint(x: 0,y: 0)
         background.zPosition = 0
         self.addChild(background)
         
-        
-        //ADD GAMEHUD
-        
-        
         self.gameHUD = GameHUD(gameRoom: self.gameRoom, selfScene: self)
-        gameHUD.position = CGPoint(x: 0, y: (self.size.height*7)/32)
+        
+        gameHUD.position = CGPoint(x: 0, y: self.size.height/2 - gameHUD.size.height/2)
         self.addChild(gameHUD)
         
+        matrix = MatrixNode(numColumns: 3, numRows: 3, scene: self)
         
-        // ADD MATRIX
-        matrix = MatrixNode(numColumns: 3, numRows: 3)
         matrix.position = CGPoint(x: 0,y: 0)
         self.addChild(matrix)
         
         
-        checkButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clearColor(), size: CGSize(width: 400, height: 100))
-
-        checkButton.position = CGPoint(x:0,y:-500)
+        checkButton.position = CGPoint(x:0,y:-self.size.height/2 + checkButton.size.height)
         checkButton.name = "checkButton"
-        checkButton.zPosition = 1
-        self.addChild(checkButton)
+        checkButton.zPosition = 3
+        addChild(checkButton)
         
         
         
+        
+        
+
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    
+    
+    override func didMoveToView(view: SKView) {
+        /* Setup your scene here */
+
         
     }
     
@@ -106,24 +126,7 @@ class GameScene: SKScene, PopUpInGame {
         }
         
         if gameHUD.containsPoint(point){
-            if gameHUD.giveUpButton.containsPoint(point){
-                
-                let popUp = PopUpSpriteNode(scene: self)
-                addChild(popUp)
-                
-            }
-            else if gameHUD.otherUsersScoreButton.containsPoint(point){
-                
-                let popUp = PopUpSpriteNode(users: gameRoom.players, scene: self)
-                addChild(popUp)
-            }
-                
-            else if gameHUD.backToLobbyButton.containsPoint(point){
-                
-                
-                
-                
-            }
+           
         }
     }
     

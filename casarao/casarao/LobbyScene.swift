@@ -147,7 +147,7 @@ class LobbyScene: SKScene, PopUpInLobby {
                 gameRoomsSprites.append(GameRoomSpriteNode(gameRoom: room, scene: self))
                 gameRoomsSprites.last!.position = CGPoint(x: 0, y: yposition)
                 gameRoomsSprites.last!.zPosition = 3
-                yposition -= 150
+                yposition -= 80
                 addChild(gameRoomsSprites.last!)
                 
             }
@@ -208,9 +208,7 @@ class LobbyScene: SKScene, PopUpInLobby {
             if player.username ==  self.player!.username{
                 
                 let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
-                let scene = GameScene(size: self.size)
-                scene.player = self.player
-                scene.gameRoom = gameRoom
+                let scene = GameScene(size: self.size,player: self.player, gameRoom: gameRoom)
                 self.view?.presentScene(scene, transition: transition)
                 return
             }
@@ -227,9 +225,7 @@ class LobbyScene: SKScene, PopUpInLobby {
                 player.coins! -= gameRoom!.bet
                 
                 let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
-                let scene = GameScene(size: self.size)
-                scene.gameRoom = gameRoom!
-                scene.player = self.player
+                let scene = GameScene(size: self.size,player: self.player, gameRoom: gameRoom!)
                 self.view?.presentScene(scene, transition: transition)
                 return
             }

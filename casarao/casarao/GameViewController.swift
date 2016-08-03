@@ -22,8 +22,8 @@ class GameViewController: UIViewController {
         /* Sprite Kit applies additional optimizations to improve rendering performance */
         skView.ignoresSiblingOrder = true
 
-        let lobbyScene = LobbyScene(size: CGSize(width: UIScreen.mainScreen().bounds.size.width, height: UIScreen.mainScreen().bounds.size.height))
-        lobbyScene.scaleMode = .AspectFill
+        let lobbyScene = LobbyScene(size: UIScreen.mainScreen().bounds.size)
+        lobbyScene.scaleMode = .AspectFit
         skView.presentScene(lobbyScene)
     }
 

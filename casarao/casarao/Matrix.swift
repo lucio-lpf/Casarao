@@ -18,9 +18,9 @@ class MatrixNode : SKSpriteNode {
     
     
     
-    init(numColumns:Int,numRows:Int){
+    init(numColumns:Int,numRows:Int,scene:SKScene){
         
-        super.init(texture: nil, color: UIColor.clearColor(), size: CGSize(width: 400, height: 400))
+        super.init(texture: nil, color: UIColor.clearColor(), size: CGSize(width: scene.size.width - 100, height: scene.size.height/4))
         self.zPosition = 1
         //SO FUNCIONA PRA MATRIZES QUADRADAS
         let numberOfTiles = numRows*numColumns
@@ -63,7 +63,6 @@ class MatrixNode : SKSpriteNode {
         var countLine  = 0
         var y = +self.size.height/2
         var x = -self.size.width/2
-        
         for i in 0..<tilesArray.count{
             let tile = tilesArray[i]
             tile.position = CGPoint(x: x, y: y)
