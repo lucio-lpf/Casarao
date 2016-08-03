@@ -38,6 +38,12 @@ class ProfileScene: SKScene {
         storeButton.position = CGPoint(x: size.width/2 - profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
 
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        addChild(profileButton)
+        
+        addChild(lobbyButton)
+        
+        addChild(storeButton)
     }
     
     required init?(coder aDecoder: NSCoder) {
