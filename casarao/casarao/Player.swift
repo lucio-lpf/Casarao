@@ -66,11 +66,31 @@ class Player {
         }
     }
     
+    var image:NSData? {
+        get {
+            var data:NSData?
+            if let file = parseUser.valueForKey("profileImage") as? PFFile {
+                do{
+                    // synchronously
+                    data = try file.getData()
+                } catch{
+                    data = nil
+                }
+            }
+            return data
+        }
+        
+        set {
+            if (newValue != nil) {
+                parseUser.setValue(newValue!, forKey: "profileImage")
+                parseUser.saveInBackground()
+            }
+            
+        }
+    }
+    
  
     var parseUser: PFUser
-    
-    
-    
     
     
     

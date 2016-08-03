@@ -73,7 +73,7 @@ class ProfileScene: SKScene {
         
         
         playerCoins = SKLabelNode(fontNamed: "AvenirNext-Bold")
-        playerCoins?.text = coins.description
+        playerCoins?.text = "$ \(coins.description)"
         playerCoins?.fontSize = 18
         playerCoins?.position = CGPoint(x: 0, y: (+top - (playerNickname?.frame.height)! - (playerCoins?.frame.height)!)-offset-offset)
         

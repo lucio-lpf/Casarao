@@ -116,6 +116,7 @@ class LobbyScene: SKScene, PopUpInLobby {
                             self.player = Player(pfuser: player)
                             self.player.coins = 10
                             self.player.nickname = userNickname
+                            self.player.image = UIImagePNGRepresentation(UIImage(named: "user_placeholder")!)
                             checkUserPopUp.removeFromParent()
                         }
                     }
@@ -123,6 +124,7 @@ class LobbyScene: SKScene, PopUpInLobby {
                     self.player = Player(pfuser: pfuser!)
                     self.player.coins = 10
                     self.player.nickname = userNickname
+                    self.player.image = UIImagePNGRepresentation(UIImage(named: "user_placeholder")!)
                     checkUserPopUp.removeFromParent()
                     
                 }
