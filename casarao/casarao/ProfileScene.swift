@@ -96,11 +96,34 @@ class ProfileScene: SKScene {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
         
-//        for touch in touches {
-//            
-//        }
+        let touch = touches.first!
+        let point = touch.locationInNode(self)
+        
+        if profileButton.containsPoint(point){
+            
+            
+            reloadGameRooms()
+            
+            
+        }
+        else if storeButton.containsPoint(point){
+            
+            let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+            let scene:SKScene = StoreScene(size: self.size)
+            self.view?.presentScene(scene, transition: transition)
+            
+        }
+        else if lobbyButton.containsPoint(point){
+            
+            
+            let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+            let scene:SKScene = LobbyScene(size: self.size)
+            self.view?.presentScene(scene, transition: transition)
+        }
     }
     
+    func reloadGameRooms(){
+    }
     
     
     private func transitioToScene(scene:SKScene) {

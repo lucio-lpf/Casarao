@@ -26,7 +26,6 @@
 		9F1591AB1D3FD70A00C52171 /* LobbyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */; };
 		9F216B771D48F112005365A7 /* LobbyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F216B761D48F112005365A7 /* LobbyServices.swift */; };
 		9FA7E9CD1D400E5000BF482C /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */; };
-		9FA7E9CF1D40182600BF482C /* StoreScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9FA7E9CE1D40182600BF482C /* StoreScene.sks */; };
 		9FA7E9D11D40187D00BF482C /* StoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7E9D01D40187D00BF482C /* StoreScene.swift */; };
 		9FA85F381D493C6E005D0394 /* Decypher-BridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA85F371D493C6E005D0394 /* Decypher-BridgingHeader.m */; };
 		9FE2BCB81D3E95E100B95074 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE2BCB71D3E95E100B95074 /* CloudKit.framework */; };
@@ -81,7 +80,6 @@
 		9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyScene.swift; sourceTree = "<group>"; };
 		9F216B761D48F112005365A7 /* LobbyServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyServices.swift; sourceTree = "<group>"; };
 		9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
-		9FA7E9CE1D40182600BF482C /* StoreScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StoreScene.sks; sourceTree = "<group>"; };
 		9FA7E9D01D40187D00BF482C /* StoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreScene.swift; sourceTree = "<group>"; };
 		9FA85F361D493C6E005D0394 /* Decypher-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Decypher-Bridging-Header.h"; sourceTree = "<group>"; };
 		9FA85F371D493C6E005D0394 /* Decypher-BridgingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Decypher-BridgingHeader.m"; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 				9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */,
 				9FA7E9D01D40187D00BF482C /* StoreScene.swift */,
 				9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */,
-				9FA7E9CE1D40182600BF482C /* StoreScene.sks */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -392,7 +389,6 @@
 				5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */,
 				5A41A2921D3E902000C93165 /* Assets.xcassets in Resources */,
 				5A41A2901D3E902000C93165 /* Main.storyboard in Resources */,
-				9FA7E9CF1D40182600BF482C /* StoreScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
