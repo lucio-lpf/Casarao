@@ -88,6 +88,8 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         //CHECK CURRENT USER
         let allUsersPass = "P6xA5#72GacX;F]X"
+        let userNickname = "GuestUser\(Int(arc4random_uniform(1000)))"
+        
         
         // init user
         let currentUser = PFUser.currentUser()
@@ -113,12 +115,16 @@ class LobbyScene: SKScene, PopUpInLobby {
                         } else {
                             self.player = Player(pfuser: player)
                             self.player.coins = 10
+                            self.player.nickname = userNickname
+                            self.player.image = UIImagePNGRepresentation(UIImage(named: "user_placeholder")!)
                             checkUserPopUp.removeFromParent()
                         }
                     }
                 } else {
                     self.player = Player(pfuser: pfuser!)
                     self.player.coins = 10
+                    self.player.nickname = userNickname
+                    self.player.image = UIImagePNGRepresentation(UIImage(named: "user_placeholder")!)
                     checkUserPopUp.removeFromParent()
                     
                 }

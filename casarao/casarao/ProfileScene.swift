@@ -8,23 +8,77 @@
 
 import Foundation
 import SpriteKit
-
+import Parse
 
 
 class ProfileScene: SKScene {
     
     
-    var profileButton:SKNode?
-    var lobbyButton:SKNode?
-    var storeButton:SKNode?
+    var profileButton:SKSpriteNode!
+    var lobbyButton:SKSpriteNode!
+    var storeButton:SKSpriteNode!
     
+    var player: Player?
+    
+    var playerNickname:SKLabelNode?
+    var playerCoins:SKLabelNode?
+    
+    
+    
+    override init(size: CGSize) {
+        super.init(size: size)
+        
+        profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        profileButton.position = CGPoint(x: -size.width/2 + profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
+        
+        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        lobbyButton.position = CGPoint(x: 0, y: -size.height/2 + profileButton.size.height/2)
+        
+        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        storeButton.position = CGPoint(x: size.width/2 - profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
+
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
         
-        profileButton = self.childNodeWithName("profileButton") as SKNode!
-        lobbyButton = self.childNodeWithName("lobbyButton") as SKNode!
-        storeButton = self.childNodeWithName("storeButton") as SKNode!
+        if let pfuser = PFUser.currentUser() {
+            self.player = Player(pfuser: pfuser)
+        }
+        
+        configItemPosition()
+    }
+    
+    
+    
+    func configItemPosition() {
+        guard let coins = player?.coins else {fatalError()}
+        guard let nickname = player?.nickname else {fatalError()}
+        
+        let offset: CGFloat = 20.0
+        
+        let top = self.size.height/2
+        
+        playerNickname = SKLabelNode(fontNamed: "AvenirNext-Bold")
+        playerNickname?.text = nickname
+        playerNickname?.fontSize = 24
+        playerNickname?.position = CGPoint(x: 0, y: +top - (playerNickname?.frame.height)! - offset)
+        
+        self.addChild(playerNickname!)
+        
+        
+        playerCoins = SKLabelNode(fontNamed: "AvenirNext-Bold")
+        playerCoins?.text = "$ \(coins.description)"
+        playerCoins?.fontSize = 18
+        playerCoins?.position = CGPoint(x: 0, y: (+top - (playerNickname?.frame.height)! - (playerCoins?.frame.height)!)-offset-offset)
+        
+        self.addChild(playerCoins!)
+        
     }
     
     
@@ -36,9 +90,9 @@ class ProfileScene: SKScene {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
         
-        for touch in touches {
-            
-        }
+//        for touch in touches {
+//            
+//        }
     }
     
     
