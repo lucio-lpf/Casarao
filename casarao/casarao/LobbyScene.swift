@@ -116,7 +116,9 @@ class LobbyScene: SKScene, PopUpInLobby {
                             self.player = Player(pfuser: player)
                             self.player.coins = 10
                             self.player.nickname = userNickname
-                            self.player.image = UIImagePNGRepresentation(UIImage(named: "user_placeholder")!)
+                            let image = UIImage(named: "user_placeholder")!
+                            self.player.image = UIImagePNGRepresentation(image)
+                            
                             checkUserPopUp.removeFromParent()
                         }
                     }

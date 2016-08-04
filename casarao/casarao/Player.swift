@@ -81,11 +81,15 @@ class Player {
         }
         
         set {
-            if (newValue != nil) {
-                parseUser.setValue(newValue!, forKey: "profileImage")
-                parseUser.saveInBackground()
+            if let data = newValue {
+                let file = PFFile(data: data)
+                file?.saveInBackgroundWithBlock() {
+                    [unowned self] (saved, error) in
+                    
+                    self.parseUser.setValue(file!, forKey: "profileImage")
+                    self.parseUser.saveInBackground()
+                }
             }
-            
         }
     }
     
