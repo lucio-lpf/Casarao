@@ -38,7 +38,7 @@ class PopUpSpriteNode: SKSpriteNode{
         self.gameRoom = gameRoom
         super.init(texture: SKTexture(imageNamed: "LobbyPopUp") , color: SKColor.clearColor(), size: SKTexture(imageNamed: "LobbyPopUp").size())
         userInteractionEnabled = true
-        zPosition = 4
+        zPosition =  1000
         GameSceneDelegate = nil
         LobbySceneDelegate = scene
         joinButtonAccept = SKSpriteNode(texture: SKTexture(imageNamed:"yesButton"), color: SKColor.clearColor(), size: CGSize(width: 150, height: 100))

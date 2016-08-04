@@ -335,4 +335,16 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         
     }
     
+    
+    //MARK: Protocol Funcs
+    
+    func backToLobby(){
+        
+        let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+        let scene:SKScene = LobbyScene(size: self.size)
+        self.view?.presentScene(scene, transition: transition)
+        
+        
+    }
+    
 }

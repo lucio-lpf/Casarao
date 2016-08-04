@@ -9,6 +9,8 @@
 
 protocol GameHUDProtocol{
     
+    func backToLobby()
+    
 }
 
 import Foundation
@@ -44,10 +46,10 @@ class GameHUD: SKSpriteNode{
         userInteractionEnabled = true
         
         chancesLabel.text = "Chances: \(selfScene.chances)"
-        chancesLabel.fontName = "AvenirNext-Bold"
+        chancesLabel.fontName = "aspace"
         chancesLabel.fontSize = 16
 
-        chancesLabel.position = CGPoint(x: 0, y: -self.size.height/4)
+        chancesLabel.position = CGPoint(x: 0, y: -self.size.height/2)
         chancesLabel.color = SKColor.whiteColor()
         chancesLabel.zPosition = 3
         self.addChild(chancesLabel)
@@ -56,9 +58,9 @@ class GameHUD: SKSpriteNode{
         // QUANTIDADE DE DINHEIRO TOTAL DA SALA
         
         amountOfMoneyLabel.text = "Amount of Coins: \(gameRoom.amount)"
-        amountOfMoneyLabel.fontName = "AvenirNext-Bold"
+        amountOfMoneyLabel.fontName = "aspace"
         amountOfMoneyLabel.fontSize = 16
-        amountOfMoneyLabel.position = CGPoint(x: 0, y: 0)
+        amountOfMoneyLabel.position = CGPoint(x: 0, y: -size.height/4)
         amountOfMoneyLabel.color = SKColor.whiteColor()
         amountOfMoneyLabel.zPosition = 3
         self.addChild(amountOfMoneyLabel)
@@ -114,6 +116,7 @@ class GameHUD: SKSpriteNode{
             
         else if backToLobbyButton.containsPoint(point){
             
+            gameSceneDelegate.backToLobby()
         }
         
     }
