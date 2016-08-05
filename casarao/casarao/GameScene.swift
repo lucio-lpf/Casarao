@@ -248,7 +248,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     // REFACTORING
     private func loadWaitBGScreen() {
         
-        let popUpTimer = SKSpriteNode(texture: SKTexture(imageNamed: "grey_background"), color: SKColor.clearColor(), size: CGSize(width: 300, height: 300))
+        let popUpTimer = SKSpriteNode(texture: SKTexture(imageNamed: "PopUpTimer"), color: SKColor.clearColor(), size: CGSize(width: 300, height: 300))
         
         popUpTimer.name = "popUpTimer"
         popUpTimer.zPosition = 20
