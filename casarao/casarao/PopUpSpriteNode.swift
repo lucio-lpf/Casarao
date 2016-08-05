@@ -21,7 +21,7 @@ protocol PopUpInGame {
 import Foundation
 import SpriteKit
 
-class PopUpSpriteNode: SKSpriteNode{
+class PopUpSpriteNode: SKSpriteNode {
     
     
     var GameSceneDelegate:PopUpInGame?

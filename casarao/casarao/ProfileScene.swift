@@ -11,7 +11,7 @@ import SpriteKit
 import Parse
 
 
-class ProfileScene: SKScene {
+class ProfileScene: SKScene, UITextFieldDelegate {
     
     
     var profileButton:SKSpriteNode!
@@ -25,7 +25,7 @@ class ProfileScene: SKScene {
     var playerCoins:SKLabelNode?
     var profileImage:SKSpriteNode?
     
-    
+    var highScoreText:UITextField!
     
     
     
@@ -40,6 +40,9 @@ class ProfileScene: SKScene {
         
         storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
         storeButton.position = CGPoint(x: size.width/2 - profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
+        
+        loginButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clearColor(), size: CGSize(width: 300, height: 70))
+        loginButton.position = CGPoint(x: 0.5, y: 0.5)
 
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
@@ -48,6 +51,9 @@ class ProfileScene: SKScene {
         addChild(lobbyButton)
         
         addChild(storeButton)
+        
+        addChild(loginButton)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -60,6 +66,25 @@ class ProfileScene: SKScene {
         if let pfuser = PFUser.currentUser() {
             self.player = Player(pfuser: pfuser)
         }
+        
+        // meio da tela
+        let centerX = (view.bounds.width / 2 - 160)
+        let centerY = (view.bounds.height / 2 - 22.5)
+        
+        highScoreText = UITextField(frame: CGRectMake(centerX, (centerY - centerY), 320, 45))
+        
+        highScoreText.borderStyle = UITextBorderStyle.RoundedRect
+        highScoreText.textColor = UIColor.blackColor()
+        highScoreText.placeholder = "Enter your nickname here"
+        highScoreText.backgroundColor = UIColor.whiteColor()
+        highScoreText.autocorrectionType = UITextAutocorrectionType.Yes
+        highScoreText.keyboardType = UIKeyboardType.Default
+        highScoreText.clearButtonMode = UITextFieldViewMode.WhileEditing
+        highScoreText.autocapitalizationType = UITextAutocapitalizationType.Words
+        highScoreText.returnKeyType = UIReturnKeyType.Done
+        highScoreText.delegate = self
+        highScoreText.hidden = true
+        self.view!.addSubview(highScoreText)
         
         configItemPosition()
     }
@@ -90,31 +115,26 @@ class ProfileScene: SKScene {
         
         self.addChild(playerCoins!)
         
-        let image = UIImage(data:profileImageData)!
-        let texture = SKTexture(image:image)
         
-        profileImage = SKSpriteNode(texture:texture)
+        // carrega imagem do user
         
-        let playerNickameHeight = (playerNickname?.frame.height)!
-        let playerCoinsHeight = (playerCoins?.frame.height)!
-        let plus = playerCoinsHeight + playerNickameHeight
-        let minus3Offset = offset + offset + offset
-        
-        let imageSize = (profileImage?.frame.height)!/2
-        
-        profileImage?.position = CGPoint(x: 0, y: +top - imageSize - plus - minus3Offset)
-        
+//        let image = UIImage(data:profileImageData)!
+//        let texture = SKTexture(image:image)
+//        profileImage = SKSpriteNode(texture:texture)
+//        
+//        let playerNickameHeight = (playerNickname?.frame.height)!
+//        let playerCoinsHeight = (playerCoins?.frame.height)!
+//        let plus = playerCoinsHeight + playerNickameHeight
+//        let minus3Offset = offset + offset + offset
+//        
+//        let imageSize = (profileImage?.frame.height)!/2
+//        
+//        profileImage?.position = CGPoint(x: 0, y: +top - imageSize - plus - minus3Offset)
         
 //        self.addChild(profileImage!)
         
         
-        
-        loginButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clearColor(), size: CGSize(width: 300, height: 70))
-        loginButton.position = CGPoint(x: 0.5, y: 0.5)
-        addChild(loginButton)
-        
-        
-        
+        // monta o shape pra adicionar a foto do user
         
 //        let shape = SKShapeNode()
 //        shape.path = UIBezierPath(roundedRect: CGRect(x: -128, y: -128, width: 256, height: 256), cornerRadius: 64).CGPath
@@ -139,27 +159,23 @@ class ProfileScene: SKScene {
         let touch = touches.first!
         let point = touch.locationInNode(self)
         
-        if profileButton.containsPoint(point){
-            
-            
-            reloadGameRooms()
-            
-        }
-        else if storeButton.containsPoint(point){
+        
+        // goto: store
+        if storeButton.containsPoint(point) {
             
             let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
             let scene:SKScene = StoreScene(size: self.size)
             self.view?.presentScene(scene, transition: transition)
             
         }
+        // goto: lobby
         else if lobbyButton.containsPoint(point){
-            
             
             let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
             let scene:SKScene = LobbyScene(size: self.size)
             self.view?.presentScene(scene, transition: transition)
         }
-        
+        // update user data
         else if loginButton.containsPoint(point) {
            updateLoginUser()
         }
@@ -170,8 +186,22 @@ class ProfileScene: SKScene {
     
     
     func updateLoginUser() {
-        print("new user")
+        highScoreText.hidden = false
+    }
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         
+        // Update view
+        playerNickname?.text = highScoreText.text
+        // Update model
+        player?.nickname = highScoreText.text
+        
+        // Hides the keyboard
+        textField.resignFirstResponder()
+        highScoreText.hidden = true
+        
+        return true
     }
     
     private func transitioToScene(scene:SKScene) {
