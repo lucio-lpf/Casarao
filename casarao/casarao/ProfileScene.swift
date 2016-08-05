@@ -17,11 +17,15 @@ class ProfileScene: SKScene {
     var profileButton:SKSpriteNode!
     var lobbyButton:SKSpriteNode!
     var storeButton:SKSpriteNode!
+    var loginButton:SKSpriteNode!
     
     var player: Player?
     
     var playerNickname:SKLabelNode?
     var playerCoins:SKLabelNode?
+    var profileImage:SKSpriteNode?
+    
+    
     
     
     
@@ -65,6 +69,7 @@ class ProfileScene: SKScene {
     func configItemPosition() {
         guard let coins = player?.coins else {fatalError()}
         guard let nickname = player?.nickname else {fatalError()}
+        guard let profileImageData = player?.image else {fatalError()}
         
         let offset: CGFloat = 20.0
         
@@ -85,6 +90,41 @@ class ProfileScene: SKScene {
         
         self.addChild(playerCoins!)
         
+        let image = UIImage(data:profileImageData)!
+        let texture = SKTexture(image:image)
+        
+        profileImage = SKSpriteNode(texture:texture)
+        
+        let playerNickameHeight = (playerNickname?.frame.height)!
+        let playerCoinsHeight = (playerCoins?.frame.height)!
+        let plus = playerCoinsHeight + playerNickameHeight
+        let minus3Offset = offset + offset + offset
+        
+        let imageSize = (profileImage?.frame.height)!/2
+        
+        profileImage?.position = CGPoint(x: 0, y: +top - imageSize - plus - minus3Offset)
+        
+        
+//        self.addChild(profileImage!)
+        
+        
+        
+        loginButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clearColor(), size: CGSize(width: 300, height: 70))
+        loginButton.position = CGPoint(x: 0.5, y: 0.5)
+        addChild(loginButton)
+        
+        
+        
+        
+//        let shape = SKShapeNode()
+//        shape.path = UIBezierPath(roundedRect: CGRect(x: -128, y: -128, width: 256, height: 256), cornerRadius: 64).CGPath
+//        shape.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetMidY(frame))
+//        shape.fillColor = UIColor.redColor()
+//        shape.strokeColor = UIColor.blueColor()
+//        shape.lineWidth = 10
+//        addChild(shape)
+        
+        
     }
     
     
@@ -104,7 +144,6 @@ class ProfileScene: SKScene {
             
             reloadGameRooms()
             
-            
         }
         else if storeButton.containsPoint(point){
             
@@ -120,11 +159,20 @@ class ProfileScene: SKScene {
             let scene:SKScene = LobbyScene(size: self.size)
             self.view?.presentScene(scene, transition: transition)
         }
+        
+        else if loginButton.containsPoint(point) {
+           updateLoginUser()
+        }
     }
     
     func reloadGameRooms(){
     }
     
+    
+    func updateLoginUser() {
+        print("new user")
+        
+    }
     
     private func transitioToScene(scene:SKScene) {
         let transition = SKTransition.crossFadeWithDuration(0.5)
