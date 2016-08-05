@@ -221,7 +221,11 @@ class LobbyScene: SKScene, PopUpInLobby {
                 return
             }
         }
-        self.addChild(PopUpSpriteNode(gameRoom: gameRoom, scene: self))
+        let blur = SKSpriteNode(texture: SKTexture(imageNamed:"blur"), color: SKColor.clearColor(), size: size)
+        blur.name = "blur"
+        blur.zPosition = 100
+        addChild(blur)
+        addChild(PopUpSpriteNode(gameRoom: gameRoom, scene: self))
     }
     
     
@@ -241,12 +245,11 @@ class LobbyScene: SKScene, PopUpInLobby {
             else{
                 
                 print("User dosen't have enough money ")
-                selfpopUp.removeFromParent()
             }
         }
-        else{
-            selfpopUp.removeFromParent()
-        }
+        
+        childNodeWithName("blur")?.removeFromParent()
+        selfpopUp.removeFromParent()
     }
     
     
