@@ -63,11 +63,7 @@ class ProfileScene: SKScene, UITextFieldDelegate {
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
         
-        if let pfuser = PFUser.currentUser() {
-            self.player = Player(pfuser: pfuser)
-        }
-        
-        // meio da tela
+       //  meio da tela
         let centerX = (view.bounds.width / 2 - 160)
         let centerY = (view.bounds.height / 2 - 22.5)
         
@@ -92,57 +88,6 @@ class ProfileScene: SKScene, UITextFieldDelegate {
     
     
     func configItemPosition() {
-        guard let coins = player?.coins else {fatalError()}
-        guard let nickname = player?.nickname else {fatalError()}
-        guard let profileImageData = player?.image else {fatalError()}
-        
-        let offset: CGFloat = 20.0
-        
-        let top = self.size.height/2
-        
-        playerNickname = SKLabelNode(fontNamed: "AvenirNext-Bold")
-        playerNickname?.text = nickname
-        playerNickname?.fontSize = 24
-        playerNickname?.position = CGPoint(x: 0, y: +top - (playerNickname?.frame.height)! - offset)
-        
-        self.addChild(playerNickname!)
-        
-        
-        playerCoins = SKLabelNode(fontNamed: "AvenirNext-Bold")
-        playerCoins?.text = "$ \(coins.description)"
-        playerCoins?.fontSize = 18
-        playerCoins?.position = CGPoint(x: 0, y: (+top - (playerNickname?.frame.height)! - (playerCoins?.frame.height)!)-offset-offset)
-        
-        self.addChild(playerCoins!)
-        
-        
-        // carrega imagem do user
-        
-//        let image = UIImage(data:profileImageData)!
-//        let texture = SKTexture(image:image)
-//        profileImage = SKSpriteNode(texture:texture)
-//        
-//        let playerNickameHeight = (playerNickname?.frame.height)!
-//        let playerCoinsHeight = (playerCoins?.frame.height)!
-//        let plus = playerCoinsHeight + playerNickameHeight
-//        let minus3Offset = offset + offset + offset
-//        
-//        let imageSize = (profileImage?.frame.height)!/2
-//        
-//        profileImage?.position = CGPoint(x: 0, y: +top - imageSize - plus - minus3Offset)
-        
-//        self.addChild(profileImage!)
-        
-        
-        // monta o shape pra adicionar a foto do user
-        
-//        let shape = SKShapeNode()
-//        shape.path = UIBezierPath(roundedRect: CGRect(x: -128, y: -128, width: 256, height: 256), cornerRadius: 64).CGPath
-//        shape.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetMidY(frame))
-//        shape.fillColor = UIColor.redColor()
-//        shape.strokeColor = UIColor.blueColor()
-//        shape.lineWidth = 10
-//        addChild(shape)
         
         
     }

@@ -66,29 +66,45 @@ class Player {
         }
     }
     
-    var image:NSData? {
+    var image:UIImage? {
         get {
-            var data:NSData?
-            if let file = parseUser.valueForKey("profileImage") as? PFFile {
-                do{
-                    // synchronously
-                    data = try file.getData()
-                } catch{
-                    data = nil
+            do {
+                let userImageFile = parseUser.objectForKey("profileImage") as? PFFile
+                let data = try userImageFile?.getData()
+                if let data = data {
+                    return UIImage(data: data)
                 }
+                else {
+                    return nil
+                }
+            } catch {
+                return nil
             }
-            return data
         }
         
         set {
-            if let data = newValue {
-                let file = PFFile(data: data)
-                file?.saveInBackgroundWithBlock() {
-                    [unowned self] (saved, error) in
-                    
-                    self.parseUser.setValue(file!, forKey: "profileImage")
-                    self.parseUser.saveInBackground()
-                }
+            if let newValue = newValue {
+                let imageData = UIImageJPEGRepresentation(newValue, 0.05)
+                let imageFile = PFFile(name:"profileImage.jpg", data:imageData!)
+                parseUser.setObject(imageFile!, forKey: "profileImage")
+            } else {
+                parseUser.removeObjectForKey("profileImage")
+            }
+        }
+    }
+    
+    
+    func getPictureInBackground(block: (UIImage) -> Void) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            var pic = UIImage()
+            if let verifiedPic = self.image{
+                pic = verifiedPic
+            }
+            else{
+                pic = UIImage(named: "ProfilePlaceHolder")!
+            }
+            dispatch_async(dispatch_get_main_queue()) {
+                block(pic)
             }
         }
     }
