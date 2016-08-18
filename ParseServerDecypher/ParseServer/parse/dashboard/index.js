@@ -1,6 +1,6 @@
 var ParseDashboard = require('parse-dashboard');
 
-let serverURL = "http://localhost:3000/parse"
+let serverURL = "https://decypher.tk/parse"
 if (process.env.NODE_ENV == 'production') {
   serverURL = 'https://decypher.tk/parse'
 }

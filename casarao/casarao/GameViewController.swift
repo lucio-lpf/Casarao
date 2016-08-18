@@ -22,9 +22,9 @@ class GameViewController: UIViewController {
         /* Sprite Kit applies additional optimizations to improve rendering performance */
         skView.ignoresSiblingOrder = true
 
-        let lobbyScene = LobbyScene(size: UIScreen.mainScreen().bounds.size)
-        lobbyScene.scaleMode = .AspectFit
-        skView.presentScene(lobbyScene)
+        let splashScene = SplashScene(size: UIScreen.mainScreen().bounds.size)
+        splashScene.scaleMode = .AspectFit
+        skView.presentScene(splashScene)
     }
 
     override func shouldAutorotate() -> Bool {

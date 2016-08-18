@@ -32,4 +32,23 @@ class WebServiceManager {
             }
         }
     }
+    
+    static func addUserToRoom(player:PFUser,room:PFObject,callBack: (Bool)->()){
+        print(room.objectId!)
+        PFCloud.callFunctionInBackground("addUserToRoom", withParameters: ["player":player.objectId!, "room":room.objectId!]) { (response, error) in
+            guard error != nil else{
+                print(response.debugDescription)
+                callBack(true)
+                return
+            }
+            print(error.debugDescription)
+            callBack(false)
+            
+        }
+    }
+    static func checkUserMatrix(player:PFUser,room:PFObject, callBack: (Bool)->()){
+        PFCloud.callFunctionInBackground("addUserToRoom", withParameters: ["player":player, "room":room]) { (response, error) in
+            callBack(true)
+        }
+    }
 }

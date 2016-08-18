@@ -63,6 +63,11 @@ class ProfileScene: SKScene, UITextFieldDelegate {
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
         
+        let userImage = SKSpriteNode(texture: SKTexture(imageNamed:"ProfilePlaceHolder"), color: SKColor.clearColor(), size: CGSize(width: 183, height: 183))
+        userImage.position = CGPoint(x: 0, y: size.height/2 - userImage.size.height/2 - 50)
+        addChild(userImage)
+        
+        
        //  meio da tela
         let centerX = (view.bounds.width / 2 - 160)
         let centerY = (view.bounds.height / 2 - 22.5)
