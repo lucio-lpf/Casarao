@@ -44,28 +44,6 @@ class Player {
     }
 
 
-    
-    var currentMatrix:Array<Int>?{
-        get{
-            return parseUser.valueForKey("currentMatrix") as? Array<Int>
-        }
-        set{
-            parseUser.setValue(newValue, forKey: "currentMatrix")
-            parseUser.saveInBackground()
-        }
-    }
-
-    
-    var answerMatrix:Array<Int>?{
-        get{
-            return parseUser.valueForKey("answerMatrix") as? Array<Int>
-        }
-        set{
-            parseUser.setValue(newValue, forKey: "answerMatrix")
-            parseUser.saveInBackground()
-        }
-    }
-    
     var image:UIImage? {
         get {
             do {
@@ -121,30 +99,6 @@ class Player {
         }
     }
     
-    func checkUserAnswer() -> (tileRight:Array<Int>,didFinishTheGame:Bool) {
-        
-        var countScore = 0
-        var tilesRight = Array<Int>()
-        
-        for i in 0..<currentMatrix!.count{
-            
-            if currentMatrix![i] == answerMatrix![i]{
-                countScore += 1
-                tilesRight.append(i)
-            }
-            else{
-                currentMatrix![i] = 0
-            }
-            
-        }
-        
-        if countScore == answerMatrix!.count{
-            return(tilesRight,true)
-        }
-        else{
-            return(tilesRight,false)
-        }
-    }
     
     
     init(pfuser:PFUser) {
@@ -152,18 +106,12 @@ class Player {
         parseUser = pfuser
     }
     
-    
-    func numberOfUserRightAnswers()->Int{
-        
-        var countScore = 0
-        for i in 0..<currentMatrix!.count{
-            
-            if currentMatrix![i] == answerMatrix![i]{
-                countScore += 1
-            }
+    var id:String{
+        get{
+            return parseUser.objectId!
         }
-        return(countScore)
     }
+    
     
 }
 

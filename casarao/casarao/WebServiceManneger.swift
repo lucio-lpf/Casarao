@@ -33,22 +33,48 @@ class WebServiceManager {
         }
     }
     
-    static func addUserToRoom(player:PFUser,room:PFObject,callBack: (Bool)->()){
-        print(room.objectId!)
-        PFCloud.callFunctionInBackground("addUserToRoom", withParameters: ["player":player.objectId!, "room":room.objectId!]) { (response, error) in
+    static func addUserToRoom(playerId:String,roomId:String,callBack: (Bool)->()){
+        PFCloud.callFunctionInBackground("addUserToRoom", withParameters: ["player":playerId, "room":roomId]) { (response, error) in
             guard error != nil else{
-                print(response.debugDescription)
-                callBack(true)
+                let responseObject = response as! NSDictionary
+                print(responseObject["Messenge"])
+                if (responseObject["Code"] as! Int) == 0{
+                    callBack(true)
+                }
+                else{
+                    callBack(false)
+                }
+                
                 return
             }
             print(error.debugDescription)
             callBack(false)
-            
         }
     }
+    
+    
     static func checkUserMatrix(player:PFUser,room:PFObject, callBack: (Bool)->()){
         PFCloud.callFunctionInBackground("addUserToRoom", withParameters: ["player":player, "room":room]) { (response, error) in
             callBack(true)
+        }
+    }
+    
+    static func checkIfUserIsInRoom(playerId:String,roomId:String, callBack: (Bool)->()){
+        PFCloud.callFunctionInBackground("checkIfUserIsInRoom", withParameters: ["player":playerId, "room":roomId]) { (response, error) in
+            guard error != nil else{
+                let responseObject = response as! NSDictionary
+                print(responseObject["Messenge"])
+                if (responseObject["Code"] as! Int) == 0{
+                    callBack(true)
+                }
+                else{
+                    callBack(false)
+                }
+                
+                return
+            }
+            print(error?.userInfo["error"])
+            callBack(false)
         }
     }
 }

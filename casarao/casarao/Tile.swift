@@ -14,7 +14,7 @@ class Tile: SKSpriteNode{
     var colorNumber:Int!
     var status:String!{
         didSet{
-            if status == "right"{
+            if status == "Right"{
                 switch colorNumber {
                 case 1:
                     texture = SKTexture(imageNamed: "right_orange_tile.png")
@@ -60,7 +60,7 @@ class Tile: SKSpriteNode{
         }
         super.init(texture:texture, color: SKColor.clearColor(), size:  CGSize(width: 60, height: 60))
         self.colorNumber = colorNumber
-        self.status = "stillWrong"
+        self.status = status
     }
     
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {

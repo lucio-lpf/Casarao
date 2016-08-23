@@ -70,7 +70,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         gameHUD.position = CGPoint(x: 0, y: self.size.height/2 - gameHUD.size.height/2)
         self.addChild(gameHUD)
         
-        matrix = MatrixNode(numColumns: 3, numRows: 3, scene: self)
+        matrix = MatrixNode(gameRoom: gameRoom, playerId: player.id)
         
         matrix.position = CGPoint(x: 0,y: 0)
         self.addChild(matrix)
@@ -144,77 +144,31 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     }
     
     func checkUserChances(tile:Tile) {
-        if tile.colorNumber == 3 {
-            self.chances += 1
-            tile.changeColor()
-            return
-        }
-        if tile.colorNumber != 0{
-            tile.changeColor()
-            return
-        }
-        if chances > 0{
-            if tile.colorNumber == 0{
-                self.chances -= 1
+        if tile.status == "Wrong"{
+            if tile.colorNumber == 3 {
+                self.chances += 1
                 tile.changeColor()
+                return
+            }
+            if tile.colorNumber != 0{
+                tile.changeColor()
+                return
+            }
+            if chances > 0{
+                if tile.colorNumber == 0{
+                    self.chances -= 1
+                    tile.changeColor()
+                }
             }
         }
+        
     }
     
     func checkUserMatrix() {
         
-        gameRoom.parseObject.fetchInBackgroundWithBlock { (newobject, error) in
-            self.gameRoom.parseObject = newobject!
-            self.chackUserMatrix2()
         }
-    }
     
-    
-    func chackUserMatrix2(){
-        if gameRoom.status != "finished"{
-            //atualizando a matriz do user
-            player.currentMatrix?.removeAll()
-            
-            for tile in matrix.tilesArray{
-                player.currentMatrix?.append(tile.colorNumber)
-            }
-            
-            let results = player.checkUserAnswer()
-            
-            if results.didFinishTheGame{
-                let popUpFinishGame = SKSpriteNode(texture: SKTexture(imageNamed: "grey_background"), color: SKColor.clearColor(), size: CGSize(width: 300, height: 300))
-                let label = SKLabelNode(text: "Acabou o jogo!!!")
-                popUpFinishGame.zPosition = 20
-                label.color  = SKColor.whiteColor()
-                label.position = CGPoint(x: 0,y: 0)
-                label.zPosition = 21
-                popUpFinishGame.addChild(label)
-                popUpFinishGame.position = CGPoint(x: 0,y: 0)
-                self.addChild(popUpFinishGame)
-                userInteractionEnabled = false
-                gameRoom.status = "finished"
-                gameRoom.winner = player
-            }
-            else{
-                stopInterval = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameScene.levelCountdown), userInfo: nil, repeats: true)
-                loadWaitBGScreen()
-                if results.tileRight.count != 0{
-                    for i in results.tileRight{
-                        matrix.tilesArray[i].status = "right"
-                    }
-                }
-                matrix.updateMatrixColors(player.currentMatrix!)
-                chances = 3
-            }
-        }
-        else{
-            let pop = PopUpSpriteNode(winner: gameRoom.winner!, scene: self)
-            pop.position = CGPoint(x: 0, y: 0)
-            pop.zPosition = 50
-            addChild(pop)
-        }
-        
-    }
+
     
     // REFACTORING
     private func removeBlurBG() {

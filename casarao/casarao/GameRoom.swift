@@ -101,12 +101,35 @@ class GameRoom{
             return parseObject.valueForKey("maxPlayers") as! Int
         }
     }
+    
+    
+    var id:String{
+        get{
+            return parseObject.objectId!
+        }
+    }
 
     
     var parseObject: PFObject
     
     
+    var playerRightMatrix:Dictionary<String,Array<Int>>{
+        get{
+            return parseObject.valueForKey("userRightMatrix") as! Dictionary<String,Array<Int>>
+        }
+    }
     
+    var playerMatrix:Dictionary<String,Array<Int>>{
+        get{
+            return parseObject.valueForKey("userMatrix") as! Dictionary<String,Array<Int>>
+        }
+        set{
+            
+            parseObject.setValue(newValue, forKey: "winner")
+            parseObject.saveInBackground()
+        }
+    }
+
     
     init(pfobject:PFObject){
         
@@ -116,36 +139,5 @@ class GameRoom{
     // matriz de resposta para cada player
     
     
-    func addPlayerToGame(player:Player) {
-        // add player to game room
-        self.players.append(player)
-        amount += bet
-        
-        var playerRandomArray = Array<Int>()
-        var playerFreshArray = Array<Int>()
-        for _ in 0..<9{
-            playerRandomArray.append(Int(arc4random_uniform(3) + 1))
-            playerFreshArray.append(0)
-        }
-        
-        player.answerMatrix = playerRandomArray
-        player.currentMatrix = playerFreshArray
-        
-    }
-    
-    func firstPlaceGame()->(Player){
-        
-        var firstPlayer = players[0]
-        
-        for player in players{
-            
-            if player.numberOfUserRightAnswers() > firstPlayer.numberOfUserRightAnswers(){
-                firstPlayer = player
-            }
-        }
-        
-        return firstPlayer
-        
-        
-    }
+
 }

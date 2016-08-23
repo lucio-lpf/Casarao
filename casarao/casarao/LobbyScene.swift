@@ -17,6 +17,9 @@ class LobbyScene: SKScene, PopUpInLobby {
     var profileButton:SKSpriteNode
     var lobbyButton:SKSpriteNode!
     var storeButton:SKSpriteNode!
+    var loadingFrames = [SKTexture]()
+    var loadedFrames = [SKTexture]()
+    var loadSymbol = SKSpriteNode()
     
     
     // REFACTORING
@@ -73,6 +76,8 @@ class LobbyScene: SKScene, PopUpInLobby {
     }
     
     
+    
+    
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
         
@@ -116,8 +121,7 @@ class LobbyScene: SKScene, PopUpInLobby {
                             self.player = Player(pfuser: player)
                             self.player.coins = 10
                             self.player.nickname = userNickname
-                            let image = UIImage(named: "user_placeholder")!
-                            self.player.image = UIImagePNGRepresentation(image)
+                            self.player.image = UIImage(named: "user_placeholder")!
                             
                             checkUserPopUp.removeFromParent()
                         }
@@ -126,7 +130,7 @@ class LobbyScene: SKScene, PopUpInLobby {
                     self.player = Player(pfuser: pfuser!)
                     self.player.coins = 10
                     self.player.nickname = userNickname
-                    self.player.image = UIImagePNGRepresentation(UIImage(named: "user_placeholder")!)
+                    self.player.image = UIImage(named: "user_placeholder")!
                     checkUserPopUp.removeFromParent()
                     
                 }
@@ -137,7 +141,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         
         
-        
+        setAnimationFrames()
         // REFACTORING
         
         
@@ -179,6 +183,7 @@ class LobbyScene: SKScene, PopUpInLobby {
             
             let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
             let scene:SKScene = ProfileScene(size: self.size)
+            removeFromParent()
             self.view?.presentScene(scene, transition: transition)
             
         }
@@ -186,6 +191,7 @@ class LobbyScene: SKScene, PopUpInLobby {
             
             let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
             let scene:SKScene = StoreScene(size: self.size)
+            removeFromParent()
             self.view?.presentScene(scene, transition: transition)
             
         }
@@ -212,44 +218,93 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     func joinGame(gameRoom: GameRoom) {
         
-        for player in gameRoom.players{
-            if player.username ==  self.player!.username{
+        animateLoading()
+        
+        WebServiceManager.checkIfUserIsInRoom(player.id, roomId: gameRoom.id) { (bool) in
+            if bool{
                 
                 let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
-                let scene = GameScene(size: self.size,player: self.player, gameRoom: gameRoom)
+                let scene:SKScene = GameScene(size: self.size, player: self.player, gameRoom: gameRoom)
+                
+                self.removeFromParent()
                 self.view?.presentScene(scene, transition: transition)
-                return
+                
+            }
+            else{
+                //    ALPHA NODE
+                
+                let alphaNode = SKSpriteNode(color: UIColor.blackColor(), size: self.size)
+                alphaNode.alpha = 0.0
+                alphaNode.name = "alphaNode"
+                alphaNode.zPosition = 53
+                self.addChild(alphaNode)
+                alphaNode.runAction(SKAction.fadeAlphaTo(0.5, duration: 0.25))
+                
+                
+                self.addChild(PopUpSpriteNode(gameRoom: gameRoom, scene: self))
+                
             }
         }
-        let blur = SKSpriteNode(texture: SKTexture(imageNamed:"blur"), color: SKColor.clearColor(), size: size)
-        blur.name = "blur"
-        blur.zPosition = 100
-        addChild(blur)
-        addChild(PopUpSpriteNode(gameRoom: gameRoom, scene: self))
+        
+        
+        
     }
     
+    
+    
+    override func removeFromParent() {
+        
+        removeAllActions()
+        removeAllChildren()
+        super.removeFromParent()
+    }
+    
+    
+    
+ 
     
     func didDeciedEnterRoom(response: Bool,selfpopUp:PopUpSpriteNode,gameRoom:GameRoom?) {
         if response == true{
             
-            if player.coins >= gameRoom?.bet{
-                gameRoom!.addPlayerToGame(self.player)
-                player.coins! -= gameRoom!.bet
+            WebServiceManager.addUserToRoom(player.id, roomId:gameRoom!.id) { (bool) in
+                print(bool)
                 
-                let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
-                let scene = GameScene(size: self.size,player: self.player, gameRoom: gameRoom!)
-                self.view?.presentScene(scene, transition: transition)
-                return
+                
             }
-                
-            else{
-                
-                print("User dosen't have enough money ")
-            }
+            
+        }
+            
+        else{
+            
+            print("User dosen't have enough money ")
         }
         
-        childNodeWithName("blur")?.removeFromParent()
+        self.loadSymbol.removeFromParent()
+        self.childNodeWithName("rectangle")?.removeFromParent()
+        self.childNodeWithName("alphaNode")?.removeFromParent()
         selfpopUp.removeFromParent()
+    }
+    
+    
+    func animateLoading() {
+        //cria a ação
+        let loadingAction = SKAction.animateWithTextures(loadingFrames, timePerFrame: 0.03)
+        
+        //cria a "pop up"
+        let rectangle = SKSpriteNode(texture: SKTexture(imageNamed: "loadTwitter"))
+        rectangle.zPosition = 54
+        rectangle.size = CGSize(width: 100, height: 100)
+        rectangle.name = "rectangle"
+        self.addChild(rectangle)
+        
+        //cria o nodo onde vai ter animação
+        self.loadSymbol = SKSpriteNode(texture: SKTexture(imageNamed: ""))
+        self.loadSymbol.zPosition = 55
+        self.loadSymbol.size = CGSize(width: 50, height: 50)
+        rectangle.addChild(self.loadSymbol)
+        
+        //executa a ação
+        loadSymbol.runAction((SKAction.repeatActionForever(loadingAction)), withKey: "loading")
     }
     
     
@@ -269,6 +324,20 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         skView.presentScene(scene, transition: transition)
         
+    }
+    
+    
+    func setAnimationFrames() {
+        //seta os frames do top
+        for i in 0 ... 19{
+            let textureName = "loading\(i)"
+            self.loadingFrames.append(SKTexture(imageNamed: textureName))
+        }
+        
+        for i in 0 ... 10{
+            let textureName = "loaded\(i)"
+            self.loadedFrames.append(SKTexture(imageNamed: textureName))
+        }
     }
 }
 

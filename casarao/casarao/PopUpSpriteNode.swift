@@ -61,19 +61,7 @@ class PopUpSpriteNode: SKSpriteNode {
         self.GameSceneDelegate = scene
         self.LobbySceneDelegate = nil
         
-        
-        
-        
-        var firstPlayer = users[0]
-        
-        for player in users{
-            
-            if player.numberOfUserRightAnswers() > firstPlayer.numberOfUserRightAnswers(){
-                firstPlayer = player
-            }
-        }
     }
-    
     
     //POPUP DE DESITENCIA DA PARTIDA
     

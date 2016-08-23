@@ -37,22 +37,23 @@ class MatrixNode : SKSpriteNode {
     }
     
     
-    init(array:Array<Int>,answerArray:Array<Int>){
+    init(gameRoom:GameRoom,playerId:String){
         
         super.init(texture: nil, color: UIColor.clearColor(), size: CGSize(width: 400, height: 400))
         
         self.zPosition = 1
         //SO FUNCIONA PRA MATRIZES QUADRADAS
-        
-        for i in 0..<array.count{
-            if array[i] == answerArray[i]{
-                tilesArray.append(Tile(colorNumber: i,status: "right"))
+        let userArray = gameRoom.playerMatrix[playerId]
+        for int in userArray!{
+            if int == 0{
+               tilesArray.append(Tile(colorNumber: int, status: "Wrong"))
             }
             else{
-                tilesArray.append(Tile(colorNumber: i,status: "stillWrong"))
+                tilesArray.append(Tile(colorNumber: int, status: "Right"))
             }
             
         }
+        
         
         addTilesAsMatrixChildren()
         
@@ -61,17 +62,17 @@ class MatrixNode : SKSpriteNode {
     private func addTilesAsMatrixChildren() {
         //otimizar essa parte(muitos ifs)
         var countLine  = 0
-        var y = +self.size.height/2
-        var x = -self.size.width/2
+        var y = +self.size.height/4
+        var x = -self.size.width/4
         for i in 0..<tilesArray.count{
             let tile = tilesArray[i]
             tile.position = CGPoint(x: x, y: y)
             self.addChild(tile)
             countLine += 1
-            x += self.size.width/2
+            x += self.size.width/4
             if countLine == 3{
-                y -= self.size.height/2
-                x = -self.size.width/2
+                y -= self.size.height/4
+                x = -self.size.width/4
                 countLine = 0
             }
             
