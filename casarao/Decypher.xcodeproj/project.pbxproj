@@ -137,7 +137,6 @@
 			children = (
 				9FE2BCB71D3E95E100B95074 /* CloudKit.framework */,
 				5A41A2851D3E902000C93165 /* casarao */,
-				5A41A29E1D3E902000C93165 /* casaraoTests */,
 				5A41A2A91D3E902000C93165 /* casaraoUITests */,
 				5A41A2841D3E902000C93165 /* Products */,
 				CCBC8C5CBD228F6FD020BA16 /* Pods */,
@@ -169,6 +168,7 @@
 				5A41A2961D3E902000C93165 /* Info.plist */,
 				9FA85F371D493C6E005D0394 /* Decypher-BridgingHeader.m */,
 				9FA85F361D493C6E005D0394 /* Decypher-Bridging-Header.h */,
+				5A41A29E1D3E902000C93165 /* casaraoTests */,
 			);
 			path = casarao;
 			sourceTree = "<group>";
@@ -181,7 +181,7 @@
 				5A41A2A11D3E902000C93165 /* Info.plist */,
 			);
 			path = casaraoTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		5A41A2A91D3E902000C93165 /* casaraoUITests */ = {
 			isa = PBXGroup;

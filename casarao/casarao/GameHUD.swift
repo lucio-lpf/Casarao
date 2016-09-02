@@ -11,6 +11,8 @@ protocol GameHUDProtocol{
     
     func backToLobby()
     
+    func otherUserScore()
+    
 }
 
 import Foundation
@@ -111,7 +113,7 @@ class GameHUD: SKSpriteNode{
             
         }
         else if otherUsersScoreButton.containsPoint(point){
-            
+            gameSceneDelegate.otherUserScore()
         }
             
         else if backToLobbyButton.containsPoint(point){

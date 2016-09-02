@@ -18,7 +18,7 @@ class WebServiceManager {
         
         var gameRoomsArray: Array<GameRoom>= []
         let parseQuery = PFQuery(className: "GameRoom")
-        parseQuery.whereKey("estado", equalTo: "waiting")
+        parseQuery.whereKey("estado", notEqualTo: "finished")
         parseQuery.includeKey("players")
         parseQuery.findObjectsInBackgroundWithBlock { (PFObjects, error) in
             if let e = error{
@@ -53,9 +53,46 @@ class WebServiceManager {
     }
     
     
-    static func checkUserMatrix(player:PFUser,room:PFObject, callBack: (Bool)->()){
-        PFCloud.callFunctionInBackground("addUserToRoom", withParameters: ["player":player, "room":room]) { (response, error) in
-            callBack(true)
+    static func checkUserMatrix(playerId:String,roomId:String,playerMatrixArray:Array<Int>, callBack: (playerArray:Array<Int>?,winner:String?)->()){
+        PFCloud.callFunctionInBackground("checkUserMatrix", withParameters: ["player":playerId, "room":roomId,"playerMatrixArray": playerMatrixArray]) { (response, error) in
+            guard error != nil else{
+                let responseObject = response as! NSDictionary
+                
+                switch(responseObject["Code"] as! Int){
+                
+                    case 0:
+                        
+                        print(responseObject["Messenge"])
+                        callBack(playerArray: responseObject["NewArray"] as? Array<Int>, winner: nil)
+                        break
+                        
+                    case 1:
+                        
+                        print(responseObject["Messenge"])
+                        callBack(playerArray: responseObject["NewArray"] as? Array<Int>, winner: responseObject["Winner"] as? String)
+                        break
+                        
+                    case 2:
+                        
+                        print(responseObject["Messenge"])
+                        callBack(playerArray: nil, winner: nil)
+                        
+                        break
+                    case 3:
+                        
+                        print(responseObject["Messenge"])
+                        callBack(playerArray: nil, winner: responseObject["Winner"] as? String)
+                        
+                        break
+                        
+                    default:
+                        fatalError()
+                    }
+                
+                return
+            }
+            print(error?.userInfo["error"])
+            callBack(playerArray: nil,winner: nil)
         }
     }
     
@@ -76,5 +113,22 @@ class WebServiceManager {
             print(error?.userInfo["error"])
             callBack(false)
         }
+    }
+    
+    
+    static func roomScoreTable(roomId:String,callBack:(Dictionary<String,Int>?)->()){
+        
+        PFCloud.callFunctionInBackground("roomScoreTable", withParameters: ["room":roomId]) { (response, error) in
+            guard error != nil else{
+                let responseObject = response as! NSDictionary
+                print(responseObject["ScorePerUser"])
+                callBack(responseObject["ScorePerUser"] as? Dictionary<String,Int>)
+                return
+            }
+            print(error?.userInfo["error"])
+            callBack(nil)
+        }
+
+        
     }
 }

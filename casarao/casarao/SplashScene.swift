@@ -13,7 +13,7 @@ import Parse
 
 class SplashScene: SKScene {
     
-    
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     var player:Player!
     
@@ -29,53 +29,48 @@ class SplashScene: SKScene {
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
         
-        
-        //CHECK CURRENT USER
         let allUsersPass = "P6xA5#72GacX;F]X"
         let userNickname = "GuestUser\(Int(arc4random_uniform(1000)))"
         
         
-        // init user
-        let currentUser = PFUser.currentUser()
-        if currentUser != nil {
-            self.player = Player(pfuser: currentUser!)
-            self.player.coins = 10
-            lobbyTransition()
+        if defaults.stringForKey("userKey") != nil{
             
-        } else {
-            PFUser.logInWithUsernameInBackground(String(UIDevice.currentDevice().identifierForVendor!), password: allUsersPass) {
+            PFUser.logInWithUsernameInBackground(defaults.stringForKey("userKey")!, password: allUsersPass) {
                 (pfuser, error) in
                 
                 if let e = error {
                     print(e.debugDescription)
-                    let player = PFUser()
-                    player.username = String(UIDevice.currentDevice().identifierForVendor!)
-                    player.password = allUsersPass
-                    player.email = "\(UIDevice.currentDevice().identifierForVendor!)@teste.com"
-                    player.signUpInBackgroundWithBlock(){
-                        (bool, error) in
-                        if let e = error{
-                            print(e.debugDescription)
-                        } else {
-                            self.player = Player(pfuser: player)
-                            self.player.coins = 10
-                            self.player.nickname = userNickname
-                            self.player.image = UIImage(named: "ProfilePlaceHolder")!
-                            
-                            self.lobbyTransition()
-                        }
-                    }
-                } else {
+                }else {
                     self.player = Player(pfuser: pfuser!)
-                    self.player.coins = 10
                     self.player.nickname = userNickname
                     self.player.image = UIImage(named: "ProfilePlaceHolder")!
                     self.lobbyTransition()
                 }
             }
         }
-        
-        
+        else{
+            let player = PFUser()
+            defaults.setObject(String(UIDevice.currentDevice().identifierForVendor!), forKey: "userKey")
+            player.username = defaults.stringForKey("userKey")!
+            player.password = allUsersPass
+            player.email = "\(UIDevice.currentDevice().identifierForVendor!)@teste.com"
+            player.signUpInBackgroundWithBlock(){
+                (bool, error) in
+                if let e = error{
+                    print(e.debugDescription)
+                } else {
+                    self.player = Player(pfuser: player)
+                    self.player.nickname = userNickname
+                    self.player.coins = 10
+                    self.player.image = UIImage(named: "ProfilePlaceHolder")!
+                    
+                    self.lobbyTransition()
+                }
+            }
+            
+
+           
+        }
         
     }
     
@@ -87,7 +82,13 @@ class SplashScene: SKScene {
         
         let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
         let lobby:LobbyScene = LobbyScene(size: self.size)
+        player.updateUserDefaults(player.coins!)
         lobby.player = player
         self.view!.presentScene(lobby, transition: transition)
+    }
+    
+    func iCloudKeysChanged(sender: NSNotification) {
+        
+        // Update local store values
     }
 }

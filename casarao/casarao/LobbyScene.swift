@@ -14,6 +14,10 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     var gameRoomsSprites:Array<GameRoomSpriteNode> = Array()
     
+    
+    let defaults = NSUserDefaults.standardUserDefaults()
+
+    
     var profileButton:SKSpriteNode
     var lobbyButton:SKSpriteNode!
     var storeButton:SKSpriteNode!
@@ -25,6 +29,8 @@ class LobbyScene: SKScene, PopUpInLobby {
     // REFACTORING
     var player:Player!
     var selectedRoomNode:SKNode?
+    
+    var userHUD:UserHUD!
     
     
     
@@ -82,63 +88,10 @@ class LobbyScene: SKScene, PopUpInLobby {
         super.didMoveToView(view)
         
         
-        let checkUserPopUp = PopUpSpriteNode()
-        
-        addChild(checkUserPopUp)
-        
-        
-        
-        
-        // REFACTORING
-        
-        //CHECK CURRENT USER
-        let allUsersPass = "P6xA5#72GacX;F]X"
-        let userNickname = "GuestUser\(Int(arc4random_uniform(1000)))"
-        
-        
-        // init user
-        let currentUser = PFUser.currentUser()
-        if currentUser != nil {
-            self.player = Player(pfuser: currentUser!)
-            self.player.coins = 10
-            checkUserPopUp.removeFromParent()
-            
-        } else {
-            PFUser.logInWithUsernameInBackground(String(UIDevice.currentDevice().identifierForVendor!), password: allUsersPass) {
-                (pfuser, error) in
-                
-                if let e = error {
-                    print(e.debugDescription)
-                    let player = PFUser()
-                    player.username = String(UIDevice.currentDevice().identifierForVendor!)
-                    player.password = allUsersPass
-                    player.email = "\(UIDevice.currentDevice().identifierForVendor!)@teste.com"
-                    player.signUpInBackgroundWithBlock(){
-                        (bool, error) in
-                        if let e = error{
-                            print(e.debugDescription)
-                        } else {
-                            self.player = Player(pfuser: player)
-                            self.player.coins = 10
-                            self.player.nickname = userNickname
-                            self.player.image = UIImage(named: "user_placeholder")!
-                            
-                            checkUserPopUp.removeFromParent()
-                        }
-                    }
-                } else {
-                    self.player = Player(pfuser: pfuser!)
-                    self.player.coins = 10
-                    self.player.nickname = userNickname
-                    self.player.image = UIImage(named: "user_placeholder")!
-                    checkUserPopUp.removeFromParent()
-                    
-                }
-            }
-        }
-        
-        
-        
+        userHUD = UserHUD(player: player)
+        userHUD.position = CGPoint(x: 0, y: size.height/2 - userHUD.size.height/2)
+        userHUD.zPosition = 200
+        addChild(userHUD)
         
         
         setAnimationFrames()
@@ -204,6 +157,13 @@ class LobbyScene: SKScene, PopUpInLobby {
         else{
             for gameRoomsSprite in gameRoomsSprites{
                 if gameRoomsSprite.containsPoint(point){
+                    let alphaNode = SKSpriteNode(color: UIColor.blackColor(), size: self.size)
+                    alphaNode.alpha = 0.0
+                    alphaNode.name = "alphaNode"
+                    alphaNode.userInteractionEnabled = true
+                    alphaNode.zPosition = 53
+                    self.addChild(alphaNode)
+                    alphaNode.runAction(SKAction.fadeAlphaTo(0.5, duration: 0.25))
                     joinGame(gameRoomsSprite.gameRoom)
                 }
             }
@@ -223,22 +183,13 @@ class LobbyScene: SKScene, PopUpInLobby {
         WebServiceManager.checkIfUserIsInRoom(player.id, roomId: gameRoom.id) { (bool) in
             if bool{
                 
-                let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
-                let scene:SKScene = GameScene(size: self.size, player: self.player, gameRoom: gameRoom)
-                
-                self.removeFromParent()
-                self.view?.presentScene(scene, transition: transition)
+                self.moveToGameRoom(gameRoom)
                 
             }
             else{
                 //    ALPHA NODE
                 
-                let alphaNode = SKSpriteNode(color: UIColor.blackColor(), size: self.size)
-                alphaNode.alpha = 0.0
-                alphaNode.name = "alphaNode"
-                alphaNode.zPosition = 53
-                self.addChild(alphaNode)
-                alphaNode.runAction(SKAction.fadeAlphaTo(0.5, duration: 0.25))
+                
                 
                 
                 self.addChild(PopUpSpriteNode(gameRoom: gameRoom, scene: self))
@@ -250,6 +201,14 @@ class LobbyScene: SKScene, PopUpInLobby {
         
     }
     
+    func moveToGameRoom(gameRoom:GameRoom){
+        
+        let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+        let scene:SKScene = GameScene(size: self.size, player: self.player, gameRoom: gameRoom)
+        
+        self.removeFromParent()
+        self.view?.presentScene(scene, transition: transition)
+    }
     
     
     override func removeFromParent() {
@@ -264,12 +223,21 @@ class LobbyScene: SKScene, PopUpInLobby {
  
     
     func didDeciedEnterRoom(response: Bool,selfpopUp:PopUpSpriteNode,gameRoom:GameRoom?) {
-        if response == true{
+        if response {
             
-            WebServiceManager.addUserToRoom(player.id, roomId:gameRoom!.id) { (bool) in
+            WebServiceManager.addUserToRoom(player.id, roomId: gameRoom!.id) { (bool) in
                 print(bool)
-                
-                
+                if bool{
+                    let localCoins = self.defaults.integerForKey("coins")
+                    self.defaults.setInteger(localCoins - (gameRoom?.bet)!, forKey: "coins")
+                    self.userHUD.updateCoinsLabel()
+                    self.moveToGameRoom(gameRoom!)
+                    
+                }
+                else{
+                   
+                    
+                }
             }
             
         }

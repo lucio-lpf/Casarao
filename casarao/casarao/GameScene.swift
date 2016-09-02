@@ -18,6 +18,9 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     }
     var gameRoom:GameRoom
     var player: Player
+    var loadingFrames = [SKTexture]()
+    var loadedFrames = [SKTexture]()
+    var loadSymbol = SKSpriteNode()
     var checkButton: SKSpriteNode
     var mountOfMoney: Int = 0{
         didSet{
@@ -27,20 +30,8 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
     var gameHUD: GameHUD!
     
-    // REFACTORING
-    var stopInterval:NSTimer?
-    
-    var levelTimerLabel = SKLabelNode(fontNamed: "ArialMT")
     
     //Immediately after leveTimerValue variable is set, update label's text
-    var levelTimerValue: Int = 5 {
-        didSet {
-            if levelTimerValue == 0 {
-                removeBlurBG()
-            }
-            levelTimerLabel.text = "0:\(levelTimerValue)"
-        }
-    }
     
     init(size: CGSize,player: Player, gameRoom: GameRoom) {
         
@@ -97,7 +88,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-
+        setAnimationFrames()
         
     }
     
@@ -126,6 +117,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         }
         
         if gameHUD.containsPoint(point){
+            
            
         }
     }
@@ -166,126 +158,54 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
     func checkUserMatrix() {
         
-        }
-    
+            WebServiceManager.checkUserMatrix(player.id, roomId: gameRoom.id, playerMatrixArray: matrix.playerMatrixArray()) { (playerArray, winner) in
+                print(playerArray,winner)
+                
+                let alphaNode = SKSpriteNode(color: UIColor.blackColor(), size: self.size)
+                alphaNode.alpha = 0.0
+                alphaNode.name = "alphaNode"
+                alphaNode.zPosition = 150
+                alphaNode.userInteractionEnabled = true
+                self.addChild(alphaNode)
+                alphaNode.runAction(SKAction.fadeAlphaTo(0.5, duration: 0.25))
+                
+                
+                if (playerArray != nil) && (winner == nil){
+                    
+                    
+                    
+                    
+                    self.matrix.changeMatrixToNewMatrix(playerArray!)
+                    let timerPopUp = PopUpSpriteNode(scene: self)
+                    self.chances = 3
+                    timerPopUp.zPosition = 200
+                    self.addChild(timerPopUp)
+                }
+                else if (playerArray != nil) && (winner != nil){
 
-    
-    // REFACTORING
-    private func removeBlurBG() {
-        let blurNode = self.childNodeWithName("blurBG")!
-        let popUpTimer = self.childNodeWithName("popUpTimer")!
-        
-        var nodeToRemove:Array<SKNode> = Array()
-        
-        nodeToRemove.append(blurNode)
-        nodeToRemove.append(popUpTimer)
-        
-        levelTimerLabel.hidden = true
-        
-        
-        self.removeChildrenInArray(nodeToRemove)
-        
-        userInteractionEnabled = true
-        
-        stopInterval?.invalidate()
-        
-        levelTimerValue = 5
-    }
-    
-    // REFACTORING
-    func levelCountdown() {
-        levelTimerValue -= 1
-        levelTimerLabel.text = String(levelTimerValue)
-    }
-    
-    
-    // REFACTORING
-    private func loadWaitBGScreen() {
-        
-        let popUpTimer = SKSpriteNode(texture: SKTexture(imageNamed: "PopUpTimer"), color: SKColor.clearColor(), size: CGSize(width: 300, height: 300))
-        
-        popUpTimer.name = "popUpTimer"
-        popUpTimer.zPosition = 20
-        levelTimerLabel.color  = SKColor.whiteColor()
-        levelTimerLabel.position = CGPoint(x: 0,y: 0)
-        levelTimerLabel.zPosition = 21
-        popUpTimer.addChild(levelTimerLabel)
-        popUpTimer.position = CGPoint(x: 0,y: 0)
-        userInteractionEnabled = false
-        
-        levelTimerLabel.respondsToSelector(#selector(GameScene.levelCountdown))
-        
-        levelTimerLabel.hidden = false
-        
-        
-        
-        let duration = 0.0
-        
-        let waitBG:SKSpriteNode = self.getBluredScreenshot()
-        
-        waitBG.name = "blurBG"
-        
-        //pauseBG.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-        waitBG.alpha = 0
-        waitBG.zPosition = self.zPosition + 1
-        waitBG.runAction(SKAction.fadeAlphaTo(0.5, duration: duration))
-        
-        // add blur
-        self.addChild(waitBG)
-        
-        // add timer over blur
-        self.addChild(popUpTimer)
-    }
-    
-    
-    private func getBluredScreenshot() -> SKSpriteNode {
-        
-        //create the graphics context
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: self.view!.frame.size.width, height: self.view!.frame.size.height), true, 1)
-        
-        self.view!.drawViewHierarchyInRect(self.view!.frame, afterScreenUpdates: true)
-        
-        // retrieve graphics context
-        _ = UIGraphicsGetCurrentContext()
-        
-        // query image from it
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        
-        // create Core Image context
-        let ciContext = CIContext(options: nil)
-        // create a CIImage, think of a CIImage as image data for processing, nothing is displayed or can be displayed at this point
-        let coreImage = CIImage(image: image)
-        // pick the filter we want
-        let filter = CIFilter(name: "CIGaussianBlur")
-        // pass our image as input
-        filter!.setValue(coreImage, forKey: kCIInputImageKey)
-        
-        //edit the amount of blur
-        filter!.setValue(10.0, forKey: kCIInputRadiusKey)
-        
-        //retrieve the processed image
-        let filteredImageData = filter!.valueForKey(kCIOutputImageKey) as! CIImage
-        // return a Quartz image from the Core Image context
-        let filteredImageRef = ciContext.createCGImage(filteredImageData, fromRect: filteredImageData.extent)
-        // final UIImage
-        let filteredImage = UIImage(CGImage: filteredImageRef)
-        
-        // create a texture, pass the UIImage
-        let texture = SKTexture(image: filteredImage)
-        // wrap it inside a sprite node
-        let sprite = SKSpriteNode(texture:texture)
-        
-        // make image the position in the center
-        sprite.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-        
-        let scale:CGFloat = UIScreen.mainScreen().scale
-        
-        sprite.size.width  *= scale
-        
-        sprite.size.height *= scale
-        
-        return sprite
-        
+                    let congratulations = PopUpSpriteNode()
+                    congratulations.zPosition = 200
+                    self.addChild(congratulations)
+                    
+                }
+                else if (playerArray == nil) && (winner == nil){
+                    
+                    let waitRoomStart = PopUpSpriteNode(waitStartScene: self)
+                    waitRoomStart.position = CGPoint(x: 0, y: 0)
+                    waitRoomStart.zPosition = 200
+                    self.addChild(waitRoomStart)
+                    
+                }
+                else{
+                    let losePopUp = PopUpSpriteNode(winner: winner!,scene: self)
+                    losePopUp.position = CGPoint(x: 0, y: 0)
+                    losePopUp.zPosition = 200
+                    self.addChild(losePopUp)
+                }
+                
+                
+                
+        }
         
     }
     
@@ -295,10 +215,82 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     func backToLobby(){
         
         let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
-        let scene:SKScene = LobbyScene(size: self.size)
+        let scene:LobbyScene = LobbyScene(size: self.size)
+        scene.player = player
         self.view?.presentScene(scene, transition: transition)
         
         
     }
     
+    func removeTimerFromScene(selfPopUp: PopUpSpriteNode) {
+        
+        selfPopUp.removeFromParent()
+        actionForKey("loading")?.finalize()
+        self.childNodeWithName("rectangle")?.removeFromParent()
+        self.childNodeWithName("alphaNode")?.removeFromParent()
+    }
+    
+    func otherUserScore(){
+        
+        let alphaNode = SKSpriteNode(color: UIColor.blackColor(), size: self.size)
+        alphaNode.alpha = 0.0
+        alphaNode.name = "alphaNode"
+        alphaNode.zPosition = 150
+        alphaNode.userInteractionEnabled = true
+        self.addChild(alphaNode)
+        alphaNode.runAction(SKAction.fadeAlphaTo(0.5, duration: 0.25))
+        
+        animateLoading()
+        
+        WebServiceManager.roomScoreTable(gameRoom.id) { (Dict) in
+            
+            let scorePopUp = PopUpSpriteNode(scorePerUser: Dict!, scene: self)
+            scorePopUp.position = CGPoint(x: 0,y: 0)
+            scorePopUp.zPosition = 200
+            self.addChild(scorePopUp)
+            
+        }
+        
+    }
+    
+    func setAnimationFrames() {
+        //seta os frames do top
+        for i in 0 ... 19{
+            let textureName = "loading\(i)"
+            self.loadingFrames.append(SKTexture(imageNamed: textureName))
+        }
+        
+        for i in 0 ... 10{
+            let textureName = "loaded\(i)"
+            self.loadedFrames.append(SKTexture(imageNamed: textureName))
+        }
+    }
+    
+    func animateLoading() {
+        //cria a ação
+        let loadingAction = SKAction.animateWithTextures(loadingFrames, timePerFrame: 0.03)
+        
+        //cria a "pop up"
+        let rectangle = SKSpriteNode(texture: SKTexture(imageNamed: "loadTwitter"))
+        rectangle.zPosition = 54
+        rectangle.size = CGSize(width: 100, height: 100)
+        rectangle.name = "rectangle"
+        self.addChild(rectangle)
+        
+        //cria o nodo onde vai ter animação
+        self.loadSymbol = SKSpriteNode(texture: SKTexture(imageNamed: ""))
+        self.loadSymbol.zPosition = 55
+        self.loadSymbol.size = CGSize(width: 50, height: 50)
+        rectangle.addChild(self.loadSymbol)
+        
+        //executa a ação
+        loadSymbol.runAction((SKAction.repeatActionForever(loadingAction)), withKey: "loading")
+    }
+    
+    func removeLoadingAnimation(){
+        
+        self.loadSymbol.removeFromParent()
+        self.childNodeWithName("rectangle")?.removeFromParent()
+        self.childNodeWithName("alphaNode")?.removeFromParent()
+    }
 }

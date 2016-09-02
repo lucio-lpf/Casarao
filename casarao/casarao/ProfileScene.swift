@@ -122,7 +122,8 @@ class ProfileScene: SKScene, UITextFieldDelegate {
         else if lobbyButton.containsPoint(point){
             
             let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
-            let scene:SKScene = LobbyScene(size: self.size)
+            let scene:LobbyScene = LobbyScene(size: self.size)
+            scene.player = player
             self.view?.presentScene(scene, transition: transition)
         }
         // update user data

@@ -43,19 +43,21 @@ class MatrixNode : SKSpriteNode {
         
         self.zPosition = 1
         //SO FUNCIONA PRA MATRIZES QUADRADAS
-        let userArray = gameRoom.playerMatrix[playerId]
-        for int in userArray!{
-            if int == 0{
-               tilesArray.append(Tile(colorNumber: int, status: "Wrong"))
+        
+        gameRoom.parseObject.fetchInBackgroundWithBlock { (newObject, error) in
+            let userArray = gameRoom.playerMatrix[playerId]
+            for int in userArray!{
+                if int == 0{
+                    self.tilesArray.append(Tile(colorNumber: int, status: "Wrong"))
+                }
+                else{
+                    self.tilesArray.append(Tile(colorNumber: int, status: "Right"))
+                }
+                
             }
-            else{
-                tilesArray.append(Tile(colorNumber: int, status: "Right"))
-            }
-            
+            self.addTilesAsMatrixChildren()
         }
         
-        
-        addTilesAsMatrixChildren()
         
     }
     
@@ -78,6 +80,32 @@ class MatrixNode : SKSpriteNode {
             
         }
     }
+    
+    func changeMatrixToNewMatrix(newArray: Array<Int>){
+    
+        for i in 0..<tilesArray.count{
+            if newArray[i] != 0{
+                tilesArray[i].colorNumber = newArray[i]
+                tilesArray[i].status = "Right"
+            }
+            else{
+                tilesArray[i].colorNumber = 0
+                tilesArray[i].status = "Wrong"
+            }
+        }
+        
+    }
+    
+    func playerMatrixArray()->(Array<Int>){
+        
+        var array = Array<Int>()
+        
+        for tile in tilesArray{
+            array.append(tile.colorNumber)
+        }
+        return array
+    }
+    
     
     func updateMatrixColors(currentPlayerMatrix:Array<Int>){
         
