@@ -19,6 +19,7 @@ class WebServiceManager {
         var gameRoomsArray: Array<GameRoom>= []
         let parseQuery = PFQuery(className: "GameRoom")
         parseQuery.whereKey("estado", notEqualTo: "finished")
+        parseQuery.orderByAscending("roomName")
         parseQuery.includeKey("players")
         parseQuery.findObjectsInBackgroundWithBlock { (PFObjects, error) in
             if let e = error{
@@ -130,5 +131,39 @@ class WebServiceManager {
         }
 
         
+    }
+    static func checkUserPlayTimer(playerId:String, roomId:String,callBack:(Bool,Int?)->()){
+        
+        print("entrei na funçao")
+        PFCloud.callFunctionInBackground("checkUserPlayTimer", withParameters: ["player":playerId, "room":roomId]) { (response, error) in
+            guard error != nil else{
+                let responseObject = response as! NSDictionary
+                print(responseObject["Messenge"])
+                switch (responseObject["Code"] as! Int){
+                case 0:
+                    callBack(true,nil)
+                    
+                    break
+                    
+                case 1:
+                    
+                    callBack(false,responseObject["TimeLeft"] as? Int)
+                    
+                    break
+                default:
+                    
+                    fatalError()
+                    
+                    break
+                    
+                }
+                
+                return
+            }
+            print(error?.userInfo["error"])
+            fatalError()
+        
+        
+        }
     }
 }

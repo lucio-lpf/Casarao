@@ -100,13 +100,13 @@ class PopUpSpriteNode: SKSpriteNode {
     
     //POPUP DE DESITENCIA DA PARTIDA
     
-    init(scene: GameScene){
+    init(scene: GameScene, seconds:Int){
         super.init(texture: SKTexture(imageNamed: "timerPopUp"), color: SKColor.clearColor(), size: CGSize(width: 300, height: 300))
         self.GameSceneDelegate = scene
         self.LobbySceneDelegate = nil
         
         
-        let wait = SKAction.waitForDuration(10)
+        let wait = SKAction.waitForDuration(Double(seconds))
         let action = SKAction.runBlock {
             self.GameSceneDelegate!.removeTimerFromScene(self)
         }

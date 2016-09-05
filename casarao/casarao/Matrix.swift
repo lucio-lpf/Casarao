@@ -36,7 +36,6 @@ class MatrixNode : SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     init(gameRoom:GameRoom,playerId:String){
         
         super.init(texture: nil, color: UIColor.clearColor(), size: CGSize(width: 400, height: 400))

@@ -6,6 +6,14 @@
 //  Copyright (c) 2016 'team'. All rights reserved.
 //
 
+
+/* Z POSITIONS
+ 
+ 
+ 
+ 
+ 
+ */
 import SpriteKit
 class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
@@ -21,7 +29,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     var loadingFrames = [SKTexture]()
     var loadedFrames = [SKTexture]()
     var loadSymbol = SKSpriteNode()
-    var checkButton: SKSpriteNode
+    var checkButton: SKSpriteNode!
     var mountOfMoney: Int = 0{
         didSet{
             gameHUD.updateMountLabel(mountOfMoney)
@@ -35,9 +43,8 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
     init(size: CGSize,player: Player, gameRoom: GameRoom) {
         
-        let background = SKSpriteNode(imageNamed: "black_background")
         
-        checkButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clearColor(), size: CGSize(width: 300, height: 70))
+        
 
         
         self.gameRoom = gameRoom
@@ -48,8 +55,37 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         super.init(size: size)
         
         
+        
+        
+        
+        
+        
+        
+
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    
+    
+    override func didMoveToView(view: SKView) {
+        /* Setup your scene here */
+        
+        addAlphaNode()
+        
+        setAnimationFrames()
+        
+        animateLoading()
+        
+        checkButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clearColor(), size: CGSize(width: 300, height: 70))
+
+        
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
+        let background = SKSpriteNode(imageNamed: "black_background")
         
         background.size = self.size
         background.position = CGPoint(x: 0,y: 0)
@@ -72,23 +108,17 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         checkButton.zPosition = 3
         addChild(checkButton)
         
-        
-        
-        
-        
-
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    
-    
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        setAnimationFrames()
+        WebServiceManager.checkUserPlayTimer(player.id, roomId: gameRoom.id) { (bool,time) in
+            
+            if !bool{
+                
+                self.waitTimePopUp(time!)
+            }
+            else{
+                self.removeLoadingAnimation()
+            }
+            
+        }
         
     }
     
@@ -103,6 +133,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         let point = touch.locationInNode(self)
         
         if checkButton.containsPoint(point){
+            addAlphaNode()
             checkUserMatrix()
             return
         }
@@ -158,17 +189,9 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
     func checkUserMatrix() {
         
+
             WebServiceManager.checkUserMatrix(player.id, roomId: gameRoom.id, playerMatrixArray: matrix.playerMatrixArray()) { (playerArray, winner) in
                 print(playerArray,winner)
-                
-                let alphaNode = SKSpriteNode(color: UIColor.blackColor(), size: self.size)
-                alphaNode.alpha = 0.0
-                alphaNode.name = "alphaNode"
-                alphaNode.zPosition = 150
-                alphaNode.userInteractionEnabled = true
-                self.addChild(alphaNode)
-                alphaNode.runAction(SKAction.fadeAlphaTo(0.5, duration: 0.25))
-                
                 
                 if (playerArray != nil) && (winner == nil){
                     
@@ -176,7 +199,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
                     
                     
                     self.matrix.changeMatrixToNewMatrix(playerArray!)
-                    let timerPopUp = PopUpSpriteNode(scene: self)
+                    let timerPopUp = PopUpSpriteNode(scene: self, seconds: self.gameRoom.timer)
                     self.chances = 3
                     timerPopUp.zPosition = 200
                     self.addChild(timerPopUp)
@@ -232,13 +255,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
     func otherUserScore(){
         
-        let alphaNode = SKSpriteNode(color: UIColor.blackColor(), size: self.size)
-        alphaNode.alpha = 0.0
-        alphaNode.name = "alphaNode"
-        alphaNode.zPosition = 150
-        alphaNode.userInteractionEnabled = true
-        self.addChild(alphaNode)
-        alphaNode.runAction(SKAction.fadeAlphaTo(0.5, duration: 0.25))
+        addAlphaNode()
         
         animateLoading()
         
@@ -292,5 +309,29 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         self.loadSymbol.removeFromParent()
         self.childNodeWithName("rectangle")?.removeFromParent()
         self.childNodeWithName("alphaNode")?.removeFromParent()
+    }
+    
+    
+    func addAlphaNode(){
+        
+        let alphaNode = SKSpriteNode(color: UIColor.blackColor(), size: self.size)
+        alphaNode.alpha = 0.0
+        alphaNode.name = "alphaNode"
+        alphaNode.zPosition = 150
+        alphaNode.userInteractionEnabled = true
+        self.addChild(alphaNode)
+        alphaNode.runAction(SKAction.fadeAlphaTo(0.5, duration: 0.25))
+    }
+    
+    
+    func waitTimePopUp(seconds:Int){
+        
+        
+        removeLoadingAnimation()
+        addAlphaNode()
+        let timerPopUp = PopUpSpriteNode(scene: self, seconds: seconds)
+        timerPopUp.zPosition = 200
+        self.addChild(timerPopUp)
+        
     }
 }

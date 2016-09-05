@@ -52,6 +52,20 @@ class GameRoom{
         }
     }
     
+    
+    var timer:Int{
+        
+        get{
+            return parseObject.valueForKey("timer") as! Int
+            
+        }
+        
+        set{
+            parseObject.setValue(newValue, forKey: "timer")
+            parseObject.saveInBackground()
+        }
+    }
+    
     // montante das apostas
     var amount:Int{
         get{

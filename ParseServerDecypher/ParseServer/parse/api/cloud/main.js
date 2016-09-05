@@ -36,11 +36,20 @@ Parse.Cloud.define('addUserToRoom', function(request, response) {
               var userMatrix = result.get("userMatrix")
               userMatrix[playerId] = [0,0,0,0,0,0,0,0,0];
               var userRightMatrix = result.get("userRightMatrix")
+              var userPlayTime = result.get("userPlayTime")
+              console.log(userPlayTime, "oi");
+              var date = new Date()
+              console.log(new Date(date));
+              userPlayTime[playerId] = date.getTime() - (result.get("timer")*1000)
+              console.log(userPlayTime[playerId]);
+              console.log("continuando function");
               var array = []
               for (x=0;x<9;x++){
                 array.push(Math.floor((Math.random() * 3) + 1))
               }
               userRightMatrix[playerId] = array
+
+              result.set("amount", result.get("amount") + roomBet)
               result.save()
 
               user.set("coins", playersCoins - roomBet)
@@ -124,6 +133,53 @@ function getRoom(roomId)
 };
 
 
+Parse.Cloud.define('checkUserPlayTimer',function(request,response){
+
+    var roomId = request.params.room;
+    var playerId = request.params.player;
+
+    var responseObject = {
+      Code:999,
+      Messenge:"HAHAHAH",
+      TimeLeft: 0
+    }
+
+    console.log("checando user play time");
+    getRoom(roomId).then(
+
+
+      function(room){
+        console.log("achei a sala");
+        var date = new Date();
+        console.log(date.getTime() - room.get("userPlayTime")[playerId]);
+        console.log(room.get('timer')*1000);
+        var timeWithoutPlay = date.getTime() - room.get("userPlayTime")[playerId]
+        var roomWaitTime = room.get('timer')
+        if (timeWithoutPlay >= (roomWaitTime*1000)) {
+                console.log("Fazem mais de",room.get('timer') ,"seg, pode editar");
+                responseObject.Code = 0
+                responseObject.Messenge = "user can play again"
+                response.success(responseObject);
+
+        }
+        else{
+          console.log("user Cant Play");
+          responseObject.Code = 1
+          responseObject.Messenge = "user can't play again, wait longer"
+          responseObject.TimeLeft = roomWaitTime - (timeWithoutPlay/1000)
+          response.success(responseObject);
+        }
+      },
+      function(error){
+
+      }
+
+
+    )
+
+
+});
+
 
 Parse.Cloud.define('checkUserMatrix',function(request,response){
 
@@ -137,6 +193,7 @@ Parse.Cloud.define('checkUserMatrix',function(request,response){
   }
 
   getRoom(roomId).then(
+
 
       function(room){
           if (room.get("estado") == "playing"){
@@ -154,28 +211,41 @@ Parse.Cloud.define('checkUserMatrix',function(request,response){
             }
           }
           if (verify == true){
+            console.log("user ", playerId,"acertou todas a matriz");
             room.set("estado", "finished");
             room.set("winner", playerId);
+            creatNewRoom(room)
             responseObject.Code = 1
             responseObject.Messenge = "Parabéns, você venceu o jogo!"
 
           }
           else{
+            console.log("user:", playerId,"ainda nao acertou toda a matriz");
+            var userPlayTime = room.get('userPlayTime')
+            console.log(userPlayTime);
+            var date = new Date()
+            userPlayTime[playerId] = date.getTime()
             responseObject.Code = 0
             responseObject.Messenge = "Sua matriz foi corrigida!"
             responseObject.NewArray = userMatrix
 
           }
-          room.save()
+          room.save().then(
+            response.success(responseObject)
+          )
+          console.log(userPlayTime);
 
-          response.success(responseObject)
+
       }
       else if (room.get("estado") == "waiting"){
+        console.log("user:", playerId,"tentou jogar quando a sala ainda nao estava liberada");
         responseObject.Code = 2
         responseObject.Messenge = "Você precisa esperar a sala começar para jogar!"
         esponse.success(responseObject)
       }
       else{
+        console.log("user:", playerId,"depois que alguem ja tinha ganho o jogo");
+
         responseObject.Code = 3
         responseObject.Messenge = "Outro jogador ganhou o jogo!"
         getUser(room.get("winner")).then(
@@ -195,7 +265,38 @@ Parse.Cloud.define('checkUserMatrix',function(request,response){
     }
   )
 
+function creatNewRoom(room){
 
+  console.log("funcção ok");
+
+    // Simple syntax to create a new subclass of Parse.Object.
+    var GameRoom = Parse.Object.extend("GameRoom");
+
+    // Create a new instance of that class.
+    var newGameRoom = new GameRoom();
+
+    console.log("classes certas");
+
+    newGameRoom.set("roomName", room.get("roomName"));
+    newGameRoom.set("players", []);
+    newGameRoom.set("amount", 0);
+    newGameRoom.set("bet", room.get("bet"));
+    newGameRoom.set("estado", "playing");
+    newGameRoom.set("timer", room.get("timer"));
+    newGameRoom.set("maxPlayers", room.get("maxPlayers"));
+    newGameRoom.set("userPlayTime", {});
+    newGameRoom.set("userRightMatrix", {});
+    newGameRoom.set("userMatrix", {});
+
+    console.log("atribuicoes certas");
+
+    newGameRoom.save()
+
+    console.log(newGameRoom);
+
+
+
+}
 
 
 })

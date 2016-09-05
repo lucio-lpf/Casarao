@@ -72,17 +72,17 @@ class GameHUD: SKSpriteNode{
         
         
         giveUpButton.position = CGPoint(x: -self.size.width/2 + 40, y: self.size.height/2)
-        giveUpButton.zPosition = 100
+        giveUpButton.zPosition = 200
         addChild(giveUpButton)
         
         
         otherUsersScoreButton.position = CGPoint(x: +self.size.width/2 - otherUsersScoreButton.size.width, y: self.size.height/2 - otherUsersScoreButton.size.height/2 - 20)
-        otherUsersScoreButton.zPosition = 100
+        otherUsersScoreButton.zPosition = 200
         addChild(otherUsersScoreButton)
         
         
         backToLobbyButton.position = CGPoint(x: -self.size.width/2 + backToLobbyButton.size.width/2, y: self.size.height/2 - backToLobbyButton.size.height/2 - 20)
-        backToLobbyButton.zPosition = 100
+        backToLobbyButton.zPosition = 250
         addChild(backToLobbyButton)
         
         
