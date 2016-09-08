@@ -25,10 +25,10 @@ class StoreScene: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
         
-        profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button_disable"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
         profileButton.position = CGPoint(x: -size.width/2 + profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
-        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button_disable"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
         lobbyButton.position = CGPoint(x: 0, y: -size.height/2 + profileButton.size.height/2)
         
         storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
@@ -60,12 +60,14 @@ class StoreScene: SKScene {
         if profileButton.containsPoint(point){
             
             let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
-            let scene:SKScene = ProfileScene(size: self.size)
+            let scene:ProfileScene = ProfileScene(size: self.size)
+            scene.player = player
             self.view?.presentScene(scene, transition: transition)
         }
         else if lobbyButton.containsPoint(point){
             let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
-            let scene:SKScene = LobbyScene(size: self.size)
+            let scene:LobbyScene = LobbyScene(size: self.size)
+            scene.player = player
             self.view?.presentScene(scene, transition: transition)
         }
     }

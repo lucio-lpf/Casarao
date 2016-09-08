@@ -29,10 +29,15 @@ class UserHUD: SKSpriteNode {
         userExpirience = 10
         super.init(texture: nil, color: SKColor.clearColor(), size: CGSize(width: UIScreen.mainScreen().bounds.width, height: 25))
         userCoins = player.coins!
+        
+        let coinsIcon = SKSpriteNode(texture: SKTexture(imageNamed: "coins"), color: SKColor.clearColor(), size: CGSize(width: 30, height: 30))
+        coinsIcon.position = CGPoint(x: 25 - size.width/2 , y: -8)
+        coinsIcon.zPosition += zPosition
+        addChild(coinsIcon)
     
-       coinsLabel = SKLabelNode(text: "Coins: \(String(defaults.integerForKey("coins")))")
+        coinsLabel = SKLabelNode(text: "\(String(defaults.integerForKey("coins")))")
         coinsLabel.fontSize = 16
-        coinsLabel.position = CGPoint(x: size.width/2 - 50, y: 0)
+        coinsLabel.position = CGPoint(x: 90 - size.width/2, y: -8)
         coinsLabel.zPosition += zPosition
         addChild(coinsLabel)
     

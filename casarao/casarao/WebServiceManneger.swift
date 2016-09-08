@@ -33,6 +33,24 @@ class WebServiceManager {
             }
         }
     }
+    static func getGameRoomFromId(gameRoomId:String, callBack:(GameRoom:GameRoom)->()){
+        
+        let parseQuery = PFQuery(className: "GameRoom")
+        parseQuery.whereKey("obejctId", equalTo: gameRoomId )
+        parseQuery.includeKey("players")
+        parseQuery.findObjectsInBackgroundWithBlock { (PFObjects, error) in
+            if let e = error{
+                print(e.debugDescription)
+            }else{
+                print(PFObjects)
+               let  gameRoom = GameRoom(pfobject: PFObjects![0])
+                callBack(GameRoom: gameRoom)
+                
+            }
+           
+        }
+    }
+    
     
     static func addUserToRoom(playerId:String,roomId:String,callBack: (Bool)->()){
         PFCloud.callFunctionInBackground("addUserToRoom", withParameters: ["player":playerId, "room":roomId]) { (response, error) in

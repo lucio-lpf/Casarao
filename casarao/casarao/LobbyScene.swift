@@ -39,13 +39,13 @@ class LobbyScene: SKScene, PopUpInLobby {
         //SET TAB BUTTONS
         
         
-        profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button_disable"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
         profileButton.position = CGPoint(x: -size.width/2 + profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
         lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
         lobbyButton.position = CGPoint(x: 0, y: -size.height/2 + profileButton.size.height/2)
         
-        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button_disable"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
         storeButton.position = CGPoint(x: size.width/2 - profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
         super.init(size: size)
@@ -87,6 +87,10 @@ class LobbyScene: SKScene, PopUpInLobby {
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
         
+        
+        
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge , .Sound] , categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         
         userHUD = UserHUD(player: player)
         userHUD.position = CGPoint(x: 0, y: size.height/2 - userHUD.size.height/2)
@@ -144,7 +148,9 @@ class LobbyScene: SKScene, PopUpInLobby {
         else if storeButton.containsPoint(point){
             
             let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
-            let scene:SKScene = StoreScene(size: self.size)
+            let scene:StoreScene = StoreScene(size: self.size)
+            scene.player = player
+
             removeFromParent()
             self.view?.presentScene(scene, transition: transition)
             

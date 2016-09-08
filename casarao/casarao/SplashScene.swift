@@ -17,6 +17,13 @@ class SplashScene: SKScene {
     
     var player:Player!
     
+    static var notificationPlayer:Player?
+    
+    static var nextSceneIsOn: String?
+    
+    static var gameRoomTargetId: String?
+    
+    
     
     override init(size: CGSize) {
         
@@ -29,6 +36,7 @@ class SplashScene: SKScene {
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
         
+  
         let allUsersPass = "P6xA5#72GacX;F]X"
         let userNickname = "GuestUser\(Int(arc4random_uniform(1000)))"
         
@@ -78,14 +86,32 @@ class SplashScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     func lobbyTransition(){
         
-        let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
-        let lobby:LobbyScene = LobbyScene(size: self.size)
-        player.updateUserDefaults(player.coins!)
-        lobby.player = player
-        self.view!.presentScene(lobby, transition: transition)
+        if let gameRoom = SplashScene.gameRoomTargetId{
+            
+            WebServiceManager.getGameRoomFromId(gameRoom, callBack: { (GameRoom) in
+                let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+                self.player.updateUserDefaults(self.player.coins!)
+                let gameScene:GameScene = GameScene(size: self.size, player: self.player, gameRoom: GameRoom)
+                self.view!.presentScene(gameScene, transition: transition)
+            })
+            
+            
+        }
+            
+        else{
+            let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+            let lobby:LobbyScene = LobbyScene(size: self.size)
+            player.updateUserDefaults(player.coins!)
+            lobby.player = player
+            self.view!.presentScene(lobby, transition: transition)
+        }
+        
+        
     }
+    
     
     func iCloudKeysChanged(sender: NSNotification) {
         

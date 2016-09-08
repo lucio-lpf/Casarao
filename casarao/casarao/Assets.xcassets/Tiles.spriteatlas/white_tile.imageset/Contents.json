@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "white_tile.png",
+      "filename" : "white_tile@3x.png",
       "scale" : "1x"
     },
     {

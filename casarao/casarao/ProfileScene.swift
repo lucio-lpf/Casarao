@@ -35,10 +35,10 @@ class ProfileScene: SKScene, UITextFieldDelegate {
         profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
         profileButton.position = CGPoint(x: -size.width/2 + profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
-        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button_disable"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
         lobbyButton.position = CGPoint(x: 0, y: -size.height/2 + profileButton.size.height/2)
         
-        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button_disable"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
         storeButton.position = CGPoint(x: size.width/2 - profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
         loginButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clearColor(), size: CGSize(width: 300, height: 70))
@@ -114,7 +114,8 @@ class ProfileScene: SKScene, UITextFieldDelegate {
         if storeButton.containsPoint(point) {
             
             let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
-            let scene:SKScene = StoreScene(size: self.size)
+            let scene:StoreScene = StoreScene(size: self.size)
+            scene.player = player
             self.view?.presentScene(scene, transition: transition)
             
         }

@@ -36,7 +36,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
 
-
+        if let options = launchOptions {
+            if let notification = options[UIApplicationLaunchOptionsLocalNotificationKey] as? UILocalNotification {
+                if let userInfo = notification.userInfo {
+                    if let gameRoomId = userInfo["gameRoomId"]{
+                        print(gameRoomId)
+                        SplashScene.gameRoomTargetId = gameRoomId.description
+                    }
+                }
+            }
+        }
+        
         return true
     }
     
@@ -46,6 +56,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         installation?.channels = ["global"]
         installation?.saveInBackground()
     }
+    
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        if let userInfo = notification.userInfo {
+            let customField1 = userInfo["gameRoomId"] as! String
+            SplashScene.gameRoomTargetId = customField1
+            print("didReceiveLocalNotification: \(customField1)")
+        }
+    }
+    
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)

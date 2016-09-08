@@ -62,21 +62,36 @@ class MatrixNode : SKSpriteNode {
     
     private func addTilesAsMatrixChildren() {
         //otimizar essa parte(muitos ifs)
-        var countLine  = 0
-        var y = +self.size.height/4
-        var x = -self.size.width/4
+
+        
         for i in 0..<tilesArray.count{
-            let tile = tilesArray[i]
-            tile.position = CGPoint(x: x, y: y)
-            self.addChild(tile)
-            countLine += 1
-            x += self.size.width/4
-            if countLine == 3{
-                y -= self.size.height/4
-                x = -self.size.width/4
-                countLine = 0
+            
+            if i < 3{
+                
+                let tile = tilesArray[i]
+                let yposition = tile.size.height - (tile.size.height * CGFloat(i)) + CGFloat(15 - (15 * i))
+                tilesArray[i].position = CGPoint(x: -tile.size.width + 15, y: yposition)
+                
+                
+            }
+            else if(i<6){
+                
+                
+                let tile = tilesArray[i]
+                let yposition = (tile.size.height * 4) - (tile.size.height * CGFloat(i)) + CGFloat(60 - (15 * i)) - tile.size.height/2
+                tilesArray[i].position = CGPoint(x: 0, y: yposition)
+            }
+            else{
+                
+                let tile = tilesArray[i]
+                let yposition = (tile.size.height * 7) - (tile.size.height * CGFloat(i)) + CGFloat(105 - (15 * i))
+                tilesArray[i].position = CGPoint(x: +tile.size.width - 15, y: yposition)
+
+
             }
             
+            addChild(tilesArray[i])
+        
         }
     }
     

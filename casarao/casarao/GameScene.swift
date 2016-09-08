@@ -202,6 +202,18 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
                     let timerPopUp = PopUpSpriteNode(scene: self, seconds: self.gameRoom.timer)
                     self.chances = 3
                     timerPopUp.zPosition = 200
+                    
+                    
+                    let notification = UILocalNotification()
+                    notification.fireDate = NSDate(timeIntervalSinceNow: 10)
+                    notification.alertBody = "Hey you! It's time to play agian! Don't waist any time!"
+                    notification.alertAction = "Time to win!"
+                    notification.soundName = UILocalNotificationDefaultSoundName
+                    notification.userInfo = ["gameRoomId": self.gameRoom.id]
+                    UIApplication.sharedApplication().scheduleLocalNotification(notification)
+                    
+                    
+                    
                     self.addChild(timerPopUp)
                 }
                 else if (playerArray != nil) && (winner != nil){
