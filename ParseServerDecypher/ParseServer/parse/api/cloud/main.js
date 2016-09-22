@@ -30,7 +30,7 @@ Parse.Cloud.define('addUserToRoom', function(request, response) {
               console.log("ele tem moedas o bastante");
 
               var newUserArray = result.get("players")
-              newUserArray.push(user);
+              newUserArray.push(user.id);
               result.set('players', newUserArray)
 
               var userMatrix = result.get("userMatrix")
@@ -40,7 +40,7 @@ Parse.Cloud.define('addUserToRoom', function(request, response) {
               console.log(userPlayTime, "oi");
               var date = new Date()
               console.log(new Date(date));
-              userPlayTime[playerId] = date.getTime() - (result.get("timer")*1000)
+              userPlayTime[playerId] = date.getTime() //- (result.get("timer")*1000)
               console.log(userPlayTime[playerId]);
               console.log("continuando function");
               var array = []
@@ -189,7 +189,8 @@ Parse.Cloud.define('checkUserMatrix',function(request,response){
     Code:999,
     Messenge:"HAHAHAH",
     NewArray:[0,0,0,0,0,0,0,0,0],
-    Winner:"guestUser"
+    Winner:"guestUser",
+    NewRoomObject:null
   }
 
   getRoom(roomId).then(
@@ -230,9 +231,17 @@ Parse.Cloud.define('checkUserMatrix',function(request,response){
             responseObject.NewArray = userMatrix
 
           }
-          room.save().then(
-            response.success(responseObject)
-          )
+          room.save().then(function(newRoom){
+              newRoom.fetch().then(
+              function(newRoomAtt){
+                responseObject.NewRoomObject = newRoomAtt
+                response.success(responseObject)
+
+              }
+
+            )
+
+          })
           console.log(userPlayTime);
 
 
@@ -296,11 +305,8 @@ function creatNewRoom(room){
 
 
 
-}
-
-
+  }
 })
-
 Parse.Cloud.define('checkIfUserIsInRoom', function(request,response){
 
   var roomId = request.params.room;
@@ -317,7 +323,7 @@ Parse.Cloud.define('checkIfUserIsInRoom', function(request,response){
       console.log('Sala encontrada')
       var players = result.get('players')
       for (i = 0;i<players.length;i++){
-          if (players[i].id == playerId){
+          if (players[i] == playerId){
             responseObject["Code"] = 0
             responseObject["Messenge"] = "Player is in the room"
             response.success(responseObject);

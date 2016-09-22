@@ -25,13 +25,13 @@ class StoreScene: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
         
-        profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button_disable"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button_disable"), color: SKColor.clear, size: CGSize(width: 100, height: 100 ))
         profileButton.position = CGPoint(x: -size.width/2 + profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
-        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button_disable"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button_disable"), color: SKColor.clear, size: CGSize(width: 100, height: 100 ))
         lobbyButton.position = CGPoint(x: 0, y: -size.height/2 + profileButton.size.height/2)
         
-        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button"), color: SKColor.clear, size: CGSize(width: 110, height: 110 ))
         storeButton.position = CGPoint(x: size.width/2 - profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -47,25 +47,25 @@ class StoreScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func update(currentTime: NSTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         
         let touch = touches.first!
-        let point = touch.locationInNode(self)
+        let point = touch.location(in: self)
         
-        if profileButton.containsPoint(point){
+        if profileButton.contains(point){
             
-            let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+            let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
             let scene:ProfileScene = ProfileScene(size: self.size)
             scene.player = player
             self.view?.presentScene(scene, transition: transition)
         }
-        else if lobbyButton.containsPoint(point){
-            let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+        else if lobbyButton.contains(point){
+            let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
             let scene:LobbyScene = LobbyScene(size: self.size)
             scene.player = player
             self.view?.presentScene(scene, transition: transition)
@@ -73,9 +73,9 @@ class StoreScene: SKScene {
     }
     
     
-    private func transitioToScene(scene:SKScene) {
+    fileprivate func transitioToScene(_ scene:SKScene) {
         
-        let transition = SKTransition.crossFadeWithDuration(0.5)
+        let transition = SKTransition.crossFade(withDuration: 0.5)
         // Configure the view.
         let skView = self.view!
         skView.showsFPS = true
@@ -85,7 +85,7 @@ class StoreScene: SKScene {
         skView.ignoresSiblingOrder = true
         
         /* Set the scale mode to scale to fit the window */
-        scene.scaleMode = .AspectFill
+        scene.scaleMode = .aspectFill
         
         skView.presentScene(scene, transition: transition)
         

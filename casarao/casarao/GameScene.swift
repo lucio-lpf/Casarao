@@ -71,7 +71,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
     
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
         
         addAlphaNode()
@@ -80,7 +80,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         
         animateLoading()
         
-        checkButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clearColor(), size: CGSize(width: 300, height: 70))
+        checkButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clear, size: CGSize(width: 300, height: 70))
 
         
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -124,22 +124,22 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
     
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
-        let point = touch.locationInNode(self)
+        let point = touch.location(in: self)
         
-        if checkButton.containsPoint(point){
+        if checkButton.contains(point){
             addAlphaNode()
             checkUserMatrix()
             return
         }
-        if matrix.containsPoint(point){
+        if matrix.contains(point){
             for tile in matrix.tilesArray{
-                if tile.containsPoint(point){
+                if tile.contains(point){
                     
                     checkUserChances(tile)
                     return
@@ -147,14 +147,14 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
             }
         }
         
-        if gameHUD.containsPoint(point){
+        if gameHUD.contains(point){
             
            
         }
     }
     
     
-    func userGaveUpGame(response: Bool, selfpopUp: PopUpSpriteNode) {
+    func userGaveUpGame(_ response: Bool, selfpopUp: PopUpSpriteNode) {
         if response{
             
             
@@ -166,7 +166,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         }
     }
     
-    func checkUserChances(tile:Tile) {
+    func checkUserChances(_ tile:Tile) {
         if tile.status == "Wrong"{
             if tile.colorNumber == 3 {
                 self.chances += 1
@@ -190,27 +190,31 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     func checkUserMatrix() {
         
 
-            WebServiceManager.checkUserMatrix(player.id, roomId: gameRoom.id, playerMatrixArray: matrix.playerMatrixArray()) { (playerArray, winner) in
+            WebServiceManager.checkUserMatrix(player.id, roomId: gameRoom.id, playerMatrixArray: matrix.playerMatrixArray()) { (playerArray, winner,newObject) in
                 print(playerArray,winner)
                 
                 if (playerArray != nil) && (winner == nil){
                     
                     
                     
-                    
+                    self.gameRoom.parseObject = newObject!
                     self.matrix.changeMatrixToNewMatrix(playerArray!)
                     let timerPopUp = PopUpSpriteNode(scene: self, seconds: self.gameRoom.timer)
                     self.chances = 3
                     timerPopUp.zPosition = 200
                     
+                    if let index = AlertSpriteKit.gameRoomsToPlay.index(of: self.gameRoom.id) {
+                        AlertSpriteKit.gameRoomsToPlay.remove(at: index)
+                    }
+                    
                     
                     let notification = UILocalNotification()
-                    notification.fireDate = NSDate(timeIntervalSinceNow: 10)
+                    notification.fireDate = Date(timeIntervalSinceNow: 10)
                     notification.alertBody = "Hey you! It's time to play agian! Don't waist any time!"
                     notification.alertAction = "Time to win!"
                     notification.soundName = UILocalNotificationDefaultSoundName
                     notification.userInfo = ["gameRoomId": self.gameRoom.id]
-                    UIApplication.sharedApplication().scheduleLocalNotification(notification)
+                    UIApplication.shared.scheduleLocalNotification(notification)
                     
                     
                     
@@ -249,7 +253,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
     func backToLobby(){
         
-        let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+        let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
         let scene:LobbyScene = LobbyScene(size: self.size)
         scene.player = player
         self.view?.presentScene(scene, transition: transition)
@@ -257,12 +261,12 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         
     }
     
-    func removeTimerFromScene(selfPopUp: PopUpSpriteNode) {
+    func removeTimerFromScene(_ selfPopUp: PopUpSpriteNode) {
         
         selfPopUp.removeFromParent()
-        actionForKey("loading")?.finalize()
-        self.childNodeWithName("rectangle")?.removeFromParent()
-        self.childNodeWithName("alphaNode")?.removeFromParent()
+        action(forKey: "loading")?.finalize()
+        self.childNode(withName: "rectangle")?.removeFromParent()
+        self.childNode(withName: "alphaNode")?.removeFromParent()
     }
     
     func otherUserScore(){
@@ -271,14 +275,14 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         
         animateLoading()
         
-        WebServiceManager.roomScoreTable(gameRoom.id) { (Dict) in
-            
-            let scorePopUp = PopUpSpriteNode(scorePerUser: Dict!, scene: self)
-            scorePopUp.position = CGPoint(x: 0,y: 0)
-            scorePopUp.zPosition = 200
-            self.addChild(scorePopUp)
-            
-        }
+//        WebServiceManager.roomScoreTable(gameRoom.id) { (Dict) in
+//            
+//            let scorePopUp = PopUpSpriteNode(scorePerUser: Dict!, scene: self)
+//            scorePopUp.position = CGPoint(x: 0,y: 0)
+//            scorePopUp.zPosition = 200
+//            self.addChild(scorePopUp)
+//            
+//        }
         
     }
     
@@ -297,7 +301,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
     func animateLoading() {
         //cria a ação
-        let loadingAction = SKAction.animateWithTextures(loadingFrames, timePerFrame: 0.03)
+        let loadingAction = SKAction.animate(with: loadingFrames, timePerFrame: 0.03)
         
         //cria a "pop up"
         let rectangle = SKSpriteNode(texture: SKTexture(imageNamed: "loadTwitter"))
@@ -313,30 +317,30 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         rectangle.addChild(self.loadSymbol)
         
         //executa a ação
-        loadSymbol.runAction((SKAction.repeatActionForever(loadingAction)), withKey: "loading")
+        loadSymbol.run((SKAction.repeatForever(loadingAction)), withKey: "loading")
     }
     
     func removeLoadingAnimation(){
         
         self.loadSymbol.removeFromParent()
-        self.childNodeWithName("rectangle")?.removeFromParent()
-        self.childNodeWithName("alphaNode")?.removeFromParent()
+        self.childNode(withName: "rectangle")?.removeFromParent()
+        self.childNode(withName: "alphaNode")?.removeFromParent()
     }
     
     
     func addAlphaNode(){
         
-        let alphaNode = SKSpriteNode(color: UIColor.blackColor(), size: self.size)
+        let alphaNode = SKSpriteNode(color: UIColor.black, size: self.size)
         alphaNode.alpha = 0.0
         alphaNode.name = "alphaNode"
         alphaNode.zPosition = 150
-        alphaNode.userInteractionEnabled = true
+        alphaNode.isUserInteractionEnabled = true
         self.addChild(alphaNode)
-        alphaNode.runAction(SKAction.fadeAlphaTo(0.5, duration: 0.25))
+        alphaNode.run(SKAction.fadeAlpha(to: 0.5, duration: 0.25))
     }
     
     
-    func waitTimePopUp(seconds:Int){
+    func waitTimePopUp(_ seconds:Int){
         
         
         removeLoadingAnimation()

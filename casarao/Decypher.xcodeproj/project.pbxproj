@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A22E3E01D81DA4F008DC4C4 /* AlertSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22E3DF1D81DA4F008DC4C4 /* AlertSpriteNode.swift */; };
+		5A22E3E21D81E32A008DC4C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A22E3E11D81E32A008DC4C4 /* Assets.xcassets */; };
 		5A41A2871D3E902000C93165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2861D3E902000C93165 /* AppDelegate.swift */; };
 		5A41A28B1D3E902000C93165 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A28A1D3E902000C93165 /* GameScene.swift */; };
 		5A41A28D1D3E902000C93165 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A28C1D3E902000C93165 /* GameViewController.swift */; };
 		5A41A2901D3E902000C93165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A28E1D3E902000C93165 /* Main.storyboard */; };
-		5A41A2921D3E902000C93165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A2911D3E902000C93165 /* Assets.xcassets */; };
 		5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */; };
 		5A41A2A01D3E902000C93165 /* casaraoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A29F1D3E902000C93165 /* casaraoTests.swift */; };
 		5A41A2AB1D3E902000C93165 /* casaraoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */; };
@@ -21,6 +22,7 @@
 		5A4B67C31D5BB51300E09295 /* UserHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4B67C21D5BB51300E09295 /* UserHUD.swift */; };
 		5A4B67D81D5CF93E00E09295 /* SplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4B67D71D5CF93E00E09295 /* SplashScene.swift */; };
 		5A4B67DA1D5E12A500E09295 /* ScrollSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4B67D91D5E12A500E09295 /* ScrollSprite.swift */; };
+		5A8553881D94511F005AF1E7 /* Pods_casarao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8553871D94511F005AF1E7 /* Pods_casarao.framework */; };
 		5A8FDA6F1D46911900A7C1C9 /* PopUpSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FDA6E1D46911900A7C1C9 /* PopUpSpriteNode.swift */; };
 		5AC3486A1D4697530094AE21 /* GameHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC348691D4697530094AE21 /* GameHUD.swift */; };
 		5AEF63EB1D4FD67200959B01 /* GameRoomSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF63EA1D4FD67200959B01 /* GameRoomSpriteNode.swift */; };
@@ -36,7 +38,6 @@
 		9FE8E1BC1D3EB19100A32C65 /* GameRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */; };
 		9FE8E1BE1D3EB42A00A32C65 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BD1D3EB42A00A32C65 /* Player.swift */; };
 		9FE8E1C01D3EB6ED00A32C65 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BF1D3EB6ED00A32C65 /* Matrix.swift */; };
-		DE86FA8407EA37A96FB3E097 /* Pods_casarao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9621FB30D68550CD1AF8D1F /* Pods_casarao.framework */; };
 		DF86772EA0839830E60E640F /* Pods_casaraoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA99AF5004B20F68CAF0FF03 /* Pods_casaraoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,12 +60,13 @@
 
 /* Begin PBXFileReference section */
 		5186AD38E5BF37BCB2F71290 /* Pods-casaraoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casaraoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-casaraoTests/Pods-casaraoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5A22E3DF1D81DA4F008DC4C4 /* AlertSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSpriteNode.swift; sourceTree = "<group>"; };
+		5A22E3E11D81E32A008DC4C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A41A2831D3E902000C93165 /* Decypher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decypher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A41A2861D3E902000C93165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A41A28A1D3E902000C93165 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		5A41A28C1D3E902000C93165 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5A41A28F1D3E902000C93165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5A41A2911D3E902000C93165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A41A2941D3E902000C93165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A41A2961D3E902000C93165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A41A29B1D3E902000C93165 /* Decypher.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Decypher.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 		5A4B67C21D5BB51300E09295 /* UserHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHUD.swift; sourceTree = "<group>"; };
 		5A4B67D71D5CF93E00E09295 /* SplashScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScene.swift; sourceTree = "<group>"; };
 		5A4B67D91D5E12A500E09295 /* ScrollSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollSprite.swift; sourceTree = "<group>"; };
+		5A8553871D94511F005AF1E7 /* Pods_casarao.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_casarao.framework; path = "../../Library/Developer/Xcode/DerivedData/casarao-ennmzsqwvdowarbmepexednnmoji/Build/Products/Debug-iphonesimulator/Pods_casarao.framework"; sourceTree = "<group>"; };
 		5A8FDA6E1D46911900A7C1C9 /* PopUpSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpSpriteNode.swift; sourceTree = "<group>"; };
 		5AC348691D4697530094AE21 /* GameHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHUD.swift; sourceTree = "<group>"; };
 		5AEF63EA1D4FD67200959B01 /* GameRoomSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoomSpriteNode.swift; sourceTree = "<group>"; };
@@ -108,8 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A8553881D94511F005AF1E7 /* Pods_casarao.framework in Frameworks */,
 				9FE2BCB81D3E95E100B95074 /* CloudKit.framework in Frameworks */,
-				DE86FA8407EA37A96FB3E097 /* Pods_casarao.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +207,7 @@
 		9734F5870A3FF1CFC2597050 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A8553871D94511F005AF1E7 /* Pods_casarao.framework */,
 				D9621FB30D68550CD1AF8D1F /* Pods_casarao.framework */,
 				EA99AF5004B20F68CAF0FF03 /* Pods_casaraoTests.framework */,
 				730A9F6588B9E66C8B631ABE /* Pods_casaraoUITests.framework */,
@@ -226,8 +230,8 @@
 		9F1591AD1D3FD80900C52171 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				5A22E3E11D81E32A008DC4C4 /* Assets.xcassets */,
 				5A41A28E1D3E902000C93165 /* Main.storyboard */,
-				5A41A2911D3E902000C93165 /* Assets.xcassets */,
 				5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */,
 			);
 			name = Assets;
@@ -248,6 +252,7 @@
 				9FE8E1BF1D3EB6ED00A32C65 /* Matrix.swift */,
 				5A8FDA6E1D46911900A7C1C9 /* PopUpSpriteNode.swift */,
 				5AC348691D4697530094AE21 /* GameHUD.swift */,
+				5A22E3DF1D81DA4F008DC4C4 /* AlertSpriteNode.swift */,
 				5A4B67D91D5E12A500E09295 /* ScrollSprite.swift */,
 				5A4B67C21D5BB51300E09295 /* UserHUD.swift */,
 				5AEF63EA1D4FD67200959B01 /* GameRoomSpriteNode.swift */,
@@ -348,12 +353,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "'team'";
 				TargetAttributes = {
 					5A41A2821D3E902000C93165 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = TY5QM4UU69;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -365,10 +371,12 @@
 					};
 					5A41A29A1D3E902000C93165 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 5A41A2821D3E902000C93165;
 					};
 					5A41A2A51D3E902000C93165 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 5A41A2821D3E902000C93165;
 					};
 				};
@@ -400,7 +408,7 @@
 			files = (
 				5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */,
 				9F94AE1C1D54D96A00113344 /* default.gpx in Resources */,
-				5A41A2921D3E902000C93165 /* Assets.xcassets in Resources */,
+				5A22E3E21D81E32A008DC4C4 /* Assets.xcassets in Resources */,
 				5A41A2901D3E902000C93165 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -670,6 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AFDBCF41D3EAEDF0093F328 /* WebServiceManneger.swift in Sources */,
+				5A22E3E01D81DA4F008DC4C4 /* AlertSpriteNode.swift in Sources */,
 				5A41A28B1D3E902000C93165 /* GameScene.swift in Sources */,
 				5AC3486A1D4697530094AE21 /* GameHUD.swift in Sources */,
 				5A41A28D1D3E902000C93165 /* GameViewController.swift in Sources */,
@@ -758,8 +767,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -804,8 +815,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -824,6 +837,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -833,6 +847,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 95C3A4A2498456A784D8E56F /* Pods-casarao.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = casarao/casarao.entitlements;
@@ -845,6 +860,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "casarao/Decypher-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -852,6 +868,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC2E7637816376BF6BDAAD64 /* Pods-casarao.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = casarao/casarao.entitlements;
@@ -863,6 +880,7 @@
 				PRODUCT_NAME = Decypher;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "casarao/Decypher-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -876,6 +894,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoTests";
 				PRODUCT_NAME = Decypher;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Decypher.app/Decypher";
 			};
 			name = Debug;
@@ -889,6 +908,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoTests";
 				PRODUCT_NAME = Decypher;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Decypher.app/Decypher";
 			};
 			name = Release;
@@ -902,6 +922,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoUITests";
 				PRODUCT_NAME = Decypher;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = casarao;
 			};
 			name = Debug;
@@ -914,6 +935,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoUITests";
 				PRODUCT_NAME = Decypher;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = casarao;
 			};
 			name = Release;

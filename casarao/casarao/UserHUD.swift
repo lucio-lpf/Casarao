@@ -11,7 +11,7 @@ import SpriteKit
 
 class UserHUD: SKSpriteNode {
     
-     let defaults = NSUserDefaults.standardUserDefaults()
+     let defaults = UserDefaults.standard
     
     var userExpirience: Int
     
@@ -27,25 +27,26 @@ class UserHUD: SKSpriteNode {
     init(player:Player){
         
         userExpirience = 10
-        super.init(texture: nil, color: SKColor.clearColor(), size: CGSize(width: UIScreen.mainScreen().bounds.width, height: 25))
+        super.init(texture: nil, color: SKColor.clear, size: CGSize(width: UIScreen.main.bounds.width, height: 50))
         userCoins = player.coins!
         
-        let coinsIcon = SKSpriteNode(texture: SKTexture(imageNamed: "coins"), color: SKColor.clearColor(), size: CGSize(width: 30, height: 30))
-        coinsIcon.position = CGPoint(x: 25 - size.width/2 , y: -8)
+        let coinsIcon = SKSpriteNode(texture: SKTexture(imageNamed: "coinsIcon"), color: SKColor.clear, size: SKTexture(imageNamed: "coinsIcon").size())
+        coinsIcon.position = CGPoint(x: coinsIcon.size.width/2 - size.width/2 + 10 , y: 0)
         coinsIcon.zPosition += zPosition
         addChild(coinsIcon)
     
-        coinsLabel = SKLabelNode(text: "\(String(defaults.integerForKey("coins")))")
+        coinsLabel = SKLabelNode(text: "\(String(defaults.integer(forKey: "coins")))")
+        coinsLabel.fontColor = SKColor.black
+        coinsLabel.position = CGPoint(x: coinsIcon.size.width/2 - 20, y: -6)
         coinsLabel.fontSize = 16
-        coinsLabel.position = CGPoint(x: 90 - size.width/2, y: -8)
-        coinsLabel.zPosition += zPosition
-        addChild(coinsLabel)
+        coinsLabel.zPosition = coinsIcon.zPosition + 2
+        coinsIcon.addChild(coinsLabel)
     
     }
     
     
     func updateCoinsLabel(){
-          coinsLabel = SKLabelNode(text: "Coins: \(String(defaults.integerForKey("coins")))")
+          coinsLabel = SKLabelNode(text: "Coins: \(String(defaults.integer(forKey: "coins")))")
     }
     
     required init?(coder aDecoder: NSCoder) {

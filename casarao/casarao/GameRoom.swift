@@ -13,7 +13,7 @@ class GameRoom{
     
     var roomName:String?{
         get{
-            return parseObject.valueForKey("roomName") as? String
+            return parseObject.value(forKey: "roomName") as? String
         }
         set{
             parseObject.setValue(newValue, forKey: "roomName")
@@ -22,33 +22,23 @@ class GameRoom{
 
     }
     
-    var players:Array<Player>{
+    var players:Array<String>{
         
         get{
-            let pfusers =  parseObject.valueForKey("players") as? Array<PFUser>
-            var playerArray:Array<Player> = []
-            if pfusers != nil{
-                for user in (pfusers)!{
-                    playerArray.append(Player(pfuser: user))
-                }
-            }
+            return parseObject.value(forKey: "players") as! Array<String>
             
-            return playerArray
         }
+        
         set{
-            var userArray:Array<PFUser> = []
-            for player in newValue{
-                userArray.append(player.parseUser)
-            }
-            parseObject.setValue(userArray, forKey: "players")
+            parseObject.setValue(newValue, forKey: "players")
             parseObject.saveInBackground()
         }
     }
     
     // hora que começa o game
-    var startTime:NSDate?{
+    var startTime:Date?{
         get{
-            return parseObject.valueForKey("startTime") as? NSDate
+            return parseObject.value(forKey: "startTime") as? Date
         }
     }
     
@@ -56,7 +46,7 @@ class GameRoom{
     var timer:Int{
         
         get{
-            return parseObject.valueForKey("timer") as! Int
+            return parseObject.value(forKey: "timer") as! Int
             
         }
         
@@ -69,7 +59,7 @@ class GameRoom{
     // montante das apostas
     var amount:Int{
         get{
-            return parseObject.valueForKey("amount") as! Int
+            return parseObject.value(forKey: "amount") as! Int
         }
         set{
             parseObject.setValue(newValue, forKey: "amount")
@@ -80,14 +70,14 @@ class GameRoom{
     // aposta inicial
     var bet:Int{
         get{
-            return parseObject.valueForKey("bet") as! Int
+            return parseObject.value(forKey: "bet") as! Int
         }
     }
     
     var status:String{
         
         get{
-           return parseObject.valueForKey("estado") as! String
+           return parseObject.value(forKey: "estado") as! String
         }
         set{
             parseObject.setValue(newValue, forKey: "estado")
@@ -97,7 +87,7 @@ class GameRoom{
     }
     var winner:Player?{
         get{
-            let user = parseObject.valueForKey("winner") as! PFUser
+            let user = parseObject.value(forKey: "winner") as! PFUser
             return Player(pfuser: user)
         }
         set{
@@ -112,7 +102,7 @@ class GameRoom{
     var maxPlayers:Int{
         
         get{
-            return parseObject.valueForKey("maxPlayers") as! Int
+            return parseObject.value(forKey: "maxPlayers") as! Int
         }
     }
     
@@ -123,19 +113,35 @@ class GameRoom{
         }
     }
 
+    fileprivate var playTimesPerPlayer:Dictionary<String,TimeInterval>{
+        get{
+            return parseObject.value(forKey: "userPlayTime") as! Dictionary<String,TimeInterval>
+        }
+    }
+    
+    func timeOfLastUserPlay(_ playerId:String) -> TimeInterval?{
+
+        if let time = playTimesPerPlayer[playerId]{
+            print(Date().timeIntervalSince1970 - time/1000)
+            return Date().timeIntervalSince1970 - time/1000
+        }
+        
+        return nil
+        
+    }
     
     var parseObject: PFObject
     
     
     var playerRightMatrix:Dictionary<String,Array<Int>>{
         get{
-            return parseObject.valueForKey("userRightMatrix") as! Dictionary<String,Array<Int>>
+            return parseObject.value(forKey: "userRightMatrix") as! Dictionary<String,Array<Int>>
         }
     }
     
     var playerMatrix:Dictionary<String,Array<Int>>{
         get{
-            return parseObject.valueForKey("userMatrix") as! Dictionary<String,Array<Int>>
+            return parseObject.value(forKey: "userMatrix") as! Dictionary<String,Array<Int>>
         }
         set{
             

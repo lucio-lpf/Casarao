@@ -12,11 +12,11 @@ import Parse
 class Player {
     
     
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
     var nickname:String?{
         get{
-            return parseUser.valueForKey("nickname") as? String
+            return parseUser.value(forKey: "nickname") as? String
         }
         set{
             parseUser.setValue(newValue, forKey: "nickname")
@@ -28,7 +28,7 @@ class Player {
     // amonut user coins default
     var coins:Int?{
         get{
-            return parseUser.valueForKey("coins") as? Int
+            return parseUser.value(forKey: "coins") as? Int
         }
         set{
             parseUser.setValue(newValue, forKey: "coins")
@@ -39,7 +39,7 @@ class Player {
     
     var username:String?{
         get{
-            return parseUser.valueForKey("username") as? String
+            return parseUser.value(forKey: "username") as? String
         }
     }
 
@@ -47,7 +47,7 @@ class Player {
     var image:UIImage? {
         get {
             do {
-                let userImageFile = parseUser.objectForKey("profileImage") as? PFFile
+                let userImageFile = parseUser.object(forKey: "profileImage") as? PFFile
                 let data = try userImageFile?.getData()
                 if let data = data {
                     return UIImage(data: data)
@@ -66,14 +66,14 @@ class Player {
                 let imageFile = PFFile(name:"profileImage.jpg", data:imageData!)
                 parseUser.setObject(imageFile!, forKey: "profileImage")
             } else {
-                parseUser.removeObjectForKey("profileImage")
+                parseUser.remove(forKey: "profileImage")
             }
         }
     }
     
     
-    func getPictureInBackground(block: (UIImage) -> Void) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+    func getPictureInBackground(_ block: @escaping (UIImage) -> Void) {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
             var pic = UIImage()
             if let verifiedPic = self.image{
                 pic = verifiedPic
@@ -81,7 +81,7 @@ class Player {
             else{
                 pic = UIImage(named: "ProfilePlaceHolder")!
             }
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 block(pic)
             }
         }
@@ -92,11 +92,8 @@ class Player {
     
     
     
-    func updateUserDefaults(newCoins:Int) {
-        coins = defaults.integerForKey("coins")
-        if (newCoins>coins) {
-            defaults.setInteger(newCoins, forKey: "coins")
-        }
+    func updateUserDefaults(_ newCoins:Int) {
+        defaults.set(newCoins, forKey: "coins")
     }
     
     

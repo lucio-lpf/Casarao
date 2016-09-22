@@ -32,16 +32,16 @@ class ProfileScene: SKScene, UITextFieldDelegate {
     override init(size: CGSize) {
         super.init(size: size)
         
-        profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button"), color: SKColor.clear, size: CGSize(width: 110, height: 110 ))
         profileButton.position = CGPoint(x: -size.width/2 + profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
-        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button_disable"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button_disable"), color: SKColor.clear, size: CGSize(width: 100, height: 100 ))
         lobbyButton.position = CGPoint(x: 0, y: -size.height/2 + profileButton.size.height/2)
         
-        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button_disable"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button_disable"), color: SKColor.clear, size: CGSize(width: 100, height: 100 ))
         storeButton.position = CGPoint(x: size.width/2 - profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
-        loginButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clearColor(), size: CGSize(width: 300, height: 70))
+        loginButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clear, size: CGSize(width: 300, height: 70))
         loginButton.position = CGPoint(x: 0.5, y: 0.5)
 
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -60,10 +60,10 @@ class ProfileScene: SKScene, UITextFieldDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func didMoveToView(view: SKView) {
-        super.didMoveToView(view)
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
         
-        let userImage = SKSpriteNode(texture: SKTexture(imageNamed:"ProfilePlaceHolder"), color: SKColor.clearColor(), size: CGSize(width: 183, height: 183))
+        let userImage = SKSpriteNode(texture: SKTexture(imageNamed:"ProfilePlaceHolder"), color: SKColor.clear, size: CGSize(width: 183, height: 183))
         userImage.position = CGPoint(x: 0, y: size.height/2 - userImage.size.height/2 - 50)
         addChild(userImage)
         
@@ -72,19 +72,19 @@ class ProfileScene: SKScene, UITextFieldDelegate {
         let centerX = (view.bounds.width / 2 - 160)
         let centerY = (view.bounds.height / 2 - 22.5)
         
-        highScoreText = UITextField(frame: CGRectMake(centerX, (centerY - centerY), 320, 45))
+        highScoreText = UITextField(frame: CGRect(x: centerX, y: (centerY - centerY), width: 320, height: 45))
         
-        highScoreText.borderStyle = UITextBorderStyle.RoundedRect
-        highScoreText.textColor = UIColor.blackColor()
+        highScoreText.borderStyle = UITextBorderStyle.roundedRect
+        highScoreText.textColor = UIColor.black
         highScoreText.placeholder = "Enter your nickname here"
-        highScoreText.backgroundColor = UIColor.whiteColor()
-        highScoreText.autocorrectionType = UITextAutocorrectionType.Yes
-        highScoreText.keyboardType = UIKeyboardType.Default
-        highScoreText.clearButtonMode = UITextFieldViewMode.WhileEditing
-        highScoreText.autocapitalizationType = UITextAutocapitalizationType.Words
-        highScoreText.returnKeyType = UIReturnKeyType.Done
+        highScoreText.backgroundColor = UIColor.white
+        highScoreText.autocorrectionType = UITextAutocorrectionType.yes
+        highScoreText.keyboardType = UIKeyboardType.default
+        highScoreText.clearButtonMode = UITextFieldViewMode.whileEditing
+        highScoreText.autocapitalizationType = UITextAutocapitalizationType.words
+        highScoreText.returnKeyType = UIReturnKeyType.done
         highScoreText.delegate = self
-        highScoreText.hidden = true
+        highScoreText.isHidden = true
         self.view!.addSubview(highScoreText)
         
         configItemPosition()
@@ -98,37 +98,37 @@ class ProfileScene: SKScene, UITextFieldDelegate {
     }
     
     
-    override func update(currentTime: NSTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
     }
     
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         
         let touch = touches.first!
-        let point = touch.locationInNode(self)
+        let point = touch.location(in: self)
         
         
         // goto: store
-        if storeButton.containsPoint(point) {
+        if storeButton.contains(point) {
             
-            let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+            let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
             let scene:StoreScene = StoreScene(size: self.size)
             scene.player = player
             self.view?.presentScene(scene, transition: transition)
             
         }
         // goto: lobby
-        else if lobbyButton.containsPoint(point){
+        else if lobbyButton.contains(point){
             
-            let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+            let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
             let scene:LobbyScene = LobbyScene(size: self.size)
             scene.player = player
             self.view?.presentScene(scene, transition: transition)
         }
         // update user data
-        else if loginButton.containsPoint(point) {
+        else if loginButton.contains(point) {
            updateLoginUser()
         }
     }
@@ -138,11 +138,11 @@ class ProfileScene: SKScene, UITextFieldDelegate {
     
     
     func updateLoginUser() {
-        highScoreText.hidden = false
+        highScoreText.isHidden = false
     }
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         // Update view
         playerNickname?.text = highScoreText.text
@@ -151,13 +151,13 @@ class ProfileScene: SKScene, UITextFieldDelegate {
         
         // Hides the keyboard
         textField.resignFirstResponder()
-        highScoreText.hidden = true
+        highScoreText.isHidden = true
         
         return true
     }
     
-    private func transitioToScene(scene:SKScene) {
-        let transition = SKTransition.crossFadeWithDuration(0.5)
+    fileprivate func transitioToScene(_ scene:SKScene) {
+        let transition = SKTransition.crossFade(withDuration: 0.5)
         // Configure the view.
         let skView = self.view!
         skView.showsFPS = true
@@ -167,7 +167,7 @@ class ProfileScene: SKScene, UITextFieldDelegate {
         skView.ignoresSiblingOrder = true
         
         /* Set the scale mode to scale to fit the window */
-        scene.scaleMode = .AspectFill
+        scene.scaleMode = .aspectFill
         
         skView.presentScene(scene, transition: transition)
         

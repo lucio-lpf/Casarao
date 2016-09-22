@@ -25,8 +25,8 @@ class ScrollSprite: SKSpriteNode{
     init(size:CGSize,gameRooms:[GameRoomSpriteNode]){
         
         self.gameRooms = gameRooms
-        super.init(texture: nil, color: SKColor.blueColor(), size: size)
-        userInteractionEnabled = true
+        super.init(texture: nil, color: SKColor.blue, size: size)
+        isUserInteractionEnabled = true
         addGameRooms()
         
         
@@ -58,13 +58,13 @@ class ScrollSprite: SKSpriteNode{
     
     
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if gameRooms != nil{
             let touch = touches.first!
-            let point = touch.locationInNode(self)
+            let point = touch.location(in: self)
             for gameRoom in gameRooms!{
                 
-                if gameRoom.containsPoint(point){
+                if gameRoom.contains(point){
                     
                     self.selectGameRoom = true
                     selectedGameRoom = gameRoom
@@ -74,19 +74,19 @@ class ScrollSprite: SKSpriteNode{
         
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         
         selectGameRoom = false
       //  let firstTouch = touches.first
         for touch in touches{
-         print(touch.locationInNode(self))
+         print(touch.location(in: self))
         }
         
         
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if selectGameRoom == true{
             

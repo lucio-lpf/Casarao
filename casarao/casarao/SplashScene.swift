@@ -13,7 +13,7 @@ import Parse
 
 class SplashScene: SKScene {
     
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
     var player:Player!
     
@@ -33,17 +33,17 @@ class SplashScene: SKScene {
     }
     
     
-    override func didMoveToView(view: SKView) {
-        super.didMoveToView(view)
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
         
   
         let allUsersPass = "P6xA5#72GacX;F]X"
         let userNickname = "GuestUser\(Int(arc4random_uniform(1000)))"
         
         
-        if defaults.stringForKey("userKey") != nil{
+        if defaults.string(forKey: "userKey") != nil{
             
-            PFUser.logInWithUsernameInBackground(defaults.stringForKey("userKey")!, password: allUsersPass) {
+            PFUser.logInWithUsername(inBackground: defaults.string(forKey: "userKey")!, password: allUsersPass) {
                 (pfuser, error) in
                 
                 if let e = error {
@@ -58,11 +58,11 @@ class SplashScene: SKScene {
         }
         else{
             let player = PFUser()
-            defaults.setObject(String(UIDevice.currentDevice().identifierForVendor!), forKey: "userKey")
-            player.username = defaults.stringForKey("userKey")!
+            defaults.set(String(describing: UIDevice.current.identifierForVendor!), forKey: "userKey")
+            player.username = defaults.string(forKey: "userKey")!
             player.password = allUsersPass
-            player.email = "\(UIDevice.currentDevice().identifierForVendor!)@teste.com"
-            player.signUpInBackgroundWithBlock(){
+            player.email = "\(UIDevice.current.identifierForVendor!)@teste.com"
+            player.signUpInBackground(){
                 (bool, error) in
                 if let e = error{
                     print(e.debugDescription)
@@ -92,7 +92,7 @@ class SplashScene: SKScene {
         if let gameRoom = SplashScene.gameRoomTargetId{
             
             WebServiceManager.getGameRoomFromId(gameRoom, callBack: { (GameRoom) in
-                let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+                let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
                 self.player.updateUserDefaults(self.player.coins!)
                 let gameScene:GameScene = GameScene(size: self.size, player: self.player, gameRoom: GameRoom)
                 self.view!.presentScene(gameScene, transition: transition)
@@ -102,7 +102,7 @@ class SplashScene: SKScene {
         }
             
         else{
-            let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+            let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
             let lobby:LobbyScene = LobbyScene(size: self.size)
             player.updateUserDefaults(player.coins!)
             lobby.player = player
@@ -113,7 +113,7 @@ class SplashScene: SKScene {
     }
     
     
-    func iCloudKeysChanged(sender: NSNotification) {
+    func iCloudKeysChanged(_ sender: Notification) {
         
         // Update local store values
     }

@@ -15,8 +15,8 @@ class LobbyScene: SKScene, PopUpInLobby {
     var gameRoomsSprites:Array<GameRoomSpriteNode> = Array()
     
     
-    let defaults = NSUserDefaults.standardUserDefaults()
-
+    let defaults = UserDefaults.standard
+    
     
     var profileButton:SKSpriteNode
     var lobbyButton:SKSpriteNode!
@@ -24,6 +24,13 @@ class LobbyScene: SKScene, PopUpInLobby {
     var loadingFrames = [SKTexture]()
     var loadedFrames = [SKTexture]()
     var loadSymbol = SKSpriteNode()
+    
+    var retangle = SKSpriteNode()
+    
+    var lastTimeUpdated = TimeInterval()
+    
+    
+    var sectionButton = SKSpriteNode()
     
     
     // REFACTORING
@@ -39,13 +46,13 @@ class LobbyScene: SKScene, PopUpInLobby {
         //SET TAB BUTTONS
         
         
-        profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button_disable"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button_disable"), color: SKColor.clear, size: CGSize(width: 100, height: 100 ))
         profileButton.position = CGPoint(x: -size.width/2 + profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
-        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button"), color: SKColor.clear, size: CGSize(width: 110, height: 110 ))
         lobbyButton.position = CGPoint(x: 0, y: -size.height/2 + profileButton.size.height/2)
         
-        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button_disable"), color: SKColor.clearColor(), size: CGSize(width: 100, height: 100 ))
+        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button_disable"), color: SKColor.clear, size: CGSize(width: 100, height: 100 ))
         storeButton.position = CGPoint(x: size.width/2 - profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
         super.init(size: size)
@@ -55,7 +62,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         //ADD TOP BAR
         
-        let topBar = SKSpriteNode(texture: SKTexture(imageNamed: "lobbyTopBar"), color: SKColor.clearColor(), size: SKTexture(imageNamed: "lobbyTopBar").size())
+        let topBar = SKSpriteNode(texture: SKTexture(imageNamed: "lobbyTopBar"), color: SKColor.clear, size: SKTexture(imageNamed: "lobbyTopBar").size())
         topBar.position = CGPoint(x: 0, y: size.height/2 - topBar.size.height/2)
         addChild(topBar)
         
@@ -84,13 +91,22 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     
     
-    override func didMoveToView(view: SKView) {
-        super.didMoveToView(view)
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        
+        
+        lastTimeUpdated = CACurrentMediaTime()
+        
+        
+        retangle = SKSpriteNode(texture: nil, color: SKColor.clear, size: CGSize(width: size.width, height: size.height - SKTexture(imageNamed: "lobbyTopBar").size().height - lobbyButton.size.height))
+        retangle.zPosition += zPosition
+        addChild(retangle)
         
         
         
-        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge , .Sound] , categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
+        let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge , .sound] , categories: nil)
+        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
         
         userHUD = UserHUD(player: player)
         userHUD.position = CGPoint(x: 0, y: size.height/2 - userHUD.size.height/2)
@@ -105,18 +121,19 @@ class LobbyScene: SKScene, PopUpInLobby {
     }
     
     
-    func addRoomsToScene(gameRooms:[GameRoom]){
+    func addRoomsToScene(_ gameRooms:[GameRoom]){
         
         if gameRooms.isEmpty{
             
         }
         else{
-            var yposition = self.size.height/2 - 120
+            var yposition = self.size.height/2 - 140
             for room in gameRooms{
                 gameRoomsSprites.append(GameRoomSpriteNode(gameRoom: room, scene: self))
                 gameRoomsSprites.last!.position = CGPoint(x: 0, y: yposition)
                 gameRoomsSprites.last!.zPosition = 3
                 yposition -= 80
+                
                 addChild(gameRoomsSprites.last!)
                 
             }
@@ -126,36 +143,74 @@ class LobbyScene: SKScene, PopUpInLobby {
         
     }
     
-    override func update(currentTime: NSTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
+        
+            if currentTime - lastTimeUpdated > 5{
+                
+                updateSpritesInScene()
+                
+                
+                lastTimeUpdated = currentTime
+                
+                WebServiceManager.updateUserRooms(player.id, callBack: { (array) in
+                    
+                    
+                    for object in array{
+                        
+                        for sprite in self.gameRoomsSprites{
+                            
+                            if sprite.gameRoom.id == object.id{
+                                
+                                sprite.updateGameRoom(object,playerId: self.player.id)
+                            }
+                        }
+                    }
+                    
+                    
+                })
+                print("time for update nigga")
+            }
+        
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
+    func updateSpritesInScene(){
+        
+        for sprite in gameRoomsSprites{
+            
+            if retangle.intersects(sprite){
+                sprite.fetchGameRoom(self.player.id)
+            }
+        }
+        
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         
         let touch = touches.first!
-        let point = touch.locationInNode(self)
+        let point = touch.location(in: self)
         
-        if profileButton.containsPoint(point){
+        if profileButton.contains(point){
             
-            let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+            let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
             let scene:ProfileScene = ProfileScene(size: self.size)
             scene.player = player
             removeFromParent()
             self.view?.presentScene(scene, transition: transition)
             
         }
-        else if storeButton.containsPoint(point){
+        else if storeButton.contains(point){
             
-            let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+            let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
             let scene:StoreScene = StoreScene(size: self.size)
             scene.player = player
-
+            
             removeFromParent()
             self.view?.presentScene(scene, transition: transition)
             
         }
-        else if lobbyButton.containsPoint(point){
+        else if lobbyButton.contains(point){
             
             reloadGameRooms()
             
@@ -163,14 +218,15 @@ class LobbyScene: SKScene, PopUpInLobby {
             
         else{
             for gameRoomsSprite in gameRoomsSprites{
-                if gameRoomsSprite.containsPoint(point){
-                    let alphaNode = SKSpriteNode(color: UIColor.blackColor(), size: self.size)
+                if gameRoomsSprite.contains(point){
+                    let alphaNode = SKSpriteNode(color: UIColor.black, size: self.size)
                     alphaNode.alpha = 0.0
                     alphaNode.name = "alphaNode"
-                    alphaNode.userInteractionEnabled = true
+                    alphaNode.isUserInteractionEnabled = true
                     alphaNode.zPosition = 53
                     self.addChild(alphaNode)
-                    alphaNode.runAction(SKAction.fadeAlphaTo(0.5, duration: 0.25))
+                    alphaNode.run(SKAction.fadeAlpha(to: 0.5, duration: 0.25))
+                    gameRoomsSprite.alertSprite = nil
                     joinGame(gameRoomsSprite.gameRoom)
                 }
             }
@@ -183,34 +239,24 @@ class LobbyScene: SKScene, PopUpInLobby {
     func reloadGameRooms(){
     }
     
-    func joinGame(gameRoom: GameRoom) {
+    func joinGame(_ gameRoom: GameRoom) {
         
         animateLoading()
         
         WebServiceManager.checkIfUserIsInRoom(player.id, roomId: gameRoom.id) { (bool) in
             if bool{
-                
                 self.moveToGameRoom(gameRoom)
-                
             }
             else{
-                //    ALPHA NODE
-                
-                
-                
-                
                 self.addChild(PopUpSpriteNode(gameRoom: gameRoom, scene: self))
                 
             }
         }
-        
-        
-        
     }
     
-    func moveToGameRoom(gameRoom:GameRoom){
+    func moveToGameRoom(_ gameRoom:GameRoom){
         
-        let transition:SKTransition = SKTransition.fadeWithDuration(0.5)
+        let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
         let scene:SKScene = GameScene(size: self.size, player: self.player, gameRoom: gameRoom)
         
         self.removeFromParent()
@@ -227,22 +273,22 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     
     
- 
     
-    func didDeciedEnterRoom(response: Bool,selfpopUp:PopUpSpriteNode,gameRoom:GameRoom?) {
+    
+    func didDeciedEnterRoom(_ response: Bool,selfpopUp:PopUpSpriteNode,gameRoom:GameRoom?) {
         if response {
             
             WebServiceManager.addUserToRoom(player.id, roomId: gameRoom!.id) { (bool) in
                 print(bool)
                 if bool{
-                    let localCoins = self.defaults.integerForKey("coins")
-                    self.defaults.setInteger(localCoins - (gameRoom?.bet)!, forKey: "coins")
+                    let localCoins = self.defaults.integer(forKey: "coins")
+                    self.defaults.set(localCoins - (gameRoom?.bet)!, forKey: "coins")
                     self.userHUD.updateCoinsLabel()
                     self.moveToGameRoom(gameRoom!)
                     
                 }
                 else{
-                   
+                    
                     
                 }
             }
@@ -255,15 +301,15 @@ class LobbyScene: SKScene, PopUpInLobby {
         }
         
         self.loadSymbol.removeFromParent()
-        self.childNodeWithName("rectangle")?.removeFromParent()
-        self.childNodeWithName("alphaNode")?.removeFromParent()
+        self.childNode(withName: "rectangle")?.removeFromParent()
+        self.childNode(withName: "alphaNode")?.removeFromParent()
         selfpopUp.removeFromParent()
     }
     
     
     func animateLoading() {
         //cria a ação
-        let loadingAction = SKAction.animateWithTextures(loadingFrames, timePerFrame: 0.03)
+        let loadingAction = SKAction.animate(with: loadingFrames, timePerFrame: 0.03)
         
         //cria a "pop up"
         let rectangle = SKSpriteNode(texture: SKTexture(imageNamed: "loadTwitter"))
@@ -279,13 +325,13 @@ class LobbyScene: SKScene, PopUpInLobby {
         rectangle.addChild(self.loadSymbol)
         
         //executa a ação
-        loadSymbol.runAction((SKAction.repeatActionForever(loadingAction)), withKey: "loading")
+        loadSymbol.run((SKAction.repeatForever(loadingAction)), withKey: "loading")
     }
     
     
-    private func transitioToScene(scene:SKScene) {
+    fileprivate func transitioToScene(_ scene:SKScene) {
         
-        let transition = SKTransition.crossFadeWithDuration(0.5)
+        let transition = SKTransition.crossFade(withDuration: 0.5)
         // Configure the view.
         let skView = self.view!
         skView.showsFPS = true
@@ -295,7 +341,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         skView.ignoresSiblingOrder = true
         
         /* Set the scale mode to scale to fit the window */
-        scene.scaleMode = .AspectFill
+        scene.scaleMode = .aspectFill
         
         skView.presentScene(scene, transition: transition)
         
@@ -314,6 +360,9 @@ class LobbyScene: SKScene, PopUpInLobby {
             self.loadedFrames.append(SKTexture(imageNamed: textureName))
         }
     }
+    
+    
+    
 }
 
 

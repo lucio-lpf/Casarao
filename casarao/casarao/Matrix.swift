@@ -20,7 +20,7 @@ class MatrixNode : SKSpriteNode {
     
     init(numColumns:Int,numRows:Int,scene:SKScene){
         
-        super.init(texture: nil, color: UIColor.clearColor(), size: CGSize(width: scene.size.width - 100, height: scene.size.height/4))
+        super.init(texture: nil, color: UIColor.clear, size: CGSize(width: scene.size.width - 100, height: scene.size.height/4))
         self.zPosition = 1
         //SO FUNCIONA PRA MATRIZES QUADRADAS
         let numberOfTiles = numRows*numColumns
@@ -38,12 +38,12 @@ class MatrixNode : SKSpriteNode {
     
     init(gameRoom:GameRoom,playerId:String){
         
-        super.init(texture: nil, color: UIColor.clearColor(), size: CGSize(width: 400, height: 400))
+        super.init(texture: nil, color: UIColor.clear, size: CGSize(width: 400, height: 400))
         
         self.zPosition = 1
         //SO FUNCIONA PRA MATRIZES QUADRADAS
         
-        gameRoom.parseObject.fetchInBackgroundWithBlock { (newObject, error) in
+        gameRoom.parseObject.fetchInBackground { (newObject, error) in
             let userArray = gameRoom.playerMatrix[playerId]
             for int in userArray!{
                 if int == 0{
@@ -60,7 +60,7 @@ class MatrixNode : SKSpriteNode {
         
     }
     
-    private func addTilesAsMatrixChildren() {
+    fileprivate func addTilesAsMatrixChildren() {
         //otimizar essa parte(muitos ifs)
 
         
@@ -69,7 +69,7 @@ class MatrixNode : SKSpriteNode {
             if i < 3{
                 
                 let tile = tilesArray[i]
-                let yposition = tile.size.height - (tile.size.height * CGFloat(i)) + CGFloat(15 - (15 * i))
+                let yposition = tile.size.height - (tile.size.height * CGFloat(i)) + CGFloat(10 - (10 * i))
                 tilesArray[i].position = CGPoint(x: -tile.size.width + 15, y: yposition)
                 
                 
@@ -78,13 +78,13 @@ class MatrixNode : SKSpriteNode {
                 
                 
                 let tile = tilesArray[i]
-                let yposition = (tile.size.height * 4) - (tile.size.height * CGFloat(i)) + CGFloat(60 - (15 * i)) - tile.size.height/2
+                let yposition = (tile.size.height * 4) - (tile.size.height * CGFloat(i)) + CGFloat(40 - (10 * i)) - tile.size.height/2
                 tilesArray[i].position = CGPoint(x: 0, y: yposition)
             }
             else{
                 
                 let tile = tilesArray[i]
-                let yposition = (tile.size.height * 7) - (tile.size.height * CGFloat(i)) + CGFloat(105 - (15 * i))
+                let yposition = (tile.size.height * 7) - (tile.size.height * CGFloat(i)) + CGFloat(70 - (10 * i))
                 tilesArray[i].position = CGPoint(x: +tile.size.width - 15, y: yposition)
 
 
@@ -95,7 +95,7 @@ class MatrixNode : SKSpriteNode {
         }
     }
     
-    func changeMatrixToNewMatrix(newArray: Array<Int>){
+    func changeMatrixToNewMatrix(_ newArray: Array<Int>){
     
         for i in 0..<tilesArray.count{
             if newArray[i] != 0{
@@ -121,7 +121,7 @@ class MatrixNode : SKSpriteNode {
     }
     
     
-    func updateMatrixColors(currentPlayerMatrix:Array<Int>){
+    func updateMatrixColors(_ currentPlayerMatrix:Array<Int>){
         
         for i in 0..<tilesArray.count{
             if currentPlayerMatrix[i] == 0{
