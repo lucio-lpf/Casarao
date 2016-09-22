@@ -14,8 +14,32 @@ import Bolts
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+/*
+    # Uncomment this line to define a global platform for your project
+    # platform :ios, '9.0'
+    
+    target 'Decypher' do
+    # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+    use_frameworks!
+    
+    pod 'Parse'
+    pod 'Alamofire', '~> 3.4'
+    pod 'AlamofireObjectMapper', '~> 3.0'
+    
+    # Pods for casarao
+    target 'DecypherTests' do
+    inherit! :search_paths
+    # Pods for testing
+    end
+    
+    target 'DecypherUITests' do
+    inherit! :search_paths
+    # Pods for testing
+    end
+    
+    end
 
-
+*/
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
