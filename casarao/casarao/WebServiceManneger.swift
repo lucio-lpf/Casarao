@@ -23,7 +23,7 @@ class WebServiceManager {
         parseQuery.includeKey("players")
         parseQuery.findObjectsInBackground { (PFObjects, error) in
             if let e = error{
-                print(e.debugDescription)
+                print(e.localizedDescription)
             }
             else{
                 for object in PFObjects!{
@@ -40,7 +40,7 @@ class WebServiceManager {
         parseQuery.includeKey("players")
         parseQuery.findObjectsInBackground { (PFObjects, error) in
             if let e = error{
-                print(e.debugDescription)
+                print(e.localizedDescription)
             }else{
                 print(PFObjects)
                let  gameRoom = GameRoom(pfobject: PFObjects![0])
@@ -66,7 +66,7 @@ class WebServiceManager {
                 
                 return
             }
-            print(error.debugDescription)
+            print(error?.localizedDescription)
             callBack(false)
         }
     }
@@ -112,7 +112,7 @@ class WebServiceManager {
                 
                 return
             }
-            print(error?.userInfo["error"])
+            print(error?.localizedDescription)
         }
     }
     
@@ -130,7 +130,7 @@ class WebServiceManager {
                 
                 return
             }
-            print(error?.userInfo["error"])
+            print(error?.localizedDescription)
             callBack(false)
         }
     }
@@ -149,7 +149,7 @@ class WebServiceManager {
                 
                 return
             }
-            print(error?.userInfo["error"])
+            print(error?.localizedDescription)
             callBack(false)
         }
     }
@@ -165,7 +165,7 @@ class WebServiceManager {
         parseQuery.whereKey("players", containedIn: [playerId])
         parseQuery.findObjectsInBackground { (PFObjects, error) in
             if let e = error{
-                print(e.debugDescription)
+                print(e.localizedDescription)
             }
             else{
                 for object in PFObjects!{
@@ -203,7 +203,7 @@ class WebServiceManager {
                 
                 return
             }
-            print(error?.userInfo["error"])
+            print(error?.localizedDescription)
             fatalError()
         
         

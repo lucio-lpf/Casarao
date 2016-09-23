@@ -73,7 +73,10 @@ class Player {
     
     
     func getPictureInBackground(_ block: @escaping (UIImage) -> Void) {
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
+        
+        
+        
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
             var pic = UIImage()
             if let verifiedPic = self.image{
                 pic = verifiedPic

@@ -89,7 +89,7 @@ class LobbyScene: SKScene, PopUpInLobby {
     }
     
     
-    
+
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -102,11 +102,6 @@ class LobbyScene: SKScene, PopUpInLobby {
         retangle.zPosition += zPosition
         addChild(retangle)
         
-        
-        
-        
-        let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge , .sound] , categories: nil)
-        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
         
         userHUD = UserHUD(player: player)
         userHUD.position = CGPoint(x: 0, y: size.height/2 - userHUD.size.height/2)

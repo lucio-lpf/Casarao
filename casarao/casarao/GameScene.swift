@@ -15,6 +15,8 @@
  
  */
 import SpriteKit
+import UserNotifications
+
 class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     
     
@@ -203,22 +205,42 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
                     self.chances = 3
                     timerPopUp.zPosition = 200
                     
-                    if let index = AlertSpriteKit.gameRoomsToPlay.index(of: self.gameRoom.id) {
+                   /* if let index = AlertSpriteKit.gameRoomsToPlay.index(of: self.gameRoom.id) {
                         AlertSpriteKit.gameRoomsToPlay.remove(at: index)
+                    }*/
+                    
+                    
+                    let content = UNMutableNotificationContent()
+                    content.title = "Hey You!!!"
+                    content.body = "It's time to play again! Don't waist any time."
+                    content.sound = UNNotificationSound.default()
+                    content.badge = (UIApplication.shared.applicationIconBadgeNumber + 1) as NSNumber
+                    
+                    
+                    
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(self.gameRoom.timer), repeats: false)
+                
+                let request = UNNotificationRequest(identifier: "PlayAgain", content: content, trigger: trigger)
+                    
+                    
+                let center = UNUserNotificationCenter.current()
+                    
+                center.add(request, withCompletionHandler: { (error) in
+                    guard let _ = error else{
+                        
+                        print("Notificação adicionada com sucesso")
+                        
+                        return
                     }
-                    
-                    
-                    let notification = UILocalNotification()
-                    notification.fireDate = Date(timeIntervalSinceNow: 10)
-                    notification.alertBody = "Hey you! It's time to play agian! Don't waist any time!"
-                    notification.alertAction = "Time to win!"
-                    notification.soundName = UILocalNotificationDefaultSoundName
-                    notification.userInfo = ["gameRoomId": self.gameRoom.id]
-                    UIApplication.shared.scheduleLocalNotification(notification)
+                    print(error?.localizedDescription)
+                })
                     
                     
                     
-                    self.addChild(timerPopUp)
+                self.addChild(timerPopUp)
+                    
+                    
+                    
                 }
                 else if (playerArray != nil) && (winner != nil){
 
@@ -264,7 +286,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
     func removeTimerFromScene(_ selfPopUp: PopUpSpriteNode) {
         
         selfPopUp.removeFromParent()
-        action(forKey: "loading")?.finalize()
+        removeAction(forKey: "loading")
         self.childNode(withName: "rectangle")?.removeFromParent()
         self.childNode(withName: "alphaNode")?.removeFromParent()
     }

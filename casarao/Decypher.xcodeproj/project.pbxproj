@@ -1,2222 +1,985 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>071BECFE237F0D66ECF9EEB5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-casaraoTests/Pods-casaraoTests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>0C02C237E9D9703A6E41B610</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>0FB1DF38AD5E3EF093D1D3B2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>1304A618ADE8A8CD6FC50107</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>17760E21BB6EDC1CD876819D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>3927916C3554CDE60D84807B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>4A6EDAE4CE78A39353F746C7</string>
-				<string>E58273926F6E5D24579FCE2E</string>
-				<string>FB03FB3AE3849BC4B07E0D67</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>432EE73171DC9E5357882C36</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-casarao/Pods-casarao-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>4A6EDAE4CE78A39353F746C7</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_Decypher.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>4EB878F3C292B65910AAAD48</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-casaraoUITests/Pods-casaraoUITests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>5663B2DA4E4ED5163637A2D0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>5A22E3DF1D81DA4F008DC4C4</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AlertSpriteNode.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A22E3E01D81DA4F008DC4C4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A22E3DF1D81DA4F008DC4C4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A22E3E11D81E32A008DC4C4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A22E3E21D81E32A008DC4C4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A22E3E11D81E32A008DC4C4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A41A27A1D3E902000C93165</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9FE2BCB71D3E95E100B95074</string>
-				<string>5A41A2851D3E902000C93165</string>
-				<string>5A41A2A91D3E902000C93165</string>
-				<string>5A41A2841D3E902000C93165</string>
-				<string>B0FF41EF98C5DEBF7CBD466E</string>
-				<string>3927916C3554CDE60D84807B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A27B1D3E902000C93165</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0800</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>'team'</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>5A41A2821D3E902000C93165</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3.1</string>
-						<key>DevelopmentTeam</key>
-						<string>TY5QM4UU69</string>
-						<key>LastSwiftMigration</key>
-						<string>0800</string>
-						<key>SystemCapabilities</key>
-						<dict>
-							<key>com.apple.Push</key>
-							<dict>
-								<key>enabled</key>
-								<string>1</string>
-							</dict>
-							<key>com.apple.iCloud</key>
-							<dict>
-								<key>enabled</key>
-								<string>1</string>
-							</dict>
-						</dict>
-					</dict>
-					<key>5A41A29A1D3E902000C93165</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3.1</string>
-						<key>LastSwiftMigration</key>
-						<string>0800</string>
-						<key>TestTargetID</key>
-						<string>5A41A2821D3E902000C93165</string>
-					</dict>
-					<key>5A41A2A51D3E902000C93165</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3.1</string>
-						<key>LastSwiftMigration</key>
-						<string>0800</string>
-						<key>TestTargetID</key>
-						<string>5A41A2821D3E902000C93165</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>5A41A27E1D3E902000C93165</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>5A41A27A1D3E902000C93165</string>
-			<key>productRefGroup</key>
-			<string>5A41A2841D3E902000C93165</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>5A41A2821D3E902000C93165</string>
-				<string>5A41A29A1D3E902000C93165</string>
-				<string>5A41A2A51D3E902000C93165</string>
-			</array>
-		</dict>
-		<key>5A41A27E1D3E902000C93165</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5A41A2AD1D3E902000C93165</string>
-				<string>5A41A2AE1D3E902000C93165</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5A41A27F1D3E902000C93165</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5AFDBCF41D3EAEDF0093F328</string>
-				<string>5A22E3E01D81DA4F008DC4C4</string>
-				<string>5A41A28B1D3E902000C93165</string>
-				<string>5AC3486A1D4697530094AE21</string>
-				<string>5A41A28D1D3E902000C93165</string>
-				<string>5A41A2871D3E902000C93165</string>
-				<string>9FA7E9CD1D400E5000BF482C</string>
-				<string>9F216B771D48F112005365A7</string>
-				<string>5AEF63EB1D4FD67200959B01</string>
-				<string>9FA7E9D11D40187D00BF482C</string>
-				<string>9FE8E1C01D3EB6ED00A32C65</string>
-				<string>9FE8E1BE1D3EB42A00A32C65</string>
-				<string>9FE8E1BC1D3EB19100A32C65</string>
-				<string>9F1591AB1D3FD70A00C52171</string>
-				<string>5A4B67C31D5BB51300E09295</string>
-				<string>5A8FDA6F1D46911900A7C1C9</string>
-				<string>5A4B67DA1D5E12A500E09295</string>
-				<string>9FA85F381D493C6E005D0394</string>
-				<string>5A41A2B91D3E913D00C93165</string>
-				<string>5A4B67D81D5CF93E00E09295</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A41A2801D3E902000C93165</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>9FE2BCB81D3E95E100B95074</string>
-				<string>EE7C80B699EAF9FCE350DC00</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A41A2811D3E902000C93165</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5A41A2951D3E902000C93165</string>
-				<string>9F94AE1C1D54D96A00113344</string>
-				<string>5A22E3E21D81E32A008DC4C4</string>
-				<string>5A41A2901D3E902000C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A41A2821D3E902000C93165</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>5A41A2AF1D3E902000C93165</string>
-			<key>buildPhases</key>
-			<array>
-				<string>A274F56BEE724C51EA08DB2C</string>
-				<string>5663B2DA4E4ED5163637A2D0</string>
-				<string>5A41A27F1D3E902000C93165</string>
-				<string>5A41A2801D3E902000C93165</string>
-				<string>5A41A2811D3E902000C93165</string>
-				<string>432EE73171DC9E5357882C36</string>
-				<string>764F19EB1652D8A32B773925</string>
-				<string>917BEAA1B36B6CB63E66CA0A</string>
-				<string>D6B8C74B9CAB88CF321F8DF6</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Decypher</string>
-			<key>productName</key>
-			<string>casarao</string>
-			<key>productReference</key>
-			<string>5A41A2831D3E902000C93165</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>5A41A2831D3E902000C93165</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Decypher.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5A41A2841D3E902000C93165</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A41A2831D3E902000C93165</string>
-				<string>5A41A29B1D3E902000C93165</string>
-				<string>5A41A2A61D3E902000C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2851D3E902000C93165</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9F216B751D48F0F7005365A7</string>
-				<string>9FE8E1BA1D3EB17800A32C65</string>
-				<string>9FE2BCB61D3E95D900B95074</string>
-				<string>5A41A2861D3E902000C93165</string>
-				<string>9F1591AC1D3FD7E900C52171</string>
-				<string>5A41A28C1D3E902000C93165</string>
-				<string>5AFDBCF31D3EAEDF0093F328</string>
-				<string>9F1591AD1D3FD80900C52171</string>
-				<string>5A41A2961D3E902000C93165</string>
-				<string>9FA85F371D493C6E005D0394</string>
-				<string>9FA85F361D493C6E005D0394</string>
-				<string>5A41A29E1D3E902000C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>casarao</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2861D3E902000C93165</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2871D3E902000C93165</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A41A2861D3E902000C93165</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A41A28A1D3E902000C93165</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>GameScene.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A28B1D3E902000C93165</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A41A28A1D3E902000C93165</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A41A28C1D3E902000C93165</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>GameViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A28D1D3E902000C93165</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A41A28C1D3E902000C93165</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A41A28E1D3E902000C93165</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A41A28F1D3E902000C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A28F1D3E902000C93165</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2901D3E902000C93165</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A41A28E1D3E902000C93165</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A41A2931D3E902000C93165</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A41A2941D3E902000C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2941D3E902000C93165</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2951D3E902000C93165</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A41A2931D3E902000C93165</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A41A2961D3E902000C93165</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2971D3E902000C93165</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5A41A2A01D3E902000C93165</string>
-				<string>5A41A2BA1D3E913D00C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A41A2981D3E902000C93165</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A3C7BEE5260CFFEDE9F1AD96</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A41A2991D3E902000C93165</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A41A29A1D3E902000C93165</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>5A41A2B21D3E902000C93165</string>
-			<key>buildPhases</key>
-			<array>
-				<string>0FB1DF38AD5E3EF093D1D3B2</string>
-				<string>0C02C237E9D9703A6E41B610</string>
-				<string>5A41A2971D3E902000C93165</string>
-				<string>5A41A2981D3E902000C93165</string>
-				<string>5A41A2991D3E902000C93165</string>
-				<string>A980ACFEE042BD2FB9391D05</string>
-				<string>071BECFE237F0D66ECF9EEB5</string>
-				<string>17760E21BB6EDC1CD876819D</string>
-				<string>1304A618ADE8A8CD6FC50107</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>5A41A29D1D3E902000C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>DecypherTests</string>
-			<key>productName</key>
-			<string>casaraoTests</string>
-			<key>productReference</key>
-			<string>5A41A29B1D3E902000C93165</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>5A41A29B1D3E902000C93165</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Decypher.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5A41A29C1D3E902000C93165</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>5A41A27B1D3E902000C93165</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>5A41A2821D3E902000C93165</string>
-			<key>remoteInfo</key>
-			<string>casarao</string>
-		</dict>
-		<key>5A41A29D1D3E902000C93165</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>5A41A2821D3E902000C93165</string>
-			<key>targetProxy</key>
-			<string>5A41A29C1D3E902000C93165</string>
-		</dict>
-		<key>5A41A29E1D3E902000C93165</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9F94AE1B1D54D96A00113344</string>
-				<string>5A41A29F1D3E902000C93165</string>
-				<string>5A41A2A11D3E902000C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>casaraoTests</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5A41A29F1D3E902000C93165</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>casaraoTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2A01D3E902000C93165</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A41A29F1D3E902000C93165</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A41A2A11D3E902000C93165</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2A21D3E902000C93165</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5A41A2AB1D3E902000C93165</string>
-				<string>5A41A2BB1D3E913D00C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A41A2A31D3E902000C93165</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C241A87E4E7632E08EC78060</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A41A2A41D3E902000C93165</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A41A2A51D3E902000C93165</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>5A41A2B51D3E902000C93165</string>
-			<key>buildPhases</key>
-			<array>
-				<string>678BB98B9072F1D3701A7D03</string>
-				<string>5FC9A7BAE65995DB0272A2FA</string>
-				<string>5A41A2A21D3E902000C93165</string>
-				<string>5A41A2A31D3E902000C93165</string>
-				<string>5A41A2A41D3E902000C93165</string>
-				<string>4EB878F3C292B65910AAAD48</string>
-				<string>C1240535D3DD6DE7EECD3E55</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>5A41A2A81D3E902000C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>DecypherUITests</string>
-			<key>productName</key>
-			<string>casaraoUITests</string>
-			<key>productReference</key>
-			<string>5A41A2A61D3E902000C93165</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.ui-testing</string>
-		</dict>
-		<key>5A41A2A61D3E902000C93165</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Decypher.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5A41A2A71D3E902000C93165</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>5A41A27B1D3E902000C93165</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>5A41A2821D3E902000C93165</string>
-			<key>remoteInfo</key>
-			<string>casarao</string>
-		</dict>
-		<key>5A41A2A81D3E902000C93165</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>5A41A2821D3E902000C93165</string>
-			<key>targetProxy</key>
-			<string>5A41A2A71D3E902000C93165</string>
-		</dict>
-		<key>5A41A2A91D3E902000C93165</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A41A2AA1D3E902000C93165</string>
-				<string>5A41A2AC1D3E902000C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>casaraoUITests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2AA1D3E902000C93165</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>casaraoUITests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2AB1D3E902000C93165</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A41A2AA1D3E902000C93165</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A41A2AC1D3E902000C93165</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2AD1D3E902000C93165</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5A41A2AE1D3E902000C93165</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Owholemodule</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5A41A2AF1D3E902000C93165</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5A41A2B01D3E902000C93165</string>
-				<string>5A41A2B11D3E902000C93165</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5A41A2B01D3E902000C93165</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>AC827EB1274C21C723EC1E08</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES</key>
-				<string>YES</string>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>casarao/casarao.entitlements</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>INFOPLIST_FILE</key>
-				<string>casarao/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>-team.casarao</string>
-				<key>PRODUCT_NAME</key>
-				<string>Decypher</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string></string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>casarao/Decypher-Bridging-Header.h</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5A41A2B11D3E902000C93165</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>60E500BE60E2DD2D2E52E155</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES</key>
-				<string>YES</string>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>casarao/casarao.entitlements</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>INFOPLIST_FILE</key>
-				<string>casarao/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>-team.casarao</string>
-				<key>PRODUCT_NAME</key>
-				<string>Decypher</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string></string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>casarao/Decypher-Bridging-Header.h</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5A41A2B21D3E902000C93165</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5A41A2B31D3E902000C93165</string>
-				<string>5A41A2B41D3E902000C93165</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5A41A2B31D3E902000C93165</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F0C2F210CE5ED84C8F619FDE</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>INFOPLIST_FILE</key>
-				<string>casaraoTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>-team.casaraoTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>Decypher</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Decypher.app/Decypher</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5A41A2B41D3E902000C93165</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>8360E3E01552EA6683BF12E6</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>casaraoTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>-team.casaraoTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>Decypher</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Decypher.app/Decypher</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5A41A2B51D3E902000C93165</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5A41A2B61D3E902000C93165</string>
-				<string>5A41A2B71D3E902000C93165</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5A41A2B61D3E902000C93165</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>FC70EACE4CAE73663C9E7B60</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>INFOPLIST_FILE</key>
-				<string>casaraoUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>-team.casaraoUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>Decypher</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>casarao</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5A41A2B71D3E902000C93165</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>DD1658A863F00C563FF6ADE3</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>casaraoUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>-team.casaraoUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>Decypher</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>casarao</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5A41A2B81D3E913D00C93165</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Tile.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A41A2B91D3E913D00C93165</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A41A2B81D3E913D00C93165</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A41A2BA1D3E913D00C93165</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A41A2B81D3E913D00C93165</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A41A2BB1D3E913D00C93165</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A41A2B81D3E913D00C93165</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4B67C21D5BB51300E09295</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>UserHUD.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4B67C31D5BB51300E09295</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4B67C21D5BB51300E09295</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4B67D71D5CF93E00E09295</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>SplashScene.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4B67D81D5CF93E00E09295</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4B67D71D5CF93E00E09295</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4B67D91D5E12A500E09295</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ScrollSprite.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4B67DA1D5E12A500E09295</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4B67D91D5E12A500E09295</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A8FDA6E1D46911900A7C1C9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>PopUpSpriteNode.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A8FDA6F1D46911900A7C1C9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A8FDA6E1D46911900A7C1C9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5AC348691D4697530094AE21</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>GameHUD.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5AC3486A1D4697530094AE21</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5AC348691D4697530094AE21</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5AEF63E91D4FD65100959B01</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9FE8E1BB1D3EB19100A32C65</string>
-				<string>9FE8E1BD1D3EB42A00A32C65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Parse</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5AEF63EA1D4FD67200959B01</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>GameRoomSpriteNode.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5AEF63EB1D4FD67200959B01</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5AEF63EA1D4FD67200959B01</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5AFDBCF31D3EAEDF0093F328</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>WebServiceManneger.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5AFDBCF41D3EAEDF0093F328</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5AFDBCF31D3EAEDF0093F328</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5FC9A7BAE65995DB0272A2FA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>60E500BE60E2DD2D2E52E155</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Decypher.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Decypher/Pods-Decypher.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>678BB98B9072F1D3701A7D03</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>764F19EB1652D8A32B773925</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-casarao/Pods-casarao-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>8360E3E01552EA6683BF12E6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-DecypherTests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>917BEAA1B36B6CB63E66CA0A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Decypher/Pods-Decypher-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>9F1591AA1D3FD70A00C52171</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>LobbyScene.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9F1591AB1D3FD70A00C52171</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9F1591AA1D3FD70A00C52171</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9F1591AC1D3FD7E900C52171</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A41A28A1D3E902000C93165</string>
-				<string>9F1591AA1D3FD70A00C52171</string>
-				<string>5A4B67D71D5CF93E00E09295</string>
-				<string>9FA7E9D01D40187D00BF482C</string>
-				<string>9FA7E9CC1D400E5000BF482C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Scenes</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9F1591AD1D3FD80900C52171</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A22E3E11D81E32A008DC4C4</string>
-				<string>5A41A28E1D3E902000C93165</string>
-				<string>5A41A2931D3E902000C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Assets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9F216B751D48F0F7005365A7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9F216B761D48F112005365A7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Services</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9F216B761D48F112005365A7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>LobbyServices.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9F216B771D48F112005365A7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9F216B761D48F112005365A7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9F94AE1B1D54D96A00113344</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xml</string>
-			<key>name</key>
-			<string>default.gpx</string>
-			<key>path</key>
-			<string>../casarao/default.gpx</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9F94AE1C1D54D96A00113344</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9F94AE1B1D54D96A00113344</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9FA7E9CC1D400E5000BF482C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ProfileScene.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9FA7E9CD1D400E5000BF482C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9FA7E9CC1D400E5000BF482C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9FA7E9D01D40187D00BF482C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>StoreScene.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9FA7E9D11D40187D00BF482C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9FA7E9D01D40187D00BF482C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9FA85F361D493C6E005D0394</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Decypher-Bridging-Header.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9FA85F371D493C6E005D0394</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Decypher-BridgingHeader.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9FA85F381D493C6E005D0394</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9FA85F371D493C6E005D0394</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9FE2BCB61D3E95D900B95074</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xml</string>
-			<key>path</key>
-			<string>casarao.entitlements</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9FE2BCB71D3E95E100B95074</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CloudKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CloudKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>9FE2BCB81D3E95E100B95074</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9FE2BCB71D3E95E100B95074</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9FE8E1BA1D3EB17800A32C65</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5AEF63E91D4FD65100959B01</string>
-				<string>9FE8E1BF1D3EB6ED00A32C65</string>
-				<string>5A8FDA6E1D46911900A7C1C9</string>
-				<string>5AC348691D4697530094AE21</string>
-				<string>5A22E3DF1D81DA4F008DC4C4</string>
-				<string>5A4B67D91D5E12A500E09295</string>
-				<string>5A4B67C21D5BB51300E09295</string>
-				<string>5AEF63EA1D4FD67200959B01</string>
-				<string>5A41A2B81D3E913D00C93165</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Model</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9FE8E1BB1D3EB19100A32C65</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>GameRoom.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9FE8E1BC1D3EB19100A32C65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9FE8E1BB1D3EB19100A32C65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9FE8E1BD1D3EB42A00A32C65</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Player.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9FE8E1BE1D3EB42A00A32C65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9FE8E1BD1D3EB42A00A32C65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9FE8E1BF1D3EB6ED00A32C65</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Matrix.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9FE8E1C01D3EB6ED00A32C65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9FE8E1BF1D3EB6ED00A32C65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A274F56BEE724C51EA08DB2C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>A3C7BEE5260CFFEDE9F1AD96</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E58273926F6E5D24579FCE2E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A980ACFEE042BD2FB9391D05</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-casaraoTests/Pods-casaraoTests-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>AC827EB1274C21C723EC1E08</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Decypher.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Decypher/Pods-Decypher.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B0FF41EF98C5DEBF7CBD466E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AC827EB1274C21C723EC1E08</string>
-				<string>60E500BE60E2DD2D2E52E155</string>
-				<string>F0C2F210CE5ED84C8F619FDE</string>
-				<string>8360E3E01552EA6683BF12E6</string>
-				<string>FC70EACE4CAE73663C9E7B60</string>
-				<string>DD1658A863F00C563FF6ADE3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C1240535D3DD6DE7EECD3E55</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>C241A87E4E7632E08EC78060</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FB03FB3AE3849BC4B07E0D67</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D6B8C74B9CAB88CF321F8DF6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Decypher/Pods-Decypher-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>DD1658A863F00C563FF6ADE3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-DecypherUITests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E58273926F6E5D24579FCE2E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_DecypherTests.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>EE7C80B699EAF9FCE350DC00</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4A6EDAE4CE78A39353F746C7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F0C2F210CE5ED84C8F619FDE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-DecypherTests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FB03FB3AE3849BC4B07E0D67</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_DecypherUITests.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>FC70EACE4CAE73663C9E7B60</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-DecypherUITests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>5A41A27B1D3E902000C93165</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A22E3E01D81DA4F008DC4C4 /* AlertSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22E3DF1D81DA4F008DC4C4 /* AlertSpriteNode.swift */; };
+		5A22E3E21D81E32A008DC4C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A22E3E11D81E32A008DC4C4 /* Assets.xcassets */; };
+		5A41A2871D3E902000C93165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2861D3E902000C93165 /* AppDelegate.swift */; };
+		5A41A28B1D3E902000C93165 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A28A1D3E902000C93165 /* GameScene.swift */; };
+		5A41A28D1D3E902000C93165 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A28C1D3E902000C93165 /* GameViewController.swift */; };
+		5A41A2901D3E902000C93165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A28E1D3E902000C93165 /* Main.storyboard */; };
+		5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */; };
+		5A41A2A01D3E902000C93165 /* casaraoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A29F1D3E902000C93165 /* casaraoTests.swift */; };
+		5A41A2AB1D3E902000C93165 /* casaraoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */; };
+		5A41A2B91D3E913D00C93165 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2B81D3E913D00C93165 /* Tile.swift */; };
+		5A41A2BA1D3E913D00C93165 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2B81D3E913D00C93165 /* Tile.swift */; };
+		5A41A2BB1D3E913D00C93165 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2B81D3E913D00C93165 /* Tile.swift */; };
+		5A4B67C31D5BB51300E09295 /* UserHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4B67C21D5BB51300E09295 /* UserHUD.swift */; };
+		5A4B67D81D5CF93E00E09295 /* SplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4B67D71D5CF93E00E09295 /* SplashScene.swift */; };
+		5A4B67DA1D5E12A500E09295 /* ScrollSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4B67D91D5E12A500E09295 /* ScrollSprite.swift */; };
+		5A8FDA6F1D46911900A7C1C9 /* PopUpSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FDA6E1D46911900A7C1C9 /* PopUpSpriteNode.swift */; };
+		5AC3486A1D4697530094AE21 /* GameHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC348691D4697530094AE21 /* GameHUD.swift */; };
+		5AEF63EB1D4FD67200959B01 /* GameRoomSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF63EA1D4FD67200959B01 /* GameRoomSpriteNode.swift */; };
+		5AFDBCF41D3EAEDF0093F328 /* WebServiceManneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDBCF31D3EAEDF0093F328 /* WebServiceManneger.swift */; };
+		9F1591AB1D3FD70A00C52171 /* LobbyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */; };
+		9F216B771D48F112005365A7 /* LobbyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F216B761D48F112005365A7 /* LobbyServices.swift */; };
+		9F94AE1C1D54D96A00113344 /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9F94AE1B1D54D96A00113344 /* default.gpx */; };
+		9FA7E9CD1D400E5000BF482C /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */; };
+		9FA7E9D11D40187D00BF482C /* StoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7E9D01D40187D00BF482C /* StoreScene.swift */; };
+		9FA85F381D493C6E005D0394 /* Decypher-BridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA85F371D493C6E005D0394 /* Decypher-BridgingHeader.m */; };
+		9FE2BCB81D3E95E100B95074 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE2BCB71D3E95E100B95074 /* CloudKit.framework */; };
+		9FE8E1BC1D3EB19100A32C65 /* GameRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */; };
+		9FE8E1BE1D3EB42A00A32C65 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BD1D3EB42A00A32C65 /* Player.swift */; };
+		9FE8E1C01D3EB6ED00A32C65 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BF1D3EB6ED00A32C65 /* Matrix.swift */; };
+		A3C7BEE5260CFFEDE9F1AD96 /* Pods_DecypherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E58273926F6E5D24579FCE2E /* Pods_DecypherTests.framework */; };
+		C241A87E4E7632E08EC78060 /* Pods_DecypherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB03FB3AE3849BC4B07E0D67 /* Pods_DecypherUITests.framework */; };
+		EE7C80B699EAF9FCE350DC00 /* Pods_Decypher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6EDAE4CE78A39353F746C7 /* Pods_Decypher.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A41A29C1D3E902000C93165 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A41A27B1D3E902000C93165 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A41A2821D3E902000C93165;
+			remoteInfo = casarao;
+		};
+		5A41A2A71D3E902000C93165 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A41A27B1D3E902000C93165 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A41A2821D3E902000C93165;
+			remoteInfo = casarao;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A6EDAE4CE78A39353F746C7 /* Pods_Decypher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Decypher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A22E3DF1D81DA4F008DC4C4 /* AlertSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSpriteNode.swift; sourceTree = "<group>"; };
+		5A22E3E11D81E32A008DC4C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A41A2831D3E902000C93165 /* Decypher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decypher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A41A2861D3E902000C93165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5A41A28A1D3E902000C93165 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		5A41A28C1D3E902000C93165 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5A41A28F1D3E902000C93165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A41A2941D3E902000C93165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5A41A2961D3E902000C93165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A41A29B1D3E902000C93165 /* Decypher.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Decypher.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A41A29F1D3E902000C93165 /* casaraoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casaraoTests.swift; sourceTree = "<group>"; };
+		5A41A2A11D3E902000C93165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A41A2A61D3E902000C93165 /* Decypher.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Decypher.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casaraoUITests.swift; sourceTree = "<group>"; };
+		5A41A2AC1D3E902000C93165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A41A2B81D3E913D00C93165 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		5A4B67C21D5BB51300E09295 /* UserHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHUD.swift; sourceTree = "<group>"; };
+		5A4B67D71D5CF93E00E09295 /* SplashScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScene.swift; sourceTree = "<group>"; };
+		5A4B67D91D5E12A500E09295 /* ScrollSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollSprite.swift; sourceTree = "<group>"; };
+		5A8FDA6E1D46911900A7C1C9 /* PopUpSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpSpriteNode.swift; sourceTree = "<group>"; };
+		5AC348691D4697530094AE21 /* GameHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHUD.swift; sourceTree = "<group>"; };
+		5AEF63EA1D4FD67200959B01 /* GameRoomSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoomSpriteNode.swift; sourceTree = "<group>"; };
+		5AFDBCF31D3EAEDF0093F328 /* WebServiceManneger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManneger.swift; sourceTree = "<group>"; };
+		60E500BE60E2DD2D2E52E155 /* Pods-Decypher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decypher.release.xcconfig"; path = "Pods/Target Support Files/Pods-Decypher/Pods-Decypher.release.xcconfig"; sourceTree = "<group>"; };
+		8360E3E01552EA6683BF12E6 /* Pods-DecypherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests.release.xcconfig"; sourceTree = "<group>"; };
+		9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyScene.swift; sourceTree = "<group>"; };
+		9F216B761D48F112005365A7 /* LobbyServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyServices.swift; sourceTree = "<group>"; };
+		9F94AE1B1D54D96A00113344 /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = default.gpx; path = ../casarao/default.gpx; sourceTree = "<group>"; };
+		9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
+		9FA7E9D01D40187D00BF482C /* StoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreScene.swift; sourceTree = "<group>"; };
+		9FA85F361D493C6E005D0394 /* Decypher-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Decypher-Bridging-Header.h"; sourceTree = "<group>"; };
+		9FA85F371D493C6E005D0394 /* Decypher-BridgingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Decypher-BridgingHeader.m"; sourceTree = "<group>"; };
+		9FE2BCB61D3E95D900B95074 /* casarao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = casarao.entitlements; sourceTree = "<group>"; };
+		9FE2BCB71D3E95E100B95074 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoom.swift; sourceTree = "<group>"; };
+		9FE8E1BD1D3EB42A00A32C65 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		9FE8E1BF1D3EB6ED00A32C65 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		AC827EB1274C21C723EC1E08 /* Pods-Decypher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decypher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Decypher/Pods-Decypher.debug.xcconfig"; sourceTree = "<group>"; };
+		DD1658A863F00C563FF6ADE3 /* Pods-DecypherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E58273926F6E5D24579FCE2E /* Pods_DecypherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecypherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0C2F210CE5ED84C8F619FDE /* Pods-DecypherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB03FB3AE3849BC4B07E0D67 /* Pods_DecypherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecypherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC70EACE4CAE73663C9E7B60 /* Pods-DecypherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A41A2801D3E902000C93165 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FE2BCB81D3E95E100B95074 /* CloudKit.framework in Frameworks */,
+				EE7C80B699EAF9FCE350DC00 /* Pods_Decypher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A41A2981D3E902000C93165 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3C7BEE5260CFFEDE9F1AD96 /* Pods_DecypherTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A41A2A31D3E902000C93165 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C241A87E4E7632E08EC78060 /* Pods_DecypherUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3927916C3554CDE60D84807B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A6EDAE4CE78A39353F746C7 /* Pods_Decypher.framework */,
+				E58273926F6E5D24579FCE2E /* Pods_DecypherTests.framework */,
+				FB03FB3AE3849BC4B07E0D67 /* Pods_DecypherUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A41A27A1D3E902000C93165 = {
+			isa = PBXGroup;
+			children = (
+				9FE2BCB71D3E95E100B95074 /* CloudKit.framework */,
+				5A41A2851D3E902000C93165 /* casarao */,
+				5A41A2A91D3E902000C93165 /* casaraoUITests */,
+				5A41A2841D3E902000C93165 /* Products */,
+				B0FF41EF98C5DEBF7CBD466E /* Pods */,
+				3927916C3554CDE60D84807B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5A41A2841D3E902000C93165 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A41A2831D3E902000C93165 /* Decypher.app */,
+				5A41A29B1D3E902000C93165 /* Decypher.xctest */,
+				5A41A2A61D3E902000C93165 /* Decypher.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A41A2851D3E902000C93165 /* casarao */ = {
+			isa = PBXGroup;
+			children = (
+				9F216B751D48F0F7005365A7 /* Services */,
+				9FE8E1BA1D3EB17800A32C65 /* Model */,
+				9FE2BCB61D3E95D900B95074 /* casarao.entitlements */,
+				5A41A2861D3E902000C93165 /* AppDelegate.swift */,
+				9F1591AC1D3FD7E900C52171 /* Scenes */,
+				5A41A28C1D3E902000C93165 /* GameViewController.swift */,
+				5AFDBCF31D3EAEDF0093F328 /* WebServiceManneger.swift */,
+				9F1591AD1D3FD80900C52171 /* Assets */,
+				5A41A2961D3E902000C93165 /* Info.plist */,
+				9FA85F371D493C6E005D0394 /* Decypher-BridgingHeader.m */,
+				9FA85F361D493C6E005D0394 /* Decypher-Bridging-Header.h */,
+				5A41A29E1D3E902000C93165 /* casaraoTests */,
+			);
+			path = casarao;
+			sourceTree = "<group>";
+		};
+		5A41A29E1D3E902000C93165 /* casaraoTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F94AE1B1D54D96A00113344 /* default.gpx */,
+				5A41A29F1D3E902000C93165 /* casaraoTests.swift */,
+				5A41A2A11D3E902000C93165 /* Info.plist */,
+			);
+			path = casaraoTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		5A41A2A91D3E902000C93165 /* casaraoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */,
+				5A41A2AC1D3E902000C93165 /* Info.plist */,
+			);
+			path = casaraoUITests;
+			sourceTree = "<group>";
+		};
+		5AEF63E91D4FD65100959B01 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */,
+				9FE8E1BD1D3EB42A00A32C65 /* Player.swift */,
+			);
+			name = Parse;
+			sourceTree = "<group>";
+		};
+		9F1591AC1D3FD7E900C52171 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5A41A28A1D3E902000C93165 /* GameScene.swift */,
+				9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */,
+				5A4B67D71D5CF93E00E09295 /* SplashScene.swift */,
+				9FA7E9D01D40187D00BF482C /* StoreScene.swift */,
+				9FA7E9CC1D400E5000BF482C /* ProfileScene.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		9F1591AD1D3FD80900C52171 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5A22E3E11D81E32A008DC4C4 /* Assets.xcassets */,
+				5A41A28E1D3E902000C93165 /* Main.storyboard */,
+				5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		9F216B751D48F0F7005365A7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9F216B761D48F112005365A7 /* LobbyServices.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		9FE8E1BA1D3EB17800A32C65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5AEF63E91D4FD65100959B01 /* Parse */,
+				9FE8E1BF1D3EB6ED00A32C65 /* Matrix.swift */,
+				5A8FDA6E1D46911900A7C1C9 /* PopUpSpriteNode.swift */,
+				5AC348691D4697530094AE21 /* GameHUD.swift */,
+				5A22E3DF1D81DA4F008DC4C4 /* AlertSpriteNode.swift */,
+				5A4B67D91D5E12A500E09295 /* ScrollSprite.swift */,
+				5A4B67C21D5BB51300E09295 /* UserHUD.swift */,
+				5AEF63EA1D4FD67200959B01 /* GameRoomSpriteNode.swift */,
+				5A41A2B81D3E913D00C93165 /* Tile.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B0FF41EF98C5DEBF7CBD466E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC827EB1274C21C723EC1E08 /* Pods-Decypher.debug.xcconfig */,
+				60E500BE60E2DD2D2E52E155 /* Pods-Decypher.release.xcconfig */,
+				F0C2F210CE5ED84C8F619FDE /* Pods-DecypherTests.debug.xcconfig */,
+				8360E3E01552EA6683BF12E6 /* Pods-DecypherTests.release.xcconfig */,
+				FC70EACE4CAE73663C9E7B60 /* Pods-DecypherUITests.debug.xcconfig */,
+				DD1658A863F00C563FF6ADE3 /* Pods-DecypherUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A41A2821D3E902000C93165 /* Decypher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A41A2AF1D3E902000C93165 /* Build configuration list for PBXNativeTarget "Decypher" */;
+			buildPhases = (
+				A274F56BEE724C51EA08DB2C /* 📦 Check Pods Manifest.lock */,
+				5663B2DA4E4ED5163637A2D0 /* [CP] Check Pods Manifest.lock */,
+				5A41A27F1D3E902000C93165 /* Sources */,
+				5A41A2801D3E902000C93165 /* Frameworks */,
+				5A41A2811D3E902000C93165 /* Resources */,
+				432EE73171DC9E5357882C36 /* [CP] Embed Pods Frameworks */,
+				764F19EB1652D8A32B773925 /* [CP] Copy Pods Resources */,
+				917BEAA1B36B6CB63E66CA0A /* 📦 Embed Pods Frameworks */,
+				D6B8C74B9CAB88CF321F8DF6 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Decypher;
+			productName = casarao;
+			productReference = 5A41A2831D3E902000C93165 /* Decypher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5A41A29A1D3E902000C93165 /* DecypherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A41A2B21D3E902000C93165 /* Build configuration list for PBXNativeTarget "DecypherTests" */;
+			buildPhases = (
+				0FB1DF38AD5E3EF093D1D3B2 /* 📦 Check Pods Manifest.lock */,
+				0C02C237E9D9703A6E41B610 /* [CP] Check Pods Manifest.lock */,
+				5A41A2971D3E902000C93165 /* Sources */,
+				5A41A2981D3E902000C93165 /* Frameworks */,
+				5A41A2991D3E902000C93165 /* Resources */,
+				A980ACFEE042BD2FB9391D05 /* [CP] Embed Pods Frameworks */,
+				071BECFE237F0D66ECF9EEB5 /* [CP] Copy Pods Resources */,
+				17760E21BB6EDC1CD876819D /* 📦 Embed Pods Frameworks */,
+				1304A618ADE8A8CD6FC50107 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A41A29D1D3E902000C93165 /* PBXTargetDependency */,
+			);
+			name = DecypherTests;
+			productName = casaraoTests;
+			productReference = 5A41A29B1D3E902000C93165 /* Decypher.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5A41A2A51D3E902000C93165 /* DecypherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A41A2B51D3E902000C93165 /* Build configuration list for PBXNativeTarget "DecypherUITests" */;
+			buildPhases = (
+				678BB98B9072F1D3701A7D03 /* 📦 Check Pods Manifest.lock */,
+				5FC9A7BAE65995DB0272A2FA /* [CP] Check Pods Manifest.lock */,
+				5A41A2A21D3E902000C93165 /* Sources */,
+				5A41A2A31D3E902000C93165 /* Frameworks */,
+				5A41A2A41D3E902000C93165 /* Resources */,
+				4EB878F3C292B65910AAAD48 /* [CP] Copy Pods Resources */,
+				C1240535D3DD6DE7EECD3E55 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A41A2A81D3E902000C93165 /* PBXTargetDependency */,
+			);
+			name = DecypherUITests;
+			productName = casaraoUITests;
+			productReference = 5A41A2A61D3E902000C93165 /* Decypher.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A41A27B1D3E902000C93165 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "'team'";
+				TargetAttributes = {
+					5A41A2821D3E902000C93165 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = TY5QM4UU69;
+						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					5A41A29A1D3E902000C93165 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+						TestTargetID = 5A41A2821D3E902000C93165;
+					};
+					5A41A2A51D3E902000C93165 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+						TestTargetID = 5A41A2821D3E902000C93165;
+					};
+				};
+			};
+			buildConfigurationList = 5A41A27E1D3E902000C93165 /* Build configuration list for PBXProject "Decypher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A41A27A1D3E902000C93165;
+			productRefGroup = 5A41A2841D3E902000C93165 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A41A2821D3E902000C93165 /* Decypher */,
+				5A41A29A1D3E902000C93165 /* DecypherTests */,
+				5A41A2A51D3E902000C93165 /* DecypherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A41A2811D3E902000C93165 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */,
+				9F94AE1C1D54D96A00113344 /* default.gpx in Resources */,
+				5A22E3E21D81E32A008DC4C4 /* Assets.xcassets in Resources */,
+				5A41A2901D3E902000C93165 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A41A2991D3E902000C93165 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A41A2A41D3E902000C93165 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		071BECFE237F0D66ECF9EEB5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casaraoTests/Pods-casaraoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0C02C237E9D9703A6E41B610 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0FB1DF38AD5E3EF093D1D3B2 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1304A618ADE8A8CD6FC50107 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17760E21BB6EDC1CD876819D /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		432EE73171DC9E5357882C36 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casarao/Pods-casarao-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EB878F3C292B65910AAAD48 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casaraoUITests/Pods-casaraoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5663B2DA4E4ED5163637A2D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5FC9A7BAE65995DB0272A2FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		678BB98B9072F1D3701A7D03 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		764F19EB1652D8A32B773925 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+			showEnvVarsInLog = 0;
+		};
+		917BEAA1B36B6CB63E66CA0A /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Decypher/Pods-Decypher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A274F56BEE724C51EA08DB2C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A980ACFEE042BD2FB9391D05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casaraoTests/Pods-casaraoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1240535D3DD6DE7EECD3E55 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6B8C74B9CAB88CF321F8DF6 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Decypher/Pods-Decypher-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A41A27F1D3E902000C93165 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFDBCF41D3EAEDF0093F328 /* WebServiceManneger.swift in Sources */,
+				5A22E3E01D81DA4F008DC4C4 /* AlertSpriteNode.swift in Sources */,
+				5A41A28B1D3E902000C93165 /* GameScene.swift in Sources */,
+				5AC3486A1D4697530094AE21 /* GameHUD.swift in Sources */,
+				5A41A28D1D3E902000C93165 /* GameViewController.swift in Sources */,
+				5A41A2871D3E902000C93165 /* AppDelegate.swift in Sources */,
+				9FA7E9CD1D400E5000BF482C /* ProfileScene.swift in Sources */,
+				9F216B771D48F112005365A7 /* LobbyServices.swift in Sources */,
+				5AEF63EB1D4FD67200959B01 /* GameRoomSpriteNode.swift in Sources */,
+				9FA7E9D11D40187D00BF482C /* StoreScene.swift in Sources */,
+				9FE8E1C01D3EB6ED00A32C65 /* Matrix.swift in Sources */,
+				9FE8E1BE1D3EB42A00A32C65 /* Player.swift in Sources */,
+				9FE8E1BC1D3EB19100A32C65 /* GameRoom.swift in Sources */,
+				9F1591AB1D3FD70A00C52171 /* LobbyScene.swift in Sources */,
+				5A4B67C31D5BB51300E09295 /* UserHUD.swift in Sources */,
+				5A8FDA6F1D46911900A7C1C9 /* PopUpSpriteNode.swift in Sources */,
+				5A4B67DA1D5E12A500E09295 /* ScrollSprite.swift in Sources */,
+				9FA85F381D493C6E005D0394 /* Decypher-BridgingHeader.m in Sources */,
+				5A41A2B91D3E913D00C93165 /* Tile.swift in Sources */,
+				5A4B67D81D5CF93E00E09295 /* SplashScene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A41A2971D3E902000C93165 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A41A2A01D3E902000C93165 /* casaraoTests.swift in Sources */,
+				5A41A2BA1D3E913D00C93165 /* Tile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A41A2A21D3E902000C93165 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A41A2AB1D3E902000C93165 /* casaraoUITests.swift in Sources */,
+				5A41A2BB1D3E913D00C93165 /* Tile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A41A29D1D3E902000C93165 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A41A2821D3E902000C93165 /* Decypher */;
+			targetProxy = 5A41A29C1D3E902000C93165 /* PBXContainerItemProxy */;
+		};
+		5A41A2A81D3E902000C93165 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A41A2821D3E902000C93165 /* Decypher */;
+			targetProxy = 5A41A2A71D3E902000C93165 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5A41A28E1D3E902000C93165 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A41A28F1D3E902000C93165 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A41A2941D3E902000C93165 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A41A2AD1D3E902000C93165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A41A2AE1D3E902000C93165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A41A2B01D3E902000C93165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC827EB1274C21C723EC1E08 /* Pods-Decypher.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = casarao/casarao.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = casarao/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-team.casarao";
+				PRODUCT_NAME = Decypher;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "casarao/Decypher-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5A41A2B11D3E902000C93165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60E500BE60E2DD2D2E52E155 /* Pods-Decypher.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = casarao/casarao.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = casarao/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-team.casarao";
+				PRODUCT_NAME = Decypher;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "casarao/Decypher-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		5A41A2B31D3E902000C93165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0C2F210CE5ED84C8F619FDE /* Pods-DecypherTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = casaraoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoTests";
+				PRODUCT_NAME = Decypher;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Decypher.app/Decypher";
+			};
+			name = Debug;
+		};
+		5A41A2B41D3E902000C93165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8360E3E01552EA6683BF12E6 /* Pods-DecypherTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = casaraoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoTests";
+				PRODUCT_NAME = Decypher;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Decypher.app/Decypher";
+			};
+			name = Release;
+		};
+		5A41A2B61D3E902000C93165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC70EACE4CAE73663C9E7B60 /* Pods-DecypherUITests.debug.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = casaraoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoUITests";
+				PRODUCT_NAME = Decypher;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = casarao;
+			};
+			name = Debug;
+		};
+		5A41A2B71D3E902000C93165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD1658A863F00C563FF6ADE3 /* Pods-DecypherUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = casaraoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoUITests";
+				PRODUCT_NAME = Decypher;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = casarao;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A41A27E1D3E902000C93165 /* Build configuration list for PBXProject "Decypher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A41A2AD1D3E902000C93165 /* Debug */,
+				5A41A2AE1D3E902000C93165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A41A2AF1D3E902000C93165 /* Build configuration list for PBXNativeTarget "Decypher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A41A2B01D3E902000C93165 /* Debug */,
+				5A41A2B11D3E902000C93165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A41A2B21D3E902000C93165 /* Build configuration list for PBXNativeTarget "DecypherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A41A2B31D3E902000C93165 /* Debug */,
+				5A41A2B41D3E902000C93165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A41A2B51D3E902000C93165 /* Build configuration list for PBXNativeTarget "DecypherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A41A2B61D3E902000C93165 /* Debug */,
+				5A41A2B71D3E902000C93165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A41A27B1D3E902000C93165 /* Project object */;
+}

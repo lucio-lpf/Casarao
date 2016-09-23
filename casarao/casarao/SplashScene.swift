@@ -47,7 +47,7 @@ class SplashScene: SKScene {
                 (pfuser, error) in
                 
                 if let e = error {
-                    print(e.debugDescription)
+                    print(e.localizedDescription)
                 }else {
                     self.player = Player(pfuser: pfuser!)
                     self.player.nickname = userNickname
@@ -65,7 +65,7 @@ class SplashScene: SKScene {
             player.signUpInBackground(){
                 (bool, error) in
                 if let e = error{
-                    print(e.debugDescription)
+                    print(e.localizedDescription)
                 } else {
                     self.player = Player(pfuser: player)
                     self.player.nickname = userNickname
