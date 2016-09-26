@@ -218,22 +218,22 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
                     
                     
                     
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(self.gameRoom.timer), repeats: false)
-                
-                let request = UNNotificationRequest(identifier: "PlayAgain", content: content, trigger: trigger)
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(self.gameRoom.timer), repeats: false)
                     
-                    
-                let center = UNUserNotificationCenter.current()
-                    
-                center.add(request, withCompletionHandler: { (error) in
-                    guard let _ = error else{
+                    let request = UNNotificationRequest(identifier: "PlayAgain", content: content, trigger: trigger)
                         
-                        print("Notificação adicionada com sucesso")
                         
-                        return
-                    }
-                    print(error?.localizedDescription)
-                })
+                    let center = UNUserNotificationCenter.current()
+                        
+                    center.add(request, withCompletionHandler: { (error) in
+                        guard let _ = error else{
+                            
+                            print("Notificação adicionada com sucesso")
+                            
+                            return
+                        }
+                        print(error?.localizedDescription)
+                    })
                     
                     
                     

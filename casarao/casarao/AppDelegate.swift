@@ -15,19 +15,21 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
         // Override point for customization after application launch.
-
+        
         Parse.enableLocalDatastore()
         
         // Initialize Parse.
+        
         let configuration = ParseClientConfiguration{
             $0.applicationId = "HSYwTD8Cz0O2cznV9J7jSCBmdR38X6EF"
             $0.clientKey = "y5NPYdVS50Ts96N5O0iLrPZlFX7ULy1L"
             $0.server = "https://decypher.tk/parse"
             $0.isLocalDatastoreEnabled = true
         }
+        
         Parse.initialize(with: configuration)
         
         
@@ -36,16 +38,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Enable or disable features based on authorization.
         }
         application.registerForRemoteNotifications()
-
         
-        return true
+    
     }
+
+//    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+//        // Override point for customization after application launch.
+//
+//        Parse.enableLocalDatastore()
+//        
+//        // Initialize Parse.
+//        PFUser.registerSubclass()
+//        
+//        let configuration = ParseClientConfiguration{
+//            $0.applicationId = "HSYwTD8Cz0O2cznV9J7jSCBmdR38X6EF"
+//            $0.clientKey = "y5NPYdVS50Ts96N5O0iLrPZlFX7ULy1L"
+//            $0.server = "https://decypher.tk/parse"
+//            $0.isLocalDatastoreEnabled = true
+//        }
+//        
+//        Parse.initialize(with: configuration)
+//        
+//        
+//        let u = PFUser()
+//        let center = UNUserNotificationCenter.current()
+//        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+//            // Enable or disable features based on authorization.
+//        }
+//        application.registerForRemoteNotifications()
+//
+//        
+//        return true
+//    }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let installation = PFInstallation.current()
-        installation?.setDeviceTokenFrom(deviceToken as Data)
-        installation?.channels = ["global"]
-        installation?.saveInBackground()
+        installation.setDeviceTokenFrom(deviceToken as Data)
+        installation.channels = ["global"]
+        installation.saveInBackground()
     }
     
     

@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let skView = view as! SKView
         skView.isMultipleTouchEnabled = false
         

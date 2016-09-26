@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11BDD9586DF55760F884AE0A /* Pods_DecypherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284C37B8672E20C5A0B4A1C4 /* Pods_DecypherUITests.framework */; };
+		1F812102A23D9636C52CA109 /* Pods_Decypher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE96CC2950CE6271430FC31 /* Pods_Decypher.framework */; };
+		3075B18BC212CB542662412B /* Pods_DecypherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E677D89480D38D9D24976C /* Pods_DecypherTests.framework */; };
 		5A22E3E01D81DA4F008DC4C4 /* AlertSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22E3DF1D81DA4F008DC4C4 /* AlertSpriteNode.swift */; };
 		5A22E3E21D81E32A008DC4C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A22E3E11D81E32A008DC4C4 /* Assets.xcassets */; };
 		5A41A2871D3E902000C93165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2861D3E902000C93165 /* AppDelegate.swift */; };
@@ -36,9 +39,6 @@
 		9FE8E1BC1D3EB19100A32C65 /* GameRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */; };
 		9FE8E1BE1D3EB42A00A32C65 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BD1D3EB42A00A32C65 /* Player.swift */; };
 		9FE8E1C01D3EB6ED00A32C65 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE8E1BF1D3EB6ED00A32C65 /* Matrix.swift */; };
-		A3C7BEE5260CFFEDE9F1AD96 /* Pods_DecypherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E58273926F6E5D24579FCE2E /* Pods_DecypherTests.framework */; };
-		C241A87E4E7632E08EC78060 /* Pods_DecypherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB03FB3AE3849BC4B07E0D67 /* Pods_DecypherUITests.framework */; };
-		EE7C80B699EAF9FCE350DC00 /* Pods_Decypher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6EDAE4CE78A39353F746C7 /* Pods_Decypher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +59,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4A6EDAE4CE78A39353F746C7 /* Pods_Decypher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Decypher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12BD87A8D80AA93A2A5D7489 /* Pods-Decypher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decypher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Decypher/Pods-Decypher.debug.xcconfig"; sourceTree = "<group>"; };
+		284C37B8672E20C5A0B4A1C4 /* Pods_DecypherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecypherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33028232C1B7C8745FCA5023 /* Pods-DecypherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3FA9EFA6F0F8E2AF15078056 /* Pods-DecypherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5A22E3DF1D81DA4F008DC4C4 /* AlertSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSpriteNode.swift; sourceTree = "<group>"; };
 		5A22E3E11D81E32A008DC4C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A41A2831D3E902000C93165 /* Decypher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decypher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,8 +86,9 @@
 		5AC348691D4697530094AE21 /* GameHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHUD.swift; sourceTree = "<group>"; };
 		5AEF63EA1D4FD67200959B01 /* GameRoomSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoomSpriteNode.swift; sourceTree = "<group>"; };
 		5AFDBCF31D3EAEDF0093F328 /* WebServiceManneger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManneger.swift; sourceTree = "<group>"; };
-		60E500BE60E2DD2D2E52E155 /* Pods-Decypher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decypher.release.xcconfig"; path = "Pods/Target Support Files/Pods-Decypher/Pods-Decypher.release.xcconfig"; sourceTree = "<group>"; };
-		8360E3E01552EA6683BF12E6 /* Pods-DecypherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests.release.xcconfig"; sourceTree = "<group>"; };
+		68E677D89480D38D9D24976C /* Pods_DecypherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecypherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81E9A15E4552E8F6F327EA7F /* Pods-Decypher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decypher.release.xcconfig"; path = "Pods/Target Support Files/Pods-Decypher/Pods-Decypher.release.xcconfig"; sourceTree = "<group>"; };
+		9EE96CC2950CE6271430FC31 /* Pods_Decypher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Decypher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1591AA1D3FD70A00C52171 /* LobbyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyScene.swift; sourceTree = "<group>"; };
 		9F216B761D48F112005365A7 /* LobbyServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyServices.swift; sourceTree = "<group>"; };
 		9F94AE1B1D54D96A00113344 /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = default.gpx; path = ../casarao/default.gpx; sourceTree = "<group>"; };
@@ -97,12 +101,8 @@
 		9FE8E1BB1D3EB19100A32C65 /* GameRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoom.swift; sourceTree = "<group>"; };
 		9FE8E1BD1D3EB42A00A32C65 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		9FE8E1BF1D3EB6ED00A32C65 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
-		AC827EB1274C21C723EC1E08 /* Pods-Decypher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decypher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Decypher/Pods-Decypher.debug.xcconfig"; sourceTree = "<group>"; };
-		DD1658A863F00C563FF6ADE3 /* Pods-DecypherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E58273926F6E5D24579FCE2E /* Pods_DecypherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecypherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0C2F210CE5ED84C8F619FDE /* Pods-DecypherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FB03FB3AE3849BC4B07E0D67 /* Pods_DecypherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecypherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC70EACE4CAE73663C9E7B60 /* Pods-DecypherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC3B0ED0ECCF27576FE0CEAA /* Pods-DecypherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FE46D486124877B787162C1D /* Pods-DecypherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FE2BCB81D3E95E100B95074 /* CloudKit.framework in Frameworks */,
-				EE7C80B699EAF9FCE350DC00 /* Pods_Decypher.framework in Frameworks */,
+				1F812102A23D9636C52CA109 /* Pods_Decypher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3C7BEE5260CFFEDE9F1AD96 /* Pods_DecypherTests.framework in Frameworks */,
+				3075B18BC212CB542662412B /* Pods_DecypherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,21 +127,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C241A87E4E7632E08EC78060 /* Pods_DecypherUITests.framework in Frameworks */,
+				11BDD9586DF55760F884AE0A /* Pods_DecypherUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3927916C3554CDE60D84807B /* Frameworks */ = {
+		3953FF6F279C7D98CCDEE081 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4A6EDAE4CE78A39353F746C7 /* Pods_Decypher.framework */,
-				E58273926F6E5D24579FCE2E /* Pods_DecypherTests.framework */,
-				FB03FB3AE3849BC4B07E0D67 /* Pods_DecypherUITests.framework */,
+				9EE96CC2950CE6271430FC31 /* Pods_Decypher.framework */,
+				68E677D89480D38D9D24976C /* Pods_DecypherTests.framework */,
+				284C37B8672E20C5A0B4A1C4 /* Pods_DecypherUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5835874FBD120E9B2FBFEA0F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				12BD87A8D80AA93A2A5D7489 /* Pods-Decypher.debug.xcconfig */,
+				81E9A15E4552E8F6F327EA7F /* Pods-Decypher.release.xcconfig */,
+				33028232C1B7C8745FCA5023 /* Pods-DecypherTests.debug.xcconfig */,
+				FE46D486124877B787162C1D /* Pods-DecypherTests.release.xcconfig */,
+				AC3B0ED0ECCF27576FE0CEAA /* Pods-DecypherUITests.debug.xcconfig */,
+				3FA9EFA6F0F8E2AF15078056 /* Pods-DecypherUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		5A41A27A1D3E902000C93165 = {
@@ -151,8 +164,8 @@
 				5A41A2851D3E902000C93165 /* casarao */,
 				5A41A2A91D3E902000C93165 /* casaraoUITests */,
 				5A41A2841D3E902000C93165 /* Products */,
-				B0FF41EF98C5DEBF7CBD466E /* Pods */,
-				3927916C3554CDE60D84807B /* Frameworks */,
+				5835874FBD120E9B2FBFEA0F /* Pods */,
+				3953FF6F279C7D98CCDEE081 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,19 +272,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		B0FF41EF98C5DEBF7CBD466E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AC827EB1274C21C723EC1E08 /* Pods-Decypher.debug.xcconfig */,
-				60E500BE60E2DD2D2E52E155 /* Pods-Decypher.release.xcconfig */,
-				F0C2F210CE5ED84C8F619FDE /* Pods-DecypherTests.debug.xcconfig */,
-				8360E3E01552EA6683BF12E6 /* Pods-DecypherTests.release.xcconfig */,
-				FC70EACE4CAE73663C9E7B60 /* Pods-DecypherUITests.debug.xcconfig */,
-				DD1658A863F00C563FF6ADE3 /* Pods-DecypherUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,15 +279,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A41A2AF1D3E902000C93165 /* Build configuration list for PBXNativeTarget "Decypher" */;
 			buildPhases = (
-				A274F56BEE724C51EA08DB2C /* 📦 Check Pods Manifest.lock */,
+				A274F56BEE724C51EA08DB2C /* [CP] Check Pods Manifest.lock */,
 				5663B2DA4E4ED5163637A2D0 /* [CP] Check Pods Manifest.lock */,
 				5A41A27F1D3E902000C93165 /* Sources */,
 				5A41A2801D3E902000C93165 /* Frameworks */,
 				5A41A2811D3E902000C93165 /* Resources */,
 				432EE73171DC9E5357882C36 /* [CP] Embed Pods Frameworks */,
 				764F19EB1652D8A32B773925 /* [CP] Copy Pods Resources */,
-				917BEAA1B36B6CB63E66CA0A /* 📦 Embed Pods Frameworks */,
-				D6B8C74B9CAB88CF321F8DF6 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,15 +300,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A41A2B21D3E902000C93165 /* Build configuration list for PBXNativeTarget "DecypherTests" */;
 			buildPhases = (
-				0FB1DF38AD5E3EF093D1D3B2 /* 📦 Check Pods Manifest.lock */,
+				0FB1DF38AD5E3EF093D1D3B2 /* [CP] Check Pods Manifest.lock */,
 				0C02C237E9D9703A6E41B610 /* [CP] Check Pods Manifest.lock */,
 				5A41A2971D3E902000C93165 /* Sources */,
 				5A41A2981D3E902000C93165 /* Frameworks */,
 				5A41A2991D3E902000C93165 /* Resources */,
 				A980ACFEE042BD2FB9391D05 /* [CP] Embed Pods Frameworks */,
 				071BECFE237F0D66ECF9EEB5 /* [CP] Copy Pods Resources */,
-				17760E21BB6EDC1CD876819D /* 📦 Embed Pods Frameworks */,
-				1304A618ADE8A8CD6FC50107 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -326,13 +322,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A41A2B51D3E902000C93165 /* Build configuration list for PBXNativeTarget "DecypherUITests" */;
 			buildPhases = (
-				678BB98B9072F1D3701A7D03 /* 📦 Check Pods Manifest.lock */,
+				678BB98B9072F1D3701A7D03 /* [CP] Check Pods Manifest.lock */,
 				5FC9A7BAE65995DB0272A2FA /* [CP] Check Pods Manifest.lock */,
 				5A41A2A21D3E902000C93165 /* Sources */,
 				5A41A2A31D3E902000C93165 /* Frameworks */,
 				5A41A2A41D3E902000C93165 /* Resources */,
 				4EB878F3C292B65910AAAD48 /* [CP] Copy Pods Resources */,
-				C1240535D3DD6DE7EECD3E55 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -440,7 +435,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casaraoTests/Pods-casaraoTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0C02C237E9D9703A6E41B610 /* [CP] Check Pods Manifest.lock */ = {
@@ -458,49 +453,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		0FB1DF38AD5E3EF093D1D3B2 /* 📦 Check Pods Manifest.lock */ = {
+		0FB1DF38AD5E3EF093D1D3B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		1304A618ADE8A8CD6FC50107 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		17760E21BB6EDC1CD876819D /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		432EE73171DC9E5357882C36 /* [CP] Embed Pods Frameworks */ = {
@@ -515,7 +480,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casarao/Pods-casarao-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Decypher/Pods-Decypher-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4EB878F3C292B65910AAAD48 /* [CP] Copy Pods Resources */ = {
@@ -530,7 +495,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casaraoUITests/Pods-casaraoUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5663B2DA4E4ED5163637A2D0 /* [CP] Check Pods Manifest.lock */ = {
@@ -563,14 +528,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		678BB98B9072F1D3701A7D03 /* 📦 Check Pods Manifest.lock */ = {
+		678BB98B9072F1D3701A7D03 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,32 +555,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Decypher/Pods-Decypher-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		917BEAA1B36B6CB63E66CA0A /* 📦 Embed Pods Frameworks */ = {
+		A274F56BEE724C51EA08DB2C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Decypher/Pods-Decypher-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A274F56BEE724C51EA08DB2C /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,37 +585,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-casaraoTests/Pods-casaraoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C1240535D3DD6DE7EECD3E55 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D6B8C74B9CAB88CF321F8DF6 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Decypher/Pods-Decypher-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -843,7 +763,7 @@
 		};
 		5A41A2B01D3E902000C93165 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC827EB1274C21C723EC1E08 /* Pods-Decypher.debug.xcconfig */;
+			baseConfigurationReference = 12BD87A8D80AA93A2A5D7489 /* Pods-Decypher.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -851,6 +771,10 @@
 				CODE_SIGN_ENTITLEMENTS = casarao/casarao.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = casarao/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -865,7 +789,7 @@
 		};
 		5A41A2B11D3E902000C93165 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60E500BE60E2DD2D2E52E155 /* Pods-Decypher.release.xcconfig */;
+			baseConfigurationReference = 81E9A15E4552E8F6F327EA7F /* Pods-Decypher.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -873,6 +797,10 @@
 				CODE_SIGN_ENTITLEMENTS = casarao/casarao.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = casarao/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -886,7 +814,7 @@
 		};
 		5A41A2B31D3E902000C93165 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0C2F210CE5ED84C8F619FDE /* Pods-DecypherTests.debug.xcconfig */;
+			baseConfigurationReference = 33028232C1B7C8745FCA5023 /* Pods-DecypherTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -901,7 +829,7 @@
 		};
 		5A41A2B41D3E902000C93165 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8360E3E01552EA6683BF12E6 /* Pods-DecypherTests.release.xcconfig */;
+			baseConfigurationReference = FE46D486124877B787162C1D /* Pods-DecypherTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = casaraoTests/Info.plist;
@@ -915,7 +843,7 @@
 		};
 		5A41A2B61D3E902000C93165 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC70EACE4CAE73663C9E7B60 /* Pods-DecypherUITests.debug.xcconfig */;
+			baseConfigurationReference = AC3B0ED0ECCF27576FE0CEAA /* Pods-DecypherUITests.debug.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = casaraoUITests/Info.plist;
@@ -929,7 +857,7 @@
 		};
 		5A41A2B71D3E902000C93165 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD1658A863F00C563FF6ADE3 /* Pods-DecypherUITests.release.xcconfig */;
+			baseConfigurationReference = 3FA9EFA6F0F8E2AF15078056 /* Pods-DecypherUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = casaraoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
