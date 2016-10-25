@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import Decypher
+import Parse
 
 class casaraoTests: XCTestCase {
     
@@ -31,6 +32,27 @@ class casaraoTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    
+    func testWebRequestToGameRooms() {
+        
+    let expectationk = expectation(description: "hahah")
+
+        let parseQuery = PFQuery(className: "GameRoom")
+        parseQuery.whereKey("obejctId", equalTo: "QOCtu5drLf")
+        parseQuery.findObjectsInBackground { (PFObjects, error) in
+            if let e = error{
+                print(e.localizedDescription)
+            }else{
+                print(PFObjects)
+                XCTAssert(true)
+                expectationk.fulfill()
+                
+            }
+            
+        }
+        waitForExpectations(timeout: 5.0, handler:nil)
     }
     
 }

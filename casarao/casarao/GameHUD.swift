@@ -24,12 +24,12 @@ class GameHUD: SKSpriteNode{
     
     var gameSceneDelegate: GameHUDProtocol
     
-    var amountOfMoneyLabel = SKLabelNode(text:"Total de cash:")
+    //var amountOfMoneyLabel = SKLabelNode(text:"Total de cash:")
     
     
     let giveUpButton = SKSpriteNode(texture: SKTexture(imageNamed: "x"), color: SKColor.clear, size: SKTexture(imageNamed: "x").size())
     
-    var chancesLabel = SKLabelNode(text:"Chances:")
+    //var chancesLabel = SKLabelNode(text:"Chances:")
     
     let backToLobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "backButton"), color: SKColor.white, size: SKTexture(imageNamed: "backButton").size())
     
@@ -41,47 +41,47 @@ class GameHUD: SKSpriteNode{
         
         gameSceneDelegate = selfScene
         
-        super.init(texture: nil, color: SKColor.clear, size: CGSize(width: selfScene.size.width, height: selfScene.size.height/4))
+        super.init(texture: nil, color: SKColor.clear, size: CGSize(width: selfScene.size.width, height: selfScene.size.height/8))
         //LABEL DAS CHANCES DO USUARIO
         zPosition = 2
         
         isUserInteractionEnabled = true
         
-        chancesLabel.text = "Chances: \(selfScene.chances)"
-        chancesLabel.fontName = "aspace"
-        chancesLabel.fontSize = 16
-
-        chancesLabel.position = CGPoint(x: 0, y: -self.size.height/2)
-        chancesLabel.color = SKColor.white
-        chancesLabel.zPosition = 3
-        self.addChild(chancesLabel)
+//        chancesLabel.text = "Chances: \(selfScene.chances)"
+//        chancesLabel.fontName = "aspace"
+//        chancesLabel.fontSize = 16
+//
+//        chancesLabel.position = CGPoint(x: 0, y: -self.size.height/2)
+//        chancesLabel.color = SKColor.white
+//        chancesLabel.zPosition = 3
+//        self.addChild(chancesLabel)
         
         
         // QUANTIDADE DE DINHEIRO TOTAL DA SALA
         
-        amountOfMoneyLabel.text = "Amount of Coins: \(gameRoom.amount)"
-        amountOfMoneyLabel.fontName = "aspace"
-        amountOfMoneyLabel.fontSize = 16
-        amountOfMoneyLabel.position = CGPoint(x: 0, y: -size.height/4)
-        amountOfMoneyLabel.color = SKColor.white
-        amountOfMoneyLabel.zPosition = 3
-        self.addChild(amountOfMoneyLabel)
+//        amountOfMoneyLabel.text = "Amount of Coins: \(gameRoom.amount)"
+//        amountOfMoneyLabel.fontName = "aspace"
+//        amountOfMoneyLabel.fontSize = 16
+//        amountOfMoneyLabel.position = CGPoint(x: 0, y: -size.height/4)
+//        amountOfMoneyLabel.color = SKColor.white
+//        amountOfMoneyLabel.zPosition = 3
+//        self.addChild(amountOfMoneyLabel)
         
         
         //BOTAO DE DESISTIR DO JOGO
         
         
-        giveUpButton.position = CGPoint(x: self.size.width/2 - giveUpButton.size.width, y: self.size.height/2 - 50)
+        giveUpButton.position = CGPoint(x: self.size.width/2 - giveUpButton.size.width, y:0)
         giveUpButton.zPosition = 200
         addChild(giveUpButton)
         
         
-        otherUsersScoreButton.position = CGPoint(x: 0, y: self.size.height/2 - 50)
+        otherUsersScoreButton.position = CGPoint(x: 0, y: 0)
         otherUsersScoreButton.zPosition = 200
         addChild(otherUsersScoreButton)
         
         
-        backToLobbyButton.position = CGPoint(x: -self.size.width/2 + backToLobbyButton.size.width, y: self.size.height/2 - 50)
+        backToLobbyButton.position = CGPoint(x: -self.size.width/2 + backToLobbyButton.size.width, y: 0)
         backToLobbyButton.zPosition = 250
         addChild(backToLobbyButton)
         
@@ -95,13 +95,13 @@ class GameHUD: SKSpriteNode{
     
     func updateMountLabel(_ mount : Int){
         
-        amountOfMoneyLabel.text = "Total de cash:\(mount)"
+        //amountOfMoneyLabel.text = "Total de cash:\(mount)"
         
     }
     
     func updateChancesLabel(_ chances: Int){
         
-        chancesLabel.text = "Tentatias:\(chances)"
+        //chancesLabel.text = "Chances:\(chances)"
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

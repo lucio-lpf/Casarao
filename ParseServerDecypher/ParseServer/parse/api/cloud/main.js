@@ -240,9 +240,15 @@ Parse.Cloud.define('checkUserMatrix',function(request,response){
               }
 
             )
+              getUser(playerId).then(
 
+                function(user){
+
+                  user["coins"] = user["coins"] + room["amount"]
+                }
+              )
           })
-          console.log(userPlayTime);
+          console.log(userPlayTime);q
 
 
       }
@@ -288,6 +294,11 @@ function creatNewRoom(room){
 
     newGameRoom.set("roomName", room.get("roomName"));
     newGameRoom.set("players", []);
+
+    var NowDate = new Date();
+    var tenminutesDate = new Date(NowDate.getTime() + 600000)
+    newGameRoom.set("startTime", tenminutesDate);
+    newGameRoom.set("Typer", room.get("Typer"));
     newGameRoom.set("amount", 0);
     newGameRoom.set("bet", room.get("bet"));
     newGameRoom.set("estado", "playing");
@@ -307,6 +318,15 @@ function creatNewRoom(room){
 
   }
 })
+
+ // Parse.Cloud.define('roomScoreTable', function(request.response){
+ //
+ //
+ //
+ //
+ // })
+
+
 Parse.Cloud.define('checkIfUserIsInRoom', function(request,response){
 
   var roomId = request.params.room;

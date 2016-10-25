@@ -17,6 +17,7 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     let defaults = UserDefaults.standard
     
+    var tutorialController = 0
     
     var profileButton:SKSpriteNode
     var lobbyButton:SKSpriteNode!
@@ -27,15 +28,26 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     var retangle = SKSpriteNode()
     
+    var sectionButton:SKSpriteNode!
+
+    
     var lastTimeUpdated = TimeInterval()
     
+    var lastTimeTimersUpdated = TimeInterval()
     
-    var sectionButton = SKSpriteNode()
+    
+    var filterController:SKSpriteNode!
+    var filterType = "None"
     
     
     // REFACTORING
     var player:Player!
+    
     var selectedRoomNode:SKNode?
+    
+    var roomType = "public"
+    
+    
     
     var userHUD:UserHUD!
     
@@ -49,7 +61,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button_disable"), color: SKColor.clear, size: CGSize(width: 100, height: 100 ))
         profileButton.position = CGPoint(x: -size.width/2 + profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
-        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button"), color: SKColor.clear, size: CGSize(width: 110, height: 110 ))
+        lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button"), color: SKColor.clear, size: CGSize(width: 120, height: 120 ))
         lobbyButton.position = CGPoint(x: 0, y: -size.height/2 + profileButton.size.height/2)
         
         storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button_disable"), color: SKColor.clear, size: CGSize(width: 100, height: 100 ))
@@ -59,13 +71,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
-        
-        //ADD TOP BAR
-        
-        let topBar = SKSpriteNode(texture: SKTexture(imageNamed: "lobbyTopBar"), color: SKColor.clear, size: SKTexture(imageNamed: "lobbyTopBar").size())
-        topBar.position = CGPoint(x: 0, y: size.height/2 - topBar.size.height/2)
-        addChild(topBar)
-        
+    
         //ADD TAB BUTTONS
         
         addChild(profileButton)
@@ -75,12 +81,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         addChild(storeButton)
         
         
-        WebServiceManager.returnGameRooms { (gameRooms) in
-            
-            self.gameRoomsSprites.removeAll()
-            self.addRoomsToScene(gameRooms)
-            
-        }
+       
         
     }
     
@@ -98,9 +99,10 @@ class LobbyScene: SKScene, PopUpInLobby {
         lastTimeUpdated = CACurrentMediaTime()
         
         
-        retangle = SKSpriteNode(texture: nil, color: SKColor.clear, size: CGSize(width: size.width, height: size.height - SKTexture(imageNamed: "lobbyTopBar").size().height - lobbyButton.size.height))
-        retangle.zPosition += zPosition
+        retangle = SKSpriteNode(texture: nil, color: .clear, size: CGSize(width: size.width, height: size.height/1.5))
+        retangle.position = CGPoint(x: 0, y: 0)
         addChild(retangle)
+        
         
         
         userHUD = UserHUD(player: player)
@@ -109,25 +111,102 @@ class LobbyScene: SKScene, PopUpInLobby {
         addChild(userHUD)
         
         
+        filterController = SKSpriteNode(texture: SKTexture(imageNamed:"filterBar"), color: UIColor.clear, size: CGSize(width: size.width - 20, height: 30))
+        filterController.position = CGPoint(x: 0, y: userHUD.position.y - userHUD.size.height - 20)
+        addChild(filterController)
+        
+        WebServiceManager.returnGameRooms(filterType,roomType){ (gameRooms) in
+            
+            self.gameRoomsSprites.removeAll()
+            self.addRoomsToScene(gameRooms)
+            
+        }
         setAnimationFrames()
         // REFACTORING
+        
+        
+        if (defaults.value(forKey: "tutorial") as! Bool != true){
+            
+            addAlpha()
+            
+            nextTutorial(point: CGPoint(x: 0, y: 0))
+        }
+        
+        print(defaults.value(forKey: "tutorial") )
+        
+        
+        //SECTIONBUTTON
+        
+        sectionButton = SKSpriteNode(texture: SKTexture(imageNamed:"lobby_section_public"), color: .clear, size: SKTexture(imageNamed:"lobby_section_public").size())
+        sectionButton.position = CGPoint(x: 0, y: lobbyButton.position.y + 10 + lobbyButton.size.height/2)
+        sectionButton.zPosition = 200
+        addChild(sectionButton)
         
         
     }
     
     
+    
+    func nextTutorial(point:CGPoint){
+        
+        self.childNode(withName: "tutorialPopUp")?.removeFromParent()
+        
+        let popup = PopUpSpriteNode(tutorialNumber:tutorialController)
+        popup.name = "tutorialPopUp"
+        popup.position = CGPoint(x:0,y:0)
+        popup.zPosition = 1001
+        addChild(popup)
+        
+        print(tutorialController)
+        switch(tutorialController){
+            
+        case 0,4:
+            tutorialController += 1
+
+            break
+            
+        case 1:
+            
+            profileButton.zPosition = 1002
+            if profileButton.contains(point){
+                let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
+                let scene:ProfileScene = ProfileScene(size: self.size)
+                scene.player = player
+                scene.tutorialController = tutorialController + 1
+                removeFromParent()
+                self.view?.presentScene(scene, transition: transition)
+            }
+            break
+            
+            
+        case 5:
+            gameRoomsSprites[0].zPosition = 1002
+            if gameRoomsSprites[0].contains(point){
+                joinGame(gameRoomsSprites[0].gameRoom)
+            }
+            
+        default:
+            break
+            
+            
+        }
+        
+    }
     func addRoomsToScene(_ gameRooms:[GameRoom]){
+        
+        
+        
         
         if gameRooms.isEmpty{
             
         }
         else{
-            var yposition = self.size.height/2 - 140
+            var yposition = filterController.position.y - 60
             for room in gameRooms{
                 gameRoomsSprites.append(GameRoomSpriteNode(gameRoom: room, scene: self))
                 gameRoomsSprites.last!.position = CGPoint(x: 0, y: yposition)
                 gameRoomsSprites.last!.zPosition = 3
-                yposition -= 80
+                yposition -= 60
                 
                 addChild(gameRoomsSprites.last!)
                 
@@ -140,6 +219,15 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
+ 
+        
+        if currentTime - lastTimeTimersUpdated > 1{
+            
+            for sprite in gameRoomsSprites{
+                sprite.updateTimerLabel()
+                lastTimeTimersUpdated = currentTime
+            }
+        }
         
             if currentTime - lastTimeUpdated > 5{
                 
@@ -164,7 +252,6 @@ class LobbyScene: SKScene, PopUpInLobby {
                     
                     
                 })
-                print("time for update nigga")
             }
         
     }
@@ -185,6 +272,16 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         let touch = touches.first!
         let point = touch.location(in: self)
+        
+        
+        if defaults.value(forKey: "tutorial") as! Bool != true{
+            
+            nextTutorial(point: point)
+            return
+        }
+        
+        
+        
         
         if profileButton.contains(point){
             
@@ -207,20 +304,87 @@ class LobbyScene: SKScene, PopUpInLobby {
         }
         else if lobbyButton.contains(point){
             
-            reloadGameRooms()
+            reloadGameRooms(type: roomType)
             
+        }
+        
+        else if filterController.contains(point){
+            
+
+            
+            if point.x < -filterController.size.width/4{
+                
+                filterController.texture = SKTexture(image: #imageLiteral(resourceName: "filterBar_Bet"))
+                if filterType != "bet"{
+                    filterType = "bet"
+                }
+                else{
+                    filterController.texture = SKTexture(image: #imageLiteral(resourceName: "filterBar"))
+
+                    filterType = "None"
+                }
+                reloadGameRooms(type:roomType)
+                
+            }
+            else if point.x > filterController.size.width/4 {
+                filterController.texture = SKTexture(image: #imageLiteral(resourceName: "filterBar_Players"))
+                if filterType != "Players"{
+                    filterType = "Players"
+                }
+                else{
+                    filterController.texture = SKTexture(image: #imageLiteral(resourceName: "filterBar"))
+                    filterType = "None"
+                }
+                
+                
+            }
+            else if point.x <= 0 {
+                
+                filterController.texture = SKTexture(image: #imageLiteral(resourceName: "filterBar_TimeLeft"))
+                if filterType != "timeLeft"{
+                    filterType = "timeLeft"
+                }
+                else{
+                    filterController.texture = SKTexture(image: #imageLiteral(resourceName: "filterBar"))
+                    filterType = "None"
+                }
+                
+            }
+            else{
+                
+               filterController.texture = SKTexture(image:  #imageLiteral(resourceName: "filterBar_Pot"))
+                if filterType != "amount"{
+                    filterType = "amount"
+                }
+                else{
+                    filterController.texture = SKTexture(image: #imageLiteral(resourceName: "filterBar"))
+                    filterType = "None"
+                }
+                reloadGameRooms(type:roomType)
+            }
+            
+           // reloadGameRooms()
+            
+        }
+            
+        else if sectionButton.contains(point){
+            
+            
+            if point.x > 0{
+
+                setRooms(type: "private")
+            }
+            else{
+                setRooms(type: "public")
+                print("public rooms")
+            }
+            print("secton button")
         }
             
         else{
             for gameRoomsSprite in gameRoomsSprites{
                 if gameRoomsSprite.contains(point){
-                    let alphaNode = SKSpriteNode(color: UIColor.black, size: self.size)
-                    alphaNode.alpha = 0.0
-                    alphaNode.name = "alphaNode"
-                    alphaNode.isUserInteractionEnabled = true
-                    alphaNode.zPosition = 53
-                    self.addChild(alphaNode)
-                    alphaNode.run(SKAction.fadeAlpha(to: 0.5, duration: 0.25))
+                    addAlpha()
                     gameRoomsSprite.alertSprite = nil
                     joinGame(gameRoomsSprite.gameRoom)
                 }
@@ -229,9 +393,52 @@ class LobbyScene: SKScene, PopUpInLobby {
     }
     
     
+    func setRooms(type:String){
+        
+        
+        
+        if roomType != type{
+            
+            print("mudou")
+            roomType = type
+            sectionButton.texture = SKTexture(imageNamed:"lobby_section_\(type)")
+            
+            reloadGameRooms(type:roomType)
+
+            
+            
+        }
+    }
     
     
-    func reloadGameRooms(){
+    
+    func addAlpha(){
+        let alphaNode = SKSpriteNode(color: UIColor.black, size: self.size)
+        alphaNode.alpha = 0.0
+        alphaNode.name = "alphaNode"
+        alphaNode.isUserInteractionEnabled = true
+        alphaNode.zPosition = 53
+        self.addChild(alphaNode)
+        alphaNode.run(SKAction.fadeAlpha(to: 0.8, duration: 0.15))
+    }
+    
+    func reloadGameRooms(type:String){
+        
+        addAlpha()
+        animateLoading()
+        
+        WebServiceManager.returnGameRooms(filterType,roomType){ (gameRooms) in
+            
+            self.gameRoomsSprites.forEach({ (gameRoom) in
+                gameRoom.removeFromParent()
+            })
+            self.gameRoomsSprites.removeAll()
+            self.addRoomsToScene(gameRooms)
+            self.removeLoadingAnimation()
+            
+        }
+        
+        
     }
     
     func joinGame(_ gameRoom: GameRoom) {
@@ -251,9 +458,14 @@ class LobbyScene: SKScene, PopUpInLobby {
     
     func moveToGameRoom(_ gameRoom:GameRoom){
         
-        let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
-        let scene:SKScene = GameScene(size: self.size, player: self.player, gameRoom: gameRoom)
         
+       
+        let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
+        let scene:GameScene = GameScene(size: self.size, player: self.player, gameRoom: gameRoom)
+        scene.userHUD = userHUD
+        if (defaults.value(forKey: "tutorial") as! Bool != true){
+            scene.tutorialController = tutorialController + 1
+        }
         self.removeFromParent()
         self.view?.presentScene(scene, transition: transition)
     }
@@ -354,6 +566,14 @@ class LobbyScene: SKScene, PopUpInLobby {
             let textureName = "loaded\(i)"
             self.loadedFrames.append(SKTexture(imageNamed: textureName))
         }
+    }
+    
+    
+    func removeLoadingAnimation(){
+        
+        self.loadSymbol.removeFromParent()
+        self.childNode(withName: "rectangle")?.removeFromParent()
+        self.childNode(withName: "alphaNode")?.removeFromParent()
     }
     
     

@@ -14,12 +14,17 @@ class WebServiceManager {
     static let sharedInstance = WebServiceManager()
     
     
-    static func returnGameRooms(_ callBack:@escaping (_ GameRooms:Array<GameRoom>)->()){
+    static func returnGameRooms(_ filterType:String, roomType:String, callBack:@escaping (_ GameRooms:Array<GameRoom>)->()){
         
         var gameRoomsArray: Array<GameRoom>= []
         let parseQuery = PFQuery(className: "GameRoom")
         parseQuery.whereKey("estado", notEqualTo: "finished")
-        parseQuery.order(byAscending: "roomName")
+        if filterType == "None"{
+            parseQuery.order(byAscending: "roomName")}
+        else{
+            parseQuery.order(byAscending: filterType)
+        }
+        parseQuery.whereKey("Type", equalTo: roomType)
         parseQuery.includeKey("players")
         parseQuery.findObjectsInBackground { (PFObjects, error) in
             if let e = error{

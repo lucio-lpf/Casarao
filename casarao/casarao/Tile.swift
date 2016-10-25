@@ -19,7 +19,7 @@ class Tile: SKSpriteNode{
     }
     
     init(){
-        super.init(texture:SKTexture(imageNamed: "white_tile.png"), color: SKColor.clear, size: CGSize(width: 110, height: 110))
+        super.init(texture:SKTexture(imageNamed: "white_tile.png"), color: SKColor.clear, size: CGSize(width: 100, height: 90))
         colorNumber = 0
         self.zPosition = 2
         status = "stillWrong"
@@ -35,7 +35,7 @@ class Tile: SKSpriteNode{
     }
     
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
-        super.init(texture: texture,color:color, size: size)
+        super.init(texture: texture,color:color, size: CGSize(width: 100, height: 90))
     }
     
     

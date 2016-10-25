@@ -32,6 +32,8 @@ class PopUpSpriteNode: SKSpriteNode {
     var cancelJoinButton: SKSpriteNode? = nil
     var closeScorePopUp: SKSpriteNode? = nil
     var gameRoom:GameRoom?
+    var timer:SKLabelNode!
+    var timePlusWaitTime = TimeInterval()
     var giveUpButton: SKSpriteNode? = nil
     
 
@@ -41,21 +43,32 @@ class PopUpSpriteNode: SKSpriteNode {
         self.gameRoom = gameRoom
         super.init(texture: SKTexture(imageNamed: "LobbyPopUp") , color: SKColor.clear, size: SKTexture(imageNamed: "LobbyPopUp").size())
         isUserInteractionEnabled = true
-        zPosition =  1000
+        zPosition =  1005
         GameSceneDelegate = nil
         LobbySceneDelegate = scene
-        joinButtonAccept = SKSpriteNode(texture: SKTexture(imageNamed:"yesButton"), color: SKColor.clear, size: CGSize(width: 150, height: 100))
-        joinButtonAccept!.position = CGPoint(x: 0, y: -self.size.height/4)
+        joinButtonAccept = SKSpriteNode(texture: SKTexture(imageNamed:"yesButton"), color: SKColor.clear, size: SKTexture(imageNamed:"yesButton").size())
+        joinButtonAccept!.position = CGPoint(x: size.width/4, y: -self.size.height/3.5)
         joinButtonAccept?.zPosition = 5
         addChild(joinButtonAccept!)
-        cancelJoinButton = SKSpriteNode(texture: SKTexture(imageNamed:"x"), color: SKColor.clear, size: CGSize(width: 50, height: 50))
-        cancelJoinButton!.position = CGPoint(x: self.size.width/2 - 50, y: self.size.height/2)
+        cancelJoinButton = SKSpriteNode(texture: SKTexture(imageNamed:"noButton"), color: SKColor.clear, size: SKTexture(imageNamed:"noButton").size())
+        cancelJoinButton!.position = CGPoint(x: -size.width/4, y: -self.size.height/3.5)
         cancelJoinButton?.zPosition = 5
         addChild(cancelJoinButton!)
         
 
   
 
+    }
+    
+    
+    init(tutorialNumber:Int){
+        
+        
+        var newTexture: SKTexture
+        newTexture = SKTexture(imageNamed: "tutorialPopUp\(tutorialNumber)")
+        super.init(texture: newTexture, color: SKColor.clear, size: newTexture.size())
+
+        
     }
     
     //POPUP COM LISTA DE USUARIOS DA SALA E SUAS PONTUAÇÕES
@@ -102,18 +115,57 @@ class PopUpSpriteNode: SKSpriteNode {
     
     init(scene: GameScene, seconds:Int){
         super.init(texture: SKTexture(imageNamed: "timerPopUp"), color: SKColor.clear, size: CGSize(width: 300, height: 300))
+
+        timePlusWaitTime = NSDate().timeIntervalSince1970 + Double(seconds)
+        
         self.GameSceneDelegate = scene
         self.LobbySceneDelegate = nil
         
+        name = "TimerPopUp"
         
-        let wait = SKAction.wait(forDuration: Double(seconds))
-        let action = SKAction.run {
-            self.GameSceneDelegate!.removeTimerFromScene(self)
-        }
-        self.run(SKAction.sequence([wait,action]))
+        updateTImer()
+        
+        
         
     }
     
+    func updateTImer(){
+        
+        childNode(withName: "timer")?.removeFromParent()
+        
+        
+        let timeNow  = NSDate().timeIntervalSince1970
+        
+        
+        let timeToPlay = timePlusWaitTime - timeNow
+        if timeToPlay > 0{
+            
+            timer = SKLabelNode(text: timeToPlay.minuteSecond)
+            timer.name = "timer"
+            
+        }else{
+            
+            timer.text =  "00:00"
+            self.GameSceneDelegate!.removeTimerFromScene(self)
+        }
+        
+        timer.position = CGPoint(x: 0, y: -size.height/4)
+        setLabel(label: timer)
+        
+        
+        
+    }
+    
+    func setLabel(label:SKLabelNode){
+        
+        label.fontName = "AvenirNext-Bold"
+        label.fontSize = 16
+        label.fontColor = SKColor.black
+        label.zPosition = 4
+        label.verticalAlignmentMode = .center
+        addChild(label)
+        
+    }
     
     //POPUP DO FIM DO JOGO COM O VENCEDOR
     init(winner: String,scene: GameScene){

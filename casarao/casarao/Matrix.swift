@@ -69,8 +69,8 @@ class MatrixNode : SKSpriteNode {
             if i < 3{
                 
                 let tile = tilesArray[i]
-                let yposition = tile.size.height - (tile.size.height * CGFloat(i)) + CGFloat(10 - (10 * i))
-                tilesArray[i].position = CGPoint(x: -tile.size.width + 15, y: yposition)
+                let yposition = tile.size.height*1.1 - (tile.size.height*1.1 * CGFloat(i))
+                tilesArray[i].position = CGPoint(x: -tile.size.width*1.1 + 25, y: yposition)
                 
                 
             }
@@ -78,14 +78,14 @@ class MatrixNode : SKSpriteNode {
                 
                 
                 let tile = tilesArray[i]
-                let yposition = (tile.size.height * 4) - (tile.size.height * CGFloat(i)) + CGFloat(40 - (10 * i)) - tile.size.height/2
+                let yposition = (tile.size.height*1.1 * 4) - (tile.size.height*1.1 * CGFloat(i)) - tile.size.height/2
                 tilesArray[i].position = CGPoint(x: 0, y: yposition)
             }
             else{
                 
                 let tile = tilesArray[i]
-                let yposition = (tile.size.height * 7) - (tile.size.height * CGFloat(i)) + CGFloat(70 - (10 * i))
-                tilesArray[i].position = CGPoint(x: +tile.size.width - 15, y: yposition)
+                let yposition = (tile.size.height*1.1 * 7) - (tile.size.height*1.1 * CGFloat(i))
+                tilesArray[i].position = CGPoint(x: +tile.size.width*1.1 - 25, y: yposition)
 
 
             }

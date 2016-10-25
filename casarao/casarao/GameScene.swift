@@ -26,18 +26,25 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
             gameHUD.updateChancesLabel(chances)
         }
     }
+    var userHUD:UserHUD!
+    
     var gameRoom:GameRoom
     var player: Player
     var loadingFrames = [SKTexture]()
+    let defaults = UserDefaults.standard
+
     var loadedFrames = [SKTexture]()
     var loadSymbol = SKSpriteNode()
     var checkButton: SKSpriteNode!
+    var timerController = TimeInterval()
+    
     var mountOfMoney: Int = 0{
         didSet{
             gameHUD.updateMountLabel(mountOfMoney)
         }
     }
     
+    var  tutorialController:Int!
     var gameHUD: GameHUD!
     
     
@@ -82,7 +89,8 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         
         animateLoading()
         
-        checkButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clear, size: CGSize(width: 300, height: 70))
+        
+        checkButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clear, size: SKTexture(imageNamed: "checkButton").size())
 
         
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -94,9 +102,13 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         background.zPosition = 0
         self.addChild(background)
         
+        
+        userHUD.position = CGPoint(x: 0, y: self.size.height/2 - userHUD.size.height/2)
+        addChild(userHUD)
+        
         self.gameHUD = GameHUD(gameRoom: self.gameRoom, selfScene: self)
         
-        gameHUD.position = CGPoint(x: 0, y: self.size.height/2 - gameHUD.size.height/2)
+        gameHUD.position = CGPoint(x: 0, y: userHUD.position.y - userHUD.size.height/2 - gameHUD.size.height/2)
         self.addChild(gameHUD)
         
         matrix = MatrixNode(gameRoom: gameRoom, playerId: player.id)
@@ -107,8 +119,22 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         
         checkButton.position = CGPoint(x:0,y:-self.size.height/2 + checkButton.size.height)
         checkButton.name = "checkButton"
-        checkButton.zPosition = 3
+        checkButton.zPosition = 5
         addChild(checkButton)
+        
+        
+        let buttonBackground = SKSpriteNode(texture: nil, color: UIColor.init(red: 235, green: 237, blue: 237, alpha: 1), size: CGSize(width: size.width, height: (checkButton.position.y + size.height/2)*2))
+        buttonBackground.position = checkButton.position
+        buttonBackground.zPosition = 4
+        addChild(buttonBackground)
+        
+        let checkLabel = SKLabelNode(text: "Check!")
+        checkLabel.fontName =  "HelveticaNeue"
+        checkLabel.position = CGPoint(x: 0, y: -6)
+        checkLabel.fontSize = 20
+        checkLabel.zPosition = checkButton.zPosition + 2
+        checkButton.addChild(checkLabel)
+
         
         WebServiceManager.checkUserPlayTimer(player.id, roomId: gameRoom.id) { (bool,time) in
             
@@ -122,15 +148,41 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
             
         }
         
+        
+        if tutorialController != nil{
+            
+            
+            nextTutorial()
+            
+        }
+        
+        
+ 
     }
     
+    func nextTutorial(){
+        
+        defaults.set(true, forKey: "tutorial")
+    }
     
     
     override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
+        
+        if currentTime - timerController > 1{
+            if let timerPopUp = childNode(withName: "TimerPopUp") as? PopUpSpriteNode{
+                timerPopUp.updateTImer()
+            }
+            
+            timerController = currentTime
+        }
+        
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        
         let touch = touches.first!
         let point = touch.location(in: self)
         
@@ -193,7 +245,6 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         
 
             WebServiceManager.checkUserMatrix(player.id, roomId: gameRoom.id, playerMatrixArray: matrix.playerMatrixArray()) { (playerArray, winner,newObject) in
-                print(playerArray,winner)
                 
                 if (playerArray != nil) && (winner == nil){
                     
@@ -210,6 +261,8 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
                     }*/
                     
                     
+                    if #available(iOS 10.0, *) {
+                    
                     let content = UNMutableNotificationContent()
                     content.title = "Hey You!!!"
                     content.body = "It's time to play again! Don't waist any time."
@@ -218,7 +271,9 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
                     
                     
                     
+                    
                     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(self.gameRoom.timer), repeats: false)
+                   
                     
                     let request = UNNotificationRequest(identifier: "PlayAgain", content: content, trigger: trigger)
                         
@@ -234,7 +289,9 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
                         }
                         print(error?.localizedDescription)
                     })
-                    
+                    } else {
+                        // Fallback on earlier versions
+                    }
                     
                     
                 self.addChild(timerPopUp)
@@ -247,6 +304,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
                     let congratulations = PopUpSpriteNode()
                     congratulations.zPosition = 200
                     self.addChild(congratulations)
+                    self.userHUD.incrementCoins(value: self.gameRoom.amount)
                     
                 }
                 else if (playerArray == nil) && (winner == nil){
@@ -358,7 +416,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         alphaNode.zPosition = 150
         alphaNode.isUserInteractionEnabled = true
         self.addChild(alphaNode)
-        alphaNode.run(SKAction.fadeAlpha(to: 0.5, duration: 0.25))
+        alphaNode.run(SKAction.fadeAlpha(to: 0.8, duration: 0.15))
     }
     
     

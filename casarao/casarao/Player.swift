@@ -112,6 +112,11 @@ class Player {
         }
     }
     
-    
+    func updateNickname(_ newValue:String,callBack:@escaping (Bool)->Void){
+        parseUser["nickname"] = newValue
+        parseUser.saveInBackground { (bool, error) in
+            callBack(bool)
+        }
+    }
 }
 

@@ -19,6 +19,9 @@ class StoreScene: SKScene {
     var storeButton:SKSpriteNode!
     var loginButton:SKSpriteNode!
     
+    
+    var tutorialController:Int!
+
     var player: Player?
     
     
@@ -31,7 +34,7 @@ class StoreScene: SKScene {
         lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button_disable"), color: SKColor.clear, size: CGSize(width: 100, height: 100 ))
         lobbyButton.position = CGPoint(x: 0, y: -size.height/2 + profileButton.size.height/2)
         
-        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button"), color: SKColor.clear, size: CGSize(width: 110, height: 110 ))
+        storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button"), color: SKColor.clear, size: CGSize(width: 120, height: 120))
         storeButton.position = CGPoint(x: size.width/2 - profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -41,6 +44,20 @@ class StoreScene: SKScene {
         addChild(lobbyButton)
         
         addChild(storeButton)
+    }
+    
+    override func didMove(to view: SKView) {
+        
+        if tutorialController != nil{
+            
+            addAlpha()
+            let popup = PopUpSpriteNode(tutorialNumber:tutorialController)
+            popup.name = "tutorialPopUp"
+            popup.position = CGPoint(x:0,y:0)
+            popup.zPosition = 1001
+            lobbyButton.zPosition = 1002
+            addChild(popup)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,6 +73,17 @@ class StoreScene: SKScene {
         
         let touch = touches.first!
         let point = touch.location(in: self)
+        
+        if tutorialController != nil{
+            if lobbyButton.contains(point){
+                let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
+                let scene:LobbyScene = LobbyScene(size: self.size)
+                scene.player = player
+                scene.tutorialController = tutorialController + 1
+                self.view?.presentScene(scene, transition: transition)
+            }
+            return
+        }
         
         if profileButton.contains(point){
             
@@ -89,5 +117,14 @@ class StoreScene: SKScene {
         
         skView.presentScene(scene, transition: transition)
         
+    }
+    func addAlpha(){
+        let alphaNode = SKSpriteNode(color: UIColor.black, size: self.size)
+        alphaNode.alpha = 0.0
+        alphaNode.name = "alphaNode"
+        alphaNode.isUserInteractionEnabled = true
+        alphaNode.zPosition = 53
+        self.addChild(alphaNode)
+        alphaNode.run(SKAction.fadeAlpha(to: 0.8, duration: 0.15))
     }
 }

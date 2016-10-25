@@ -23,7 +23,7 @@ class SplashScene: SKScene {
     
     static var gameRoomTargetId: String?
     
-    
+
     
     override init(size: CGSize) {
         
@@ -50,8 +50,6 @@ class SplashScene: SKScene {
                     print(e.localizedDescription)
                 }else {
                     self.player = Player(pfuser: pfuser!)
-                    self.player.nickname = userNickname
-                    self.player.image = UIImage(named: "ProfilePlaceHolder")!
                     self.lobbyTransition()
                 }
             }
@@ -61,6 +59,7 @@ class SplashScene: SKScene {
             defaults.set(String(describing: UIDevice.current.identifierForVendor!), forKey: "userKey")
             player.username = defaults.string(forKey: "userKey")!
             player.password = allUsersPass
+            defaults.set(false, forKey: "tutorial")
             player.email = "\(UIDevice.current.identifierForVendor!)@teste.com"
             player.signUpInBackground(){
                 (bool, error) in
@@ -69,7 +68,7 @@ class SplashScene: SKScene {
                 } else {
                     self.player = Player(pfuser: player)
                     self.player.nickname = userNickname
-                    self.player.coins = 10
+                    self.player.coins = 1000
                     self.player.image = UIImage(named: "ProfilePlaceHolder")!
                     
                     self.lobbyTransition()

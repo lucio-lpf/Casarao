@@ -36,9 +36,9 @@ class GameRoom{
     }
     
     // hora que começa o game
-    var startTime:Date?{
+    var startTime:Date!{
         get{
-            return parseObject.value(forKey: "startTime") as? Date
+            return parseObject.value(forKey: "startTime") as! Date
         }
     }
     
@@ -122,7 +122,6 @@ class GameRoom{
     func timeOfLastUserPlay(_ playerId:String) -> TimeInterval?{
 
         if let time = playTimesPerPlayer[playerId]{
-            print(Date().timeIntervalSince1970 - time/1000)
             return Date().timeIntervalSince1970 - time/1000
         }
         

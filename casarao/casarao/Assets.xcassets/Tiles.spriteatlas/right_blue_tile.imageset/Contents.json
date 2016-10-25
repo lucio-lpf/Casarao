@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "right_blue_tile.png",
+      "filename" : "blue_locked_button.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "right_blue_tile@2x.png",
+      "filename" : "blue_locked_button-2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "right_blue_tile@3x.png",
+      "filename" : "blue_locked_button-1.png",
       "scale" : "3x"
     }
   ],
