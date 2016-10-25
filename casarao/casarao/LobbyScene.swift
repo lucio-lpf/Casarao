@@ -115,7 +115,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         filterController.position = CGPoint(x: 0, y: userHUD.position.y - userHUD.size.height - 20)
         addChild(filterController)
         
-        WebServiceManager.returnGameRooms(filterType,roomType){ (gameRooms) in
+        WebServiceManager.returnGameRooms(filterType,roomType: roomType){ (gameRooms) in
             
             self.gameRoomsSprites.removeAll()
             self.addRoomsToScene(gameRooms)
@@ -427,7 +427,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         addAlpha()
         animateLoading()
         
-        WebServiceManager.returnGameRooms(filterType,roomType){ (gameRooms) in
+        WebServiceManager.returnGameRooms(filterType,roomType: roomType){ (gameRooms) in
             
             self.gameRoomsSprites.forEach({ (gameRoom) in
                 gameRoom.removeFromParent()
