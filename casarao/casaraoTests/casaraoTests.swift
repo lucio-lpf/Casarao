@@ -7,8 +7,8 @@
 //
 
 import XCTest
-@testable import Decypher
 import Parse
+import Decypher
 
 class casaraoTests: XCTestCase {
     
@@ -52,7 +52,7 @@ class casaraoTests: XCTestCase {
             }
             
         }
-        waitForExpectations(timeout: 5.0, handler:nil)
+        waitForExpectations(timeout: 40.0, handler:nil)
     }
     
 }

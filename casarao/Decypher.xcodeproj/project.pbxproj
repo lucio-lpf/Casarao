@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11BDD9586DF55760F884AE0A /* Pods_DecypherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284C37B8672E20C5A0B4A1C4 /* Pods_DecypherUITests.framework */; };
 		1F812102A23D9636C52CA109 /* Pods_Decypher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE96CC2950CE6271430FC31 /* Pods_Decypher.framework */; };
 		3075B18BC212CB542662412B /* Pods_DecypherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E677D89480D38D9D24976C /* Pods_DecypherTests.framework */; };
 		5A22E3E01D81DA4F008DC4C4 /* AlertSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22E3DF1D81DA4F008DC4C4 /* AlertSpriteNode.swift */; };
@@ -18,10 +17,8 @@
 		5A41A2901D3E902000C93165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A28E1D3E902000C93165 /* Main.storyboard */; };
 		5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A41A2931D3E902000C93165 /* LaunchScreen.storyboard */; };
 		5A41A2A01D3E902000C93165 /* casaraoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A29F1D3E902000C93165 /* casaraoTests.swift */; };
-		5A41A2AB1D3E902000C93165 /* casaraoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */; };
 		5A41A2B91D3E913D00C93165 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2B81D3E913D00C93165 /* Tile.swift */; };
 		5A41A2BA1D3E913D00C93165 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2B81D3E913D00C93165 /* Tile.swift */; };
-		5A41A2BB1D3E913D00C93165 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2B81D3E913D00C93165 /* Tile.swift */; };
 		5A4B67C31D5BB51300E09295 /* UserHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4B67C21D5BB51300E09295 /* UserHUD.swift */; };
 		5A4B67D81D5CF93E00E09295 /* SplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4B67D71D5CF93E00E09295 /* SplashScene.swift */; };
 		5A4B67DA1D5E12A500E09295 /* ScrollSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4B67D91D5E12A500E09295 /* ScrollSprite.swift */; };
@@ -49,13 +46,6 @@
 			remoteGlobalIDString = 5A41A2821D3E902000C93165;
 			remoteInfo = casarao;
 		};
-		5A41A2A71D3E902000C93165 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5A41A27B1D3E902000C93165 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5A41A2821D3E902000C93165;
-			remoteInfo = casarao;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -75,7 +65,6 @@
 		5A41A29B1D3E902000C93165 /* Decypher.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Decypher.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A41A29F1D3E902000C93165 /* casaraoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casaraoTests.swift; sourceTree = "<group>"; };
 		5A41A2A11D3E902000C93165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A41A2A61D3E902000C93165 /* Decypher.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Decypher.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A41A2AA1D3E902000C93165 /* casaraoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casaraoUITests.swift; sourceTree = "<group>"; };
 		5A41A2AC1D3E902000C93165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A41A2B81D3E913D00C93165 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
@@ -123,14 +112,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A41A2A31D3E902000C93165 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11BDD9586DF55760F884AE0A /* Pods_DecypherUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -174,7 +155,6 @@
 			children = (
 				5A41A2831D3E902000C93165 /* Decypher.app */,
 				5A41A29B1D3E902000C93165 /* Decypher.xctest */,
-				5A41A2A61D3E902000C93165 /* Decypher.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,27 +298,6 @@
 			productReference = 5A41A29B1D3E902000C93165 /* Decypher.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5A41A2A51D3E902000C93165 /* DecypherUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5A41A2B51D3E902000C93165 /* Build configuration list for PBXNativeTarget "DecypherUITests" */;
-			buildPhases = (
-				678BB98B9072F1D3701A7D03 /* [CP] Check Pods Manifest.lock */,
-				5FC9A7BAE65995DB0272A2FA /* [CP] Check Pods Manifest.lock */,
-				5A41A2A21D3E902000C93165 /* Sources */,
-				5A41A2A31D3E902000C93165 /* Frameworks */,
-				5A41A2A41D3E902000C93165 /* Resources */,
-				4EB878F3C292B65910AAAD48 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5A41A2A81D3E902000C93165 /* PBXTargetDependency */,
-			);
-			name = DecypherUITests;
-			productName = casaraoUITests;
-			productReference = 5A41A2A61D3E902000C93165 /* Decypher.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -364,11 +323,7 @@
 					};
 					5A41A29A1D3E902000C93165 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
-						TestTargetID = 5A41A2821D3E902000C93165;
-					};
-					5A41A2A51D3E902000C93165 = {
-						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = TY5QM4UU69;
 						LastSwiftMigration = 0800;
 						TestTargetID = 5A41A2821D3E902000C93165;
 					};
@@ -389,7 +344,6 @@
 			targets = (
 				5A41A2821D3E902000C93165 /* Decypher */,
 				5A41A29A1D3E902000C93165 /* DecypherTests */,
-				5A41A2A51D3E902000C93165 /* DecypherUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -407,13 +361,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5A41A2991D3E902000C93165 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5A41A2A41D3E902000C93165 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -483,52 +430,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Decypher/Pods-Decypher-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4EB878F3C292B65910AAAD48 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5663B2DA4E4ED5163637A2D0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5FC9A7BAE65995DB0272A2FA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		678BB98B9072F1D3701A7D03 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -627,15 +529,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A41A2A21D3E902000C93165 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A41A2AB1D3E902000C93165 /* casaraoUITests.swift in Sources */,
-				5A41A2BB1D3E913D00C93165 /* Tile.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -643,11 +536,6 @@
 			isa = PBXTargetDependency;
 			target = 5A41A2821D3E902000C93165 /* Decypher */;
 			targetProxy = 5A41A29C1D3E902000C93165 /* PBXContainerItemProxy */;
-		};
-		5A41A2A81D3E902000C93165 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5A41A2821D3E902000C93165 /* Decypher */;
-			targetProxy = 5A41A2A71D3E902000C93165 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -820,6 +708,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TY5QM4UU69;
 				INFOPLIST_FILE = casaraoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoTests";
@@ -834,39 +723,13 @@
 			baseConfigurationReference = FE46D486124877B787162C1D /* Pods-DecypherTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = TY5QM4UU69;
 				INFOPLIST_FILE = casaraoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoTests";
 				PRODUCT_NAME = Decypher;
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Decypher.app/Decypher";
-			};
-			name = Release;
-		};
-		5A41A2B61D3E902000C93165 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC3B0ED0ECCF27576FE0CEAA /* Pods-DecypherUITests.debug.xcconfig */;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = casaraoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoUITests";
-				PRODUCT_NAME = Decypher;
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = casarao;
-			};
-			name = Debug;
-		};
-		5A41A2B71D3E902000C93165 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FA9EFA6F0F8E2AF15078056 /* Pods-DecypherUITests.release.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = casaraoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-team.casaraoUITests";
-				PRODUCT_NAME = Decypher;
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = casarao;
 			};
 			name = Release;
 		};
@@ -896,15 +759,6 @@
 			buildConfigurations = (
 				5A41A2B31D3E902000C93165 /* Debug */,
 				5A41A2B41D3E902000C93165 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5A41A2B51D3E902000C93165 /* Build configuration list for PBXNativeTarget "DecypherUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5A41A2B61D3E902000C93165 /* Debug */,
-				5A41A2B71D3E902000C93165 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
