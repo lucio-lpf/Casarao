@@ -287,7 +287,7 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
                             
                             return
                         }
-                        print(error?.localizedDescription)
+                        print(error?.localizedDescription ?? 10)
                     })
                     } else {
                         // Fallback on earlier versions

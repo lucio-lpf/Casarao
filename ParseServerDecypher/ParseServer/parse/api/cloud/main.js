@@ -298,7 +298,7 @@ function creatNewRoom(room){
     var NowDate = new Date();
     var tenminutesDate = new Date(NowDate.getTime() + 600000)
     newGameRoom.set("startTime", tenminutesDate);
-    newGameRoom.set("Typer", room.get("Typer"));
+    newGameRoom.set("Type", room.get("Type"));
     newGameRoom.set("amount", 0);
     newGameRoom.set("bet", room.get("bet"));
     newGameRoom.set("estado", "playing");
@@ -326,6 +326,48 @@ function creatNewRoom(room){
  //
  // })
 
+
+ Parse.Cloud.define('creatPlayerRoom', function(request,response){
+
+   console.log("funcção ok");
+
+     // Simple syntax to create a new subclass of Parse.Object.
+     var GameRoom = Parse.Object.extend("GameRoom");
+
+     // Create a new instance of that class.
+     var newGameRoom = new GameRoom();
+
+     console.log("classes certas");
+
+     newGameRoom.set("roomName", "playerRoom");
+     newGameRoom.set("players", []);
+
+     var NowDate = new Date();
+     var tenminutesDate = new Date(NowDate.getTime() + 600000)
+     newGameRoom.set("startTime", tenminutesDate);
+     newGameRoom.set("Type", "private");
+     newGameRoom.set("amount", 0);
+     newGameRoom.set("bet", 10);
+     newGameRoom.set("estado", "playing");
+     newGameRoom.set("timer", 10);
+     newGameRoom.set("maxPlayers", 10);
+     newGameRoom.set("userPlayTime", {});
+     newGameRoom.set("userRightMatrix", {});
+     newGameRoom.set("userMatrix", {});
+
+     console.log("atribuicoes certas");
+
+     newGameRoom.save()
+
+     console.log(newGameRoom);
+
+     var responseObject = {
+       Code:0,
+       Messenge:"HAHAHAH"
+     }
+     response.success(responseObject);
+
+})
 
 Parse.Cloud.define('checkIfUserIsInRoom', function(request,response){
 

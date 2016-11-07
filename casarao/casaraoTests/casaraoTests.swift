@@ -8,7 +8,6 @@
 
 import XCTest
 import Parse
-import Decypher
 
 class casaraoTests: XCTestCase {
     
@@ -45,7 +44,7 @@ class casaraoTests: XCTestCase {
             if let e = error{
                 print(e.localizedDescription)
             }else{
-                print(PFObjects)
+                print(PFObjects ?? 10)
                 XCTAssert(true)
                 expectationk.fulfill()
                 

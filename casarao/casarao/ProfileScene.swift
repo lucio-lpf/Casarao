@@ -44,7 +44,7 @@ class ProfileScene: SKScene, UITextFieldDelegate {
         storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button_disable"), color: SKColor.clear, size: CGSize(width: 100, height: 100 ))
         storeButton.position = CGPoint(x: size.width/2 - profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
-        loginButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clear, size: CGSize(width: 300, height: 70))
+        loginButton = SKSpriteNode(texture: SKTexture(imageNamed: "edit_label") , color: SKColor.clear, size: SKTexture(imageNamed: "edit_label").size())
         loginButton.position = CGPoint(x: 0.5, y: 0.5)
 
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)

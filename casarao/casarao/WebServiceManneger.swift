@@ -47,7 +47,7 @@ class WebServiceManager {
             if let e = error{
                 print(e.localizedDescription)
             }else{
-                print(PFObjects)
+                print(PFObjects ?? 10)
                let  gameRoom = GameRoom(pfobject: PFObjects![0])
                 callBack(gameRoom)
                 
@@ -57,11 +57,13 @@ class WebServiceManager {
     }
     
     
-    static func addUserToRoom(_ playerId:String,roomId:String,callBack: @escaping (Bool)->()){
-        PFCloud.callFunction(inBackground: "addUserToRoom", withParameters: ["player":playerId, "room":roomId]) { (response, error) in
+    static func creatNewRoom(_ playerId:String,roomId:String,callBack: @escaping (Bool)->()){
+        
+        PFCloud.callFunction(inBackground: "creatPlayerRoom", withParameters: ["player":playerId, "roomName":roomId]) { (response, error) in
             guard error != nil else{
                 let responseObject = response as! NSDictionary
-                print(responseObject["Messenge"])
+                print(responseObject["Messenge"] ?? 10
+                )
                 if (responseObject["Code"] as! Int) == 0{
                     callBack(true)
                 }
@@ -71,7 +73,27 @@ class WebServiceManager {
                 
                 return
             }
-            print(error?.localizedDescription)
+            print(error?.localizedDescription ?? 10)
+            callBack(false)
+        }
+        
+    }
+    
+    static func addUserToRoom(_ playerId:String,roomId:String,callBack: @escaping (Bool)->()){
+        PFCloud.callFunction(inBackground: "addUserToRoom", withParameters: ["player":playerId, "room":roomId]) { (response, error) in
+            guard error != nil else{
+                let responseObject = response as! NSDictionary
+                print(responseObject["Messenge"] ?? 10)
+                if (responseObject["Code"] as! Int) == 0{
+                    callBack(true)
+                }
+                else{
+                    callBack(false)
+                }
+                
+                return
+            }
+            print(error?.localizedDescription ?? 10)
             callBack(false)
         }
     }
@@ -88,25 +110,25 @@ class WebServiceManager {
                 
                     case 0:
                         
-                        print(responseObject["Messenge"])
+                        print(responseObject["Messenge"] ?? 10)
                         callBack(responseObject["NewArray"] as? Array<Int>, nil,newParseObject)
                         break
                         
                     case 1:
                         
-                        print(responseObject["Messenge"])
+                        print(responseObject["Messenge"] ?? 10)
                         callBack(responseObject["NewArray"] as? Array<Int>, responseObject["Winner"] as? String,nil)
                         break
                         
                     case 2:
                         
-                        print(responseObject["Messenge"])
+                        print(responseObject["Messenge"] ?? 10)
                         callBack(nil, nil,nil)
                         
                         break
                     case 3:
                         
-                        print(responseObject["Messenge"])
+                        print(responseObject["Messenge"] ?? 10)
                         callBack(nil, responseObject["Winner"] as? String,nil)
                         
                         break
@@ -117,7 +139,7 @@ class WebServiceManager {
                 
                 return
             }
-            print(error?.localizedDescription)
+            print(error?.localizedDescription ?? 10)
         }
     }
     
@@ -125,7 +147,7 @@ class WebServiceManager {
         PFCloud.callFunction(inBackground: "checkIfUserIsInRoom", withParameters: ["player":playerId, "room":roomId]) { (response, error) in
             guard error != nil else{
                 let responseObject = response as! NSDictionary
-                print(responseObject["Messenge"])
+                print(responseObject["Messenge"] ?? 10)
                 if (responseObject["Code"] as! Int) == 0{
                     callBack(true)
                 }
@@ -135,7 +157,7 @@ class WebServiceManager {
                 
                 return
             }
-            print(error?.localizedDescription)
+            print(error?.localizedDescription ?? 10)
             callBack(false)
         }
     }
@@ -144,7 +166,7 @@ class WebServiceManager {
         PFCloud.callFunction(inBackground: "roomScoreTable", withParameters: ["player":playerId, "room":roomId]) { (response, error) in
             guard error != nil else{
                 let responseObject = response as! NSDictionary
-                print(responseObject["Messenge"])
+                print(responseObject["Messenge"] ?? 10)
                 if (responseObject["Code"] as! Int) == 0{
                     callBack(true)
                 }
@@ -154,7 +176,7 @@ class WebServiceManager {
                 
                 return
             }
-            print(error?.localizedDescription)
+            print(error?.localizedDescription ?? 10)
             callBack(false)
         }
     }
@@ -186,7 +208,7 @@ class WebServiceManager {
         PFCloud.callFunction(inBackground: "checkUserPlayTimer", withParameters: ["player":playerId, "room":roomId]) { (response, error) in
             guard error != nil else{
                 let responseObject = response as! NSDictionary
-                print(responseObject["Messenge"])
+                print(responseObject["Messenge"] ?? 10)
                 switch (responseObject["Code"] as! Int){
                 case 0:
                     callBack(true,nil)
@@ -208,7 +230,7 @@ class WebServiceManager {
                 
                 return
             }
-            print(error?.localizedDescription)
+            print(error?.localizedDescription ?? 10)
             fatalError()
         
         

@@ -144,8 +144,7 @@ class PopUpSpriteNode: SKSpriteNode {
             timer.name = "timer"
             
         }else{
-            
-            timer.text =  "00:00"
+            timer = SKLabelNode(text: "00:00")
             self.GameSceneDelegate!.removeTimerFromScene(self)
         }
         

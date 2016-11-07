@@ -29,6 +29,8 @@ class LobbyScene: SKScene, PopUpInLobby {
     var retangle = SKSpriteNode()
     
     var sectionButton:SKSpriteNode!
+    
+    var adNewRoomButton: SKSpriteNode!
 
     
     var lastTimeUpdated = TimeInterval()
@@ -132,7 +134,7 @@ class LobbyScene: SKScene, PopUpInLobby {
             nextTutorial(point: CGPoint(x: 0, y: 0))
         }
         
-        print(defaults.value(forKey: "tutorial") )
+        print(defaults.value(forKey: "tutorial") ?? 10)
         
         
         //SECTIONBUTTON
@@ -381,6 +383,15 @@ class LobbyScene: SKScene, PopUpInLobby {
             print("secton button")
         }
             
+         if roomType == "private"{
+            if adNewRoomButton.contains(point){
+                let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
+                let scene:CreateRoomScene = CreateRoomScene(size: self.size)
+                scene.player = player
+                removeFromParent()
+                self.view?.presentScene(scene, transition: transition)
+            }
+        }
         else{
             for gameRoomsSprite in gameRoomsSprites{
                 if gameRoomsSprite.contains(point){
@@ -406,6 +417,16 @@ class LobbyScene: SKScene, PopUpInLobby {
             reloadGameRooms(type:roomType)
 
             
+            if roomType == "private"{
+                
+                adNewRoomButton = SKSpriteNode(texture: SKTexture(imageNamed:"creat_new_room_button"), color: .clear, size: SKTexture(imageNamed:"creat_new_room_button").size())
+                adNewRoomButton.zPosition = 1000
+                adNewRoomButton.position = CGPoint(x: 0, y: 0)
+                addChild(adNewRoomButton)
+            }
+            else{
+                adNewRoomButton?.removeFromParent()
+            }
             
         }
     }
@@ -438,6 +459,7 @@ class LobbyScene: SKScene, PopUpInLobby {
             
         }
         
+       
         
     }
     

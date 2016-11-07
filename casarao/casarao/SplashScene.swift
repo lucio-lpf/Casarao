@@ -116,4 +116,40 @@ class SplashScene: SKScene {
         
         // Update local store values
     }
+    
+    
+  /*  <wpt lat="-30.058035" lon="-51.174231">
+    <time>2016-08-04T18:32:23Z</time>
+    </wpt>
+    
+    <wpt lat="-30.059679" lon="-51.175336">
+    <time>2016-08-04T18:32:33Z</time>
+    </wpt>
+    
+    
+    <wpt lat="-30.061331" lon="-51.175046">
+    <time>2016-08-04T18:32:43Z</time>
+    </wpt>
+    
+    <wpt lat="-30.061192" lon="-51.173490">
+    <time>2016-08-04T18:32:53Z</time>
+    </wpt>
+    
+    <wpt lat="-30.060644" lon="-51.174338">
+    <time>2016-08-04T18:33:03Z</time>
+    </wpt>
+    
+    <wpt lat="-30.059920" lon="-51.173630">
+    <time>2016-08-04T18:33:13Z</time>
+    </wpt>
+    <wpt lat="-30.059224" lon="-51.173952">
+    <time>2016-08-04T18:33:23Z</time>
+    </wpt>
+    
+    <wpt lat="-30.059809" lon="-51.171688">
+    <time>2016-08-04T18:33:43Z</time>
+    </wpt>
+ 
+ */
+
 }
