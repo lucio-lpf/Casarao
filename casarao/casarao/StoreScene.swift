@@ -31,12 +31,18 @@ class StoreScene: SKScene {
         profileButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_profile_button_disable"), color: SKColor.clear, size: CGSize(width: 100, height: 100 ))
         profileButton.position = CGPoint(x: -size.width/2 + profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
+        profileButton.zPosition = 100
+        
         lobbyButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_lobby_button_disable"), color: SKColor.clear, size: CGSize(width: 100, height: 100 ))
         lobbyButton.position = CGPoint(x: 0, y: -size.height/2 + profileButton.size.height/2)
+        
+        lobbyButton.zPosition = 100
         
         storeButton = SKSpriteNode(texture: SKTexture(imageNamed: "home_store_button"), color: SKColor.clear, size: CGSize(width: 120, height: 120))
         storeButton.position = CGPoint(x: size.width/2 - profileButton.size.width/2, y: -size.height/2 + profileButton.size.height/2)
         
+        
+        storeButton.zPosition = 100
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         addChild(profileButton)
@@ -57,6 +63,14 @@ class StoreScene: SKScene {
             popup.zPosition = 1001
             lobbyButton.zPosition = 1002
             addChild(popup)
+        }
+        
+        else{
+            addAlpha()
+            let comingSoonSprite = SKSpriteNode(texture: SKTexture(imageNamed: "shop_comingsoon"), color: .clear, size: SKTexture(imageNamed: "shop_comingsoon").size())
+            comingSoonSprite.zPosition = 100
+            comingSoonSprite.position = CGPoint(x: 0, y: 0)
+            addChild(comingSoonSprite)
         }
     }
     

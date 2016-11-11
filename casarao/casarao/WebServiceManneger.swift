@@ -162,6 +162,8 @@ class WebServiceManager {
         }
     }
     
+    //*/5 * * * * /home/ubuntu/ParseServer/parse/api/cloud/main.js roomScoreTable
+    
     static func roomScoreTable(_ playerId:String,roomId:String, callBack: @escaping (Bool)->()){
         PFCloud.callFunction(inBackground: "roomScoreTable", withParameters: ["player":playerId, "room":roomId]) { (response, error) in
             guard error != nil else{

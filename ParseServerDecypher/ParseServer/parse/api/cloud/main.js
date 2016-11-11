@@ -1,6 +1,5 @@
 
 
-
 Parse.Cloud.define('addUserToRoom', function(request, response) {
 
   var roomId = request.params.room;
@@ -319,12 +318,21 @@ function creatNewRoom(room){
   }
 })
 
- // Parse.Cloud.define('roomScoreTable', function(request.response){
- //
- //
- //
- //
- // })
+ Parse.Cloud.define('roomScoreTable', function(request,response){
+
+   var roomId = request.params.room;
+   var playerId = request.params.player;
+   var responseObject = {
+     Code:999,
+     Messenge:"HAHAHAH",
+     NewArray:[0,0,0,0,0,0,0,0,0],
+     Winner:"guestUser",
+     NewRoomObject:null
+   }
+
+   console.log("a funcção foia tiva");
+
+ })
 
 
  Parse.Cloud.define('creatPlayerRoom', function(request,response){

@@ -32,8 +32,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5A41A29A1D3E902000C93165"
-               BuildableName = "Decypher.xctest"
+               BlueprintIdentifier = "5AEA984A1DD646CD00E13EFA"
+               BuildableName = "DecypherTests.xctest"
                BlueprintName = "DecypherTests"
                ReferencedContainer = "container:Decypher.xcodeproj">
             </BuildableReference>

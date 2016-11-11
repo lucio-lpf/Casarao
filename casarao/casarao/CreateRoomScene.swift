@@ -53,6 +53,7 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
             
             var node = childNode(withName: "passSwitch") as! SKLabelNode
             node = SKLabelNode(text: "\(numberOfPlayers)")
+            print(node)
 
         }
     }

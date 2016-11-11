@@ -47,7 +47,7 @@
 		1E625C1D7E6B18806DBD6ED2216E7BC2 /* PFCachedQueryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857D07B0A5DD5D82FF18722B7B1454EC /* PFCachedQueryController.m */; };
 		1F4258C69B8A3BDF09F820882AABD0FD /* PFRelationPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B9AAC883CAD000F4464C422861DA94F /* PFRelationPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		21B8DBC7FEAA869AAF1948F1443DA3D2 /* PFCloud+Deprecated.h in Headers */ = {isa = PBXBuildFile; fileRef = 764DDF899E4965A36C5BF8246EDE1B59 /* PFCloud+Deprecated.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2217CB137613B0F839F7320CFC389F0B /* Pods-DecypherTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BAC3136357B962509FA2FC4D69474D47 /* Pods-DecypherTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2217CB137613B0F839F7320CFC389F0B /* Pods-DecypherTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7727E9C1E5952E4C12B550430ECB071 /* Pods-DecypherTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2292F41C24838DEA23E07AD5FB158CC0 /* BFCancellationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E67A2CE730F8A41709244F79FE57E0B2 /* BFCancellationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22E089E690E9D20F422FA9AEDB463571 /* PFFileState.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7DBA7FCEE84FFBF5DEBAC3F0FAB3F5 /* PFFileState.m */; };
 		22F8D66914B5260CF13537D858D1B078 /* PFUserFileCodingLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A78978E9675A9FB19CA1F68344A1A2 /* PFUserFileCodingLogic.m */; };
@@ -90,7 +90,7 @@
 		397723335BEB1A4C6A2B05E7B4C46A3B /* PFObjectFileCodingLogic.h in Headers */ = {isa = PBXBuildFile; fileRef = 83CA5347C1341F075818D0A45C862373 /* PFObjectFileCodingLogic.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3A5C28A357714F441D418A816988AFBC /* PFTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA4C0D4DE200BCA9ACBE4A935AE2353 /* PFTaskQueue.m */; };
 		3B0134704465629734AAD3347B4C1F8B /* PFReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 815A0F058E859AFF8D0D8630EF50F183 /* PFReachability.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3B90C2EC076DF9C29542CC79A7B45932 /* Pods-DecypherTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C36EE8C2E1759C0B31AEB3B2AB47227 /* Pods-DecypherTests-dummy.m */; };
+		3B90C2EC076DF9C29542CC79A7B45932 /* Pods-DecypherTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA10C1878F6AF48AE4D12CCCDF10A3D /* Pods-DecypherTests-dummy.m */; };
 		3B9617CFC8E6171DBB0221430CBF253E /* PFSQLiteDatabase_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = A849B5062AC47CE7AE265A5381190762 /* PFSQLiteDatabase_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3C17520235B89D34A8EB718C97BD75F3 /* BFTask+Exceptions.m in Sources */ = {isa = PBXBuildFile; fileRef = D221EB939CEEDF2AD63B65D63EE3A74B /* BFTask+Exceptions.m */; };
 		3C2BD3FEEB076DC2AD94FF4460BF3F2B /* PFQuery+Deprecated.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B2875BEE6A3B5924D718FFB24E5B1B /* PFQuery+Deprecated.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -151,7 +151,6 @@
 		5A312A3A694BF9305980318101F9A2F8 /* PFMutableFileState.m in Sources */ = {isa = PBXBuildFile; fileRef = 49841714447F83FD38DB91C8AE75A28B /* PFMutableFileState.m */; };
 		5AED1316402AB8D3C132A23F2C409742 /* PFObjectEstimatedData.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B1E0B47D501C97F2F46B4761E8CF880 /* PFObjectEstimatedData.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5B4F16DD12C4FE6582CBC37EE1B0A6A3 /* BFCancellationTokenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F3369235383921405A44E22500E736FC /* BFCancellationTokenSource.m */; };
-		5C53DA9ED1AA3683B46F0DA805A949DB /* Pods-DecypherUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DC8518B9CB67E6CC22DC86C4F193DA3 /* Pods-DecypherUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CE52B05E6351B2C8F632F15EF7B5C8F /* BFTask+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EB9196C00138C09D57064D2C3F1DE /* BFTask+Private.m */; };
 		5D7A187106FCBABB9B6236E402FE6199 /* PFMutableUserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B44480947714D6080A57AC744A01D7 /* PFMutableUserState.m */; };
 		5DC3C5C3DAE84EC3B960A1BA2F29E4E3 /* PFURLSessionFileDownloadTaskDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D423A6B9CF8FBC5E6F1B0F84302F425 /* PFURLSessionFileDownloadTaskDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -239,7 +238,7 @@
 		8FF22E3FA6034B09D5037DD1A98DA083 /* BFTask+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = D18477EF29C9216C9E11537EC1754F26 /* BFTask+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		901306B98042C60EC5663B6B7F2F33F5 /* PFUserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 681DCB6208094D2B45C2E0D731D3E131 /* PFUserState.m */; };
 		9053D9F1716173F9A912EB1FAE98EC4D /* PFPinningEventuallyQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 81BFE126AE3013F44DA8EADDEF396971 /* PFPinningEventuallyQueue.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9079E2C080D68674057724E74E622F38 /* Pods-Decypher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C56D4B703FCCA76C61BDA8FF26DD61B /* Pods-Decypher-dummy.m */; };
+		9079E2C080D68674057724E74E622F38 /* Pods-Decypher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3AC8BB45FD6EBFB8CF7AD05F49D4E4 /* Pods-Decypher-dummy.m */; };
 		91349278F551DDF25B45CBFD07E90C92 /* PFAnonymousUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E0B7F320907F1F9ACC46181F93223C3E /* PFAnonymousUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		921A85E1C05CEFA2878E9C21DAA7F936 /* ParseModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AE054CE640D2776E12D7858F655A2480 /* ParseModule.m */; };
 		92E1BA8B12AF880D2BD72601983612FA /* PFUserAuthenticationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCA84148181F8C5F3F4AC85DF8FF2B4 /* PFUserAuthenticationController.m */; };
@@ -312,7 +311,7 @@
 		BCF8C0CC2D790C17D32395E1ADD9EF52 /* PFQueryState_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EDFA29C15377E7A74F851297CC4F4EE5 /* PFQueryState_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BD9F5EF8ED51B486FEA17035E3FAC51D /* PFConfig_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 018F1E64419E1D23C39D4CD79F24DF6E /* PFConfig_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BDCCDE71A435A2BC78D0A0C3C5F0B692 /* PFURLSessionDataTaskDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E3373590D1D483CD43716D2FD74491E /* PFURLSessionDataTaskDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BECAED02EE26BC4B242959AC194B50AF /* Pods-Decypher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 05CF8102D5F8AB9B8873B7729FE506A3 /* Pods-Decypher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BECAED02EE26BC4B242959AC194B50AF /* Pods-Decypher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1FAA2386249B120B4B8652E55C49558 /* Pods-Decypher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFC2695C32E260E400D829A8C1424D13 /* PFSessionUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F40D147C935E4DAC2C184E5C1893A00 /* PFSessionUtilities.m */; };
 		C01E62128AE52C1F8F9A27CBB8817EE4 /* PFEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 834759B4D73F070865AEF14EE6FE5749 /* PFEncoder.m */; };
 		C0A8CD94547493B4852B16D6EDF96496 /* PFEventuallyQueue_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2FCCA73F5E203FB53F69F64DBDF9A9 /* PFEventuallyQueue_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -391,7 +390,6 @@
 		ECDAEBF33596ADD837B148917B373D13 /* PFFilePersistenceGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A55AE55A2616521284C5C9B03A8C89 /* PFFilePersistenceGroup.m */; };
 		ECE1D42B8696713BC916F961845E2F7D /* PFRESTFileCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C234C120724C404F252854EDB30DFEB /* PFRESTFileCommand.m */; };
 		ED851C45917C6620A0EB0F133C5D284F /* PFDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = DAC669DF6039B6856E497CDCF55C8BE3 /* PFDevice.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EF3E7CABACCA7F672F2F28F22E4D0E87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28CDE24B267E6659837968E368141CC /* Foundation.framework */; };
 		F152AF0622012C4DAB8B1DD700A6DCD8 /* PFURLSessionFileDownloadTaskDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C88A80756F94D710187A39EC5963E1F0 /* PFURLSessionFileDownloadTaskDelegate.m */; };
 		F205B1A271643E322D126EECC89B2221 /* PFUserDefaultsPersistenceGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA48A05D297A559E8B93379B5D0B36 /* PFUserDefaultsPersistenceGroup.m */; };
 		F27A1622811BBB2599AA7BAA7548095F /* PFPushState.h in Headers */ = {isa = PBXBuildFile; fileRef = 16ADEC9AF36CD31858EF761A824E8EE4 /* PFPushState.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -416,7 +414,6 @@
 		FD840419E898297701FC1337616AF1A0 /* PFFileState.h in Headers */ = {isa = PBXBuildFile; fileRef = 73EFC91216C6EECA1FF993EB67079880 /* PFFileState.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FE02F50B01FFBE05B1611F96C7B41DC4 /* PFRESTConfigCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CCD5F468F3D69CC754822DB1D5A305 /* PFRESTConfigCommand.m */; };
 		FE55C407F56A4CA7261BA7BF895325D1 /* PFObject+Synchronous.h in Headers */ = {isa = PBXBuildFile; fileRef = 3523AEAFB30F570FD84BBA8B1DAB2D25 /* PFObject+Synchronous.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE9B8F3DBB50E4ECEEDA98270D07A84A /* Pods-DecypherUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 212239EF8D704E12FEA2589CA83AFB62 /* Pods-DecypherUITests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -445,6 +442,7 @@
 
 /* Begin PBXFileReference section */
 		018F1E64419E1D23C39D4CD79F24DF6E /* PFConfig_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFConfig_Private.h; path = Parse/Internal/Config/PFConfig_Private.h; sourceTree = "<group>"; };
+		019AF80AF887EAB8C179FCA93C8998E6 /* Pods-Decypher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Decypher.debug.xcconfig"; sourceTree = "<group>"; };
 		01B07BBF2D5EE3F3462282F94DACEC0E /* PFGeoPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFGeoPoint.h; path = Parse/PFGeoPoint.h; sourceTree = "<group>"; };
 		026D1EF4C846BD9B11F762364EF62EFC /* PFDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFDecoder.h; path = Parse/Internal/PFDecoder.h; sourceTree = "<group>"; };
 		02F42466D1300F3981BFA4DFEC279A6B /* PFCommandRunningConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCommandRunningConstants.h; path = Parse/Internal/Commands/CommandRunner/PFCommandRunningConstants.h; sourceTree = "<group>"; };
@@ -454,24 +452,21 @@
 		044EB9196C00138C09D57064D2C3F1DE /* BFTask+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BFTask+Private.m"; path = "Parse/Internal/BFTask+Private.m"; sourceTree = "<group>"; };
 		047B52783BEC49E1F3D6E20566677F17 /* PFCurrentInstallationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCurrentInstallationController.m; path = Parse/Internal/Installation/CurrentInstallationController/PFCurrentInstallationController.m; sourceTree = "<group>"; };
 		04D542FD125815C09109FE10CF82EFFC /* PFObjectBatchController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectBatchController.h; path = Parse/Internal/Object/BatchController/PFObjectBatchController.h; sourceTree = "<group>"; };
-		05CF8102D5F8AB9B8873B7729FE506A3 /* Pods-Decypher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Decypher-umbrella.h"; sourceTree = "<group>"; };
 		06468D9F18127508B1919EF8C1069E8B /* PFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFNetworkActivityIndicatorManager.h; path = Parse/PFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		075457CD6EA4B7F2DC3CC26185DDC43A /* Pods-DecypherUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DecypherUITests.modulemap"; sourceTree = "<group>"; };
-		08537428EF71C931E47CCA63A81A69F4 /* Pods_DecypherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecypherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A48EF808FC5BB6F00EA398EE0AF75BC /* PFFieldOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFFieldOperation.m; path = Parse/Internal/FieldOperation/PFFieldOperation.m; sourceTree = "<group>"; };
 		0A618DD63CFB85C4692562F7FD33F796 /* PFWeakValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFWeakValue.m; path = Parse/Internal/PFWeakValue.m; sourceTree = "<group>"; };
 		0AE9682DC3CF20FDD8466C9CA639ADCF /* PFPinningObjectStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPinningObjectStore.m; path = Parse/Internal/Object/PinningStore/PFPinningObjectStore.m; sourceTree = "<group>"; };
 		0B1E0B47D501C97F2F46B4761E8CF880 /* PFObjectEstimatedData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectEstimatedData.h; path = Parse/Internal/Object/EstimatedData/PFObjectEstimatedData.h; sourceTree = "<group>"; };
 		0C8888C6174AA42DE017F4816919A034 /* PFRESTFileCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTFileCommand.h; path = Parse/Internal/Commands/PFRESTFileCommand.h; sourceTree = "<group>"; };
-		0CE0C84E19CB21667F90566F14550298 /* Pods-DecypherUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DecypherUITests-frameworks.sh"; sourceTree = "<group>"; };
 		0D103DAEA06A10CF71F65D964A32A3FB /* BFCancellationTokenRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenRegistration.h; path = Bolts/Common/BFCancellationTokenRegistration.h; sourceTree = "<group>"; };
+		0DB17BB71AED86ABCFE33AF1C2B1C1EC /* Pods-Decypher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Decypher.modulemap"; sourceTree = "<group>"; };
 		0E3373590D1D483CD43716D2FD74491E /* PFURLSessionDataTaskDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSessionDataTaskDelegate.h; path = Parse/Internal/Commands/CommandRunner/URLSession/Session/TaskDelegate/PFURLSessionDataTaskDelegate.h; sourceTree = "<group>"; };
 		0EE9B3DDFE5FAF946D42A8E08DF650EE /* PFLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFLogger.h; path = Parse/Internal/PFLogger.h; sourceTree = "<group>"; };
-		0EFF1096BA084335D622FD7F98B9DFE0 /* Pods_Decypher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Decypher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE84E7BC1F2604A864E790B900FFB40 /* PFPushController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPushController.h; path = Parse/Internal/Push/Controller/PFPushController.h; sourceTree = "<group>"; };
 		1073F7FA02B7019361D2F12FECF7EB2A /* PFCommandURLRequestConstructor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCommandURLRequestConstructor.h; path = Parse/Internal/Commands/CommandRunner/URLRequestConstructor/PFCommandURLRequestConstructor.h; sourceTree = "<group>"; };
 		107DE2754607A89CF85CD74230E23500 /* PFFieldOperationDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFieldOperationDecoder.h; path = Parse/Internal/FieldOperation/PFFieldOperationDecoder.h; sourceTree = "<group>"; };
 		1138FD03920E3EC533A875DF6F8509FA /* PFMutableQueryState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFMutableQueryState.m; path = Parse/Internal/Query/State/PFMutableQueryState.m; sourceTree = "<group>"; };
+		113D3C016ED52CCBA0C03F3580C9D06B /* Pods-DecypherTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DecypherTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		1350055AA09F743A3FC20A495D062B5B /* PFUserAuthenticationDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFUserAuthenticationDelegate.h; path = Parse/PFUserAuthenticationDelegate.h; sourceTree = "<group>"; };
 		13576D5090AE6257F8DE1A04CCAA4D51 /* PFQueryUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFQueryUtilities.h; path = Parse/Internal/Query/Utilities/PFQueryUtilities.h; sourceTree = "<group>"; };
 		142A3F2CE78CAB81C0F5EE74AF375B1D /* PFMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFMacros.h; path = Parse/Internal/PFMacros.h; sourceTree = "<group>"; };
@@ -495,10 +490,8 @@
 		1CA445BB1734AF92C8BA62607F3F8B70 /* PFMultiProcessFileLock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFMultiProcessFileLock.m; path = Parse/Internal/MultiProcessLock/PFMultiProcessFileLock.m; sourceTree = "<group>"; };
 		1D423A6B9CF8FBC5E6F1B0F84302F425 /* PFURLSessionFileDownloadTaskDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSessionFileDownloadTaskDelegate.h; path = Parse/Internal/Commands/CommandRunner/URLSession/Session/TaskDelegate/PFURLSessionFileDownloadTaskDelegate.h; sourceTree = "<group>"; };
 		1EC95DA6A6487D6968A12611E886E2DA /* PFNetworkCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFNetworkCommand.h; path = Parse/Internal/PFNetworkCommand.h; sourceTree = "<group>"; };
-		2022D7CF8861F4BDAEC1BA58BFB12CC6 /* Pods_DecypherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecypherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EF6626F71DE0538F488A9B3AD2F590 /* PFRESTQueryCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTQueryCommand.h; path = Parse/Internal/Commands/PFRESTQueryCommand.h; sourceTree = "<group>"; };
 		210040D3C0F20587AD462AEFC4466D14 /* PFRESTCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRESTCommand.m; path = Parse/Internal/Commands/PFRESTCommand.m; sourceTree = "<group>"; };
-		212239EF8D704E12FEA2589CA83AFB62 /* Pods-DecypherUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DecypherUITests-dummy.m"; sourceTree = "<group>"; };
 		214212D1408C70DFA36890026CD09ACF /* PFObjectUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectUtilities.h; path = Parse/Internal/Object/Utilities/PFObjectUtilities.h; sourceTree = "<group>"; };
 		221B5ABA0A722ECA60A6B30B34CDAD41 /* BFTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTask.h; path = Bolts/Common/BFTask.h; sourceTree = "<group>"; };
 		225C9E9A8D5250A6DF00FAEEB687CAAD /* PFPushChannelsController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPushChannelsController.m; path = Parse/Internal/Push/ChannelsController/PFPushChannelsController.m; sourceTree = "<group>"; };
@@ -506,14 +499,11 @@
 		246E07C9E5E52F29BB127E2A2126DCB2 /* PFCommandRunning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCommandRunning.h; path = Parse/Internal/Commands/CommandRunner/PFCommandRunning.h; sourceTree = "<group>"; };
 		2488699320AB63C0024B8D81A738732D /* PFRESTUserCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRESTUserCommand.m; path = Parse/Internal/Commands/PFRESTUserCommand.m; sourceTree = "<group>"; };
 		252556D275E6632DE305AB7861AA6F60 /* PFURLSession_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSession_Private.h; path = Parse/Internal/Commands/CommandRunner/URLSession/Session/PFURLSession_Private.h; sourceTree = "<group>"; };
-		26799B78531FD952E8EA48276BF649C5 /* Pods-Decypher-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Decypher-acknowledgements.markdown"; sourceTree = "<group>"; };
-		276C0BDF989B015F647CACFE4DDC585D /* Pods-Decypher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Decypher.debug.xcconfig"; sourceTree = "<group>"; };
 		28715B8AA40A9D00E3B9C8F9FA68A4F4 /* PFPushManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPushManager.h; path = Parse/Internal/Push/Manager/PFPushManager.h; sourceTree = "<group>"; };
 		2931587C6B451A9C2AAC91BD25211434 /* PFAnonymousUtils_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnonymousUtils_Private.h; path = Parse/Internal/User/AuthenticationProviders/Providers/Anonymous/PFAnonymousUtils_Private.h; sourceTree = "<group>"; };
 		2ADBEFE00E9C749F591CB4B1CE618921 /* PFPaymentTransactionObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPaymentTransactionObserver.h; path = Parse/Internal/Purchase/PaymentTransactionObserver/PFPaymentTransactionObserver.h; sourceTree = "<group>"; };
 		2B89D9870201EA707428C887EE099DB9 /* PFPurchase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPurchase.h; path = Parse/PFPurchase.h; sourceTree = "<group>"; };
 		2BA4100B1A913DC716952B763E8CDBD7 /* PFAsyncTaskQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFAsyncTaskQueue.m; path = Parse/Internal/PFAsyncTaskQueue.m; sourceTree = "<group>"; };
-		2C56D4B703FCCA76C61BDA8FF26DD61B /* Pods-Decypher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Decypher-dummy.m"; sourceTree = "<group>"; };
 		2CB5FA470795E35C951A5C2520318B6C /* PFPurchaseController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPurchaseController.h; path = Parse/Internal/Purchase/Controller/PFPurchaseController.h; sourceTree = "<group>"; };
 		2CDB8909183AF3DB3CE97FAC2C57BD0C /* PFCommandRunningConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCommandRunningConstants.m; path = Parse/Internal/Commands/CommandRunner/PFCommandRunningConstants.m; sourceTree = "<group>"; };
 		2DB933827BCFBCE299E41546F59EC81C /* PFProductsRequestHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFProductsRequestHandler.m; path = Parse/Internal/Product/ProductsRequestHandler/PFProductsRequestHandler.m; sourceTree = "<group>"; };
@@ -523,6 +513,7 @@
 		2F2861607F1924479C1D6E534650A95A /* Parse-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Parse-dummy.m"; sourceTree = "<group>"; };
 		2F451A71A5C69EA0A6394260D62B60F5 /* PFPersistenceController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPersistenceController.m; path = Parse/Internal/Persistence/PFPersistenceController.m; sourceTree = "<group>"; };
 		2FD15FF97273E4CE98DC84816E076A0F /* PFObjectSubclassInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFObjectSubclassInfo.m; path = Parse/Internal/Object/Subclassing/PFObjectSubclassInfo.m; sourceTree = "<group>"; };
+		30206D88CE1731665AD32A0035120B10 /* Pods-DecypherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DecypherTests.release.xcconfig"; sourceTree = "<group>"; };
 		31219385C2CD9B1DFAB161F58A41051F /* Parse_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Parse_Private.h; path = Parse/Internal/Parse_Private.h; sourceTree = "<group>"; };
 		315C50B334066751406490A5584DEF5B /* PFFilePersistenceGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFilePersistenceGroup.h; path = Parse/Internal/Persistence/Group/PFFilePersistenceGroup.h; sourceTree = "<group>"; };
 		323F459B62DD35512EBC101C7A51B454 /* PFObjectController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFObjectController.m; path = Parse/Internal/Object/Controller/PFObjectController.m; sourceTree = "<group>"; };
@@ -533,11 +524,14 @@
 		34A3E27D904E0BEAA49624673F0E05CB /* PFQueryController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFQueryController.h; path = Parse/Internal/Query/Controller/PFQueryController.h; sourceTree = "<group>"; };
 		3523AEAFB30F570FD84BBA8B1DAB2D25 /* PFObject+Synchronous.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFObject+Synchronous.h"; path = "Parse/PFObject+Synchronous.h"; sourceTree = "<group>"; };
 		3549ECC67DD858075922717A1E3BF3B1 /* PFACLPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFACLPrivate.h; path = Parse/Internal/ACL/PFACLPrivate.h; sourceTree = "<group>"; };
+		3597D7F59F470918219A8BA32D67769E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35D4DF8B9D7E0F61F17021A2AB34BA83 /* PFUserDefaultsPersistenceGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFUserDefaultsPersistenceGroup.h; path = Parse/Internal/Persistence/Group/PFUserDefaultsPersistenceGroup.h; sourceTree = "<group>"; };
 		3659E7F169241261B19FB3671DD0D04E /* PFSQLiteDatabaseResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFSQLiteDatabaseResult.m; path = Parse/Internal/LocalDataStore/SQLite/PFSQLiteDatabaseResult.m; sourceTree = "<group>"; };
 		3746E17D330FA716FE02FAA2135F3AD9 /* PFObjectUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFObjectUtilities.m; path = Parse/Internal/Object/Utilities/PFObjectUtilities.m; sourceTree = "<group>"; };
+		3779CC70B1DAAD661F1678489A24FFCE /* Pods-DecypherTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DecypherTests-frameworks.sh"; sourceTree = "<group>"; };
 		37B8DA3ED62EF84955E0A86C48E472C7 /* PFPaymentTransactionObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPaymentTransactionObserver.m; path = Parse/Internal/Purchase/PaymentTransactionObserver/PFPaymentTransactionObserver.m; sourceTree = "<group>"; };
 		37CD52D5FF7CC1802B9D77819F36F664 /* PFPushUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPushUtilities.h; path = Parse/Internal/Push/Utilites/PFPushUtilities.h; sourceTree = "<group>"; };
+		389A5E8D60B9DDFF120B1F6E7E05ABE0 /* Pods-DecypherTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DecypherTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		38A8CED9ED0CD9F94154FC18CE283244 /* PFReachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFReachability.m; path = Parse/Internal/PFReachability.m; sourceTree = "<group>"; };
 		38F887949D0284A7F5B2BD6934285B4A /* PFFile_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFile_Private.h; path = Parse/Internal/File/PFFile_Private.h; sourceTree = "<group>"; };
 		396A6C18CB1B2A1497B208F7B69430BD /* PFObjectFileCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFObjectFileCoder.m; path = Parse/Internal/Object/Coder/File/PFObjectFileCoder.m; sourceTree = "<group>"; };
@@ -559,20 +553,19 @@
 		42C3CC39754482A3563B621FE25EF4F8 /* PFRole.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRole.h; path = Parse/PFRole.h; sourceTree = "<group>"; };
 		435499D3374C60861CF93B7E38057A81 /* PFURLSessionCommandRunner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSessionCommandRunner.h; path = Parse/Internal/Commands/CommandRunner/URLSession/PFURLSessionCommandRunner.h; sourceTree = "<group>"; };
 		442DB68631F7B0CB7D4AAB327A8F326F /* PFWeakValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFWeakValue.h; path = Parse/Internal/PFWeakValue.h; sourceTree = "<group>"; };
-		44500058DFC6A155D6324C565005489A /* Pods-DecypherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DecypherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		44B2976A60CF43D2098402B59802B91C /* Bolts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Bolts.h; path = Bolts/Common/Bolts.h; sourceTree = "<group>"; };
 		44B3FD802BCF0CFC667C37D0DA138CA6 /* PFACLState_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFACLState_Private.h; path = Parse/Internal/ACL/State/PFACLState_Private.h; sourceTree = "<group>"; };
 		4627D2DF45FF6F53FA62A07BA35D8A0F /* PFQueryUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFQueryUtilities.m; path = Parse/Internal/Query/Utilities/PFQueryUtilities.m; sourceTree = "<group>"; };
 		46C8DED866C44E152BFFF76734EE54B0 /* BFCancellationToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationToken.m; path = Bolts/Common/BFCancellationToken.m; sourceTree = "<group>"; };
 		46F5B5C973560BE4D97A4F3B87609E31 /* PFObjectConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectConstants.h; path = Parse/Internal/Object/Constants/PFObjectConstants.h; sourceTree = "<group>"; };
 		488791F39B7F93B8403972A78358F206 /* PFURLSessionDataTaskDelegate_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSessionDataTaskDelegate_Private.h; path = Parse/Internal/Commands/CommandRunner/URLSession/Session/TaskDelegate/PFURLSessionDataTaskDelegate_Private.h; sourceTree = "<group>"; };
+		48FB3699FCB709377C74C917E9F044E4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4915A87223A6B16BB2C4CC313C37F839 /* PFConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFConstants.m; path = Parse/PFConstants.m; sourceTree = "<group>"; };
 		49841714447F83FD38DB91C8AE75A28B /* PFMutableFileState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFMutableFileState.m; path = Parse/Internal/File/State/PFMutableFileState.m; sourceTree = "<group>"; };
 		4ACBA1C70C71C92B1A0253D129109549 /* PFSQLiteStatement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFSQLiteStatement.h; path = Parse/Internal/LocalDataStore/SQLite/PFSQLiteStatement.h; sourceTree = "<group>"; };
 		4B9AAC883CAD000F4464C422861DA94F /* PFRelationPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRelationPrivate.h; path = Parse/Internal/Relation/PFRelationPrivate.h; sourceTree = "<group>"; };
 		4E2FCCA73F5E203FB53F69F64DBDF9A9 /* PFEventuallyQueue_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFEventuallyQueue_Private.h; path = Parse/Internal/PFEventuallyQueue_Private.h; sourceTree = "<group>"; };
 		4FAB8F38AB1CDE1AC4616CDA56F05423 /* PFOfflineStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFOfflineStore.h; path = Parse/Internal/LocalDataStore/OfflineStore/PFOfflineStore.h; sourceTree = "<group>"; };
-		501572886144D0DD3E8328A291C8F259 /* Pods-DecypherTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DecypherTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		50ABA2566F6761AE3AC13FE4DF54567B /* PFCoreManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCoreManager.h; path = Parse/Internal/PFCoreManager.h; sourceTree = "<group>"; };
 		51DD5EBFBD326CA406E71F5710875200 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		51E0B9DA69352B00FD9DD76136082DB0 /* PFQueryConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFQueryConstants.h; path = Parse/Internal/Query/PFQueryConstants.h; sourceTree = "<group>"; };
@@ -583,7 +576,7 @@
 		559B0C24E96ECCEE7530BFCCF0F28001 /* PFInstallationConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFInstallationConstants.h; path = Parse/Internal/Installation/Constants/PFInstallationConstants.h; sourceTree = "<group>"; };
 		55FF6CBCE236BE4AAE7199C06B133F71 /* BFExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFExecutor.h; path = Bolts/Common/BFExecutor.h; sourceTree = "<group>"; };
 		565F6E5C366FF45482889FB8E338E129 /* PFMutableRelationState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFMutableRelationState.h; path = Parse/Internal/Relation/State/PFMutableRelationState.h; sourceTree = "<group>"; };
-		5844C10ADD028CDBA86E4B1A4E08835B /* Pods-DecypherTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DecypherTests-resources.sh"; sourceTree = "<group>"; };
+		56E1956F0890FACBE549B3EA089A1D32 /* Pods-Decypher-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Decypher-resources.sh"; sourceTree = "<group>"; };
 		5863B9E1E28688EF5248D563F773B6B2 /* PFAsyncTaskQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAsyncTaskQueue.h; path = Parse/Internal/PFAsyncTaskQueue.h; sourceTree = "<group>"; };
 		5918744819C262CEE01BB3021E29BD88 /* PFObjectFilePersistenceController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectFilePersistenceController.h; path = Parse/Internal/Object/FilePersistence/PFObjectFilePersistenceController.h; sourceTree = "<group>"; };
 		59B6C2A8A56DC15D278334FD1C2D789D /* PFAnalyticsController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFAnalyticsController.m; path = Parse/Internal/Analytics/Controller/PFAnalyticsController.m; sourceTree = "<group>"; };
@@ -596,13 +589,14 @@
 		5E6112F4DD48E334B63CD886E8F6C8D4 /* PFFileController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFileController.h; path = Parse/Internal/File/Controller/PFFileController.h; sourceTree = "<group>"; };
 		5ECA48A05D297A559E8B93379B5D0B36 /* PFUserDefaultsPersistenceGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFUserDefaultsPersistenceGroup.m; path = Parse/Internal/Persistence/Group/PFUserDefaultsPersistenceGroup.m; sourceTree = "<group>"; };
 		60FACDB9B0DFB2244A1DF7BA310BC9CB /* PFOfflineStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFOfflineStore.m; path = Parse/Internal/LocalDataStore/OfflineStore/PFOfflineStore.m; sourceTree = "<group>"; };
-		62A0D83BE076706EA7DF50BC71DF166A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		624E5295894398D2536DFF59D4E25F84 /* Pods-DecypherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DecypherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		62E6C8015EDD66B156BD639550A3FE42 /* PFHash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFHash.h; path = Parse/Internal/PFHash.h; sourceTree = "<group>"; };
 		642D738AFF0B5E875CC47ADE71CAFFE6 /* PFRESTObjectCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTObjectCommand.h; path = Parse/Internal/Commands/PFRESTObjectCommand.h; sourceTree = "<group>"; };
 		64E166BC917D3CDCCDF68D6BB891CA73 /* PFCurrentConfigController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCurrentConfigController.h; path = Parse/Internal/Config/Controller/PFCurrentConfigController.h; sourceTree = "<group>"; };
 		65B5CF7FB98275C9D8161F56C6DAA1FE /* PFCurrentConfigController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCurrentConfigController.m; path = Parse/Internal/Config/Controller/PFCurrentConfigController.m; sourceTree = "<group>"; };
 		661E4F5CF1B03465AD35FE3893A467B5 /* ParseManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ParseManager.m; path = Parse/Internal/ParseManager.m; sourceTree = "<group>"; };
 		6646D7ED13F60364EF69F9406F90B6FE /* PFOfflineQueryController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFOfflineQueryController.h; path = Parse/Internal/Query/Controller/PFOfflineQueryController.h; sourceTree = "<group>"; };
+		665A882BD3AD03CD788A9AC53AF2F8EB /* Pods-DecypherTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DecypherTests.modulemap"; sourceTree = "<group>"; };
 		681DCB6208094D2B45C2E0D731D3E131 /* PFUserState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFUserState.m; path = Parse/Internal/User/State/PFUserState.m; sourceTree = "<group>"; };
 		6C8D3D7B2A730BF7015B57944A56211C /* PFMutablePushState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFMutablePushState.h; path = Parse/Internal/Push/State/PFMutablePushState.h; sourceTree = "<group>"; };
 		6CB74DB62DD573D5290502D84144A898 /* PFAnonymousUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFAnonymousUtils.m; path = Parse/PFAnonymousUtils.m; sourceTree = "<group>"; };
@@ -615,13 +609,14 @@
 		7270C7CA7B6E53958C8C0B8A446A38EF /* PFKeyValueCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFKeyValueCache.h; path = Parse/Internal/KeyValueCache/PFKeyValueCache.h; sourceTree = "<group>"; };
 		733E02603D25AF5AF1C3A5AE3D4E62F9 /* PFMutableACLState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFMutableACLState.m; path = Parse/Internal/ACL/State/PFMutableACLState.m; sourceTree = "<group>"; };
 		73EFC91216C6EECA1FF993EB67079880 /* PFFileState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFileState.h; path = Parse/Internal/File/State/PFFileState.h; sourceTree = "<group>"; };
+		743513E5877A66326C82D92C127344D2 /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		748387C6F8E123779BDD9B81AB8FA2E8 /* PFURLSessionJSONDataTaskDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFURLSessionJSONDataTaskDelegate.m; path = Parse/Internal/Commands/CommandRunner/URLSession/Session/TaskDelegate/PFURLSessionJSONDataTaskDelegate.m; sourceTree = "<group>"; };
 		74F8A0969BE54DF8E130A371E007CEBA /* PFURLSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSession.h; path = Parse/Internal/Commands/CommandRunner/URLSession/Session/PFURLSession.h; sourceTree = "<group>"; };
+		74FFA6077C08BB221F7BDD87051DEFCD /* Pods-Decypher-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Decypher-frameworks.sh"; sourceTree = "<group>"; };
 		764DDF899E4965A36C5BF8246EDE1B59 /* PFCloud+Deprecated.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFCloud+Deprecated.h"; path = "Parse/PFCloud+Deprecated.h"; sourceTree = "<group>"; };
 		76870F4712BD79D8E0F5934D5A701966 /* Parse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Parse.m; path = Parse/Parse.m; sourceTree = "<group>"; };
 		76A5CA5160ACB42097269239C7A852BA /* PFObjectBatchController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFObjectBatchController.m; path = Parse/Internal/Object/BatchController/PFObjectBatchController.m; sourceTree = "<group>"; };
 		76B526DA6B5C73B4E0DBAE4F5252FEB6 /* PFGeoPoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFGeoPoint.m; path = Parse/PFGeoPoint.m; sourceTree = "<group>"; };
-		76C48758A7A899BC4FA82C2337DEB9D6 /* Pods-DecypherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DecypherUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		77EC07864E80372E53878484F6EDB4FD /* PFInstallationConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFInstallationConstants.m; path = Parse/Internal/Installation/Constants/PFInstallationConstants.m; sourceTree = "<group>"; };
 		78AD54C20F3D0E3766F0ED8C2E0ACA2F /* PFMutableRelationState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFMutableRelationState.m; path = Parse/Internal/Relation/State/PFMutableRelationState.m; sourceTree = "<group>"; };
 		799EEA36ED800B823CC2949C1D1DAC99 /* PFFile+Synchronous.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFFile+Synchronous.h"; path = "Parse/PFFile+Synchronous.h"; sourceTree = "<group>"; };
@@ -630,15 +625,12 @@
 		7BCA84148181F8C5F3F4AC85DF8FF2B4 /* PFUserAuthenticationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFUserAuthenticationController.m; path = Parse/Internal/User/AuthenticationProviders/Controller/PFUserAuthenticationController.m; sourceTree = "<group>"; };
 		7C011174CFE952A225D5F6EEF8B98935 /* PFUser+Deprecated.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFUser+Deprecated.h"; path = "Parse/PFUser+Deprecated.h"; sourceTree = "<group>"; };
 		7C0D10D463A1083E89446F21D3E6234D /* PFObjectFileCodingLogic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFObjectFileCodingLogic.m; path = Parse/Internal/Object/Coder/File/PFObjectFileCodingLogic.m; sourceTree = "<group>"; };
-		7C36EE8C2E1759C0B31AEB3B2AB47227 /* Pods-DecypherTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DecypherTests-dummy.m"; sourceTree = "<group>"; };
 		7CCF57312448C1A3A946434FA8D80F11 /* PFObjectState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectState.h; path = Parse/Internal/Object/State/PFObjectState.h; sourceTree = "<group>"; };
 		7CD0534595DB5E14566D41A564400873 /* PFPushManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPushManager.m; path = Parse/Internal/Push/Manager/PFPushManager.m; sourceTree = "<group>"; };
-		7DC8518B9CB67E6CC22DC86C4F193DA3 /* Pods-DecypherUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DecypherUITests-umbrella.h"; sourceTree = "<group>"; };
+		7D3AC8BB45FD6EBFB8CF7AD05F49D4E4 /* Pods-Decypher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Decypher-dummy.m"; sourceTree = "<group>"; };
 		7ECD68F161BCCE0F00C23DD212A85403 /* PFRESTObjectBatchCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTObjectBatchCommand.h; path = Parse/Internal/Commands/PFRESTObjectBatchCommand.h; sourceTree = "<group>"; };
-		7EDB53E58341FBCFA1E40BA41F6A13C0 /* Pods-Decypher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Decypher.release.xcconfig"; sourceTree = "<group>"; };
 		7EE05DAB913367FFAFEA75B49080381D /* PFQueryPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFQueryPrivate.h; path = Parse/Internal/Query/PFQueryPrivate.h; sourceTree = "<group>"; };
 		7F008B3C4B11D046163E1BDB07F36AA9 /* PFURLSessionJSONDataTaskDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSessionJSONDataTaskDelegate.h; path = Parse/Internal/Commands/CommandRunner/URLSession/Session/TaskDelegate/PFURLSessionJSONDataTaskDelegate.h; sourceTree = "<group>"; };
-		7F0BCA53530200F328FA996FCAF75F4F /* Pods-Decypher-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Decypher-acknowledgements.plist"; sourceTree = "<group>"; };
 		7F37B6E0C8F0370F792BAFAED500CCF2 /* Bolts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bolts.xcconfig; sourceTree = "<group>"; };
 		7FF1A3EE23CEE5C970FE4737FD1128DE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		8009E41684456FA9C1D543F7A0035020 /* PFUserState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFUserState.h; path = Parse/Internal/User/State/PFUserState.h; sourceTree = "<group>"; };
@@ -652,10 +644,10 @@
 		822DEE2892551C7B6D727A35A7E34925 /* PFMulticastDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFMulticastDelegate.h; path = Parse/Internal/PFMulticastDelegate.h; sourceTree = "<group>"; };
 		834759B4D73F070865AEF14EE6FE5749 /* PFEncoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFEncoder.m; path = Parse/Internal/PFEncoder.m; sourceTree = "<group>"; };
 		834B6AABF3228C41B157A89245744132 /* PFSQLiteDatabaseController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFSQLiteDatabaseController.h; path = Parse/Internal/LocalDataStore/SQLite/PFSQLiteDatabaseController.h; sourceTree = "<group>"; };
-		837A2E77FE77B4302F955E1F4743543F /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83CA5347C1341F075818D0A45C862373 /* PFObjectFileCodingLogic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectFileCodingLogic.h; path = Parse/Internal/Object/Coder/File/PFObjectFileCodingLogic.h; sourceTree = "<group>"; };
 		857D07B0A5DD5D82FF18722B7B1454EC /* PFCachedQueryController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCachedQueryController.m; path = Parse/Internal/Query/Controller/PFCachedQueryController.m; sourceTree = "<group>"; };
 		8582A596BBC45B787BBF7F2169BDE427 /* PFPersistenceController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPersistenceController.h; path = Parse/Internal/Persistence/PFPersistenceController.h; sourceTree = "<group>"; };
+		8595BBAECF64A7DC95B30D43C0369719 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		860DB31CB8F24970943B402196782FD0 /* PFUserConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFUserConstants.h; path = Parse/Internal/User/Constants/PFUserConstants.h; sourceTree = "<group>"; };
 		862E6317D7AEACAFA3C43870C7723187 /* PFAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAssert.h; path = Parse/Internal/PFAssert.h; sourceTree = "<group>"; };
 		863932A6B49D49CD6B1BFBB50AF1D4DF /* PFCommandCache_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCommandCache_Private.h; path = Parse/Internal/PFCommandCache_Private.h; sourceTree = "<group>"; };
@@ -666,7 +658,6 @@
 		89072B670B6092EBA7DACF74ACB331EA /* PFPush.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPush.h; path = Parse/PFPush.h; sourceTree = "<group>"; };
 		89A6E97A272721DAFD05B95470D0EC80 /* PFPushChannelsController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPushChannelsController.h; path = Parse/Internal/Push/ChannelsController/PFPushChannelsController.h; sourceTree = "<group>"; };
 		8A381B0F795952C31084F6D42179B707 /* PFFileStagingController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFileStagingController.h; path = Parse/Internal/File/Controller/PFFileStagingController.h; sourceTree = "<group>"; };
-		8A3BB284564F0157509BC9D28AF865FF /* Pods-Decypher-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Decypher-resources.sh"; sourceTree = "<group>"; };
 		8A6466C49325037C2945EA8FEAB9DEDA /* PFUserFileCodingLogic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFUserFileCodingLogic.h; path = Parse/Internal/User/Coder/File/PFUserFileCodingLogic.h; sourceTree = "<group>"; };
 		8B643248E951AAF311E6C5CFB9A7ADBD /* PFAnalytics_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnalytics_Private.h; path = Parse/Internal/Analytics/PFAnalytics_Private.h; sourceTree = "<group>"; };
 		8CDF1E9A4832BFA2C62000E095820604 /* PFObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObject.h; path = Parse/PFObject.h; sourceTree = "<group>"; };
@@ -682,9 +673,10 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93D2EA144449A0F5CCD247A8FFCFC91A /* PFConfigController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFConfigController.h; path = Parse/Internal/Config/Controller/PFConfigController.h; sourceTree = "<group>"; };
 		941D16ED4918493A16E067E0FF3D3085 /* Parse.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Parse.modulemap; sourceTree = "<group>"; };
+		949B0E226E32335B8F517BFD9F4EC098 /* Pods-Decypher-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Decypher-acknowledgements.plist"; sourceTree = "<group>"; };
 		960937D9690F9ECACE6F176252E89FBD /* PFSessionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFSessionController.m; path = Parse/Internal/Session/Controller/PFSessionController.m; sourceTree = "<group>"; };
-		96318FFE5151CDD09F35158B3A182B38 /* Pods-Decypher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Decypher.modulemap"; sourceTree = "<group>"; };
 		96C137799EECC1883C90C52DB2420073 /* PFQueryState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFQueryState.m; path = Parse/Internal/Query/State/PFQueryState.m; sourceTree = "<group>"; };
+		96D091A4A410EF0D48F1DB4ECB97CCA4 /* Pods-Decypher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Decypher.release.xcconfig"; sourceTree = "<group>"; };
 		9791EF4B0A4F76163E53CD8E56C2BF48 /* PFCloudCodeController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCloudCodeController.m; path = Parse/Internal/CloudCode/PFCloudCodeController.m; sourceTree = "<group>"; };
 		97E6F451E5CC47F95A609DA75F534A84 /* PFRESTSessionCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRESTSessionCommand.m; path = Parse/Internal/Commands/PFRESTSessionCommand.m; sourceTree = "<group>"; };
 		9883731312CD31E19F45B89A7385D680 /* BFTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTask.m; path = Bolts/Common/BFTask.m; sourceTree = "<group>"; };
@@ -716,13 +708,14 @@
 		A78B0E9E13CEC05ED2ED3C3F770E7E8A /* PFBase64Encoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFBase64Encoder.h; path = Parse/Internal/PFBase64Encoder.h; sourceTree = "<group>"; };
 		A80848D8DEF537D5E4ED7D7B4CE47D55 /* PFEventuallyPin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFEventuallyPin.m; path = Parse/Internal/PFEventuallyPin.m; sourceTree = "<group>"; };
 		A849B5062AC47CE7AE265A5381190762 /* PFSQLiteDatabase_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFSQLiteDatabase_Private.h; path = Parse/Internal/LocalDataStore/SQLite/PFSQLiteDatabase_Private.h; sourceTree = "<group>"; };
+		A8A51736D51B38D41155B0DF0EB805FE /* Pods-Decypher-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Decypher-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A8F080623B420B5D11E95E9259FEF33D /* PFTaskQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFTaskQueue.h; path = Parse/Internal/PFTaskQueue.h; sourceTree = "<group>"; };
 		A904B561E7BF7093171D030A09161F09 /* PFDefaultACLController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFDefaultACLController.m; path = Parse/Internal/ACL/DefaultACLController/PFDefaultACLController.m; sourceTree = "<group>"; };
 		A9E3939170B62B5E3044A75CD006D1AE /* PFRESTObjectBatchCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRESTObjectBatchCommand.m; path = Parse/Internal/Commands/PFRESTObjectBatchCommand.m; sourceTree = "<group>"; };
 		A9EECE0B366F5C5DCFE5916D018CB16B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		AA2B50EEDA44090E3D91381F5DD6480F /* Pods_DecypherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecypherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB94B4E7C97B1BABCB832A3E5ABC777 /* PFObjectState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFObjectState.m; path = Parse/Internal/Object/State/PFObjectState.m; sourceTree = "<group>"; };
 		AB63F5179790A8053EB5871075D93046 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		AB9D4A335D9AC9EC52DF4EA4083A7D72 /* Pods-Decypher-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Decypher-frameworks.sh"; sourceTree = "<group>"; };
 		AC44A2067E955B52B00945B8210CF2ED /* PFBase64Encoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFBase64Encoder.m; path = Parse/Internal/PFBase64Encoder.m; sourceTree = "<group>"; };
 		AE054CE640D2776E12D7858F655A2480 /* ParseModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ParseModule.m; path = Parse/Internal/ParseModule.m; sourceTree = "<group>"; };
 		AF44C633C126FC0A65458BEFB5081065 /* PFPush.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPush.m; path = Parse/PFPush.m; sourceTree = "<group>"; };
@@ -733,7 +726,6 @@
 		B28554128D8881481DE433D5ED63DF16 /* PFProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFProduct.h; path = Parse/PFProduct.h; sourceTree = "<group>"; };
 		B28A768E0C9EE8A8B1F0F497F11610CB /* PFFileManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFileManager.h; path = Parse/Internal/PFFileManager.h; sourceTree = "<group>"; };
 		B2C626F627414418F6A25FE7FD00F16B /* PFFieldOperationDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFFieldOperationDecoder.m; path = Parse/Internal/FieldOperation/PFFieldOperationDecoder.m; sourceTree = "<group>"; };
-		B31BD5FA164B6CEE802BFF81E72EC882 /* Pods-DecypherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DecypherTests.release.xcconfig"; sourceTree = "<group>"; };
 		B59D3CF5B14DF826E37563886CA6CA39 /* PFCommandCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCommandCache.h; path = Parse/Internal/PFCommandCache.h; sourceTree = "<group>"; };
 		B628245D285BE570EF6755C4EE229E88 /* ParseClientConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ParseClientConfiguration.h; path = Parse/ParseClientConfiguration.h; sourceTree = "<group>"; };
 		B677BBF7C416F42362B42CEDBFFC245C /* PFObjectFilePersistenceController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFObjectFilePersistenceController.m; path = Parse/Internal/Object/FilePersistence/PFObjectFilePersistenceController.m; sourceTree = "<group>"; };
@@ -747,17 +739,17 @@
 		B9EF9579DA950A153A07AEDDA56B691C /* PFPushController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPushController.m; path = Parse/Internal/Push/Controller/PFPushController.m; sourceTree = "<group>"; };
 		BA888ABDD72E0CCA04BC9405B93F3164 /* PFConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFConfig.h; path = Parse/PFConfig.h; sourceTree = "<group>"; };
 		BA9125034479493D9FC7791EA88DEB8A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAC3136357B962509FA2FC4D69474D47 /* Pods-DecypherTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DecypherTests-umbrella.h"; sourceTree = "<group>"; };
 		BADDECE302DD7BF37F6D404FAF7918BC /* PFCommandURLRequestConstructor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCommandURLRequestConstructor.m; path = Parse/Internal/Commands/CommandRunner/URLRequestConstructor/PFCommandURLRequestConstructor.m; sourceTree = "<group>"; };
 		BB651D3F08D1BF2A9624A31D30EA265A /* PFUserAuthenticationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFUserAuthenticationController.h; path = Parse/Internal/User/AuthenticationProviders/Controller/PFUserAuthenticationController.h; sourceTree = "<group>"; };
 		BBE6BF093184B5AB0D393C68E0AD9210 /* PFInstallationIdentifierStore_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFInstallationIdentifierStore_Private.h; path = Parse/Internal/Installation/InstallationIdentifierStore/PFInstallationIdentifierStore_Private.h; sourceTree = "<group>"; };
 		BC495477C3BF1C01475CFDE0B2BABB44 /* PFCategoryLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCategoryLoader.m; path = Parse/Internal/PFCategoryLoader.m; sourceTree = "<group>"; };
+		BC8BA0B29669DF5EE2632FBC51F4EE83 /* Pods_Decypher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Decypher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6CB5196CA2D85604C266D6663821CA /* PFUser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFUser.m; path = Parse/PFUser.m; sourceTree = "<group>"; };
 		BF08D6F73FFEBC1E2B9890EAA8076C9A /* PFAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAlertView.h; path = Parse/Internal/PFAlertView.h; sourceTree = "<group>"; };
-		C00EE45FD632537697F72D42D7DDD82A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C144275498A5B18F7688ACC3CD3A4C20 /* PFDefaultACLController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFDefaultACLController.h; path = Parse/Internal/ACL/DefaultACLController/PFDefaultACLController.h; sourceTree = "<group>"; };
 		C1609F179D91AE662B25C25B0C400285 /* PFRESTAnalyticsCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTAnalyticsCommand.h; path = Parse/Internal/Commands/PFRESTAnalyticsCommand.h; sourceTree = "<group>"; };
 		C1CE6E6F90E66D7AE3DF8A3F973C2EBB /* PFProduct+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFProduct+Private.h"; path = "Parse/Internal/Product/PFProduct+Private.h"; sourceTree = "<group>"; };
+		C1FAA2386249B120B4B8652E55C49558 /* Pods-Decypher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Decypher-umbrella.h"; sourceTree = "<group>"; };
 		C213B9B3C24E4F4999CDF056CFE0D812 /* PFMultiProcessFileLockController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFMultiProcessFileLockController.m; path = Parse/Internal/MultiProcessLock/PFMultiProcessFileLockController.m; sourceTree = "<group>"; };
 		C3EDE4CBA8BB459EA21AE2F54C084E59 /* PFACL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFACL.h; path = Parse/PFACL.h; sourceTree = "<group>"; };
 		C43D38B8366FA3B38452AB82BA8C0F02 /* PFInternalUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFInternalUtils.h; path = Parse/Internal/PFInternalUtils.h; sourceTree = "<group>"; };
@@ -765,7 +757,6 @@
 		C60BC9C00DA6F4287F5A0D6CFF3D2709 /* PFObjectPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectPrivate.h; path = Parse/Internal/Object/PFObjectPrivate.h; sourceTree = "<group>"; };
 		C6517F7B2524640A4CB9479CB506D8D5 /* PFCurrentUserController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCurrentUserController.m; path = Parse/Internal/User/CurrentUserController/PFCurrentUserController.m; sourceTree = "<group>"; };
 		C6AD5CD1585F9D8C95AE9F74C4C87F5E /* PFConfig+Synchronous.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFConfig+Synchronous.h"; path = "Parse/PFConfig+Synchronous.h"; sourceTree = "<group>"; };
-		C70AD4FD4D6F607E2581142462C08EDB /* Pods-DecypherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DecypherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C81A7D335692EFF5CF1815CCE0090204 /* PFObject+Deprecated.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFObject+Deprecated.h"; path = "Parse/PFObject+Deprecated.h"; sourceTree = "<group>"; };
 		C88A80756F94D710187A39EC5963E1F0 /* PFURLSessionFileDownloadTaskDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFURLSessionFileDownloadTaskDelegate.m; path = Parse/Internal/Commands/CommandRunner/URLSession/Session/TaskDelegate/PFURLSessionFileDownloadTaskDelegate.m; sourceTree = "<group>"; };
 		C8AD259F11309139CA7A4C2EA5EA24EF /* PFRESTObjectCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRESTObjectCommand.m; path = Parse/Internal/Commands/PFRESTObjectCommand.m; sourceTree = "<group>"; };
@@ -774,18 +765,16 @@
 		C95BE7771EE4E4E07D2FD0A48C0E1D83 /* PFHTTPURLRequestConstructor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFHTTPURLRequestConstructor.h; path = Parse/Internal/HTTPRequest/PFHTTPURLRequestConstructor.h; sourceTree = "<group>"; };
 		CB7539B605855DACBC167E5B8DB3E5D5 /* PFSQLiteDatabaseResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFSQLiteDatabaseResult.h; path = Parse/Internal/LocalDataStore/SQLite/PFSQLiteDatabaseResult.h; sourceTree = "<group>"; };
 		CB885D327068E09E6272D85B1CE61C01 /* PFMutableUserState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFMutableUserState.h; path = Parse/Internal/User/State/PFMutableUserState.h; sourceTree = "<group>"; };
-		CB9B49FF7837D2D9B5EB84B0FAACEC16 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBC88A7B089F10E6BFCB39A3DA295220 /* PFPropertyInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPropertyInfo.h; path = Parse/Internal/PropertyInfo/PFPropertyInfo.h; sourceTree = "<group>"; };
 		CBDFA462F9D7B69D8BDCEEDA78E2F5A6 /* PFLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFLogging.h; path = Parse/Internal/PFLogging.h; sourceTree = "<group>"; };
 		CBF6DD7A48A29B38695DFE40DF046B24 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = Parse/Resources/en.lproj; sourceTree = "<group>"; };
 		CC067C1F4AED7D1737FD545A1F93A466 /* PFRelationState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRelationState.h; path = Parse/Internal/Relation/State/PFRelationState.h; sourceTree = "<group>"; };
 		CC6A8D77EB65F8E44E0EBED53C749EF4 /* ParseInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ParseInternal.h; path = Parse/Internal/ParseInternal.h; sourceTree = "<group>"; };
-		CD3C7B05A51AE39B917F3D70644D7717 /* Pods-DecypherTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DecypherTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CD7BD64D30115BAC6DC06AAA0E688EFC /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8CA142411B61D81A966B6BC3D0D274 /* PFURLSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFURLSession.m; path = Parse/Internal/Commands/CommandRunner/URLSession/Session/PFURLSession.m; sourceTree = "<group>"; };
 		CDA81FF78851FDAE689599BCCC8FD11A /* Parse-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parse-prefix.pch"; sourceTree = "<group>"; };
 		CDD821A748BC4288F26C3A23D2E44CAF /* PFPinningEventuallyQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPinningEventuallyQueue.m; path = Parse/Internal/PFPinningEventuallyQueue.m; sourceTree = "<group>"; };
 		CF6E8A51487E385608EA3E420BB78ABB /* PFURLConstructor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLConstructor.h; path = Parse/Internal/HTTPRequest/PFURLConstructor.h; sourceTree = "<group>"; };
+		CFA10C1878F6AF48AE4D12CCCDF10A3D /* Pods-DecypherTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DecypherTests-dummy.m"; sourceTree = "<group>"; };
 		D00CB0BF478F7303F7139B80D9958F51 /* PFGeoPointPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFGeoPointPrivate.h; path = Parse/Internal/PFGeoPointPrivate.h; sourceTree = "<group>"; };
 		D01266FF496A5AD52C19456CE3CD76CE /* Bolts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Bolts.modulemap; sourceTree = "<group>"; };
 		D049BE3484CD3E712E69B01AAED87544 /* PFSession_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFSession_Private.h; path = Parse/Internal/Session/PFSession_Private.h; sourceTree = "<group>"; };
@@ -804,14 +793,13 @@
 		D5ED319AAC289C42A8F93704E4676B76 /* PFKeychainStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFKeychainStore.m; path = Parse/Internal/PFKeychainStore.m; sourceTree = "<group>"; };
 		D6631F24209F03A127394418620A99B4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		D66F9E57A6A23C838968479753E54406 /* PFMutableACLState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFMutableACLState.h; path = Parse/Internal/ACL/State/PFMutableACLState.h; sourceTree = "<group>"; };
-		D71B7728DBB6297DDC8C76F738FD3B5A /* Pods-DecypherTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DecypherTests-frameworks.sh"; sourceTree = "<group>"; };
+		D7727E9C1E5952E4C12B550430ECB071 /* Pods-DecypherTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DecypherTests-umbrella.h"; sourceTree = "<group>"; };
 		D88EFE8213E8D66E5188505EB05EF378 /* BFExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFExecutor.m; path = Bolts/Common/BFExecutor.m; sourceTree = "<group>"; };
 		D9B6BDCC68A9A993BF9540C7101E6B42 /* PFCategoryLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCategoryLoader.h; path = Parse/Internal/PFCategoryLoader.h; sourceTree = "<group>"; };
 		D9B9CE084A75F6327C3DC911357CBEC1 /* PFSubclassing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFSubclassing.h; path = Parse/PFSubclassing.h; sourceTree = "<group>"; };
 		D9D9E39F0C138188CF324E0E558F9040 /* PFURLSessionUploadTaskDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFURLSessionUploadTaskDelegate.m; path = Parse/Internal/Commands/CommandRunner/URLSession/Session/TaskDelegate/PFURLSessionUploadTaskDelegate.m; sourceTree = "<group>"; };
 		D9E54685E799B346D238EC7F0735F06E /* PFInstallationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFInstallationController.h; path = Parse/Internal/Installation/Controller/PFInstallationController.h; sourceTree = "<group>"; };
 		D9EC0086BF5C6B2D814E3E071A612293 /* PFUserController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFUserController.h; path = Parse/Internal/User/Controller/PFUserController.h; sourceTree = "<group>"; };
-		DA9D21D64DEA6D51FED94C3B85A5D49C /* Pods-DecypherUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DecypherUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		DA9D83ED12AE88BCDBB9997839C29925 /* PFThreadsafety.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFThreadsafety.m; path = Parse/Internal/ThreadSafety/PFThreadsafety.m; sourceTree = "<group>"; };
 		DAA13DEA7FBBF4FDD4565ECA386628B9 /* PFHash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFHash.m; path = Parse/Internal/PFHash.m; sourceTree = "<group>"; };
 		DAC669DF6039B6856E497CDCF55C8BE3 /* PFDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFDevice.h; path = Parse/Internal/PFDevice.h; sourceTree = "<group>"; };
@@ -822,7 +810,6 @@
 		DBD872D554F1D685152BB082D7F488C7 /* PFRelationState_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRelationState_Private.h; path = Parse/Internal/Relation/State/PFRelationState_Private.h; sourceTree = "<group>"; };
 		DC1F61D4DFC3002D177F0D731DE94D29 /* PFConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFConstants.h; path = Parse/PFConstants.h; sourceTree = "<group>"; };
 		DD5890F88BD0A14F24AFD58E03832F6B /* PFUserController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFUserController.m; path = Parse/Internal/User/Controller/PFUserController.m; sourceTree = "<group>"; };
-		DE813D46A5E7C705C4537CC0BE72152A /* Pods-DecypherUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DecypherUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DE9098F98685F386851E78A6FB69FFB0 /* PFAnalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnalytics.h; path = Parse/PFAnalytics.h; sourceTree = "<group>"; };
 		DE91DA79B624411560B5B2457C882E07 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B7F320907F1F9ACC46181F93223C3E /* PFAnonymousUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnonymousUtils.h; path = Parse/PFAnonymousUtils.h; sourceTree = "<group>"; };
@@ -862,8 +849,6 @@
 		EFA230657FE7DD90F2F27CFD4437EB8F /* PFInstallation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFInstallation.h; path = Parse/PFInstallation.h; sourceTree = "<group>"; };
 		F0F0BCC29F3BF7AAD8705BADF9B1AA79 /* PFLocationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFLocationManager.m; path = Parse/Internal/PFLocationManager.m; sourceTree = "<group>"; };
 		F1D43CE7B8FF6745141D7E3DC5593253 /* PFDataProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFDataProvider.h; path = Parse/Internal/PFDataProvider.h; sourceTree = "<group>"; };
-		F25FF11151068C4C2B5B34B700125A48 /* Pods-DecypherUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DecypherUITests-resources.sh"; sourceTree = "<group>"; };
-		F268A00B8440B7D074FF850AA1FFDA40 /* Pods-DecypherTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DecypherTests.modulemap"; sourceTree = "<group>"; };
 		F28CDE24B267E6659837968E368141CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F319896967BF6AB10CA78B49EDBC9233 /* PFDateFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFDateFormatter.m; path = Parse/Internal/PFDateFormatter.m; sourceTree = "<group>"; };
 		F321DC7D4B4D7AEF4762DFE7D033766B /* PFRESTCloudCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTCloudCommand.h; path = Parse/Internal/Commands/PFRESTCloudCommand.h; sourceTree = "<group>"; };
@@ -871,6 +856,7 @@
 		F3677920F9735EA43226C968F6774671 /* PFRelation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRelation.h; path = Parse/PFRelation.h; sourceTree = "<group>"; };
 		F3A78978E9675A9FB19CA1F68344A1A2 /* PFUserFileCodingLogic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFUserFileCodingLogic.m; path = Parse/Internal/User/Coder/File/PFUserFileCodingLogic.m; sourceTree = "<group>"; };
 		F45E27732121995479F78A525EED2906 /* PFEventuallyQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFEventuallyQueue.h; path = Parse/Internal/PFEventuallyQueue.h; sourceTree = "<group>"; };
+		F497F1DF28B5184837F7FBBA2948F2FE /* Pods-DecypherTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DecypherTests-resources.sh"; sourceTree = "<group>"; };
 		F4D32695961B25C82D581B63A5B65CF8 /* PFFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFFile.m; path = Parse/PFFile.m; sourceTree = "<group>"; };
 		F538A6D0431800DDB7164AEFBE4EA5EE /* PFLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFLogger.m; path = Parse/Internal/PFLogger.m; sourceTree = "<group>"; };
 		F58A46530BE419A9F188263D023D778F /* PFInstallationIdentifierStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFInstallationIdentifierStore.h; path = Parse/Internal/Installation/InstallationIdentifierStore/PFInstallationIdentifierStore.h; sourceTree = "<group>"; };
@@ -921,14 +907,6 @@
 				9A0F45AC083195655179A516D1A04AEE /* Security.framework in Frameworks */,
 				338EAC02508F36E39BE10E8C4B957CDC /* StoreKit.framework in Frameworks */,
 				87C07CAB0C9C4037AF9593692DA325FB /* SystemConfiguration.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E20A5FDD4E8F9B8F4F6C10B498CB3B14 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EF3E7CABACCA7F672F2F28F22E4D0E87 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1339,36 +1317,6 @@
 			path = Parse;
 			sourceTree = "<group>";
 		};
-		31803EAF5F04B06B3048382050C59C17 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CD7BD64D30115BAC6DC06AAA0E688EFC /* Bolts.framework */,
-				837A2E77FE77B4302F955E1F4743543F /* Parse.framework */,
-				0EFF1096BA084335D622FD7F98B9DFE0 /* Pods_Decypher.framework */,
-				2022D7CF8861F4BDAEC1BA58BFB12CC6 /* Pods_DecypherTests.framework */,
-				08537428EF71C931E47CCA63A81A69F4 /* Pods_DecypherUITests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		33AEE0BC1553B0D4450A52CB1C8A19D1 /* Pods-DecypherTests */ = {
-			isa = PBXGroup;
-			children = (
-				C00EE45FD632537697F72D42D7DDD82A /* Info.plist */,
-				F268A00B8440B7D074FF850AA1FFDA40 /* Pods-DecypherTests.modulemap */,
-				CD3C7B05A51AE39B917F3D70644D7717 /* Pods-DecypherTests-acknowledgements.markdown */,
-				501572886144D0DD3E8328A291C8F259 /* Pods-DecypherTests-acknowledgements.plist */,
-				7C36EE8C2E1759C0B31AEB3B2AB47227 /* Pods-DecypherTests-dummy.m */,
-				D71B7728DBB6297DDC8C76F738FD3B5A /* Pods-DecypherTests-frameworks.sh */,
-				5844C10ADD028CDBA86E4B1A4E08835B /* Pods-DecypherTests-resources.sh */,
-				BAC3136357B962509FA2FC4D69474D47 /* Pods-DecypherTests-umbrella.h */,
-				44500058DFC6A155D6324C565005489A /* Pods-DecypherTests.debug.xcconfig */,
-				B31BD5FA164B6CEE802BFF81E72EC882 /* Pods-DecypherTests.release.xcconfig */,
-			);
-			name = "Pods-DecypherTests";
-			path = "Target Support Files/Pods-DecypherTests";
-			sourceTree = "<group>";
-		};
 		3EC2F318A8883718313B5FB7A7371527 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1415,14 +1363,32 @@
 			path = "../Target Support Files/Bolts";
 			sourceTree = "<group>";
 		};
+		6B5C7375EEFB6309386BC57ABF18DB69 /* Pods-DecypherTests */ = {
+			isa = PBXGroup;
+			children = (
+				48FB3699FCB709377C74C917E9F044E4 /* Info.plist */,
+				665A882BD3AD03CD788A9AC53AF2F8EB /* Pods-DecypherTests.modulemap */,
+				389A5E8D60B9DDFF120B1F6E7E05ABE0 /* Pods-DecypherTests-acknowledgements.markdown */,
+				113D3C016ED52CCBA0C03F3580C9D06B /* Pods-DecypherTests-acknowledgements.plist */,
+				CFA10C1878F6AF48AE4D12CCCDF10A3D /* Pods-DecypherTests-dummy.m */,
+				3779CC70B1DAAD661F1678489A24FFCE /* Pods-DecypherTests-frameworks.sh */,
+				F497F1DF28B5184837F7FBBA2948F2FE /* Pods-DecypherTests-resources.sh */,
+				D7727E9C1E5952E4C12B550430ECB071 /* Pods-DecypherTests-umbrella.h */,
+				624E5295894398D2536DFF59D4E25F84 /* Pods-DecypherTests.debug.xcconfig */,
+				30206D88CE1731665AD32A0035120B10 /* Pods-DecypherTests.release.xcconfig */,
+			);
+			name = "Pods-DecypherTests";
+			path = "Target Support Files/Pods-DecypherTests";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				44E5CA6134C04B093AD8C39BAB4EFD8E /* Frameworks */,
 				1172DC196C855C1F51AEE8E563896D5A /* Pods */,
-				31803EAF5F04B06B3048382050C59C17 /* Products */,
-				A59994B4CAFBCA59A79034994DBE65D8 /* Targets Support Files */,
+				9D399EF2CCCA8D42C316E9F2CD61314C /* Products */,
+				85B5FE0DBE6FBD41CA09911BFF9F8DD2 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1442,14 +1408,42 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		A59994B4CAFBCA59A79034994DBE65D8 /* Targets Support Files */ = {
+		85B5FE0DBE6FBD41CA09911BFF9F8DD2 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DAA6B45484D4FD8BF4A7DB67E0F23FFB /* Pods-Decypher */,
-				33AEE0BC1553B0D4450A52CB1C8A19D1 /* Pods-DecypherTests */,
-				CB4ED4BC37C157C2793D27067B0882FA /* Pods-DecypherUITests */,
+				88C838B36DDBAD5D2C29BBB3E154B119 /* Pods-Decypher */,
+				6B5C7375EEFB6309386BC57ABF18DB69 /* Pods-DecypherTests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		88C838B36DDBAD5D2C29BBB3E154B119 /* Pods-Decypher */ = {
+			isa = PBXGroup;
+			children = (
+				3597D7F59F470918219A8BA32D67769E /* Info.plist */,
+				0DB17BB71AED86ABCFE33AF1C2B1C1EC /* Pods-Decypher.modulemap */,
+				A8A51736D51B38D41155B0DF0EB805FE /* Pods-Decypher-acknowledgements.markdown */,
+				949B0E226E32335B8F517BFD9F4EC098 /* Pods-Decypher-acknowledgements.plist */,
+				7D3AC8BB45FD6EBFB8CF7AD05F49D4E4 /* Pods-Decypher-dummy.m */,
+				74FFA6077C08BB221F7BDD87051DEFCD /* Pods-Decypher-frameworks.sh */,
+				56E1956F0890FACBE549B3EA089A1D32 /* Pods-Decypher-resources.sh */,
+				C1FAA2386249B120B4B8652E55C49558 /* Pods-Decypher-umbrella.h */,
+				019AF80AF887EAB8C179FCA93C8998E6 /* Pods-Decypher.debug.xcconfig */,
+				96D091A4A410EF0D48F1DB4ECB97CCA4 /* Pods-Decypher.release.xcconfig */,
+			);
+			name = "Pods-Decypher";
+			path = "Target Support Files/Pods-Decypher";
+			sourceTree = "<group>";
+		};
+		9D399EF2CCCA8D42C316E9F2CD61314C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8595BBAECF64A7DC95B30D43C0369719 /* Bolts.framework */,
+				743513E5877A66326C82D92C127344D2 /* Parse.framework */,
+				BC8BA0B29669DF5EE2632FBC51F4EE83 /* Pods_Decypher.framework */,
+				AA2B50EEDA44090E3D91381F5DD6480F /* Pods_DecypherTests.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AA06A0FFFB1BF32A5B3585C4A83523D6 /* Resources */ = {
@@ -1474,53 +1468,9 @@
 			path = "../Target Support Files/Parse";
 			sourceTree = "<group>";
 		};
-		CB4ED4BC37C157C2793D27067B0882FA /* Pods-DecypherUITests */ = {
-			isa = PBXGroup;
-			children = (
-				62A0D83BE076706EA7DF50BC71DF166A /* Info.plist */,
-				075457CD6EA4B7F2DC3CC26185DDC43A /* Pods-DecypherUITests.modulemap */,
-				DE813D46A5E7C705C4537CC0BE72152A /* Pods-DecypherUITests-acknowledgements.markdown */,
-				DA9D21D64DEA6D51FED94C3B85A5D49C /* Pods-DecypherUITests-acknowledgements.plist */,
-				212239EF8D704E12FEA2589CA83AFB62 /* Pods-DecypherUITests-dummy.m */,
-				0CE0C84E19CB21667F90566F14550298 /* Pods-DecypherUITests-frameworks.sh */,
-				F25FF11151068C4C2B5B34B700125A48 /* Pods-DecypherUITests-resources.sh */,
-				7DC8518B9CB67E6CC22DC86C4F193DA3 /* Pods-DecypherUITests-umbrella.h */,
-				76C48758A7A899BC4FA82C2337DEB9D6 /* Pods-DecypherUITests.debug.xcconfig */,
-				C70AD4FD4D6F607E2581142462C08EDB /* Pods-DecypherUITests.release.xcconfig */,
-			);
-			name = "Pods-DecypherUITests";
-			path = "Target Support Files/Pods-DecypherUITests";
-			sourceTree = "<group>";
-		};
-		DAA6B45484D4FD8BF4A7DB67E0F23FFB /* Pods-Decypher */ = {
-			isa = PBXGroup;
-			children = (
-				CB9B49FF7837D2D9B5EB84B0FAACEC16 /* Info.plist */,
-				96318FFE5151CDD09F35158B3A182B38 /* Pods-Decypher.modulemap */,
-				26799B78531FD952E8EA48276BF649C5 /* Pods-Decypher-acknowledgements.markdown */,
-				7F0BCA53530200F328FA996FCAF75F4F /* Pods-Decypher-acknowledgements.plist */,
-				2C56D4B703FCCA76C61BDA8FF26DD61B /* Pods-Decypher-dummy.m */,
-				AB9D4A335D9AC9EC52DF4EA4083A7D72 /* Pods-Decypher-frameworks.sh */,
-				8A3BB284564F0157509BC9D28AF865FF /* Pods-Decypher-resources.sh */,
-				05CF8102D5F8AB9B8873B7729FE506A3 /* Pods-Decypher-umbrella.h */,
-				276C0BDF989B015F647CACFE4DDC585D /* Pods-Decypher.debug.xcconfig */,
-				7EDB53E58341FBCFA1E40BA41F6A13C0 /* Pods-Decypher.release.xcconfig */,
-			);
-			name = "Pods-Decypher";
-			path = "Target Support Files/Pods-Decypher";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		15A920134BD7C7231B044BBA30E4BCF4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5C53DA9ED1AA3683B46F0DA805A949DB /* Pods-DecypherUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1EB4992DFF81C5DDEFCA434E900A5A77 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1780,23 +1730,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		191C16E00868E3E0B212C220EF654891 /* Pods-DecypherUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 981D10FAD85C9DADAE936C7D984B3FD9 /* Build configuration list for PBXNativeTarget "Pods-DecypherUITests" */;
-			buildPhases = (
-				12358F2B37F798836E197788D79369A3 /* Sources */,
-				E20A5FDD4E8F9B8F4F6C10B498CB3B14 /* Frameworks */,
-				15A920134BD7C7231B044BBA30E4BCF4 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-DecypherUITests";
-			productName = "Pods-DecypherUITests";
-			productReference = 08537428EF71C931E47CCA63A81A69F4 /* Pods_DecypherUITests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		19670ECFFEF7508769AE055C88D07329 /* Pods-Decypher */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5682DEC235D0C4DA6F045E145E6412A9 /* Build configuration list for PBXNativeTarget "Pods-Decypher" */;
@@ -1813,7 +1746,7 @@
 			);
 			name = "Pods-Decypher";
 			productName = "Pods-Decypher";
-			productReference = 0EFF1096BA084335D622FD7F98B9DFE0 /* Pods_Decypher.framework */;
+			productReference = BC8BA0B29669DF5EE2632FBC51F4EE83 /* Pods_Decypher.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		2C8AA1BAF35413BDB954A1DF93576ED1 /* Parse */ = {
@@ -1832,7 +1765,7 @@
 			);
 			name = Parse;
 			productName = Parse;
-			productReference = 837A2E77FE77B4302F955E1F4743543F /* Parse.framework */;
+			productReference = 743513E5877A66326C82D92C127344D2 /* Parse.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7129FAB61478FA70223DADF4921468CD /* Bolts */ = {
@@ -1849,7 +1782,7 @@
 			);
 			name = Bolts;
 			productName = Bolts;
-			productReference = CD7BD64D30115BAC6DC06AAA0E688EFC /* Bolts.framework */;
+			productReference = 8595BBAECF64A7DC95B30D43C0369719 /* Bolts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BCE187079EACBC9652AA2967E0615B77 /* Pods-DecypherTests */ = {
@@ -1866,7 +1799,7 @@
 			);
 			name = "Pods-DecypherTests";
 			productName = "Pods-DecypherTests";
-			productReference = 2022D7CF8861F4BDAEC1BA58BFB12CC6 /* Pods_DecypherTests.framework */;
+			productReference = AA2B50EEDA44090E3D91381F5DD6480F /* Pods_DecypherTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1886,7 +1819,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 31803EAF5F04B06B3048382050C59C17 /* Products */;
+			productRefGroup = 9D399EF2CCCA8D42C316E9F2CD61314C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1894,7 +1827,6 @@
 				2C8AA1BAF35413BDB954A1DF93576ED1 /* Parse */,
 				19670ECFFEF7508769AE055C88D07329 /* Pods-Decypher */,
 				BCE187079EACBC9652AA2967E0615B77 /* Pods-DecypherTests */,
-				191C16E00868E3E0B212C220EF654891 /* Pods-DecypherUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1911,14 +1843,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		12358F2B37F798836E197788D79369A3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE9B8F3DBB50E4ECEEDA98270D07A84A /* Pods-DecypherUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		69ECF2F11789A74721F1AEC58D8D3A76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2166,9 +2090,9 @@
 			};
 			name = Debug;
 		};
-		3F551D6ACE3990B3DF602E5A11593AF2 /* Debug */ = {
+		283F6491449CD8B55C65E27CCFCC466D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76C48758A7A899BC4FA82C2337DEB9D6 /* Pods-DecypherUITests.debug.xcconfig */;
+			baseConfigurationReference = 624E5295894398D2536DFF59D4E25F84 /* Pods-DecypherTests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -2179,18 +2103,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DecypherUITests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-DecypherTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-DecypherTests/Pods-DecypherTests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_DecypherUITests;
+				PRODUCT_NAME = Pods_DecypherTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -2200,7 +2124,7 @@
 			};
 			name = Debug;
 		};
-		42287DDF97330524BA3EF220F0276DA6 /* Release */ = {
+		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2231,112 +2155,52 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		423E1BBC63E77AE2B90FFC3D27ACF276 /* Release */ = {
+		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C70AD4FD4D6F607E2581142462C08EDB /* Pods-DecypherUITests.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DecypherUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_DecypherUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		53DD7D538A90F35113C384D3CCCA3738 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44500058DFC6A155D6324C565005489A /* Pods-DecypherTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DecypherTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DecypherTests/Pods-DecypherTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_DecypherTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6CB935844F81C993CACF23ABFED22AD8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 276C0BDF989B015F647CACFE4DDC585D /* Pods-Decypher.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Decypher/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Decypher/Pods-Decypher.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Decypher;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
@@ -2430,85 +2294,9 @@
 			};
 			name = Release;
 		};
-		AE9439C22469D35336242DD983DB5C5F /* Debug */ = {
+		DF26184FEA779A2A86C5B53F821CA97E /* Release */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		C5F4B9EC61909B8B373A70A7CBD23C18 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B31BD5FA164B6CEE802BFF81E72EC882 /* Pods-DecypherTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DecypherTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DecypherTests/Pods-DecypherTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_DecypherTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C6648BD293E060E1D5F990EB05251760 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EDB53E58341FBCFA1E40BA41F6A13C0 /* Pods-Decypher.release.xcconfig */;
+			baseConfigurationReference = 96D091A4A410EF0D48F1DB4ECB97CCA4 /* Pods-Decypher.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -2521,7 +2309,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-Decypher/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Decypher/Pods-Decypher.modulemap";
@@ -2540,6 +2328,74 @@
 			};
 			name = Release;
 		};
+		EDD9B291086CBE866CDE9537DA6ADE69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30206D88CE1731665AD32A0035120B10 /* Pods-DecypherTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DecypherTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DecypherTests/Pods-DecypherTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DecypherTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FBC39643859658EB32CBA84E7F3906F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 019AF80AF887EAB8C179FCA93C8998E6 /* Pods-Decypher.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Decypher/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Decypher/Pods-Decypher.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Decypher;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2555,8 +2411,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AE9439C22469D35336242DD983DB5C5F /* Debug */,
-				42287DDF97330524BA3EF220F0276DA6 /* Release */,
+				5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */,
+				3FA451D268613890FA8A5A03801E11D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2564,17 +2420,8 @@
 		5682DEC235D0C4DA6F045E145E6412A9 /* Build configuration list for PBXNativeTarget "Pods-Decypher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6CB935844F81C993CACF23ABFED22AD8 /* Debug */,
-				C6648BD293E060E1D5F990EB05251760 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		981D10FAD85C9DADAE936C7D984B3FD9 /* Build configuration list for PBXNativeTarget "Pods-DecypherUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3F551D6ACE3990B3DF602E5A11593AF2 /* Debug */,
-				423E1BBC63E77AE2B90FFC3D27ACF276 /* Release */,
+				FBC39643859658EB32CBA84E7F3906F1 /* Debug */,
+				DF26184FEA779A2A86C5B53F821CA97E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2591,8 +2438,8 @@
 		EF12916E165557291137069F1ADC9423 /* Build configuration list for PBXNativeTarget "Pods-DecypherTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				53DD7D538A90F35113C384D3CCCA3738 /* Debug */,
-				C5F4B9EC61909B8B373A70A7CBD23C18 /* Release */,
+				283F6491449CD8B55C65E27CCFCC466D /* Debug */,
+				EDD9B291086CBE866CDE9537DA6ADE69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
