@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 import Parse
-
+import FacebookLogin
 
 class ProfileScene: SKScene, UITextFieldDelegate {
     
