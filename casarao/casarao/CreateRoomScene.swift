@@ -156,7 +156,7 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
         playersLabel.horizontalAlignmentMode = .left
         
         
-        let playersCountLabel = SKLabelNode(text: "Number of Players:")
+        let playersCountLabel = SKLabelNode(text: "\(playersCount)" )
         playersCountLabel.name = "playersLabel"
         playersCountLabel.position = CGPoint(x: -size.width/2 + 10, y: roomPassAsk.position.y - 50)
         playersCountLabel.horizontalAlignmentMode = .left
