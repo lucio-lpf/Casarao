@@ -22,6 +22,8 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
     
     var randomPass:Int!
     
+    var playersCount:Int
+    
     
     var passChoice:Bool = false{
         
@@ -32,7 +34,9 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
                 node.texture = SKTexture(imageNamed:"yes_switch")
                 let roomPassword = SKLabelNode(text: "Room's password: \(randomPass!)")
                 roomPassword.name = "passText"
-                roomPassword.position = CGPoint(x: 0, y: 0)
+                roomPassword.fontSize = 10
+                roomPassword.horizontalAlignmentMode = .left
+                roomPassword.position = CGPoint(x: -size.width/2 + 10, y: childNode(withName: "roomPassAsk")!.position.y - 25)
                 setLabelConfig([roomPassword])
                 
             }
@@ -59,6 +63,9 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
     }
     
     override init(size: CGSize) {
+        
+        playersCount = 2
+        
         super.init(size: size)
         
         
@@ -123,7 +130,7 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
         
         
         let roomName = SKLabelNode(text: "\(player!.nickname!)'s room")
-        roomName.position = CGPoint(x: 0, y: exitButton.position.y - 40)
+        roomName.position = CGPoint(x: 0, y: exitButton.position.y)
         
         randomPass = Int(arc4random_uniform(9000)) + 1000
         print(randomPass)
@@ -131,32 +138,61 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
         
         
         let roomPassAsk = SKLabelNode(text: "This room will have passcode?")
-        roomPassAsk.position = CGPoint(x: 0, y: roomName.position.y - 40)
-        
+        roomPassAsk.name = "roomPassAsk"
+        roomPassAsk.position = CGPoint(x: -size.width/2 + 10, y: roomName.position.y - 50)
+        roomPassAsk.horizontalAlignmentMode = .left
         
         let passSwitch = SKSpriteNode(texture: SKTexture(imageNamed:"no_switch"), color: .clear, size: SKTexture(imageNamed:"no_switch").size())
         passSwitch.name = "passSwitch"
-        passSwitch.position = CGPoint(x: 0, y: roomPassAsk.position.y - 40)
+        passSwitch.position = CGPoint(x: size.width/2 - passSwitch.size.width/2 - 20, y: roomPassAsk.position.y)
         addChild(passSwitch)
         
         
-        let confirmButton = SKSpriteNode(texture: nil, color: .darkGray, size: CGSize(width: 300, height: 80))
-        confirmButton.position = CGPoint(x: 0, y: -size.height/2 + confirmButton.size.height/2 + 30)
-        confirmButton.name = "confirm"
-        confirmButton.zPosition = 200
-        addChild(confirmButton)
+        //---------------------------------------
+        
+        let playersLabel = SKLabelNode(text: "Number of Players:")
+        playersLabel.name = "playersLabel"
+        playersLabel.position = CGPoint(x: -size.width/2 + 10, y: roomPassAsk.position.y - 50)
+        playersLabel.horizontalAlignmentMode = .left
         
         
+        var playersCountLabel = SKLabelNode(text: "Number of Players:")
+        playersCountLabel.name = "playersLabel"
+        playersCountLabel.position = CGPoint(x: -size.width/2 + 10, y: roomPassAsk.position.y - 50)
+        playersCountLabel.horizontalAlignmentMode = .left
+
+
         
         
-        setLabelConfig([roomName,roomPassAsk])
+        //--------------------------------------
+        
+        let  checkButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clear, size: SKTexture(imageNamed: "checkButton").size())
+        checkButton.position = CGPoint(x:0,y:-self.size.height/2 + checkButton.size.height)
+        checkButton.name  = "confirm"
+        checkButton.zPosition = 5
+        addChild(checkButton)
+        
+        
+        let buttonBackground = SKSpriteNode(texture: nil, color: UIColor.init(red: 235, green: 237, blue: 237, alpha: 1), size: CGSize(width: size.width, height: (checkButton.position.y + size.height/2)*2))
+        buttonBackground.position = checkButton.position
+        buttonBackground.zPosition = 4
+        addChild(buttonBackground)
+        
+        let checkLabel = SKLabelNode(text: "Create!")
+        checkLabel.fontName =  "HelveticaNeue"
+        checkLabel.position = CGPoint(x: 0, y: -6)
+        checkLabel.fontSize = 20
+        checkLabel.zPosition = checkButton.zPosition + 2
+        checkButton.addChild(checkLabel)
+        
+        setLabelConfig([roomName,roomPassAsk,playersLabel,playersLabel])
     }
     
     
     func setLabelConfig(_ labels:[SKLabelNode]){
         
         for label in labels{
-            label.fontName = "AvenirNext-Bold"
+            label.fontName = "Helvetica Neue"
             label.fontSize = 16
             label.fontColor = SKColor.white
             label.zPosition = 200

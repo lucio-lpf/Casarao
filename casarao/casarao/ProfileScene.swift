@@ -67,6 +67,11 @@ class ProfileScene: SKScene, UITextFieldDelegate {
         super.didMove(to: view)
         
         
+        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        loginButton.center = view.center
+        
+        view.addSubview(loginButton)
+        
         userHUD = UserHUD(player: player!)
         userHUD.position = CGPoint(x: 0, y: size.height/2 - userHUD.size.height/2)
         userHUD.zPosition = 200
@@ -149,6 +154,9 @@ class ProfileScene: SKScene, UITextFieldDelegate {
             
             let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
             let scene:StoreScene = StoreScene(size: self.size)
+            for v in (view?.subviews)!{
+                v.removeFromSuperview()
+            }
             scene.player = player
             self.view?.presentScene(scene, transition: transition)
             
