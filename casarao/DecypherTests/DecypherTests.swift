@@ -88,4 +88,23 @@ class DecypherTests: XCTestCase {
         waitForExpectations(timeout: 40.0, handler:nil)
 
     }
+    
+    func testCheckUserMatrix(){
+        
+        let expectationk = expectation(description: "hahah")
+
+        
+        WebServiceManager.checkUserMatrix("zjwlCno2dv", roomId: "o0dHqtaOK5", playerMatrixArray: [2,2,2,1,2,3,3,2,3]) { (array, string, object) in
+            if (array == nil) && (string != nil){
+                XCTAssert(true)
+                expectationk.fulfill()
+            }
+            else{
+                XCTAssert(false)
+            }
+        }
+        
+        waitForExpectations(timeout: 40.0, handler:nil)
+
+    }
 }
