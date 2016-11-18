@@ -37,7 +37,7 @@ class UserHUD: SKSpriteNode {
     
         coinsLabel = SKLabelNode(text: "\(String(defaults.integer(forKey: "coins")))")
         coinsLabel.fontColor = SKColor.black
-        coinsLabel.fontName =  "AvenirNext-Bold"
+        coinsLabel.fontName =  "Helvetica-Neue"
         coinsLabel.position = CGPoint(x: coinsIcon.size.width/2 - 30, y: -6)
         coinsLabel.fontSize = 16
         coinsLabel.zPosition = coinsIcon.zPosition + 2

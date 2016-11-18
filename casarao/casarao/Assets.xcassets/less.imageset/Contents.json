@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "timerPopUp.png",
+      "filename" : "less.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "timerPopUp@2x.png",
+      "filename" : "less@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "timerPopUp@3x.png",
+      "filename" : "less@3x.png",
       "scale" : "3x"
     }
   ],

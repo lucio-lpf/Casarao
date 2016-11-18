@@ -225,16 +225,22 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
             if tile.colorNumber == 3 {
                 self.chances += 1
                 tile.changeColor()
+                run(SKAction.playSoundFileNamed("pop.mp3", waitForCompletion: false))
+
                 return
             }
             if tile.colorNumber != 0{
                 tile.changeColor()
+                run(SKAction.playSoundFileNamed("pop.mp3", waitForCompletion: false))
+
                 return
             }
             if chances > 0{
                 if tile.colorNumber == 0{
                     self.chances -= 1
                     tile.changeColor()
+                    run(SKAction.playSoundFileNamed("pop.mp3", waitForCompletion: false))
+
                 }
             }
         }
@@ -337,6 +343,8 @@ class GameScene: SKScene, PopUpInGame,GameHUDProtocol{
         let scene:LobbyScene = LobbyScene(size: self.size)
         scene.player = player
         self.view?.presentScene(scene, transition: transition)
+        run(SKAction.playSoundFileNamed("lose.mp3", waitForCompletion: false))
+
         
         
     }

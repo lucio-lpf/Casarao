@@ -114,7 +114,7 @@ class PopUpSpriteNode: SKSpriteNode {
     //POPUP DE DESITENCIA DA PARTIDA
     
     init(scene: GameScene, seconds:Int){
-        super.init(texture: SKTexture(imageNamed: "timerPopUp"), color: SKColor.clear, size: CGSize(width: 300, height: 300))
+        super.init(texture: SKTexture(imageNamed: "timerPopUp"), color: SKColor.clear, size: SKTexture(imageNamed: "timerPopUp").size())
 
         timePlusWaitTime = NSDate().timeIntervalSince1970 + Double(seconds)
         
@@ -148,7 +148,7 @@ class PopUpSpriteNode: SKSpriteNode {
             self.GameSceneDelegate!.removeTimerFromScene(self)
         }
         
-        timer.position = CGPoint(x: 0, y: -size.height/4)
+        timer.position = CGPoint(x: 0, y: -size.height/5)
         setLabel(label: timer)
         
         
@@ -157,9 +157,9 @@ class PopUpSpriteNode: SKSpriteNode {
     
     func setLabel(label:SKLabelNode){
         
-        label.fontName = "AvenirNext-Bold"
-        label.fontSize = 16
-        label.fontColor = SKColor.black
+        label.fontName = "Helvetica Neue"
+        label.fontSize = 30
+        label.fontColor = SKColor.gray
         label.zPosition = 4
         label.verticalAlignmentMode = .center
         addChild(label)

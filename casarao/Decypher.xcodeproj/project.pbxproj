@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F812102A23D9636C52CA109 /* Pods_Decypher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE96CC2950CE6271430FC31 /* Pods_Decypher.framework */; };
 		58381574BBE555EC1C348712 /* Pods_DecypherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E677D89480D38D9D24976C /* Pods_DecypherTests.framework */; };
+		5A1868A21DDF3265006C1179 /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5A1868A01DDF3265006C1179 /* lose.mp3 */; };
+		5A1868A31DDF3265006C1179 /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5A1868A11DDF3265006C1179 /* pop.mp3 */; };
 		5A22E3E01D81DA4F008DC4C4 /* AlertSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22E3DF1D81DA4F008DC4C4 /* AlertSpriteNode.swift */; };
 		5A22E3E21D81E32A008DC4C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A22E3E11D81E32A008DC4C4 /* Assets.xcassets */; };
 		5A41A2871D3E902000C93165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41A2861D3E902000C93165 /* AppDelegate.swift */; };
@@ -52,6 +54,8 @@
 		284C37B8672E20C5A0B4A1C4 /* Pods_DecypherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecypherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33028232C1B7C8745FCA5023 /* Pods-DecypherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherTests/Pods-DecypherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FA9EFA6F0F8E2AF15078056 /* Pods-DecypherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecypherUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecypherUITests/Pods-DecypherUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5A1868A01DDF3265006C1179 /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
+		5A1868A11DDF3265006C1179 /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop.mp3; sourceTree = "<group>"; };
 		5A22E3DF1D81DA4F008DC4C4 /* AlertSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSpriteNode.swift; sourceTree = "<group>"; };
 		5A22E3E11D81E32A008DC4C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A41A2831D3E902000C93165 /* Decypher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decypher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,11 +139,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5A18689F1DDF3247006C1179 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				5A1868A01DDF3265006C1179 /* lose.mp3 */,
+				5A1868A11DDF3265006C1179 /* pop.mp3 */,
+			);
+			name = Sounds;
+			path = casarao;
+			sourceTree = "<group>";
+		};
 		5A41A27A1D3E902000C93165 = {
 			isa = PBXGroup;
 			children = (
 				9FE2BCB71D3E95E100B95074 /* CloudKit.framework */,
 				5A41A2851D3E902000C93165 /* casarao */,
+				5A18689F1DDF3247006C1179 /* Sounds */,
 				5AEA984C1DD646CD00E13EFA /* DecypherTests */,
 				5A41A2841D3E902000C93165 /* Products */,
 				5835874FBD120E9B2FBFEA0F /* Pods */,
@@ -340,8 +355,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A41A2951D3E902000C93165 /* LaunchScreen.storyboard in Resources */,
+				5A1868A21DDF3265006C1179 /* lose.mp3 in Resources */,
 				5A22E3E21D81E32A008DC4C4 /* Assets.xcassets in Resources */,
 				5A41A2901D3E902000C93165 /* Main.storyboard in Resources */,
+				5A1868A31DDF3265006C1179 /* pop.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

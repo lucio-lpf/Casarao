@@ -70,4 +70,22 @@ class DecypherTests: XCTestCase {
         waitForExpectations(timeout: 40.0, handler:nil)
 
     }
+    
+    func testUserPlayTime(){
+        let expectationk = expectation(description: "hahah")
+        
+        WebServiceManager.checkUserPlayTimer("zjwlCno2dv", roomId: "o0dHqtaOK5") { (bool, int) in
+            
+            if bool{
+                XCTAssert(true)
+                expectationk.fulfill()
+            }
+            else{
+                XCTAssert(false)
+            }
+        }
+
+        waitForExpectations(timeout: 40.0, handler:nil)
+
+    }
 }

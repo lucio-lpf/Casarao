@@ -141,7 +141,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         
         sectionButton = SKSpriteNode(texture: SKTexture(imageNamed:"lobby_section_public"), color: .clear, size: SKTexture(imageNamed:"lobby_section_public").size())
         sectionButton.position = CGPoint(x: 0, y: lobbyButton.position.y + 10 + lobbyButton.size.height/2)
-        sectionButton.zPosition = 200
+        sectionButton.zPosition = 90
         addChild(sectionButton)
         
         
@@ -438,7 +438,7 @@ class LobbyScene: SKScene, PopUpInLobby {
         alphaNode.alpha = 0.0
         alphaNode.name = "alphaNode"
         alphaNode.isUserInteractionEnabled = true
-        alphaNode.zPosition = 53
+        alphaNode.zPosition = 100
         self.addChild(alphaNode)
         alphaNode.run(SKAction.fadeAlpha(to: 0.8, duration: 0.15))
     }

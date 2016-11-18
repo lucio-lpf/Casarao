@@ -10,6 +10,8 @@ import Foundation
 import SpriteKit
 import Parse
 import FacebookLogin
+import FacebookCore
+
 
 class ProfileScene: SKScene, UITextFieldDelegate {
     
@@ -67,10 +69,17 @@ class ProfileScene: SKScene, UITextFieldDelegate {
         super.didMove(to: view)
         
         
-        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-        loginButton.center = view.center
+        if AccessToken.current != nil {
+            
+            
+        }
+        else{
+            let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+            loginButton.center = view.center
+            
+            view.addSubview(loginButton)
+        }
         
-        view.addSubview(loginButton)
         
         userHUD = UserHUD(player: player!)
         userHUD.position = CGPoint(x: 0, y: size.height/2 - userHUD.size.height/2)
@@ -79,6 +88,7 @@ class ProfileScene: SKScene, UITextFieldDelegate {
         
         let userImage = SKSpriteNode(texture: SKTexture(imageNamed:"ProfilePlaceHolder"), color: SKColor.clear, size:SKTexture(imageNamed:"ProfilePlaceHolder").size())
         userImage.position = CGPoint(x: 0, y: 180)
+        userImage.zPosition = 30
         addChild(userImage)
         
         
@@ -86,6 +96,7 @@ class ProfileScene: SKScene, UITextFieldDelegate {
         
         playerNickname?.fontSize = 20
         playerNickname?.fontName = "Helvetica Neue"
+    
         
         playerNickname?.position = CGPoint(x:0, y:userImage.position.y - userImage.size.height/2 - 40)
         
@@ -167,6 +178,9 @@ class ProfileScene: SKScene, UITextFieldDelegate {
             let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
             let scene:LobbyScene = LobbyScene(size: self.size)
             scene.player = player
+            for v in (view?.subviews)!{
+                v.removeFromSuperview()
+            }
             self.view?.presentScene(scene, transition: transition)
         }
         // update user data

@@ -24,6 +24,21 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
     
     var playersCount:Int
     
+    var playersPlus:SKSpriteNode!
+    
+    var playersLess: SKSpriteNode!
+    
+    var betPlus: SKSpriteNode!
+    
+    var betLess: SKSpriteNode!
+    
+    var roomBet = 50
+    
+    var roomTime = 5
+    
+    var timePlus: SKSpriteNode!
+    
+    var timeLess: SKSpriteNode!
     
     var passChoice:Bool = false{
         
@@ -121,7 +136,46 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
         else if (childNode(withName: "confirm")?.contains(point))!{
             creatRoom()
         }
+        else if (playersPlus!.contains(point)){
+            
+            playersCount += 1
+            updateLabel(named: "playersCountLabel")
+            
+        }
+        else if playersLess.contains(point){
+            
+            playersCount -= 1
+            updateLabel(named: "playersCountLabel")
+
+
+        }
+        else if betPlus.contains(point){
+            
+            roomBet += 50
+            updateLabel(named: "betCountLabel")
+            
+        }
+        else if betLess.contains(point){
+            
+            roomBet -= 50
+            updateLabel(named: "betCountLabel")
+            
+            
+        }
         
+        else if timePlus.contains(point){
+            
+            roomTime += 5
+            updateLabel(named: "timeCountLabel")
+            
+        }
+        else if timeLess.contains(point){
+            
+            roomTime -= 5
+            updateLabel(named: "timeCountLabel")
+            
+            
+        }
         
         
     }
@@ -139,7 +193,7 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
         
         let roomPassAsk = SKLabelNode(text: "This room will have passcode?")
         roomPassAsk.name = "roomPassAsk"
-        roomPassAsk.position = CGPoint(x: -size.width/2 + 10, y: roomName.position.y - 50)
+        roomPassAsk.position = CGPoint(x: -size.width/2 + 10, y: roomName.position.y - 75)
         roomPassAsk.horizontalAlignmentMode = .left
         
         let passSwitch = SKSpriteNode(texture: SKTexture(imageNamed:"no_switch"), color: .clear, size: SKTexture(imageNamed:"no_switch").size())
@@ -152,19 +206,76 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
         
         let playersLabel = SKLabelNode(text: "Number of Players:")
         playersLabel.name = "playersLabel"
-        playersLabel.position = CGPoint(x: -size.width/2 + 10, y: roomPassAsk.position.y - 50)
+        playersLabel.position = CGPoint(x: -size.width/2 + 10, y: roomPassAsk.position.y - 75)
         playersLabel.horizontalAlignmentMode = .left
         
         
         let playersCountLabel = SKLabelNode(text: "\(playersCount)" )
-        playersCountLabel.name = "playersLabel"
-        playersCountLabel.position = CGPoint(x: -size.width/2 + 10, y: roomPassAsk.position.y - 50)
+        playersCountLabel.name = "playersCountLabel"
+        playersCountLabel.position = CGPoint(x: size.width/4, y: playersLabel.position.y)
         playersCountLabel.horizontalAlignmentMode = .left
+        
+        
 
-
+        playersPlus = SKSpriteNode(texture: SKTexture(imageNamed:"plus"), color: .clear, size: SKTexture(imageNamed:"plus").size())
+        playersPlus.position = CGPoint(x: size.width/4 + 35, y: playersLabel.position.y)
+        addChild(playersPlus)
+        
+        playersLess = SKSpriteNode(texture: SKTexture(imageNamed:"less"), color: .clear, size: SKTexture(imageNamed:"less").size())
+        playersLess.position = CGPoint(x: size.width/4 - 35, y: playersLabel.position.y)
+        addChild(playersLess)
         
         
         //--------------------------------------
+        
+        
+        let betLabel = SKLabelNode(text: "Buy In:")
+        betLabel.name = "betLabel"
+        betLabel.position = CGPoint(x: -size.width/2 + 10, y: playersLabel.position.y - 75)
+        betLabel.horizontalAlignmentMode = .left
+        
+        
+        let betCountLabel = SKLabelNode(text: "\(roomBet)" )
+        betCountLabel.name = "betCountLabel"
+        betCountLabel.position = CGPoint(x: size.width/4 - 5, y: betLabel.position.y)
+        betCountLabel.horizontalAlignmentMode = .left
+        
+        
+        
+        betPlus = SKSpriteNode(texture: SKTexture(imageNamed:"plus"), color: .clear, size: SKTexture(imageNamed:"plus").size())
+        betPlus.position = CGPoint(x: size.width/4 + 35, y: betLabel.position.y)
+        addChild(betPlus)
+        
+        betLess = SKSpriteNode(texture: SKTexture(imageNamed:"less"), color: .clear, size: SKTexture(imageNamed:"less").size())
+        betLess.position = CGPoint(x: size.width/4 - 35, y: betLabel.position.y)
+        addChild(betLess)
+        
+        //----------------------------------------
+        
+        
+        
+        let timeLabel = SKLabelNode(text: "Time between plays:")
+        timeLabel.name = "timeLabel"
+        timeLabel.position = CGPoint(x: -size.width/2 + 10, y: betLabel.position.y - 75)
+        timeLabel.horizontalAlignmentMode = .left
+        
+        
+        let timeCountLabel = SKLabelNode(text: "\(roomTime)" )
+        timeCountLabel.name = "timeCountLabel"
+        timeCountLabel.position = CGPoint(x: size.width/4, y: timeLabel.position.y)
+        timeCountLabel.horizontalAlignmentMode = .left
+        
+        
+        
+        timePlus = SKSpriteNode(texture: SKTexture(imageNamed:"plus"), color: .clear, size: SKTexture(imageNamed:"plus").size())
+        timePlus.position = CGPoint(x: size.width/4 + 35, y: timeLabel.position.y)
+        addChild(timePlus)
+        
+        timeLess = SKSpriteNode(texture: SKTexture(imageNamed:"less"), color: .clear, size: SKTexture(imageNamed:"less").size())
+        timeLess.position = CGPoint(x: size.width/4 - 35, y: timeLabel.position.y)
+        addChild(timeLess)
+        
+        //----------------------------------------
         
         let  checkButton = SKSpriteNode(texture: SKTexture(imageNamed: "checkButton") , color: SKColor.clear, size: SKTexture(imageNamed: "checkButton").size())
         checkButton.position = CGPoint(x:0,y:-self.size.height/2 + checkButton.size.height)
@@ -185,7 +296,7 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
         checkLabel.zPosition = checkButton.zPosition + 2
         checkButton.addChild(checkLabel)
         
-        setLabelConfig([roomName,roomPassAsk,playersLabel,playersLabel])
+        setLabelConfig([roomName,roomPassAsk,playersLabel,playersCountLabel, betLabel, betCountLabel,timeLabel,timeCountLabel])
     }
     
     
@@ -208,5 +319,41 @@ class CreateRoomScene: SKScene,UITextFieldDelegate{
             print(bool)
         }
         
+    }
+    
+    func updateLabel(named:String){
+     
+       var label = childNode(withName: named) as? SKLabelNode
+        label?.removeFromParent()
+        guard label != nil else {
+            return
+        }
+        switch named {
+        case "playersCountLabel":
+            
+            label = SKLabelNode(text: "\(playersCount)")
+            label?.position = CGPoint(x: playersPlus.position.x - 35, y: playersPlus.position.y)
+            label?.name = "playersCountLabel"
+            break
+            
+        case "betCountLabel":
+            
+            label = SKLabelNode(text: "\(roomBet)")
+            label?.position = CGPoint(x: betPlus.position.x - 35, y: betPlus.position.y)
+            label?.name = "betCountLabel"
+            break
+            
+        case "timeCountLabel":
+            
+            label = SKLabelNode(text: "\(roomTime)")
+            label?.position = CGPoint(x: timePlus.position.x - 35, y: timePlus.position.y)
+            label?.name = "timeCountLabel"
+            break
+            
+        default:
+            break
+        }
+       
+        setLabelConfig([label!])
     }
 }
